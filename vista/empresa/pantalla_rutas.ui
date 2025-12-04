@@ -43,7 +43,6 @@ border-bottom: 1px solid #E3E3E3;</string>
     <property name="font">
      <font>
       <pointsize>-1</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -70,7 +69,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>:/recursos/iconsEmpresa/entrega.png</normaloff>:/recursos/iconsEmpresa/entrega.png</iconset>
+      <normaloff>recursos/recursos_empresa/entrega.png</normaloff>recursos/recursos_empresa/entrega.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -91,7 +90,6 @@ QPushButton:pressed {
     <property name="font">
      <font>
       <pointsize>-1</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -118,7 +116,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>:/recursos/iconsCliente/calendario.png</normaloff>:/recursos/iconsCliente/calendario.png</iconset>
+      <normaloff>recursos/recursos_empresa/calendario.png</normaloff>recursos/recursos_empresa/calendario.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -139,7 +137,6 @@ QPushButton:pressed {
     <property name="font">
      <font>
       <pointsize>-1</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -166,7 +163,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>:/recursos/iconsEmpresa/conductor.png</normaloff>:/recursos/iconsEmpresa/conductor.png</iconset>
+      <normaloff>recursos/recursos_empresa/conductor.png</normaloff>recursos/recursos_empresa/conductor.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -187,7 +184,6 @@ QPushButton:pressed {
     <property name="font">
      <font>
       <pointsize>-1</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -214,7 +210,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>:/recursos/iconsCliente/autobus.png</normaloff>:/recursos/iconsCliente/autobus.png</iconset>
+      <normaloff>recursos/recursos_empresa/autobus.png</normaloff>recursos/recursos_empresa/autobus.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -235,7 +231,6 @@ QPushButton:pressed {
     <property name="font">
      <font>
       <pointsize>-1</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -262,7 +257,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>:/recursos/iconsEmpresa/casa-silueta-negra-sin-puerta.png</normaloff>:/recursos/iconsEmpresa/casa-silueta-negra-sin-puerta.png</iconset>
+      <normaloff>recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</normaloff>recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -283,7 +278,6 @@ QPushButton:pressed {
     <property name="font">
      <font>
       <pointsize>-1</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -310,7 +304,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>:/recursos/iconsEmpresa/boleto.png</normaloff>:/recursos/iconsEmpresa/boleto.png</iconset>
+      <normaloff>recursos/recursos_empresa/boleto.png</normaloff>recursos/recursos_empresa/boleto.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -331,7 +325,6 @@ QPushButton:pressed {
     <property name="font">
      <font>
       <pointsize>-1</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -358,13 +351,29 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>:/recursos/iconsEmpresa/cerrar-sesion.png</normaloff>:/recursos/iconsEmpresa/cerrar-sesion.png</iconset>
+      <normaloff>recursos/recursos_empresa/cerrar-sesion.png</normaloff>recursos/recursos_empresa/cerrar-sesion.png</iconset>
     </property>
     <property name="iconSize">
      <size>
       <width>30</width>
       <height>30</height>
      </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>201</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>recursos/recursos_empresa/logo.png</pixmap>
     </property>
    </widget>
   </widget>
@@ -413,7 +422,6 @@ color: #606266;
      <property name="font">
       <font>
        <pointsize>-1</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -457,7 +465,6 @@ QPushButton:pressed {
      <property name="font">
       <font>
        <pointsize>-1</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -501,7 +508,6 @@ QPushButton:pressed {
      <property name="font">
       <font>
        <pointsize>-1</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -546,12 +552,11 @@ QPushButton:pressed {
     <property name="font">
      <font>
       <pointsize>-1</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
+     <enum>Qt::LayoutDirection::LeftToRight</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">QTableView {
@@ -638,13 +643,13 @@ QScrollBar::sub-line {
 </string>
     </property>
     <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
+     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
     </property>
     <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
+     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
     </property>
     <property name="sizeAdjustPolicy">
-     <enum>QAbstractScrollArea::AdjustIgnored</enum>
+     <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustIgnored</enum>
     </property>
     <attribute name="horizontalHeaderVisible">
      <bool>true</bool>
@@ -667,7 +672,6 @@ QScrollBar::sub-line {
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -678,7 +682,6 @@ QScrollBar::sub-line {
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -689,7 +692,6 @@ QScrollBar::sub-line {
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -700,7 +702,6 @@ QScrollBar::sub-line {
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -739,7 +740,6 @@ border-bottom: 1px solid #E3E3E3;
      <property name="font">
       <font>
        <pointsize>59</pointsize>
-       <weight>75</weight>
        <italic>true</italic>
        <bold>true</bold>
       </font>
@@ -765,7 +765,6 @@ border-bottom: 1px solid #E3E3E3;
      <property name="font">
       <font>
        <pointsize>14</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -779,7 +778,7 @@ border-bottom: 1px solid #E3E3E3;
       <string>Filtrar por origen</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
     <widget class="QComboBox" name="comboBox_forigen">
@@ -881,7 +880,6 @@ QComboBox QAbstractItemView {
      <property name="font">
       <font>
        <pointsize>14</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -895,7 +893,7 @@ QComboBox QAbstractItemView {
       <string>Filtrar por destino</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
     <widget class="QComboBox" name="comboBox_fdestino">

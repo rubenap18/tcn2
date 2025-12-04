@@ -1077,7 +1077,7 @@ QPushButton:pressed {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>recursos/recursos_empresa/usuario.png</pixmap>
+     <pixmap>recursos/usuario.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
