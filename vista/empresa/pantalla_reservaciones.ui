@@ -412,53 +412,6 @@ color: #606266;
 
 </string>
      </property>
-     <widget class="QPushButton" name="boton_crear_reservacion">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>40</y>
-        <width>160</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>-1</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-	background: #1061C4;
-	color:WHITE;
-	border:none;
-	border-radius: 8px;
-	font-weight: bold;
-	font-size: 25px;
-}
-
-QPushButton:hover {
-    background-color: #0D4FAB;    
-}
-
-QPushButton:pressed {
-    background-c
-}</string>
-      </property>
-      <property name="text">
-       <string>Crear</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../recursos/recursos_empresa/crear-reservacion.png</normaloff>../recursos/recursos_empresa/crear-reservacion.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>30</width>
-        <height>30</height>
-       </size>
-      </property>
-     </widget>
      <widget class="QPushButton" name="boton_editar_reservacion">
       <property name="geometry">
        <rect>
@@ -608,21 +561,6 @@ QComboBox QAbstractItemView {
     selection-color: white;
 }</string>
       </property>
-      <item>
-       <property name="text">
-        <string>Reservaciones Activas</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Reservaciones Pendientes</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Fecha</string>
-       </property>
-      </item>
       <item>
        <property name="text">
         <string>Nombre de cliente</string>
