@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QComboBox, QHeaderView,
     QLabel, QPushButton, QSizePolicy, QTableWidget,
     QTableWidgetItem, QWidget)
-#import resources_rc
+import resources_rc
 
 class Ui_pantalla_autobuses(object):
     def setupUi(self, pantalla_autobuses):
