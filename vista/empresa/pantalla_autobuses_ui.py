@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QComboBox, QHeaderView,
     QLabel, QPushButton, QSizePolicy, QTableWidget,
     QTableWidgetItem, QWidget)
-import resources_rc
+import recursos.resources_rc
 
 class Ui_pantalla_autobuses(object):
     def setupUi(self, pantalla_autobuses):
@@ -63,7 +63,7 @@ class Ui_pantalla_autobuses(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon = QIcon()
-        icon.addFile(u"../recursos/recursos_empresa/agregar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"recursos/recursos_empresa/agregar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_registrarAutobus.setIcon(icon)
         self.boton_registrarAutobus.setIconSize(QSize(30, 30))
         self.boton_bajaAutobus = QPushButton(self.sidebar_autobuses)
@@ -87,7 +87,7 @@ class Ui_pantalla_autobuses(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon1 = QIcon()
-        icon1.addFile(u"../recursos/recursos_empresa/eliminar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u"recursos/recursos_empresa/eliminar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_bajaAutobus.setIcon(icon1)
         self.boton_bajaAutobus.setIconSize(QSize(30, 30))
         self.widget_opfiltro_autobus = QWidget(pantalla_autobuses)
@@ -308,7 +308,7 @@ class Ui_pantalla_autobuses(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon2 = QIcon()
-        icon2.addFile(u"../recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u"recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_rutas.setIcon(icon2)
         self.boton_rutas.setIconSize(QSize(30, 30))
         self.boton_corridas = QPushButton(self.header_autobuses)
@@ -332,7 +332,7 @@ class Ui_pantalla_autobuses(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon3 = QIcon()
-        icon3.addFile(u"../recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u"recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_corridas.setIcon(icon3)
         self.boton_corridas.setIconSize(QSize(30, 30))
         self.boton_operadores = QPushButton(self.header_autobuses)
@@ -356,7 +356,7 @@ class Ui_pantalla_autobuses(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon4 = QIcon()
-        icon4.addFile(u"../recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon4.addFile(u"recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_operadores.setIcon(icon4)
         self.boton_operadores.setIconSize(QSize(30, 30))
         self.boton_autobuses = QPushButton(self.header_autobuses)
@@ -380,7 +380,7 @@ class Ui_pantalla_autobuses(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon5 = QIcon()
-        icon5.addFile(u"../recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon5.addFile(u"recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_autobuses.setIcon(icon5)
         self.boton_autobuses.setIconSize(QSize(30, 30))
         self.boton_inicio = QPushButton(self.header_autobuses)
@@ -404,7 +404,7 @@ class Ui_pantalla_autobuses(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon6 = QIcon()
-        icon6.addFile(u"../recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon6.addFile(u"recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_inicio.setIcon(icon6)
         self.boton_inicio.setIconSize(QSize(30, 30))
         self.boton_reservaciones = QPushButton(self.header_autobuses)
@@ -428,7 +428,7 @@ class Ui_pantalla_autobuses(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon7 = QIcon()
-        icon7.addFile(u"../recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon7.addFile(u"recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_reservaciones.setIcon(icon7)
         self.boton_reservaciones.setIconSize(QSize(30, 30))
         self.boton_salir = QPushButton(self.header_autobuses)
@@ -452,7 +452,7 @@ class Ui_pantalla_autobuses(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon8 = QIcon()
-        icon8.addFile(u"../recursos/recursos_empresa/cerrar-sesion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon8.addFile(u"recursos/recursos_empresa/cerrar-sesion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_salir.setIcon(icon8)
         self.boton_salir.setIconSize(QSize(30, 30))
         self.label = QLabel(self.header_autobuses)
@@ -465,7 +465,7 @@ class Ui_pantalla_autobuses(object):
 "    padding: 0px;\n"
 "    margin: 0px;\n"
 "}")
-        self.label.setPixmap(QPixmap(u"../recursos/recursos_empresa/logo.png"))
+        self.label.setPixmap(QPixmap(u"recursos/recursos_empresa/logo.png"))
         self.label.setScaledContents(True)
 
         self.retranslateUi(pantalla_autobuses)

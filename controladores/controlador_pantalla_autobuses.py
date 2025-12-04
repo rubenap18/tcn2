@@ -92,7 +92,7 @@ class ControladorPantallaAutobuses:
             """)
     
     def cargar_autobuses(self, filtro="TODOS"):
-        """Carga los autobuses en la tabla según el filtro"""
+        
         try:
             # Obtener autobuses del DAO
             autobuses = self.autobus_dao.obtener_autobuses_activos(filtro)
@@ -116,18 +116,18 @@ class ControladorPantallaAutobuses:
             QMessageBox.critical(self.pantalla, "Error", f"Error al cargar autobuses: {str(e)}")
     
     def agregar_item_tabla(self, fila, columna, texto, centrar=False):
-        """Agrega un item a la tabla con formato"""
+        
         item = QTableWidgetItem(texto)
         if centrar:
             item.setTextAlignment(Qt.AlignCenter)
         self.ui.QtableWidget_autobuses.setItem(fila, columna, item)
     
     def filtrar_autobuses(self, filtro):
-        """Filtra los autobuses según el servicio seleccionado"""
+        
         self.cargar_autobuses(filtro)
     
     def abrir_alta_autobus(self):
-        """Abre el diálogo para registrar nuevo autobús"""
+        
         try:
             # Crear diálogo
             dialog = QDialog(self.pantalla)
@@ -171,7 +171,7 @@ class ControladorPantallaAutobuses:
         )
     
     def cargar_modelos_dialogo(self, ui, marca_clave):
-        """Carga modelos en el diálogo de alta"""
+        
         try:
             modelos = self.marca_modelo_dao.obtener_modelos_por_marca(marca_clave)
             ui.comboBox_modeloAutobus.clear()
@@ -181,7 +181,7 @@ class ControladorPantallaAutobuses:
             QMessageBox.critical(None, "Error", f"Error al cargar modelos: {str(e)}")
     
     def validar_datos_alta(self, ui):
-        """Valida los datos del formulario de alta"""
+        
         # Obtener valores
         numero_text = ui.lineEdit_numeroAutobus.text()
         matricula = ui.lineEdit_matriculaAutobus.text().strip()
@@ -232,7 +232,7 @@ class ControladorPantallaAutobuses:
         return None  # Sin errores
     
     def registrar_autobus_dialogo(self, ui, dialog):
-        """Registra un nuevo autobús desde el diálogo"""
+        
         try:
             # Validar datos
             error = self.validar_datos_alta(ui)
@@ -264,7 +264,7 @@ class ControladorPantallaAutobuses:
             QMessageBox.critical(dialog, "Error", f"Error al registrar autobús: {str(e)}")
     
     def abrir_baja_autobus(self):
-        """Abre el diálogo para dar de baja un autobús"""
+        
         try:
             # Crear diálogo
             dialog = QDialog(self.pantalla)
@@ -285,7 +285,7 @@ class ControladorPantallaAutobuses:
             QMessageBox.critical(self.pantalla, "Error", f"Error al abrir diálogo de baja: {str(e)}")
     
     def configurar_dialogo_baja(self, ui, dialog):
-        """Configura el diálogo de baja de autobús"""
+        
         # Cargar autobuses activos
         try:
             autobuses = self.autobus_dao.obtener_autobuses_activos_para_baja()
@@ -311,7 +311,7 @@ class ControladorPantallaAutobuses:
             QMessageBox.critical(dialog, "Error", f"Error al cargar autobuses: {str(e)}")
     
     def mostrar_datos_autobus_dialogo(self, ui):
-        """Muestra los datos del autobús seleccionado en el diálogo de baja"""
+        
         try:
             numero_autobus = ui.comboBox_numeroAutobus.currentData()
             if numero_autobus:
@@ -330,14 +330,14 @@ class ControladorPantallaAutobuses:
             print(f"Error al cargar datos del autobús: {str(e)}")
     
     def limpiar_labels_dialogo(self, ui):
-        """Limpia los labels del diálogo de baja"""
+        
         ui.label_mostrarMatricula.setText("")
         ui.label_mostrarMarca.setText("")
         ui.label_mostrarModelo.setText("")
         ui.label_mostrarTipoAutobus.setText("")
 
     def dar_baja_autobus_dialogo(self, ui, dialog):
-        """Da de baja el autobús seleccionado desde el diálogo"""
+        
         try:
             numero_autobus = ui.comboBox_numeroAutobus.currentData()
             if not numero_autobus:

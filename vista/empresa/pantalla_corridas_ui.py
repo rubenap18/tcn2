@@ -186,7 +186,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon = QIcon()
-        icon.addFile(u"../recursos/recursos empresa/a\u00f1adir.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"recursos/recursos_empresa/a\u00f1adir.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_anadirCorr.setIcon(icon)
         self.boton_anadirCorr.setIconSize(QSize(30, 30))
         self.boton_actualizarCorr = QPushButton(self.widget_corrBotones)
@@ -210,7 +210,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon1 = QIcon()
-        icon1.addFile(u"../recursos/recursos empresa/editar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u"recursos/recursos_empresa/editar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_actualizarCorr.setIcon(icon1)
         self.boton_actualizarCorr.setIconSize(QSize(30, 30))
         self.boton_estadoCorr = QPushButton(self.widget_corrBotones)
@@ -234,7 +234,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon2 = QIcon()
-        icon2.addFile(u"../recursos/recursos empresa/borrar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u"recursos/recursos_empresa/borrar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_estadoCorr.setIcon(icon2)
         self.boton_estadoCorr.setIconSize(QSize(30, 30))
         self.widget_opfiltro_2 = QWidget(Form)
@@ -412,7 +412,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon3 = QIcon()
-        icon3.addFile(u"../recursos/recursos empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u"recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_rutas.setIcon(icon3)
         self.boton_rutas.setIconSize(QSize(30, 30))
         self.boton_corridas = QPushButton(self.header_corridas)
@@ -436,7 +436,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon4 = QIcon()
-        icon4.addFile(u"../recursos/recursos empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon4.addFile(u"recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_corridas.setIcon(icon4)
         self.boton_corridas.setIconSize(QSize(30, 30))
         self.boton_operadores = QPushButton(self.header_corridas)
@@ -460,7 +460,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon5 = QIcon()
-        icon5.addFile(u"../recursos/recursos empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon5.addFile(u"recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_operadores.setIcon(icon5)
         self.boton_operadores.setIconSize(QSize(30, 30))
         self.boton_autobuses = QPushButton(self.header_corridas)
@@ -484,7 +484,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon6 = QIcon()
-        icon6.addFile(u"../recursos/recursos empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon6.addFile(u"recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_autobuses.setIcon(icon6)
         self.boton_autobuses.setIconSize(QSize(30, 30))
         self.boton_inicio = QPushButton(self.header_corridas)
@@ -508,7 +508,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon7 = QIcon()
-        icon7.addFile(u"../recursos/recursos empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon7.addFile(u"recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_inicio.setIcon(icon7)
         self.boton_inicio.setIconSize(QSize(30, 30))
         self.boton_reservaciones = QPushButton(self.header_corridas)
@@ -532,7 +532,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon8 = QIcon()
-        icon8.addFile(u"../recursos/recursos empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon8.addFile(u"recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_reservaciones.setIcon(icon8)
         self.boton_reservaciones.setIconSize(QSize(30, 30))
         self.boton_salir = QPushButton(self.header_corridas)
@@ -556,18 +556,18 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon9 = QIcon()
-        icon9.addFile(u"../recursos/recursos empresa/cerrar-sesion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon9.addFile(u"recursos/recursos_empresa/cerrar-sesion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_salir.setIcon(icon9)
         self.boton_salir.setIconSize(QSize(30, 30))
         self.label_4 = QLabel(self.header_corridas)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(18, 15, 231, 81))
         self.label_4.setStyleSheet(u"border: none")
-        self.label_4.setPixmap(QPixmap(u"../recursos/recursos empresa/logo.png"))
+        self.label_4.setPixmap(QPixmap(u"recursos/recursos_empresa/logo.png"))
         self.label_6 = QLabel(self.header_corridas)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(1790, 10, 70, 70))
-        self.label_6.setPixmap(QPixmap(u"../recursos/recursos empresa/usuario.png"))
+        self.label_6.setPixmap(QPixmap(u"recursos/recursos_empresa/usuario.png"))
         self.label_6.setScaledContents(True)
 
         self.retranslateUi(Form)

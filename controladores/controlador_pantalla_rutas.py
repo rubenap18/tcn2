@@ -44,7 +44,7 @@ class ControladorPantallaRutas:
                 distancia_float = float(distancia_str)
                 if distancia_float <= 0:
                     errores.append("La distancia debe ser mayor a 0.")
-                if distancia_float > 1500: # Removed direct return, added to errores
+                if distancia_float > 1500: 
                     errores.append("La distancia no puede ser mayor a 1500.")
             except ValueError:
                 errores.append("La distancia debe ser un número válido.")
@@ -83,7 +83,7 @@ class ControladorPantallaRutas:
                 distancia_float = float(distancia_str)
                 if distancia_float <= 0:
                     errores.append("La distancia debe ser mayor a 0.")
-                if distancia_float > 1500: # Removed direct return, added to errores
+                if distancia_float > 1500: 
                     errores.append("La distancia no puede ser mayor a 1500.")
             except ValueError:
                 errores.append("La distancia debe ser un número válido.")

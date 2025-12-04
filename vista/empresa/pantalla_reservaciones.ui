@@ -65,7 +65,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/entrega.png</normaloff>../recursos/recursos_empresa/entrega.png</iconset>
+      <normaloff>recursos/recursos_empresa/entrega.png</normaloff>recursos/recursos_empresa/entrega.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -112,7 +112,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/calendario.png</normaloff>../recursos/recursos_empresa/calendario.png</iconset>
+      <normaloff>recursos/recursos_empresa/calendario.png</normaloff>recursos/recursos_empresa/calendario.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -159,7 +159,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/conductor.png</normaloff>../recursos/recursos_empresa/conductor.png</iconset>
+      <normaloff>recursos/recursos_empresa/conductor.png</normaloff>recursos/recursos_empresa/conductor.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -206,7 +206,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/autobus.png</normaloff>../recursos/recursos_empresa/autobus.png</iconset>
+      <normaloff>recursos/recursos_empresa/autobus.png</normaloff>recursos/recursos_empresa/autobus.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -253,7 +253,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</normaloff>../recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</iconset>
+      <normaloff>recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</normaloff>recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -300,7 +300,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/boleto.png</normaloff>../recursos/recursos_empresa/boleto.png</iconset>
+      <normaloff>recursos/recursos_empresa/boleto.png</normaloff>recursos/recursos_empresa/boleto.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -347,7 +347,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/cerrar-sesion.png</normaloff>../recursos/recursos_empresa/cerrar-sesion.png</iconset>
+      <normaloff>recursos/recursos_empresa/cerrar-sesion.png</normaloff>recursos/recursos_empresa/cerrar-sesion.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -369,7 +369,7 @@ QPushButton:pressed {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../recursos/recursos_empresa/logo.png</pixmap>
+     <pixmap>recursos/recursos_empresa/logo.png</pixmap>
     </property>
    </widget>
   </widget>
@@ -412,58 +412,11 @@ color: #606266;
 
 </string>
      </property>
-     <widget class="QPushButton" name="boton_crear_reservacion">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>40</y>
-        <width>160</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>-1</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-	background: #1061C4;
-	color:WHITE;
-	border:none;
-	border-radius: 8px;
-	font-weight: bold;
-	font-size: 25px;
-}
-
-QPushButton:hover {
-    background-color: #0D4FAB;    
-}
-
-QPushButton:pressed {
-    background-c
-}</string>
-      </property>
-      <property name="text">
-       <string>Crear</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../recursos/recursos_empresa/crear-reservacion.png</normaloff>../recursos/recursos_empresa/crear-reservacion.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>30</width>
-        <height>30</height>
-       </size>
-      </property>
-     </widget>
      <widget class="QPushButton" name="boton_editar_reservacion">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>140</y>
+        <y>30</y>
         <width>160</width>
         <height>71</height>
        </rect>
@@ -481,7 +434,7 @@ QPushButton:pressed {
 	border:none;
 	border-radius: 8px;
 	font-weight: bold;
-	font-size: 25px;
+	font-size: 20px;
 }
 
 QPushButton:hover {
@@ -494,11 +447,11 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>Editar</string>
+       <string>Mostrar boleto</string>
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../recursos/recursos_empresa/editar-reservacion.png</normaloff>../recursos/recursos_empresa/editar-reservacion.png</iconset>
+        <normaloff>recursos/recursos_empresa/editar-reservacion.png</normaloff>recursos/recursos_empresa/editar-reservacion.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -552,113 +505,6 @@ border-bottom: 1px solid #E3E3E3;
       </property>
       <property name="text">
        <string>Reservaciones</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="comboBox_filtros">
-      <property name="geometry">
-       <rect>
-        <x>1380</x>
-        <y>30</y>
-        <width>221</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QComboBox {
-    background-color: #ffffff;
-    border: 1px solid #dcdfe6;
-    border-radius: 6px;
-    padding: 6px 12px;
-    font-size: 16px;
-    color: #606266;
-    min-height: 10px;
-}
-
-QComboBox:hover {
-    border-color: #c0c4cc;
-}
-
-QComboBox:focus {
-    border-color: #409eff;
-}
-
-QComboBox::drop-down {
-    border: none;
-    width: 25px;
-}
-
-QComboBox::down-arrow {
-    image: none;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 4px solid #909399;
-}
-
-QComboBox QAbstractItemView {
-    border: 1px solid #dcdfe6;
-    border-radius: 6px;
-    background-color: white;
-    outline: none;
-    selection-background-color: #409eff;
-    selection-color: white;
-}</string>
-      </property>
-      <item>
-       <property name="text">
-        <string>Reservaciones Activas</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Reservaciones Pendientes</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Fecha</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Nombre de cliente</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Origen</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Destino</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>1290</x>
-        <y>40</y>
-        <width>81</width>
-        <height>19</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border:None;</string>
-      </property>
-      <property name="text">
-       <string>Filtrar por:</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_buscar">
@@ -723,7 +569,7 @@ QPushButton:pressed {
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../recursos/recursos empresa/boton_buscar_reservaciones.png</normaloff>../recursos/recursos empresa/boton_buscar_reservaciones.png</iconset>
+        <normaloff>recursos/recursos_empresa/boton_buscar_reservaciones.png</normaloff>recursos/recursos_empresa/boton_buscar_reservaciones.png</iconset>
       </property>
       <property name="iconSize">
        <size>

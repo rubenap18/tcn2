@@ -15,7 +15,7 @@ class AppManager:
         self.controlador_pp = controlador_pp #controlador pantalla pasajeros
         self.controlador_pcidad = controlador_pcidad #controlador pantalla ciudad
         
-        # ⭐ NUEVO: Usuario logueado y controlador de compra
+        # Usuario logueado y controlador de compra
         self.usuario_actual = None
         self.controlador_viajar = None  # Se inicializará después
         

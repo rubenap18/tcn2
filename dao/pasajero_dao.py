@@ -10,12 +10,7 @@ class PasajeroDAO:
         pass
     
     def crear_pasajero(self, nombre, apellido_pat, apellido_mat, fecha_nac, edad, correo, telefono):
-        """
-        Crea un nuevo pasajero en la base de datos.
         
-        Returns:
-            ID del pasajero creado, o None si hubo error
-        """
         conn = None
         cursor = None
         
@@ -46,7 +41,7 @@ class PasajeroDAO:
                 cursor.close()
     
     def obtener_pasajero_por_id(self, pasajero_id):
-        """Obtiene un pasajero por su ID."""
+        
         conn = None
         cursor = None
         
@@ -73,7 +68,7 @@ class PasajeroDAO:
                 cursor.close()
     
     def buscar_pasajeros_por_nombre(self, nombre):
-        """Busca pasajeros por nombre (búsqueda parcial)."""
+        
         pasajeros = []
         conn = None
         cursor = None
@@ -103,7 +98,7 @@ class PasajeroDAO:
                 cursor.close()
     
     def obtener_todos_pasajeros(self):
-        """Obtiene todos los pasajeros."""
+        
         pasajeros = []
         conn = None
         cursor = None

@@ -6,7 +6,7 @@ class IndexDAO:
         self.db = Connection.getConnection()
 
     def cargar_pasajeros_dashboard(self):
-        'Carga pasajeros recientemente registrados'
+        
         try:
             comando = """
             SELECT numero, nombre, apellPat, apellMat, 
@@ -28,7 +28,7 @@ class IndexDAO:
             return []
 
     def cargar_corridas_dashboard(self):
-        'Carga las corridas recientes o del día actual'
+        
         try:
             comando = """
             SELECT c.numero as numero, c.fecha, c.hora_salida as horasalida, 
@@ -48,7 +48,7 @@ class IndexDAO:
             return []
 
     def cargar_operadores_con_corridas_dashboard(self):
-        'Carga operadores y sus corridas asignadas para el dashboard'
+        
         try:
             comando = """
             SELECT
@@ -72,7 +72,7 @@ class IndexDAO:
             return []
 
     def cargar_pasajeros_por_corrida(self, corrida_id):
-        'Carga los pasajeros asociados a una corrida específica'
+        
         try:
             comando = """
             SELECT p.numero, p.nombre, p.apellPat, p.apellMat, 

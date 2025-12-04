@@ -35,7 +35,7 @@ from dao.ruta_dao import RutaDAO
 from dao.operador_dao import OperadorDAO
 from dao.pasajero_dao import PasajeroDAO
 from dao.ciudad_dao import CiudadesDAO # Agregado
-from dao.viajar_dao import ViajarDAO  # ⭐ NUEVO: DAO para compra de boletos
+from dao.viajar_dao import ViajarDAO 
 
 #importando controladores
 from controladores.controlador_index_empresa import ControladorIndex
@@ -48,7 +48,7 @@ from controladores.controlador_pantalla_rutas import ControladorPantallaRutas
 from controladores.controlador_pantalla_operadores import ControladorPantallaOperadores
 from controladores.controlador_pantalla_pasajeros import ControladorPantallaPasajeros
 from controladores.controlador_pantalla_ciudad import ControladorPantallaCiudad # Agregado
-from controladores.controlador_viajar import ControladorViajar   # ⭐ NUEVO: Controlador para compra de boletos
+from controladores.controlador_viajar import ControladorViajar 
 
 from utilidades.validaciones import Validaciones
 
@@ -99,7 +99,7 @@ def main():
                             controlador_prutas=controlador_prutas, controlador_po=controlador_po, controlador_pp=controlador_pp,
                             controlador_pcidad=controlador_pcidad) 
     
-    # ⭐ NUEVO: Inyectar controlador de viajar (despues de crear app_manager)
+    # Inyectando controlador de viajar (despues de crear app_manager)
     app_manager.controlador_viajar = controlador_viajar
     
     #iniciando UI
@@ -124,7 +124,7 @@ def main():
         elif resultado == InicioSesionDialog.ENTRAR_VISTA_CLIENTE:
             # Si el login es exitoso, salimos del bucle para abrir la app principal
             print("Abriendo la vista cliente...")
-            main_window = MainUIUsuario()
+            main_window = MainUIUsuario(app_manager)
             main_window.show()
             exit_code = app.exec() #Inica el bucle de la app
             break

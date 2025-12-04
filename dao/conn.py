@@ -30,7 +30,7 @@ class Connection:
         return cls._conexion
     
 
-    """Este metodo cierra la unica conexion que hay en el sistema."""
+    
     @classmethod
     def closeConnection(cls):
         if cls._conexion and cls._conexion.is_connected():
