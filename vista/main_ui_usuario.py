@@ -7,9 +7,9 @@ from PySide6.QtGui import QCloseEvent
 
 
 class MainUIUsuario(QMainWindow):
-    def __init__(self, app_manager):  # ⭐ AGREGAR app_manager como parámetro
+    def __init__(self, app_manager): #AGREGAR app_manager como parámetro
         super().__init__()
-        self.app_manager = app_manager  # ⭐ GUARDAR app_manager
+        self.app_manager = app_manager  # GUARDAR app_manager
         
         # Configurar stacked widget
         self.stacked_widget = QStackedWidget()
@@ -20,7 +20,7 @@ class MainUIUsuario(QMainWindow):
         
         # Cargar todas las interfaces
         self.cargar_interfaces()
-        self.setup_connections()  # ⭐ DESCOMENTAR para conectar señales
+        self.setup_connections()  
 
         # Mostrar MainWindow por defecto (índice 0)
         self.stacked_widget.setCurrentIndex(0)
@@ -49,28 +49,22 @@ class MainUIUsuario(QMainWindow):
     
     def abrir_pantalla_viajar(self):
         """Abre la pantalla de búsqueda de viajes."""
-        # ⭐ MOVER el import AQUÍ para evitar importación circular
+        
         from vista.compartido.pantalla_viajar import PantallaViajarWidget
         
         pantalla = PantallaViajarWidget(self.app_manager, self)
         pantalla.show()
 
     def setup_connections(self):
-        # ⭐ NUEVO: Conectar el botón viajar
+        
         if self.index_ui:
             boton_viajar = self.index_ui.findChild(QWidget, "boton_viajar")
             if boton_viajar:
                 boton_viajar.clicked.connect(self.abrir_pantalla_viajar)
             else:
-                print("⚠️ ADVERTENCIA: No se encontró el botón 'boton_viajar' en el UI")
+                print(" ADVERTENCIA: No se encontró el botón 'boton_viajar' en el UI")
         
-        # ⭐ NOTA: Los siguientes botones no existen en tu UI de usuario
-        # Si quieres agregar más pantallas después, descomenta y crea los widgets
         
-        # if self.pagina_reservaciones_widget:
-        #     boton_reservaciones = self.index_ui.findChild(QWidget, "boton_reservaciones")
-        #     if boton_reservaciones:
-        #         boton_reservaciones.clicked.connect(lambda: self.stacked_widget.setCurrentIndex(1))
 
 
     def closeEvent(self, event: QCloseEvent):

@@ -99,7 +99,7 @@ def main():
                             controlador_prutas=controlador_prutas, controlador_po=controlador_po, controlador_pp=controlador_pp,
                             controlador_pcidad=controlador_pcidad) 
     
-    # ⭐ NUEVO: Inyectar controlador de viajar (despues de crear app_manager)
+    # Inyectando controlador de viajar (despues de crear app_manager)
     app_manager.controlador_viajar = controlador_viajar
     
     #iniciando UI

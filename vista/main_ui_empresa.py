@@ -55,7 +55,7 @@ class MainUIEmpresa(QMainWindow):
         # Cargar todas las interfaces
         base_path = os.path.dirname(__file__) # Ruta del directorio de main_ui.py
         
-        # ⭐ MODIFICADO: Pasar app_manager a PantallaIndex
+        # Pasar app_manager a PantallaIndex
         self.index_ui = PantallaIndex(self.app_manager.controlador_index, self.app_manager)
         
         self.pagina_reservaciones_widget = PantallaReservaciones(self.app_manager.controlador_pr)
@@ -131,7 +131,7 @@ class MainUIEmpresa(QMainWindow):
             if boton_operadores:
                 boton_operadores.clicked.connect(lambda: self.stacked_widget.setCurrentIndex(5))
         
-        # ⭐ NUEVO: Si el boton comprar boleto es presionado
+        # Si el boton comprar boleto es presionado
         boton_comprar_boleto = self.index_ui.findChild(QWidget, "boton_comprarboleto")
         if boton_comprar_boleto:
             boton_comprar_boleto.clicked.connect(self.abrir_pantalla_viajar)
