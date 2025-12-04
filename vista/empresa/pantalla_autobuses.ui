@@ -73,7 +73,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/agregar.png</normaloff>../recursos/recursos_empresa/agregar.png</iconset>
+      <normaloff>recursos/recursos_empresa/agregar.png</normaloff>recursos/recursos_empresa/agregar.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -120,7 +120,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/eliminar.png</normaloff>../recursos/recursos_empresa/eliminar.png</iconset>
+      <normaloff>recursos/recursos_empresa/eliminar.png</normaloff>recursos/recursos_empresa/eliminar.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -489,7 +489,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/entrega.png</normaloff>../recursos/recursos_empresa/entrega.png</iconset>
+      <normaloff>recursos/recursos_empresa/entrega.png</normaloff>recursos/recursos_empresa/entrega.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -536,7 +536,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/calendario.png</normaloff>../recursos/recursos_empresa/calendario.png</iconset>
+      <normaloff>recursos/recursos_empresa/calendario.png</normaloff>recursos/recursos_empresa/calendario.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -583,7 +583,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/conductor.png</normaloff>../recursos/recursos_empresa/conductor.png</iconset>
+      <normaloff>recursos/recursos_empresa/conductor.png</normaloff>recursos/recursos_empresa/conductor.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -630,7 +630,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/autobus.png</normaloff>../recursos/recursos_empresa/autobus.png</iconset>
+      <normaloff>recursos/recursos_empresa/autobus.png</normaloff>recursos/recursos_empresa/autobus.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -677,7 +677,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</normaloff>../recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</iconset>
+      <normaloff>recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</normaloff>recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -724,7 +724,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/boleto.png</normaloff>../recursos/recursos_empresa/boleto.png</iconset>
+      <normaloff>recursos/recursos_empresa/boleto.png</normaloff>recursos/recursos_empresa/boleto.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -771,7 +771,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos_empresa/cerrar-sesion.png</normaloff>../recursos/recursos_empresa/cerrar-sesion.png</iconset>
+      <normaloff>recursos/recursos_empresa/cerrar-sesion.png</normaloff>recursos/recursos_empresa/cerrar-sesion.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -802,7 +802,7 @@ QPushButton:pressed {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../recursos/recursos_empresa/logo.png</pixmap>
+     <pixmap>recursos/recursos_empresa/logo.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
