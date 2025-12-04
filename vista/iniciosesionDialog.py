@@ -38,8 +38,7 @@ class InicioSesionDialog(QDialog):
             return
 
         # 4. Cargar el UI. El loader devuelve un NUEVO WIDGET.
-        # Guardamos este widget en una variable de instancia (self.ui) para que no sea eliminado
-        # por el recolector de basura. Este es un paso FUNDAMENTAL.
+        # Se guarda este widget en una variable de instancia (self.ui) para que no sea eliminado por el recolector de basura. 
         self.ui = loader.load(ui_file, self)
         ui_file.close()
 
@@ -55,9 +54,9 @@ class InicioSesionDialog(QDialog):
         # 7. Establecer el layout en nuestro QDialog. Ahora el contenido del .ui es visible.
         self.setLayout(layout)
 
-        # Opcional: Ajustar el tamaño del diálogo al contenido del UI
+        
         self.resize(self.ui.size())
-        self.setWindowTitle("Inicio de Sesión") # Puedes ponerlo aquí o en el Designer
+        self.setWindowTitle("Inicio de Sesión") 
 
         #Obteniendo componentes del .ui
         self.boton_continuar = self.ui.findChild(QPushButton,'boton_continuar')
