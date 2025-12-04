@@ -350,7 +350,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../../../../recursos/recursos_empresa/cerrar-sesion.png</normaloff>../../../../../../recursos/recursos_empresa/cerrar-sesion.png</iconset>
+      <normaloff>recursos/recursos_empresa/cerrar-sesion.png</normaloff>recursos/recursos_empresa/cerrar-sesion.png</iconset>
     </property>
     <property name="iconSize">
      <size>
