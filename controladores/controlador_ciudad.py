@@ -6,9 +6,7 @@ class ControladorCiudad:
         self.ciudades_dao = CiudadesDAO()
 
     def obtener_todas_las_ciudades(self):
-        """
-        Obtiene todas las ciudades de la base de datos.
-        """
+       
         try:
             return self.ciudades_dao.obtener_todas()
         except Exception as e:
@@ -16,10 +14,7 @@ class ControladorCiudad:
             return []
 
     def agregar_nueva_ciudad(self, codigo, nombre):
-        """
-        Intenta agregar una nueva ciudad.
-        Devuelve True, "duplicado", "codigo_invalido", o un string de error.
-        """
+     
         if not codigo or not nombre:
             return "El código y el nombre son obligatorios."
         
@@ -32,9 +27,7 @@ class ControladorCiudad:
             return "No se pudo agregar la ciudad por un error interno."
 
     def actualizar_ciudad(self, codigo_actual, nuevo_codigo, nuevo_nombre):
-        """
-        Intenta actualizar una ciudad existente.
-        """
+       
         if not nuevo_codigo or not nuevo_nombre:
             return "El nuevo código y nombre son obligatorios."
 
@@ -45,9 +38,7 @@ class ControladorCiudad:
             return False
 
     def buscar_ciudades_por_nombre(self, nombre):
-        """
-        Busca ciudades que coincidan con un nombre.
-        """
+        
         try:
             return self.ciudades_dao.buscar_por_nombre(nombre)
         except Exception as e:
@@ -55,9 +46,7 @@ class ControladorCiudad:
             return []
     
     def eliminar_ciudad(self, codigo):
-        """
-        Intenta eliminar una ciudad.
-        """
+       
         try:
             return self.ciudades_dao.eliminar(codigo)
         except Exception as e:

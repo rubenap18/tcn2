@@ -18,8 +18,7 @@ class OperadorDAO:
             resultados = cursor.fetchall()
 
             for fila in resultados:
-                # Assuming fechaNac and fechaContrato are stored as strings in 'YYYY-MM-DD' format
-                # and need to be converted to date objects.
+                
                 fecha_nac = date.fromisoformat(str(fila[4])) if fila[4] else None
                 fecha_contrato = date.fromisoformat(str(fila[6])) if fila[6] else None
                 operador = Operador(fila[0], fila[1], fila[2], fila[3], fecha_nac, fila[5], fecha_contrato)
@@ -64,7 +63,7 @@ class OperadorDAO:
             query = "INSERT INTO operador (nombre, apellPat, apellMat, telefono, fechaNac, fechaContrato) VALUES (%s, %s, %s, %s, %s, %s)"
             cursor = conn.cursor()
             
-            # Explicitly format date objects to strings
+            
             fechaNac_str = operador.get_fechaNac().strftime("%Y-%m-%d") if operador.get_fechaNac() else None
             fechaContrato_str = operador.get_fechaContrato().strftime("%Y-%m-%d") if operador.get_fechaContrato() else None
             
@@ -86,10 +85,9 @@ class OperadorDAO:
             query = "UPDATE operador SET nombre = %s, apellPat = %s, apellMat = %s, fechaNac = %s, telefono = %s WHERE numero = %s"
             cursor = conn.cursor()
             
-            # Explicitly format date objects to strings
+            
             fechaNac_str = operador.get_fechaNac().strftime("%Y-%m-%d") if operador.get_fechaNac() else None
-            # fechaContrato is not updated in this query based on the current structure, but should be formatted if it were.
-            # Assuming fechaContrato is not part of the update for now based on the query.
+            
             
             cursor.execute(query, (operador.get_nombre(), operador.get_apellPat(), operador.get_apellMat(), fechaNac_str, operador.get_telefono(), operador.get_numero()))
             conn.commit()

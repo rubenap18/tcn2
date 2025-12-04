@@ -3,10 +3,7 @@ from mysql.connector import Error
 from datetime import datetime, date
 
 class ViajarDAO:
-    """
-    DAO especializado para manejar toda la lógica de compra de boletos.
-    Incluye búsqueda de corridas, validación de asientos, y proceso de compra completo.
-    """
+   
     
     def __init__(self):
         pass
@@ -14,18 +11,8 @@ class ViajarDAO:
     # ==================== BÚSQUEDA DE CORRIDAS ====================
     
     def obtener_corridas_disponibles(self, ciudad_origen, ciudad_destino, fecha, num_pasajeros):
-        """
-        Obtiene las corridas disponibles según los criterios de búsqueda.
         
-        Args:
-            ciudad_origen: Código o nombre de la ciudad origen
-            ciudad_destino: Código o nombre de la ciudad destino
-            fecha: Fecha de la corrida (formato 'YYYY-MM-DD')
-            num_pasajeros: Número de pasajeros (para validar lugares disponibles)
         
-        Returns:
-            Lista de diccionarios con información de corridas disponibles
-        """
         corridas = []
         conn = None
         cursor = None
@@ -78,7 +65,7 @@ class ViajarDAO:
         return corridas
     
     def obtener_ciudades_origen(self):
-        """Obtiene todas las ciudades disponibles como origen."""
+        
         ciudades = []
         conn = None
         cursor = None
@@ -107,7 +94,7 @@ class ViajarDAO:
         return ciudades
     
     def obtener_ciudades_destino(self, ciudad_origen):
-        """Obtiene las ciudades destino disponibles desde un origen específico."""
+        
         ciudades = []
         conn = None
         cursor = None
@@ -137,7 +124,7 @@ class ViajarDAO:
         return ciudades
     
     def obtener_fechas_disponibles(self, ciudad_origen, ciudad_destino):
-        """Obtiene las fechas con corridas disponibles para una ruta."""
+        
         fechas = []
         conn = None
         cursor = None
@@ -175,12 +162,7 @@ class ViajarDAO:
     # ==================== ASIENTOS ====================
     
     def obtener_asientos_disponibles(self, numero_corrida):
-        """
-        Obtiene los asientos disponibles para una corrida específica.
         
-        Returns:
-            Lista de diccionarios con información de asientos disponibles
-        """
         asientos = []
         conn = None
         cursor = None
@@ -214,16 +196,7 @@ class ViajarDAO:
         return asientos
     
     def validar_asientos_disponibles(self, numero_corrida, asientos_seleccionados):
-        """
-        Valida que los asientos seleccionados estén disponibles.
         
-        Args:
-            numero_corrida: Número de la corrida
-            asientos_seleccionados: Lista de claves de asientos
-        
-        Returns:
-            True si todos están disponibles, False si alguno está ocupado
-        """
         conn = None
         cursor = None
         
@@ -256,15 +229,7 @@ class ViajarDAO:
     # ==================== CÁLCULO DE PRECIOS ====================
     
     def calcular_tipo_pasajero(self, fecha_nacimiento):
-        """
-        Calcula el tipo de pasajero según la edad.
         
-        Args:
-            fecha_nacimiento: Fecha de nacimiento del pasajero (date o string 'YYYY-MM-DD')
-        
-        Returns:
-            Tupla (codigo_tipo, descripcion, porcentaje_descuento, edad)
-        """
         try:
             # Convertir string a date si es necesario
             if isinstance(fecha_nacimiento, str):
@@ -289,16 +254,7 @@ class ViajarDAO:
             return ('REGU', 'Regular', 0, 0)
     
     def calcular_precio_boleto(self, tarifa_base, porcentaje_descuento):
-        """
-        Calcula el precio final del boleto con descuento.
-        
-        Args:
-            tarifa_base: Precio base de la corrida
-            porcentaje_descuento: Porcentaje de descuento (0-100)
-        
-        Returns:
-            Tupla (precio_final, monto_descuento)
-        """
+       
         descuento = (tarifa_base * porcentaje_descuento) / 100
         precio_final = tarifa_base - descuento
         return (precio_final, descuento)
@@ -306,31 +262,7 @@ class ViajarDAO:
     # ==================== PROCESO DE COMPRA COMPLETO ====================
     
     def procesar_compra_boletos(self, datos_compra, usuario_id=None):
-        """
-        Procesa la compra completa de boletos (TRANSACCIÓN ATÓMICA).
-        
-        Args:
-            datos_compra: Diccionario con:
-                - numero_corrida: int
-                - tarifa_base: float
-                - fecha_corrida: date
-                - pasajeros: lista de diccionarios con:
-                    - nombre: str
-                    - apellido_paterno: str
-                    - apellido_materno: str (opcional)
-                    - fecha_nacimiento: date
-                    - correo: str (opcional)
-                    - telefono: str
-                    - asiento_clave: str
-            usuario_id: ID del usuario logueado (opcional, None para empresa/invitado)
-        
-        Returns:
-            Diccionario con:
-                - exito: bool
-                - mensaje: str
-                - numero_reservacion: int (si exito=True)
-                - boletos: lista de números de boleto (si exito=True)
-        """
+       
         conn = None
         cursor = None
         
@@ -519,7 +451,7 @@ class ViajarDAO:
     # ==================== CONSULTAS DE RESERVACIONES ====================
     
     def obtener_boletos_reservacion(self, numero_reservacion):
-        """Obtiene todos los boletos de una reservación con información completa."""
+        
         boletos = []
         conn = None
         cursor = None
@@ -572,7 +504,7 @@ class ViajarDAO:
         return boletos
     
     def obtener_reservaciones_usuario(self, usuario_id):
-        """Obtiene todas las reservaciones de un usuario."""
+        
         reservaciones = []
         conn = None
         cursor = None

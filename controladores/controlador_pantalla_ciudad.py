@@ -10,10 +10,7 @@ class ControladorPantallaCiudad:
         self.ciudad_dao = ciudad_dao
 
     def obtener_todas_las_ciudades(self):
-        """
-        Obtiene todas las ciudades de la base de datos.
-        Devuelve una lista de objetos Ciudad.
-        """
+       
         try:
             return self.ciudad_dao.obtener_todas()
         except Exception as e:
@@ -21,10 +18,7 @@ class ControladorPantallaCiudad:
             return [] # Devolver lista vacía en lugar de False
 
     def insertar_ciudad(self, parent, codigo, nombre):
-        """
-        Inserta una nueva ciudad en la base de datos.
-        Devuelve True si tiene éxito, o False si hay errores de validación o inserción.
-        """
+        
         errores = []
 
         if not codigo:
@@ -55,10 +49,7 @@ class ControladorPantallaCiudad:
             return False
 
     def actualizar_ciudad(self, parent, codigo_actual, nuevo_codigo, nuevo_nombre):
-        """
-        Actualiza una ciudad existente.
-        Devuelve True si tiene éxito, o False si hay errores de validación o actualización.
-        """
+        
         errores = []
 
         if not codigo_actual:
@@ -94,10 +85,7 @@ class ControladorPantallaCiudad:
             return False
 
     def eliminar_ciudad(self, codigo):
-        """
-        Elimina una ciudad de la base de datos.
-        Devuelve True si tiene éxito, o un mensaje de error.
-        """
+        
         if not codigo:
             QMessageBox.warning(None, "Advertencia", "El código de la ciudad es obligatorio para eliminar.") # Asumiendo None como parent si no hay contexto
             return False
@@ -113,10 +101,7 @@ class ControladorPantallaCiudad:
             return False
 
     def buscar_ciudades(self, nombre):
-        """
-        Busca ciudades por nombre.
-        Devuelve una lista de objetos Ciudad.
-        """
+        
         try:
             return self.ciudad_dao.buscar_por_nombre(nombre)
         except Exception as e:

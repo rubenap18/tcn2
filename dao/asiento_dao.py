@@ -6,11 +6,7 @@ class AsientoDAO:
         self._conexion = Connection.getConnection()
     
     def crear_asientos_autobus(self, numero_autobus, tipo_servicio):
-        """
-        Crea los asientos para un autobús según su tipo de servicio
-        PLUS: 44 asientos, PLATINO: 34 asientos
-        Secuencia: ventana, pasillo, pasillo, ventana, pasillo, pasillo, ventana...
-        """
+    
         cursor = self._conexion.cursor()
         try:
             # Determinar cantidad de asientos según tipo
@@ -49,7 +45,7 @@ class AsientoDAO:
             cursor.close()
     
     def eliminar_asientos_autobus(self, numero_autobus):
-        """Elimina todos los asientos de un autobús"""
+        
         cursor = self._conexion.cursor()
         try:
             query = "DELETE FROM asiento WHERE autobus = %s"

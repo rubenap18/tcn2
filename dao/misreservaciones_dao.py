@@ -6,7 +6,7 @@ class MisReservacionesDAO:
         self.db = Connection.getConnection()
 
     def obtener_reservaciones_usuario(self, user_id):
-        """Obtener reservaciones con origen y destino realizadas por un usuario"""
+        
         try:
             # JOIN con corrida y luego con ruta para obtener origen y destino
             # Filtramos directamente por el usuario que realizó la reservación (r.usuario)
