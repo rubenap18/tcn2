@@ -62,7 +62,7 @@ class PantallaReservaciones(QWidget):
 
         # Si el boton editar fue recuperado as True, entonces ejecuata el metodo determinado.
         if self.boton_editar_reservacion:
-            self.boton_crear_reservacion.clicked.connect(self.editarReservacion)
+            self.boton_editar_reservacion.clicked.connect(self.editarReservacion)
 
         if self.combo_box_filtro:
             self.combo_box_filtro.currentIndexChanged.connect(self.filtrarPorComboBox)
