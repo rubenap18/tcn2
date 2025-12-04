@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>429</width>
+    <height>532</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QLabel" name="label_estatico_titulo">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>10</y>
+     <width>331</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:700; font-style:italic;&quot;&gt;Registrar autobús&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_estatico_numerodeautobus">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>150</y>
+     <width>121</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Número:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_estatico_marca">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>270</y>
+     <width>91</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Marca:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_estatico_titulo_4">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>330</y>
+     <width>101</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Modelo:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_estatico_matricula">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>210</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Matrícula:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_estatico_tipoAutobus">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>201</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Tipo de servicio:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_estatico_titulo_7">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>390</y>
+     <width>131</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Clave WIFI:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="boton_registrarAutobus">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>460</y>
+     <width>151</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #1877f2;  /* Azul de Facebook */
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #166fe5;  /* Azul más oscuro al hacer hover */
+}
+
+QPushButton:pressed {
+    background-color: #145dbf;  /* Azul aún más oscuro al presionar */
+}</string>
+   </property>
+   <property name="text">
+    <string>Registrar</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_tiposdeautobus">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>100</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {
+    border: 2px solid #1877f2;  /* Borde azul de Facebook */
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #333333;
+    min-width: 100px;
+}
+
+QComboBox:hover {
+    border: 2px solid #166fe5;  /* Azul más oscuro al hacer hover */
+}
+
+QComboBox:focus {
+    border: 2px solid #1877f2;
+    background-color: #f8f9fa;  /* Fondo ligeramente más claro al enfocar */
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 25px;
+    border-left: 1px solid #dddfe2;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #1877f2;
+    width: 0px;
+    height: 0px;
+}
+
+QComboBox::down-arrow:hover {
+    border-top: 4px solid #166fe5;
+}
+
+QComboBox QAbstractItemView {
+    border: 2px solid #1877f2;
+    border-radius: 6px;
+    background-color: white;
+    selection-background-color: #1877f2;
+    selection-color: white;
+    outline: none;
+}
+
+QComboBox QAbstractItemView::item {
+    padding: 8px 12px;
+    border: none;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #f0f2f5;
+}
+
+QComboBox QAbstractItemView::item:selected {
+    background-color: #1877f2;
+    color: white;
+    font-weight: bold;
+}
+
+QComboBox:disabled {
+    border: 2px solid #cccccc;
+    background-color: #f5f5f5;
+    color: #999999;
+}
+
+QComboBox::down-arrow:disabled {
+    border-top: 4px solid #cccccc;
+}</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>TODOS</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>PLUS</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>PLATINO</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_numeroAutobus">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>160</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+    border: 2px solid #1877f2;  /* Borde azul de Facebook */
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #333333;
+    selection-background-color: #1877f2;
+}
+
+QLineEdit:focus {
+    border: 2px solid #1877f2;  /* Mantener el mismo color al enfocar */
+    background-color: #f8f9fa;  /* Fondo ligeramente más claro al enfocar */
+}
+
+QLineEdit:hover {
+    border: 2px solid #166fe5;  /* Azul más oscuro al hacer hover */
+}
+
+QLineEdit:disabled {
+    border: 2px solid #cccccc;
+    background-color: #f5f5f5;
+    color: #999999;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_matriculaAutobus">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>220</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+    border: 2px solid #1877f2;  /* Borde azul de Facebook */
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #333333;
+    selection-background-color: #1877f2;
+}
+
+QLineEdit:focus {
+    border: 2px solid #1877f2;  /* Mantener el mismo color al enfocar */
+    background-color: #f8f9fa;  /* Fondo ligeramente más claro al enfocar */
+}
+
+QLineEdit:hover {
+    border: 2px solid #166fe5;  /* Azul más oscuro al hacer hover */
+}
+
+QLineEdit:disabled {
+    border: 2px solid #cccccc;
+    background-color: #f5f5f5;
+    color: #999999;
+}</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_marcaAutobus">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>280</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {
+    border: 2px solid #1877f2;  /* Borde azul de Facebook */
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #333333;
+    min-width: 100px;
+}
+
+QComboBox:hover {
+    border: 2px solid #166fe5;  /* Azul más oscuro al hacer hover */
+}
+
+QComboBox:focus {
+    border: 2px solid #1877f2;
+    background-color: #f8f9fa;  /* Fondo ligeramente más claro al enfocar */
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 25px;
+    border-left: 1px solid #dddfe2;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #1877f2;
+    width: 0px;
+    height: 0px;
+}
+
+QComboBox::down-arrow:hover {
+    border-top: 4px solid #166fe5;
+}
+
+QComboBox QAbstractItemView {
+    border: 2px solid #1877f2;
+    border-radius: 6px;
+    background-color: white;
+    selection-background-color: #1877f2;
+    selection-color: white;
+    outline: none;
+}
+
+QComboBox QAbstractItemView::item {
+    padding: 8px 12px;
+    border: none;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #f0f2f5;
+}
+
+QComboBox QAbstractItemView::item:selected {
+    background-color: #1877f2;
+    color: white;
+    font-weight: bold;
+}
+
+QComboBox:disabled {
+    border: 2px solid #cccccc;
+    background-color: #f5f5f5;
+    color: #999999;
+}
+
+QComboBox::down-arrow:disabled {
+    border-top: 4px solid #cccccc;
+}</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_modeloAutobus">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>340</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {
+    border: 2px solid #1877f2;  /* Borde azul de Facebook */
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #333333;
+    min-width: 100px;
+}
+
+QComboBox:hover {
+    border: 2px solid #166fe5;  /* Azul más oscuro al hacer hover */
+}
+
+QComboBox:focus {
+    border: 2px solid #1877f2;
+    background-color: #f8f9fa;  /* Fondo ligeramente más claro al enfocar */
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 25px;
+    border-left: 1px solid #dddfe2;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #1877f2;
+    width: 0px;
+    height: 0px;
+}
+
+QComboBox::down-arrow:hover {
+    border-top: 4px solid #166fe5;
+}
+
+QComboBox QAbstractItemView {
+    border: 2px solid #1877f2;
+    border-radius: 6px;
+    background-color: white;
+    selection-background-color: #1877f2;
+    selection-color: white;
+    outline: none;
+}
+
+QComboBox QAbstractItemView::item {
+    padding: 8px 12px;
+    border: none;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #f0f2f5;
+}
+
+QComboBox QAbstractItemView::item:selected {
+    background-color: #1877f2;
+    color: white;
+    font-weight: bold;
+}
+
+QComboBox:disabled {
+    border: 2px solid #cccccc;
+    background-color: #f5f5f5;
+    color: #999999;
+}
+
+QComboBox::down-arrow:disabled {
+    border-top: 4px solid #cccccc;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_claveWIFIAutobus">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>400</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+    border: 2px solid #1877f2;  /* Borde azul de Facebook */
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #333333;
+    selection-background-color: #1877f2;
+}
+
+QLineEdit:focus {
+    border: 2px solid #1877f2;  /* Mantener el mismo color al enfocar */
+    background-color: #f8f9fa;  /* Fondo ligeramente más claro al enfocar */
+}
+
+QLineEdit:hover {
+    border: 2px solid #166fe5;  /* Azul más oscuro al hacer hover */
+}
+
+QLineEdit:disabled {
+    border: 2px solid #cccccc;
+    background-color: #f5f5f5;
+    color: #999999;
+}</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

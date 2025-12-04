@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTableWidget" name="QtableWidget_pasajeros">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>240</y>
+     <width>1641</width>
+     <height>751</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTableView {
+    background: #ffffff;
+    border: 1px solid #e6e8ec;
+    border-radius: 8px;
+    gridline-color: #f1f1f3;
+    selection-background-color: #e8f0fe;
+    selection-color: #1a1a1a;
+    font-size: 14px;
+    color: #333;
+    alternate-background-color: #fafbff;
+    show-grid: false;
+}
+
+QTableView::item {
+    padding: 8px 12px;
+    border: 0px;
+}
+
+QTableView::item:hover {
+    background: #f5f8ff;
+}
+
+QTableView::item:selected {
+    background: #e2edff;
+    color: #1a1a1a;
+}
+
+QHeaderView::section {
+    background: #ffffff;
+    color: #6b7280;
+    padding: 10px 12px;
+    border: 0;
+    border-bottom: 2px solid #e6e8ec;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+QHeaderView::section:hover {
+    background: #f7f9fc;
+}
+
+QHeaderView {
+    background: #ffffff;
+    border: 0;
+}
+
+QTableView::indicator {
+    width: 18px;
+    height: 18px;
+}
+
+QHeaderView::section:first {
+    border-top-left-radius: 15px;
+}
+
+QHeaderView::section:last {
+    border-top-right-radius: 15px;
+}
+
+QScrollBar:vertical {
+    background: transparent;
+    width: 10px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #cfd3da;
+    min-height: 25px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #b5bac4;
+}
+
+QScrollBar::add-line,
+QScrollBar::sub-line {
+    background: none;
+    height: 0px;
+}
+</string>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustIgnored</enum>
+   </property>
+   <attribute name="horizontalHeaderVisible">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>273</number>
+   </attribute>
+   <attribute name="horizontalHeaderHighlightSections">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderCascadingSectionResizes">
+    <bool>true</bool>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>Num</string>
+    </property>
+    <property name="font">
+     <font>
+      <bold>true</bold>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Nombre</string>
+    </property>
+    <property name="font">
+     <font>
+      <bold>true</bold>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Fecha de nacimiento</string>
+    </property>
+    <property name="font">
+     <font>
+      <bold>true</bold>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Edad</string>
+    </property>
+    <property name="font">
+     <font>
+      <bold>true</bold>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Correo electrónico</string>
+    </property>
+    <property name="font">
+     <font>
+      <bold>true</bold>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Teléfono</string>
+    </property>
+    <property name="font">
+     <font>
+      <bold>true</bold>
+     </font>
+    </property>
+   </column>
+  </widget>
+  <widget class="QWidget" name="header_pasajeros" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1951</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 15px;
+border-bottom: 1px solid #E3E3E3;</string>
+   </property>
+   <widget class="QPushButton" name="boton_rutas">
+    <property name="geometry">
+     <rect>
+      <x>1140</x>
+      <y>20</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background: #1061C4;
+	color:WHITE;
+	border:none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size:25px;
+}
+
+QPushButton:hover {
+    background-color: #0D4FAB;    
+}
+
+QPushButton:pressed {
+    background-color: #0A3F8A;     
+}</string>
+    </property>
+    <property name="text">
+     <string>Rutas</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../recursos/recursos empresa/entrega.png</normaloff>../recursos/recursos empresa/entrega.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_corridas">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>20</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background: #1061C4;
+	color:WHITE;
+	border:none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+QPushButton:hover {
+    background-color: #0D4FAB;    
+}
+
+QPushButton:pressed {
+    background-color: #0A3F8A;     
+}</string>
+    </property>
+    <property name="text">
+     <string>Corridas</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../recursos/recursos empresa/calendario.png</normaloff>../recursos/recursos empresa/calendario.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_operadores">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>20</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background: #1061C4;
+	color:WHITE;
+	border:none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+QPushButton:hover {
+    background-color: #0D4FAB;    
+}
+
+QPushButton:pressed {
+    background-color: #0A3F8A;     
+}</string>
+    </property>
+    <property name="text">
+     <string>Operadores</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../recursos/recursos empresa/conductor.png</normaloff>../recursos/recursos empresa/conductor.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_autobuses">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>20</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background: #1061C4;
+	color:WHITE;
+	border:none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+QPushButton:hover {
+    background-color: #0D4FAB;    
+}
+
+QPushButton:pressed {
+    background-color: #0A3F8A;     
+}</string>
+    </property>
+    <property name="text">
+     <string>Autobuses</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../recursos/recursos empresa/autobus.png</normaloff>../recursos/recursos empresa/autobus.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_inicio">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>20</y>
+      <width>91</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background: #1061C4;
+	color:WHITE;
+	border:none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+QPushButton:hover {
+    background-color: #0D4FAB;    
+}
+
+QPushButton:pressed {
+    background-color: #0A3F8A;     
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../recursos/recursos empresa/casa-silueta-negra-sin-puerta.png</normaloff>../recursos/recursos empresa/casa-silueta-negra-sin-puerta.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_reservaciones">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>20</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background: #1061C4;
+	color:WHITE;
+	border:none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+QPushButton:hover {
+    background-color: #0D4FAB;    
+}
+
+QPushButton:pressed {
+    background-color: #0A3F8A;     
+}</string>
+    </property>
+    <property name="text">
+     <string>Reservaciones</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../recursos/recursos empresa/boleto.png</normaloff>../recursos/recursos empresa/boleto.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_salir">
+    <property name="geometry">
+     <rect>
+      <x>1640</x>
+      <y>20</y>
+      <width>91</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background: #1061C4;
+	color:WHITE;
+	border:none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+QPushButton:hover {
+    background-color: #0D4FAB;    
+}
+
+QPushButton:pressed {
+    background-color: #0A3F8A;     
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../recursos/recursos empresa/cerrar-sesion.png</normaloff>../recursos/recursos empresa/cerrar-sesion.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>18</x>
+      <y>15</y>
+      <width>231</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../recursos/recursos empresa/logo.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>1790</x>
+      <y>10</y>
+      <width>70</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../recursos/recursos empresa/usuario.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="widget_pasajBotones" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>120</y>
+     <width>221</width>
+     <height>871</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+
+background-color: #1061C4;
+border: 1px solid #dcdfe6;
+border-radius: 15px;
+gridline-color: #e0e0e0;
+outline: none;
+color: #606266;
+
+</string>
+   </property>
+   <widget class="QPushButton" name="boton_anadirPasaj">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>201</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background: #1061C4;
+	color:WHITE;
+	border:none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+QPushButton:hover {
+    background-color: #0D4FAB;    
+}
+
+QPushButton:pressed {
+    background-color: #0A3F8A;     
+}</string>
+    </property>
+    <property name="text">
+     <string>Añadir</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../recursos/recursos empresa/añadir.png</normaloff>../recursos/recursos empresa/añadir.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_actualizarPasaj">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>201</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background: #1061C4;
+	color:WHITE;
+	border:none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+QPushButton:hover {
+    background-color: #0D4FAB;    
+}
+
+QPushButton:pressed {
+    background-color: #0A3F8A;     
+}</string>
+    </property>
+    <property name="text">
+     <string>Actualizar</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../recursos/recursos empresa/editar.png</normaloff>../recursos/recursos empresa/editar.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="widget_pasajFiltro" native="true">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>120</y>
+     <width>1641</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #ffffff;
+border: 1px solid #dcdfe6;
+border-radius: 15px;
+gridline-color: #e0e0e0;
+outline: none;
+color: #606266;
+border-radius: 15px;
+border-bottom: 1px solid #E3E3E3;
+
+</string>
+   </property>
+   <widget class="QLabel" name="corridas_label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>351</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>59</pointsize>
+      <italic>true</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none
+
+</string>
+    </property>
+    <property name="text">
+     <string>Pasajeros</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>1061</x>
+      <y>21</y>
+      <width>58</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+border:none;</string>
+    </property>
+    <property name="text">
+     <string>Buscar</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_buscarTelPasaj">
+    <property name="geometry">
+     <rect>
+      <x>1250</x>
+      <y>56</y>
+      <width>151</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 6px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Número telefónico</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>1250</x>
+      <y>21</y>
+      <width>58</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+border:none;</string>
+    </property>
+    <property name="text">
+     <string>Buscar</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_buscarNumPasaj">
+    <property name="geometry">
+     <rect>
+      <x>1060</x>
+      <y>56</y>
+      <width>151</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 6px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Número de pasajero</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

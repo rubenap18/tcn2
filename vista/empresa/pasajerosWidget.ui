@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>pagina_pasajeros</class>
+ <widget class="QWidget" name="pagina_pasajeros">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>424</width>
+    <height>530</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Registrate</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QLabel" name="label_estatico_titulo">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>20</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>21</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Ingresa tus datos</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="boton_agregar">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>470</y>
+     <width>171</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background: #1061C4;
+	color:WHITE;
+	border:none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 20px;
+}
+QPushButton:hover {
+    background-color: #0D4FAB;    
+}
+
+QPushButton:pressed {
+    background-color: #0A3F8A;     
+}</string>
+   </property>
+   <property name="text">
+    <string>Aceptar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="boton_cancelar">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>470</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background: #FF6A36;
+	color:WHITE;
+	border:none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 20px;
+}
+QPushButton:hover {
+    background-color: #E85F30;   /* Naranja más oscuro */
+}
+
+QPushButton:pressed {
+    background-color: #CC532A;   /* Más oscuro para click */
+}</string>
+   </property>
+   <property name="text">
+    <string>Cancelar</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>60</y>
+     <width>281</width>
+     <height>380</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="Layout_operadores">
+    <item>
+     <widget class="QLabel" name="label_estatico_nombre">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Nombre</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_nombre">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>24</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background-color: ;
+	color: rgb(255, 255, 255);
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #606266;
+    min-height: 18px;
+}</string>
+      </property>
+      <property name="inputMask">
+       <string>&gt;A&lt;AAAAAAAAAAAAAA</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_estatico_apellidop">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Apellido Parterno</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_apellidop">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>24</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background-color: ;
+	color: rgb(255, 255, 255);
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #606266;
+    min-height: 18px;
+}
+</string>
+      </property>
+      <property name="inputMask">
+       <string>&gt;A&lt;AAAAAAAAAAAAAA</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_estatico_apellidom">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Apellido Materno</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_apellidom">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>24</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background-color: ;
+	color: rgb(255, 255, 255);
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #606266;
+    min-height: 18px;
+}
+</string>
+      </property>
+      <property name="inputMask">
+       <string>&gt;A&lt;AAAAAAAAAAAAAA</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_estatico_telefono">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Telefono</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_telefono">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>24</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background-color: ;
+	color: rgb(255, 255, 255);
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #606266;
+    min-height: 18px;
+}</string>
+      </property>
+      <property name="inputMask">
+       <string>9999999999</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_estatico_fechan">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Fecha de nacimiento</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDateEdit" name="dateEdit_fechanacimiento">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>24</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+    background-color: #ffffff;
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #606266;
+    min-height: 18px;
+</string>
+      </property>
+      <property name="maximumDateTime">
+       <datetime>
+        <hour>23</hour>
+        <minute>59</minute>
+        <second>59</second>
+        <year>2026</year>
+        <month>12</month>
+        <day>31</day>
+       </datetime>
+      </property>
+      <property name="maximumDate">
+       <date>
+        <year>2026</year>
+        <month>12</month>
+        <day>31</day>
+       </date>
+      </property>
+      <property name="calendarPopup">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

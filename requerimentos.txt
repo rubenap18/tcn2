@@ -1,0 +1,9 @@
+# Bibliotecas de Acceso a Datos (DAO)
+mysql-connector-python==9.5.0
+
+# Librerias para la Interfaz de Usuario (UI) - PySyde6
+PySide6==6.10.1
+
+# Herramientas de Desarrollo y Pruebas (Opcional, pero recomendado)
+#pytest==7.4.3
+#pylint==3.0.3
