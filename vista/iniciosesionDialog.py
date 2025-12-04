@@ -93,7 +93,7 @@ class InicioSesionDialog(QDialog):
             QMessageBox.warning(self, 'Mensaje', validacion)
             return
 
-        # ⭐ CAMBIO: Recibir el usuario y el tipo
+        # Recibir el usuario y el tipo
         usuario, es_admin = self.controlador.validarInicioSesion(phone, password)
         
         # Si hubo error (usuario es None)
@@ -101,7 +101,7 @@ class InicioSesionDialog(QDialog):
             QMessageBox.information(self, "Mensaje", es_admin)  # es_admin contiene el mensaje de error
             return
         
-        # ⭐ NUEVO: Guardar el usuario en AppManager
+        # NUEVO: Guardar el usuario en AppManager
         self.app_manager.set_usuario_actual(usuario)
         
         # Cerrar este dialog correctamente
