@@ -124,7 +124,7 @@ def main():
         elif resultado == InicioSesionDialog.ENTRAR_VISTA_CLIENTE:
             # Si el login es exitoso, salimos del bucle para abrir la app principal
             print("Abriendo la vista cliente...")
-            main_window = MainUIUsuario()
+            main_window = MainUIUsuario(app_manager)
             main_window.show()
             exit_code = app.exec() #Inica el bucle de la app
             break
