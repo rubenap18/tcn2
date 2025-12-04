@@ -4,7 +4,7 @@ from mysql.connector import Error
 
 class CiudadesDAO:
     def obtener_todas(self):
-        """Obtiene todas las ciudades ordenadas por nombre"""
+    
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
@@ -28,7 +28,7 @@ class CiudadesDAO:
             return []
 
     def insertar(self, ciudad: Ciudad):
-        """Inserta una nueva ciudad en la base de datos."""
+        
         try:
             # Validación del código
             if len(ciudad.get_codigo()) != 3:
@@ -59,7 +59,7 @@ class CiudadesDAO:
             raise e
 
     def actualizar(self, codigo_actual, nuevo_codigo, nuevo_nombre):
-        """Actualiza una ciudad existente."""
+        
         try:
             # Validación del nuevo código
             if len(nuevo_codigo) != 3:
@@ -90,7 +90,7 @@ class CiudadesDAO:
             return False
 
     def buscar_por_nombre(self, nombre):
-        """Busca ciudades por nombre"""
+        
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
@@ -112,7 +112,7 @@ class CiudadesDAO:
             return []
 
     def eliminar(self, codigo):
-        """Elimina una ciudad de la base de datos por su código."""
+        
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():

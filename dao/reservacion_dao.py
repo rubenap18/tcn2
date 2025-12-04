@@ -7,7 +7,6 @@ class ReservacionDAO:
 
     def getNumeroDeReservaciones(self):
 
-        """Devuelve el numero total de reservaciones (simple COUNT)."""
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
@@ -25,7 +24,7 @@ class ReservacionDAO:
             raise e
         
     def getTodasReservaciones(self):
-        '''Devuelve todas las reservaciones'''
+
         try:
             conn = Connection.getConnection() #llamnado a la conexion
             #verificando conexion
@@ -52,10 +51,6 @@ class ReservacionDAO:
 
 
     def _getBaseQuery(self, condicion_where=''):
-        """
-        Retorna la consulta SQL base que une las tablas necesarias para obtener 
-        todos los datos requeridos por el servicio.
-        """
 
         query = f"""
             SELECT 
@@ -78,9 +73,7 @@ class ReservacionDAO:
 
     # --- METODO 2: RESERVACIONES PASADAS ---
     def getTodasReservacionesPasadas(self):
-        """
-        Obtiene las reservaciones que ya han pasado.
-        """
+ 
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
@@ -115,9 +108,7 @@ class ReservacionDAO:
 
     # --- METODO 3: RESERVACIONES POR PASAR---
     def getTodasReservacionesPorPasar(self):
-        """
-        Obtiene las reservaciones cuya corrida que aun esta por ocurrir.
-        """
+
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
@@ -149,10 +140,7 @@ class ReservacionDAO:
         
 
     def getTodasReservacionesParaTabla(self):
-        """
-        Obtiene las reservaciones pero personalizada para la info de la tabla reservaciones
-        y la cosulta 10 de Profe Cleo
-        """
+ 
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
@@ -182,10 +170,7 @@ class ReservacionDAO:
         
 
     def buscarReservacionPorNumero(self,numero):
-        """
-        Obtiene las reservaciones pero personalizada para la info de la tabla reservaciones
-        y la cosulta 10 de Profe Cleo
-        """
+ 
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
@@ -216,7 +201,6 @@ class ReservacionDAO:
 
     def getNumeroDeReservacionesPasadas(self):
 
-        """Devuelve el numero total de reservaciones pasadas(simple COUNT)."""
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
@@ -241,7 +225,6 @@ class ReservacionDAO:
 
     def getNumeroDeReservacionesActivas(self):
 
-        """Devuelve el numero total de reservaciones pasadas(simple COUNT)."""
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
@@ -264,10 +247,7 @@ class ReservacionDAO:
             raise e
         
     def buscarReservacionPorCorrida(self,numero):
-        """
-        Obtiene las reservaciones pero personalizada para la info de la tabla reservaciones
-        y la cosulta 10 de Profe Cleo
-        """
+       
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
@@ -298,10 +278,7 @@ class ReservacionDAO:
         
 
     def buscarReservacionPorCiudadOrigen(self,ciudad):
-        """
-        Obtiene las reservaciones pero personalizada para la info de la tabla reservaciones
-        y la cosulta 10 de Profe Cleo
-        """
+  
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
@@ -331,10 +308,7 @@ class ReservacionDAO:
             raise e
         
     def buscarReservacionPorCiudadDestino(self,ciudad):
-        """
-        Obtiene las reservaciones pero personalizada para la info de la tabla reservaciones
-        y la cosulta 10 de Profe Cleo
-        """
+      
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():

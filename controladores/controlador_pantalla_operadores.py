@@ -47,9 +47,7 @@ class ControladorPantallaOperadores:
         return True
 
     def obtener_todos(self):
-        """
-        Obtiene todos los operadores de la base de datos a través del DAO.
-        """
+        
         try:
             return self.operador_dao.obtener_todos()
         except Exception as e:
@@ -57,9 +55,7 @@ class ControladorPantallaOperadores:
             return []
 
     def insertar_operador(self, parent, nombre, apellPat, apellMat, fechaNac_str, telefono, fechaContrato_str):
-        """
-        Intenta insertar un nuevo operador.
-        """
+        
         if not self._validar_campos_operador(parent, nombre, apellPat, apellMat, telefono, fechaNac_str, fechaContrato_str):
             return False
         try:
@@ -77,9 +73,7 @@ class ControladorPantallaOperadores:
             return False
 
     def actualizar_operador(self, parent, numero, nombre, apellPat, apellMat, fechaNac_str, telefono, fechaContrato_str):
-        """
-        Intenta actualizar un operador existente.
-        """
+        
         if not self._validar_campos_operador(parent, nombre, apellPat, apellMat, telefono, fechaNac_str, fechaContrato_str):
             return False
         try:
@@ -97,9 +91,7 @@ class ControladorPantallaOperadores:
             return False
 
     def buscar_operadores(self, criterio):
-        """
-        Busca operadores por un criterio dado a través del DAO.
-        """
+        
         try:
             return self.operador_dao.buscar(criterio)
         except Exception as e:

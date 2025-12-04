@@ -9,10 +9,7 @@ class AutobusDAO:
         self._marca_modelo_dao = MarcaModeloDAO()
     
     def obtener_autobuses_activos(self, filtro_servicio="TODOS"):
-        """
-        Obtiene autobuses activos, filtrados por servicio si es necesario
-        Retorna: Lista de objetos Autobus
-        """
+        
         cursor = self._conexion.cursor(dictionary=True)
         try:
             query = """
@@ -56,7 +53,7 @@ class AutobusDAO:
             cursor.close()
     
     def obtener_autobuses_activos_para_baja(self):
-        """Obtiene solo número y matrícula de autobuses activos para combobox"""
+        
         cursor = self._conexion.cursor(dictionary=True)
         try:
             query = """
@@ -72,7 +69,7 @@ class AutobusDAO:
             cursor.close()
     
     def obtener_datos_autobus(self, numero_autobus):
-        """Obtiene todos los datos de un autobús específico"""
+       
         cursor = self._conexion.cursor(dictionary=True)
         try:
             query = """
@@ -106,7 +103,7 @@ class AutobusDAO:
             cursor.close()
     
     def existe_matricula(self, matricula):
-        """Verifica si una matrícula ya existe en la BD"""
+        
         cursor = self._conexion.cursor()
         try:
             query = "SELECT COUNT(*) FROM autobus WHERE matricula = %s"
@@ -117,7 +114,7 @@ class AutobusDAO:
             cursor.close()
     
     def existe_numero(self, numero):
-        """Verifica si un número de autobús ya existe"""
+        
         cursor = self._conexion.cursor()
         try:
             query = "SELECT COUNT(*) FROM autobus WHERE numero = %s"
@@ -128,10 +125,7 @@ class AutobusDAO:
             cursor.close()
     
     def registrar_autobus(self, autobus):
-        """
-        Registra un nuevo autobús en la BD
-        Retorna: True si se registró correctamente
-        """
+        
         cursor = self._conexion.cursor()
         try:
             # Obtener códigos necesarios
@@ -180,10 +174,7 @@ class AutobusDAO:
             cursor.close()
     
     def dar_baja_autobus(self, numero_autobus):
-        """
-        Cambia el estado del autobús a INACTIVO
-        Retorna: True si se actualizó correctamente
-        """
+        
         cursor = self._conexion.cursor()
         try:
             # Asumiendo que 'INA' es el código para INACTIVO
@@ -198,7 +189,7 @@ class AutobusDAO:
             cursor.close()
     
     def _obtener_codigo_tipo(self, tipo_descripcion):
-        """Obtiene el código del tipo de autobús"""
+        
         cursor = self._conexion.cursor()
         try:
             query = "SELECT codigo FROM tipo_autobus WHERE descripcion = %s"
@@ -209,11 +200,7 @@ class AutobusDAO:
             cursor.close()
 
     def tiene_corridas_futuras(self, numero_autobus):
-        """
-        Verifica si el autobús tiene corridas asignadas para hoy o fechas futuras
-        con estado ACTIVO.
-        Retorna: True si tiene corridas, False si no
-        """
+        
         cursor = self._conexion.cursor()
         try:
             query = """
@@ -231,10 +218,7 @@ class AutobusDAO:
             cursor.close()
 
     def obtener_corridas_futuras(self, numero_autobus):
-        """
-        Obtiene las corridas futuras asignadas al autobús
-        Retorna: Lista de diccionarios con información básica
-        """
+        
         cursor = self._conexion.cursor(dictionary=True)
         try:
             query = """
@@ -255,10 +239,7 @@ class AutobusDAO:
 
     # REEMPLAZA el método dar_baja_autobus existente con este:
     def dar_baja_autobus(self, numero_autobus):
-        """
-        Cambia el estado del autobús a INACTIVO
-        Retorna: (exito, mensaje_error)
-        """
+        
         cursor = self._conexion.cursor()
         try:
             # 1. Verificar si tiene corridas futuras
@@ -277,10 +258,6 @@ class AutobusDAO:
             return (False, f"Error al dar de baja autobús: {str(e)}")
         finally:
             cursor.close()
-    
-    
-    
-    
     
     
     def listar_autobuses(self):

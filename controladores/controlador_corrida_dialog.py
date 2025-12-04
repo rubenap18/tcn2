@@ -26,22 +26,19 @@ class ControladorCorridaDialog(QDialog):
     def init_ui_connections(self):
         self.ui.dateEdit_fechaCorrida.dateChanged.connect(self.update_available_resources)
         self.ui.boton_crearCorrida.clicked.connect(self.crear_corrida)
-        self.ui.boton_cancelar.clicked.connect(self.reject) # Connect cancel button to reject the dialog
+        self.ui.boton_cancelar.clicked.connect(self.reject) 
 
     def load_initial_data(self):
-        # Set default date to today or a reasonable future date
+        
         self.ui.dateEdit_fechaCorrida.setDate(self.ui.dateEdit_fechaCorrida.minimumDate())
         self.update_available_resources()
-        self.populate_ruta_combobox() # Populate ruta combobox
+        self.populate_ruta_combobox() 
 
     def populate_ruta_combobox(self):
-        # Assuming rutas are static or fetched from another DAO if dynamic
-        # For now, it seems they are hardcoded in the UI file
-        # If they need to be fetched from DB, a RutaDAO would be needed.
-        # This just ensures placeholder text is cleared and a default selection isn't made
+        #
         if self.ui.comboBox_rutaCorrida.count() > 0 and self.ui.comboBox_rutaCorrida.itemText(0) == "Ruta":
-            self.ui.comboBox_rutaCorrida.removeItem(0) # Remove placeholder if present
-        self.ui.comboBox_rutaCorrida.setCurrentIndex(-1) # No selection initially
+            self.ui.comboBox_rutaCorrida.removeItem(0) 
+        self.ui.comboBox_rutaCorrida.setCurrentIndex(-1) 
 
     def update_available_resources(self):
         selected_date = self.ui.dateEdit_fechaCorrida.date().toString("yyyy-MM-dd")
@@ -52,20 +49,20 @@ class ControladorCorridaDialog(QDialog):
         self.ui.comboBox_autobusCorrida.clear()
         all_buses = self.autobus_dao.listar_autobuses()
         
-        print(f"DEBUG CTLR: all_buses retrieved: {all_buses}") # Debug print
+        print(f"DEBUG CTLR: all_buses retrieved: {all_buses}") 
         
-        self.buses = all_buses # Store all buses, no filtering
+        self.buses = all_buses 
         
         if not all_buses:
             self.ui.comboBox_autobusCorrida.addItem("No hay autobuses registrados")
             self.ui.comboBox_autobusCorrida.setEnabled(False)
-            print("DEBUG CTLR: ComboBox autobus deshabilitado (no hay autobuses registrados).") # Debug print
+            print("DEBUG CTLR: ComboBox autobus deshabilitado (no hay autobuses registrados).") 
         else:
             self.ui.comboBox_autobusCorrida.setEnabled(True)
-            print("DEBUG CTLR: ComboBox autobus habilitado. Agregando autobuses...") # Debug print
+            print("DEBUG CTLR: ComboBox autobus habilitado. Agregando autobuses...") 
             for bus in all_buses: # Iterate through all buses
                 self.ui.comboBox_autobusCorrida.addItem(f"{bus.get_numero()} - {bus.get_marca()} {bus.get_modelo()} ({bus.get_matricula()})", bus)
-            self.ui.comboBox_autobusCorrida.setCurrentIndex(-1) # No selection initially
+            self.ui.comboBox_autobusCorrida.setCurrentIndex(-1) 
 
     def populate_operador_combobox(self, selected_date):
         self.ui.comboBox_operadorCorrida.clear()
@@ -76,7 +73,7 @@ class ControladorCorridaDialog(QDialog):
             if not self.corrida_dao.operador_ocupado_en_fecha(operador.get_numero(), selected_date):
                 available_operadores.append(operador)
         
-        self.operadores = available_operadores # Store for potential later use
+        self.operadores = available_operadores 
 
         if not available_operadores:
             self.ui.comboBox_operadorCorrida.addItem("No hay operadores disponibles para esta fecha")

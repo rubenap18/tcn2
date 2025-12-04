@@ -7,10 +7,7 @@ class RutaDAO:
         pass
 
     def obtener_todas(self):
-        """
-        Obtiene todas las rutas de la base de datos.
-        Devuelve una lista de objetos Ruta.
-        """
+ 
         try:
             conn = Connection.getConnection()
             cursor = conn.cursor()
@@ -32,10 +29,7 @@ class RutaDAO:
                 cursor.close()
 
     def insertar(self, codigo_origen, codigo_destino, distancia):
-        """
-        Inserta una nueva ruta en la base de datos.
-        Devuelve True si tiene éxito, "duplicado" si la ruta ya existe, o False si hay un error.
-        """
+    
         print(f"DAO: Intentando insertar ruta con Origen={codigo_origen}, Destino={codigo_destino}, Distancia={distancia}")
         try:
             conn = Connection.getConnection()
@@ -70,10 +64,7 @@ class RutaDAO:
                 cursor.close()
 
     def actualizar_distancia(self, codigo_ruta, distancia):
-        """
-        Actualiza la distancia de una ruta existente.
-        Devuelve True si tiene éxito, False si hay un error.
-        """
+      
         print(f"DAO: Intentando actualizar distancia de ruta {codigo_ruta} a {distancia}")
         try:
             conn = Connection.getConnection()
