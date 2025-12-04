@@ -69,7 +69,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos empresa/entrega.png</normaloff>../recursos/recursos empresa/entrega.png</iconset>
+      <normaloff>recursos/recursos_empresa/entrega.png</normaloff>recursos/recursos_empresa/entrega.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -117,7 +117,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos empresa/calendario.png</normaloff>../recursos/recursos empresa/calendario.png</iconset>
+      <normaloff>recursos/recursos_empresa/calendario.png</normaloff>recursos/recursos_empresa/calendario.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -165,7 +165,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../recursos/recursos empresa/conductor.png</normaloff>../recursos/recursos empresa/conductor.png</iconset>
+      <normaloff>../recursos/recursos_empresa/conductor.png</normaloff>../recursos/recursos_empresa/conductor.png</iconset>
     </property>
     <property name="iconSize">
      <size>
