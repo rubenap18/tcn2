@@ -451,7 +451,10 @@ class ViajarDAO:
     # ==================== CONSULTAS DE RESERVACIONES ====================
     
     def obtener_boletos_reservacion(self, numero_reservacion):
-        
+        """
+        Obtiene todos los boletos de una reservación específica.
+        CORREGIDO: Ahora filtra correctamente por reservación Y corrida.
+        """
         boletos = []
         conn = None
         cursor = None
@@ -486,13 +489,16 @@ class ViajarDAO:
                 INNER JOIN ruta r ON c.ruta = r.codigo
                 INNER JOIN ciudad origen ON r.ciudadOrigen = origen.codigo
                 INNER JOIN ciudad destino ON r.ciudadDestino = destino.codigo
-                INNER JOIN asiento_reservacion ar ON b.asiento = ar.asiento
-                WHERE ar.reservacion = %s
+                INNER JOIN asiento_reservacion ar ON b.asiento = ar.asiento AND ar.reservacion = %s
+                INNER JOIN reservacion res ON ar.reservacion = res.numero AND res.corrida = c.numero
+                WHERE ar.reservacion = %s AND b.corrida = res.corrida
                 ORDER BY b.numero
             """
             
-            cursor.execute(query, (numero_reservacion,))
+            cursor.execute(query, (numero_reservacion, numero_reservacion))
             boletos = cursor.fetchall()
+            
+            print(f"✓ Encontrados {len(boletos)} boletos para reservación #{numero_reservacion}")
             
         except Error as e:
             print(f'Error en ViajarDAO.obtener_boletos_reservacion: {e}')

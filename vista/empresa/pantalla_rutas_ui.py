@@ -24,6 +24,7 @@ class Ui_Form(object):
         if not Form.objectName():
             Form.setObjectName(u"Form")
         Form.resize(1916, 1084)
+        Form.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.header_widget = QWidget(Form)
         self.header_widget.setObjectName(u"header_widget")
         self.header_widget.setGeometry(QRect(-10, 0, 1951, 111))
@@ -54,7 +55,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon = QIcon()
-        icon.addFile(u":/recursos/iconsEmpresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_rutas.setIcon(icon)
         self.boton_rutas.setIconSize(QSize(30, 30))
         self.boton_corridas = QPushButton(self.header_widget)
@@ -78,7 +79,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon1 = QIcon()
-        icon1.addFile(u":/recursos/iconsCliente/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u"recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_corridas.setIcon(icon1)
         self.boton_corridas.setIconSize(QSize(30, 30))
         self.boton_operadores = QPushButton(self.header_widget)
@@ -102,7 +103,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon2 = QIcon()
-        icon2.addFile(u":/recursos/iconsEmpresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u"recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_operadores.setIcon(icon2)
         self.boton_operadores.setIconSize(QSize(30, 30))
         self.boton_autobuses = QPushButton(self.header_widget)
@@ -126,7 +127,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon3 = QIcon()
-        icon3.addFile(u":/recursos/iconsCliente/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u"recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_autobuses.setIcon(icon3)
         self.boton_autobuses.setIconSize(QSize(30, 30))
         self.boton_inicio = QPushButton(self.header_widget)
@@ -150,7 +151,7 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon4 = QIcon()
-        icon4.addFile(u":/recursos/iconsEmpresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon4.addFile(u"recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_inicio.setIcon(icon4)
         self.boton_inicio.setIconSize(QSize(30, 30))
         self.boton_reservaciones = QPushButton(self.header_widget)
@@ -174,33 +175,13 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon5 = QIcon()
-        icon5.addFile(u":/recursos/iconsEmpresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon5.addFile(u"recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_reservaciones.setIcon(icon5)
         self.boton_reservaciones.setIconSize(QSize(30, 30))
-        self.boton_salir = QPushButton(self.header_widget)
-        self.boton_salir.setObjectName(u"boton_salir")
-        self.boton_salir.setGeometry(QRect(1640, 20, 91, 71))
-        self.boton_salir.setFont(font)
-        self.boton_salir.setStyleSheet(u"QPushButton{\n"
-"	background: #1061C4;\n"
-"	color:WHITE;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size: 25px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0D4FAB;    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #0A3F8A;     \n"
-"}")
-        icon6 = QIcon()
-        icon6.addFile(u":/recursos/iconsEmpresa/cerrar-sesion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_salir.setIcon(icon6)
-        self.boton_salir.setIconSize(QSize(30, 30))
+        self.label = QLabel(self.header_widget)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(30, 20, 201, 71))
+        self.label.setPixmap(QPixmap(u"recursos/recursos_empresa/logo.png"))
         self.widget = QWidget(Form)
         self.widget.setObjectName(u"widget")
         self.widget.setGeometry(QRect(0, 120, 1920, 971))
@@ -299,7 +280,7 @@ class Ui_Form(object):
         self.QtableWidget_rutas.setObjectName(u"QtableWidget_rutas")
         self.QtableWidget_rutas.setGeometry(QRect(430, 150, 1301, 751))
         self.QtableWidget_rutas.setFont(font)
-        self.QtableWidget_rutas.setLayoutDirection(Qt.LeftToRight)
+        self.QtableWidget_rutas.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QtableWidget_rutas.setStyleSheet(u"QTableView {\n"
 "    background: #ffffff;\n"
 "    border: 2px solid #e6e8ec;\n"
@@ -383,9 +364,9 @@ class Ui_Form(object):
 "    height: 0px;\n"
 "}\n"
 "")
-        self.QtableWidget_rutas.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.QtableWidget_rutas.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.QtableWidget_rutas.setSizeAdjustPolicy(QAbstractScrollArea.AdjustIgnored)
+        self.QtableWidget_rutas.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.QtableWidget_rutas.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.QtableWidget_rutas.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustIgnored)
         self.QtableWidget_rutas.horizontalHeader().setVisible(True)
         self.QtableWidget_rutas.horizontalHeader().setCascadingSectionResizes(False)
         self.QtableWidget_rutas.horizontalHeader().setDefaultSectionSize(325)
@@ -426,7 +407,7 @@ class Ui_Form(object):
 "\n"
 "\n"
 "")
-        self.label_estatico_forigen.setAlignment(Qt.AlignCenter)
+        self.label_estatico_forigen.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.comboBox_forigen = QComboBox(self.widget_opfiltro)
         self.comboBox_forigen.addItem("")
         self.comboBox_forigen.addItem("")
@@ -485,7 +466,7 @@ class Ui_Form(object):
 "\n"
 "\n"
 "")
-        self.label_estatico_fdestino.setAlignment(Qt.AlignCenter)
+        self.label_estatico_fdestino.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.comboBox_fdestino = QComboBox(self.widget_opfiltro)
         self.comboBox_fdestino.addItem("")
         self.comboBox_fdestino.addItem("")
@@ -550,7 +531,7 @@ class Ui_Form(object):
         self.boton_autobuses.setText(QCoreApplication.translate("Form", u"Autobuses", None))
         self.boton_inicio.setText("")
         self.boton_reservaciones.setText(QCoreApplication.translate("Form", u"Reservaciones", None))
-        self.boton_salir.setText("")
+        self.label.setText("")
         self.boton_agregaruta.setText(QCoreApplication.translate("Form", u"A\u00f1adir", None))
         self.boton_editaruta.setText(QCoreApplication.translate("Form", u"Editar", None))
         self.boton_ciudades.setText(QCoreApplication.translate("Form", u"Ciudades", None))

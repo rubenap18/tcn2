@@ -169,7 +169,7 @@ QPushButton:pressed {
 </string>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#9d9d9d;&quot;&gt;Autobuses&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#636363;&quot;&gt;Autobuses&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_estatico_servicio">
@@ -733,53 +733,6 @@ QPushButton:pressed {
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="boton_salir">
-    <property name="geometry">
-     <rect>
-      <x>1640</x>
-      <y>20</y>
-      <width>91</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>-1</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-	background: #1061C4;
-	color:WHITE;
-	border:none;
-	border-radius: 8px;
-	font-weight: bold;
-	font-size: 25px;
-}
-
-QPushButton:hover {
-    background-color: #0D4FAB;    
-}
-
-QPushButton:pressed {
-    background-color: #0A3F8A;     
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>recursos/recursos_empresa/cerrar-sesion.png</normaloff>recursos/recursos_empresa/cerrar-sesion.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
@@ -811,7 +764,7 @@ QPushButton:pressed {
   </widget>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../../recursos/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

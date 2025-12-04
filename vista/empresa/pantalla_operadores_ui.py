@@ -55,7 +55,7 @@ class Ui_pantalla_operadores(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon = QIcon()
-        icon.addFile(u":/recursos/iconsEmpresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_rutas.setIcon(icon)
         self.boton_rutas.setIconSize(QSize(30, 30))
         self.boton_corridas = QPushButton(self.header_widget)
@@ -79,7 +79,7 @@ class Ui_pantalla_operadores(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon1 = QIcon()
-        icon1.addFile(u":/recursos/iconsCliente/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u"recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_corridas.setIcon(icon1)
         self.boton_corridas.setIconSize(QSize(30, 30))
         self.boton_operadores = QPushButton(self.header_widget)
@@ -103,7 +103,7 @@ class Ui_pantalla_operadores(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon2 = QIcon()
-        icon2.addFile(u":/recursos/iconsEmpresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u"recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_operadores.setIcon(icon2)
         self.boton_operadores.setIconSize(QSize(30, 30))
         self.boton_autobuses = QPushButton(self.header_widget)
@@ -127,7 +127,7 @@ class Ui_pantalla_operadores(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon3 = QIcon()
-        icon3.addFile(u":/recursos/iconsCliente/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u"recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_autobuses.setIcon(icon3)
         self.boton_autobuses.setIconSize(QSize(30, 30))
         self.boton_inicio = QPushButton(self.header_widget)
@@ -151,7 +151,7 @@ class Ui_pantalla_operadores(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon4 = QIcon()
-        icon4.addFile(u":/recursos/iconsEmpresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon4.addFile(u"recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_inicio.setIcon(icon4)
         self.boton_inicio.setIconSize(QSize(30, 30))
         self.boton_reservaciones = QPushButton(self.header_widget)
@@ -175,33 +175,13 @@ class Ui_pantalla_operadores(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon5 = QIcon()
-        icon5.addFile(u":/recursos/iconsEmpresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon5.addFile(u"recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_reservaciones.setIcon(icon5)
         self.boton_reservaciones.setIconSize(QSize(30, 30))
-        self.boton_salir = QPushButton(self.header_widget)
-        self.boton_salir.setObjectName(u"boton_salir")
-        self.boton_salir.setGeometry(QRect(1640, 20, 91, 71))
-        self.boton_salir.setFont(font)
-        self.boton_salir.setStyleSheet(u"QPushButton{\n"
-"	background: #1061C4;\n"
-"	color:WHITE;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size: 25px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0D4FAB;    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #0A3F8A;     \n"
-"}")
-        icon6 = QIcon()
-        icon6.addFile(u":/recursos/iconsEmpresa/cerrar-sesion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_salir.setIcon(icon6)
-        self.boton_salir.setIconSize(QSize(30, 30))
+        self.label = QLabel(self.header_widget)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(40, 20, 201, 71))
+        self.label.setPixmap(QPixmap(u"recursos/recursos_empresa/logo.png"))
         self.widget_opbotones_6 = QWidget(pantalla_operadores)
         self.widget_opbotones_6.setObjectName(u"widget_opbotones_6")
         self.widget_opbotones_6.setGeometry(QRect(20, 140, 221, 881))
@@ -307,7 +287,7 @@ class Ui_pantalla_operadores(object):
         self.QTableWidget_operadores.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         self.QTableWidget_operadores.setObjectName(u"QTableWidget_operadores")
         self.QTableWidget_operadores.setGeometry(QRect(360, 280, 1421, 661))
-        self.QTableWidget_operadores.setLayoutDirection(Qt.LeftToRight)
+        self.QTableWidget_operadores.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QTableWidget_operadores.setStyleSheet(u"QTableView {\n"
 "    background: #ffffff;\n"
 "    border: 2px solid #e6e8ec;\n"
@@ -391,8 +371,8 @@ class Ui_pantalla_operadores(object):
 "    height: 0px;\n"
 "}\n"
 "")
-        self.QTableWidget_operadores.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.QTableWidget_operadores.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.QTableWidget_operadores.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.QTableWidget_operadores.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.QTableWidget_operadores.horizontalHeader().setDefaultSectionSize(284)
         self.QTableWidget_operadores.verticalHeader().setVisible(False)
         self.QTableWidget_operadores.verticalHeader().setHighlightSections(False)
@@ -410,7 +390,7 @@ class Ui_pantalla_operadores(object):
         self.boton_autobuses.setText(QCoreApplication.translate("pantalla_operadores", u"Autobuses", None))
         self.boton_inicio.setText("")
         self.boton_reservaciones.setText(QCoreApplication.translate("pantalla_operadores", u"Reservaciones", None))
-        self.boton_salir.setText("")
+        self.label.setText("")
         self.boton_editaroperadores.setText(QCoreApplication.translate("pantalla_operadores", u"Editar", None))
         self.boton_agregaroperadores.setText(QCoreApplication.translate("pantalla_operadores", u"A\u00f1adir", None))
         self.label_estatico_operadores.setText(QCoreApplication.translate("pantalla_operadores", u"Operadores", None))

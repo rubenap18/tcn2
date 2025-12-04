@@ -535,30 +535,6 @@ class Ui_Form(object):
         icon8.addFile(u"recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_reservaciones.setIcon(icon8)
         self.boton_reservaciones.setIconSize(QSize(30, 30))
-        self.boton_salir = QPushButton(self.header_corridas)
-        self.boton_salir.setObjectName(u"boton_salir")
-        self.boton_salir.setGeometry(QRect(1640, 20, 91, 71))
-        self.boton_salir.setFont(font)
-        self.boton_salir.setStyleSheet(u"QPushButton{\n"
-"	background: #1061C4;\n"
-"	color:WHITE;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size: 25px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0D4FAB;    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #0A3F8A;     \n"
-"}")
-        icon9 = QIcon()
-        icon9.addFile(u"recursos/recursos_empresa/cerrar-sesion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_salir.setIcon(icon9)
-        self.boton_salir.setIconSize(QSize(30, 30))
         self.label_4 = QLabel(self.header_corridas)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(18, 15, 231, 81))
@@ -567,7 +543,7 @@ class Ui_Form(object):
         self.label_6 = QLabel(self.header_corridas)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(1790, 10, 70, 70))
-        self.label_6.setPixmap(QPixmap(u"recursos/recursos_empresa/usuario.png"))
+        self.label_6.setPixmap(QPixmap(u"recursos/usuario.png"))
         self.label_6.setScaledContents(True)
 
         self.retranslateUi(Form)
@@ -627,7 +603,6 @@ class Ui_Form(object):
         self.boton_autobuses.setText(QCoreApplication.translate("Form", u"Autobuses", None))
         self.boton_inicio.setText("")
         self.boton_reservaciones.setText(QCoreApplication.translate("Form", u"Reservaciones", None))
-        self.boton_salir.setText("")
         self.label_4.setText("")
         self.label_6.setText("")
     # retranslateUi

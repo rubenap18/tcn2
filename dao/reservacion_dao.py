@@ -140,16 +140,19 @@ class ReservacionDAO:
         
 
     def getTodasReservacionesParaTabla(self):
- 
+        """
+        CORREGIDO: Ahora incluye reservacion.numero como primera columna
+        para poder identificar cada reservación única
+        """
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
                 raise Error('No se puede establecer conexion con la BD.')
 
             query = f"""
-                    SELECT reservacion.fecha,corrida, CONCAT(p.nombre,' ', p.apellPat,' ',p.apellMat),
-                    co.nombre,cd.nombre, c.hora_salida, c.hora_llegada,
-                    cantPasajeros,fechaLimPago
+                    SELECT reservacion.numero, reservacion.fecha, corrida, CONCAT(p.nombre,' ', p.apellPat,' ',p.apellMat),
+                    co.nombre, cd.nombre, c.hora_salida, c.hora_llegada,
+                    cantPasajeros, fechaLimPago
                     FROM reservacion 
                     INNER JOIN corrida AS c ON reservacion.corrida = c.numero
                     INNER JOIN pasajero AS p ON reservacion.pasajero = p.numero
@@ -247,16 +250,18 @@ class ReservacionDAO:
             raise e
         
     def buscarReservacionPorCorrida(self,numero):
-       
+        """
+        CORREGIDO: Ahora incluye reservacion.numero como primera columna
+        """
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
                 raise Error('No se puede establecer conexion con la BD.')
 
             query = f"""
-                    SELECT reservacion.fecha,corrida, CONCAT(p.nombre,' ', p.apellPat,' ',p.apellMat),
-                    co.nombre,cd.nombre, c.hora_salida, c.hora_llegada,
-                    cantPasajeros,fechaLimPago
+                    SELECT reservacion.numero, reservacion.fecha, corrida, CONCAT(p.nombre,' ', p.apellPat,' ',p.apellMat),
+                    co.nombre, cd.nombre, c.hora_salida, c.hora_llegada,
+                    cantPasajeros, fechaLimPago
                     FROM reservacion 
                     INNER JOIN corrida AS c ON reservacion.corrida = c.numero
                     INNER JOIN pasajero AS p ON reservacion.pasajero = p.numero
@@ -285,9 +290,9 @@ class ReservacionDAO:
                 raise Error('No se puede establecer conexion con la BD.')
 
             query = f"""
-                    SELECT reservacion.fecha,corrida, CONCAT(p.nombre,' ', p.apellPat,' ',p.apellMat),
-                    co.nombre,cd.nombre, c.hora_salida, c.hora_llegada,
-                    cantPasajeros,fechaLimPago
+                    SELECT reservacion.numero, reservacion.fecha, corrida, CONCAT(p.nombre,' ', p.apellPat,' ',p.apellMat),
+                    co.nombre, cd.nombre, c.hora_salida, c.hora_llegada,
+                    cantPasajeros, fechaLimPago
                     FROM reservacion 
                     INNER JOIN corrida AS c ON reservacion.corrida = c.numero
                     INNER JOIN pasajero AS p ON reservacion.pasajero = p.numero
@@ -315,9 +320,9 @@ class ReservacionDAO:
                 raise Error('No se puede establecer conexion con la BD.')
 
             query = f"""
-                    SELECT reservacion.fecha,corrida, CONCAT(p.nombre,' ', p.apellPat,' ',p.apellMat),
-                    co.nombre,cd.nombre, c.hora_salida, c.hora_llegada,
-                    cantPasajeros,fechaLimPago
+                    SELECT reservacion.numero, reservacion.fecha, corrida, CONCAT(p.nombre,' ', p.apellPat,' ',p.apellMat),
+                    co.nombre, cd.nombre, c.hora_salida, c.hora_llegada,
+                    cantPasajeros, fechaLimPago
                     FROM reservacion 
                     INNER JOIN corrida AS c ON reservacion.corrida = c.numero
                     INNER JOIN pasajero AS p ON reservacion.pasajero = p.numero

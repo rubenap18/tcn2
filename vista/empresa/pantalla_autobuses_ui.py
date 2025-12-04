@@ -431,30 +431,6 @@ class Ui_pantalla_autobuses(object):
         icon7.addFile(u"recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_reservaciones.setIcon(icon7)
         self.boton_reservaciones.setIconSize(QSize(30, 30))
-        self.boton_salir = QPushButton(self.header_autobuses)
-        self.boton_salir.setObjectName(u"boton_salir")
-        self.boton_salir.setGeometry(QRect(1640, 20, 91, 71))
-        self.boton_salir.setFont(font)
-        self.boton_salir.setStyleSheet(u"QPushButton{\n"
-"	background: #1061C4;\n"
-"	color:WHITE;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size: 25px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0D4FAB;    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #0A3F8A;     \n"
-"}")
-        icon8 = QIcon()
-        icon8.addFile(u"recursos/recursos_empresa/cerrar-sesion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_salir.setIcon(icon8)
-        self.boton_salir.setIconSize(QSize(30, 30))
         self.label = QLabel(self.header_autobuses)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(40, 20, 211, 81))
@@ -476,7 +452,7 @@ class Ui_pantalla_autobuses(object):
     def retranslateUi(self, pantalla_autobuses):
         self.boton_registrarAutobus.setText(QCoreApplication.translate("pantalla_autobuses", u" Registrar", None))
         self.boton_bajaAutobus.setText(QCoreApplication.translate("pantalla_autobuses", u"Dar de baja", None))
-        self.label_estatico_tituloAutobuses.setText(QCoreApplication.translate("pantalla_autobuses", u"<html><head/><body><p><span style=\" color:#9d9d9d;\">Autobuses</span></p></body></html>", None))
+        self.label_estatico_tituloAutobuses.setText(QCoreApplication.translate("pantalla_autobuses", u"<html><head/><body><p><span style=\" color:#636363;\">Autobuses</span></p></body></html>", None))
         self.label_estatico_servicio.setText(QCoreApplication.translate("pantalla_autobuses", u"<html><head/><body><p><span style=\" font-size:16pt; font-weight:700;\">Filtrar por servicio:</span></p></body></html>", None))
         ___qtablewidgetitem = self.QtableWidget_autobuses.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("pantalla_autobuses", u"N\u00famero", None));
@@ -496,7 +472,6 @@ class Ui_pantalla_autobuses(object):
         self.boton_autobuses.setText(QCoreApplication.translate("pantalla_autobuses", u"Autobuses", None))
         self.boton_inicio.setText("")
         self.boton_reservaciones.setText(QCoreApplication.translate("pantalla_autobuses", u"Reservaciones", None))
-        self.boton_salir.setText("")
         self.label.setText("")
         pass
     # retranslateUi

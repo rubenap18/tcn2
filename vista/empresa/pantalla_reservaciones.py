@@ -11,9 +11,10 @@ from utilidades.validaciones import Validaciones
 
 class PantallaReservaciones(QWidget):
 
-    def __init__(self, controlador, parent=None):
+    def __init__(self, controlador, app_manager, parent=None):
         super().__init__(parent)
         self.controlador = controlador
+        self.app_manager = app_manager  # NUEVO - Para acceder a MostrarBoletosDialog
 
         # Crear una instancia del loader
         loader = QUiLoader()
@@ -50,6 +51,7 @@ class PantallaReservaciones(QWidget):
         self.boton_crear_reservacion = self.ui.findChild(QPushButton,'boton_crear_reservacion')
         self.boton_editar_reservacion = self.ui.findChild(QPushButton,'boton_editar_reservacion')
         self.boton_buscar = self.ui.findChild(QPushButton,'boton_buscar')
+        self.boton_mostrarboleto = self.ui.findChild(QPushButton,'boton_mostrarboleto')  # NUEVO
 
         self.line_edit_buscar_reservacion = self.ui.findChild(QLineEdit,'lineEdit_buscar')
         self.combo_box_filtro = self.ui.findChild(QComboBox,'comboBox_filtros')
@@ -63,6 +65,10 @@ class PantallaReservaciones(QWidget):
         # Si el boton editar fue recuperado as True, entonces ejecuata el metodo determinado.
         if self.boton_editar_reservacion:
             self.boton_editar_reservacion.clicked.connect(self.editarReservacion)
+
+        # NUEVO - Conectar botón mostrar boleto
+        if self.boton_mostrarboleto:
+            self.boton_mostrarboleto.clicked.connect(self.mostrar_boletos_reservacion)
 
         if self.combo_box_filtro:
             self.combo_box_filtro.currentIndexChanged.connect(self.filtrarPorComboBox)
@@ -126,6 +132,65 @@ class PantallaReservaciones(QWidget):
         print(f"Datos de la fila {fila_actual}: {datos_fila}")
         return datos_fila
 
+    def mostrar_boletos_reservacion(self):
+        """
+        Muestra los boletos de la reservación seleccionada.
+        Obtiene el número de reservación directamente de la columna 0
+        """
+        # Obtener la fila seleccionada
+        fila_actual = self.table_widget.currentRow()
+        
+        if fila_actual < 0:
+            QMessageBox.warning(
+                self,
+                "Sin selección",
+                "Por favor, selecciona una reservación de la tabla para ver sus boletos."
+            )
+            return
+        
+        # Obtener el número de reservación directamente de la columna 0
+        item_numero_reservacion = self.table_widget.item(fila_actual, 0)
+        
+        if not item_numero_reservacion:
+            QMessageBox.warning(
+                self,
+                "Error",
+                "No se pudo obtener el número de reservación."
+            )
+            return
+        
+        try:
+            numero_reservacion = int(item_numero_reservacion.text())
+            print(f"✓ Abriendo boletos para reservación #{numero_reservacion}")
+            
+            # Abrir el diálogo de boletos directamente
+            from vista.compartido.mostrarBoletosDialog import MostrarBoletosDialog
+            
+            dialog = MostrarBoletosDialog(
+                self.app_manager,
+                numero_reservacion,
+                self
+            )
+            dialog.exec()
+            
+        except ValueError:
+            # Solo mostrar error si realmente hay un problema al convertir a int
+            QMessageBox.warning(
+                self,
+                "Error",
+                "El número de reservación no es válido."
+            )
+            return
+        except Exception as e:
+            QMessageBox.critical(
+                self,
+                "Error",
+                f"No se pudieron cargar los boletos:\n{str(e)}"
+            )
+            print(f"Error al abrir diálogo de boletos: {e}")
+            import traceback
+            traceback.print_exc()
+
     def filtrarPorComboBox(self):
         filtro_seleccionado = self.combo_box_filtro.currentText()
         if filtro_seleccionado == "Reservaciones Activas":
@@ -188,7 +253,7 @@ class PantallaReservaciones(QWidget):
             return
 
         for row_index, row_data in enumerate(datos_tabla):
-        # Usamos el minimo entre las columnas de los datos y las columnas de la tabla 
+        # Se usa el minimo entre las columnas de los datos y las columnas de la tabla 
         # para evitar errores si las dimensiones no coinciden.
             for col_index in range(min(num_cols_datos, self.table_widget.columnCount())):
                 item_data = row_data[col_index]
@@ -202,10 +267,3 @@ class PantallaReservaciones(QWidget):
                 # Si la columna es la 2 (indice 1), la centramos
                 if col_index == 1: 
                     item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
-                    
-            
-        # Ajustar el ancho de las columnas al contenido
-        # self.table_widget.resizeColumnsToContents()
-    
-
-

@@ -54,7 +54,7 @@ class Ui_pagina_inicio(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon = QIcon()
-        icon.addFile(u"../recursos/recursos empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_rutas.setIcon(icon)
         self.boton_rutas.setIconSize(QSize(30, 30))
         self.boton_corridas = QPushButton(self.header_corridas)
@@ -78,7 +78,7 @@ class Ui_pagina_inicio(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon1 = QIcon()
-        icon1.addFile(u"../recursos/recursos empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u"recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_corridas.setIcon(icon1)
         self.boton_corridas.setIconSize(QSize(30, 30))
         self.boton_operadores = QPushButton(self.header_corridas)
@@ -102,7 +102,7 @@ class Ui_pagina_inicio(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon2 = QIcon()
-        icon2.addFile(u"../recursos/recursos empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u"recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_operadores.setIcon(icon2)
         self.boton_operadores.setIconSize(QSize(30, 30))
         self.boton_autobuses = QPushButton(self.header_corridas)
@@ -126,7 +126,7 @@ class Ui_pagina_inicio(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon3 = QIcon()
-        icon3.addFile(u"../recursos/recursos empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u"recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_autobuses.setIcon(icon3)
         self.boton_autobuses.setIconSize(QSize(30, 30))
         self.boton_inicio = QPushButton(self.header_corridas)
@@ -174,33 +174,13 @@ class Ui_pagina_inicio(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon5 = QIcon()
-        icon5.addFile(u"../recursos/recursos empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon5.addFile(u"recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_reservaciones.setIcon(icon5)
         self.boton_reservaciones.setIconSize(QSize(30, 30))
-        self.boton_salir = QPushButton(self.header_corridas)
-        self.boton_salir.setObjectName(u"boton_salir")
-        self.boton_salir.setGeometry(QRect(1640, 20, 91, 71))
-        self.boton_salir.setFont(font)
-        self.boton_salir.setStyleSheet(u"QPushButton{\n"
-"	background: #1061C4;\n"
-"	color:WHITE;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size: 25px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0D4FAB;    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #0A3F8A;     \n"
-"}")
-        icon6 = QIcon()
-        icon6.addFile(u"../recursos/recursos empresa/cerrar-sesion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_salir.setIcon(icon6)
-        self.boton_salir.setIconSize(QSize(30, 30))
+        self.label_logo = QLabel(self.header_corridas)
+        self.label_logo.setObjectName(u"label_logo")
+        self.label_logo.setGeometry(QRect(30, 30, 221, 61))
+        self.label_logo.setPixmap(QPixmap(u"recursos/recursos_empresa/logo.png"))
         self.widget_opfiltro_2 = QWidget(pagina_inicio)
         self.widget_opfiltro_2.setObjectName(u"widget_opfiltro_2")
         self.widget_opfiltro_2.setGeometry(QRect(210, 130, 1491, 101))
@@ -266,7 +246,7 @@ class Ui_pagina_inicio(object):
         self.QtableWidget_operadores.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         self.QtableWidget_operadores.setObjectName(u"QtableWidget_operadores")
         self.QtableWidget_operadores.setGeometry(QRect(40, 720, 751, 281))
-        self.QtableWidget_operadores.setLayoutDirection(Qt.LeftToRight)
+        self.QtableWidget_operadores.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QtableWidget_operadores.setStyleSheet(u"QTableView {\n"
 "    background: #ffffff;\n"
 "    border: 2px solid #e6e8ec;\n"
@@ -350,8 +330,8 @@ class Ui_pagina_inicio(object):
 "    height: 0px;\n"
 "}\n"
 "")
-        self.QtableWidget_operadores.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.QtableWidget_operadores.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.QtableWidget_operadores.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.QtableWidget_operadores.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.QtableWidget_operadores.horizontalHeader().setDefaultSectionSize(187)
         self.QtableWidget_operadores.verticalHeader().setVisible(False)
         self.QtableWidget_corridasact = QTableWidget(pagina_inicio)
@@ -367,7 +347,7 @@ class Ui_pagina_inicio(object):
         self.QtableWidget_corridasact.setHorizontalHeaderItem(3, __qtablewidgetitem7)
         self.QtableWidget_corridasact.setObjectName(u"QtableWidget_corridasact")
         self.QtableWidget_corridasact.setGeometry(QRect(42, 340, 751, 291))
-        self.QtableWidget_corridasact.setLayoutDirection(Qt.LeftToRight)
+        self.QtableWidget_corridasact.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QtableWidget_corridasact.setStyleSheet(u"QTableView {\n"
 "    background: #ffffff;\n"
 "    border: 2px solid #e6e8ec;\n"
@@ -451,8 +431,8 @@ class Ui_pagina_inicio(object):
 "    height: 0px;\n"
 "}\n"
 "")
-        self.QtableWidget_corridasact.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.QtableWidget_corridasact.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.QtableWidget_corridasact.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.QtableWidget_corridasact.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.QtableWidget_corridasact.horizontalHeader().setDefaultSectionSize(187)
         self.QtableWidget_corridasact.verticalHeader().setVisible(False)
         self.label_estatico_corridas = QLabel(pagina_inicio)
@@ -517,7 +497,7 @@ class Ui_pagina_inicio(object):
         self.QtableWidget_pasajeros.setHorizontalHeaderItem(3, __qtablewidgetitem11)
         self.QtableWidget_pasajeros.setObjectName(u"QtableWidget_pasajeros")
         self.QtableWidget_pasajeros.setGeometry(QRect(830, 340, 1051, 661))
-        self.QtableWidget_pasajeros.setLayoutDirection(Qt.LeftToRight)
+        self.QtableWidget_pasajeros.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QtableWidget_pasajeros.setStyleSheet(u"QTableView {\n"
 "    background: #ffffff;\n"
 "    border: 2px solid #e6e8ec;\n"
@@ -601,8 +581,8 @@ class Ui_pagina_inicio(object):
 "    height: 0px;\n"
 "}\n"
 "")
-        self.QtableWidget_pasajeros.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.QtableWidget_pasajeros.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.QtableWidget_pasajeros.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.QtableWidget_pasajeros.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.QtableWidget_pasajeros.horizontalHeader().setDefaultSectionSize(262)
         self.QtableWidget_pasajeros.verticalHeader().setVisible(False)
         self.label_estatico_pasajeros = QLabel(pagina_inicio)
@@ -623,7 +603,7 @@ class Ui_pagina_inicio(object):
         self.boton_autobuses.setText(QCoreApplication.translate("pagina_inicio", u"Autobuses", None))
         self.boton_inicio.setText("")
         self.boton_reservaciones.setText(QCoreApplication.translate("pagina_inicio", u"Reservaciones", None))
-        self.boton_salir.setText("")
+        self.label_logo.setText("")
         self.label_estatico_titulo.setText(QCoreApplication.translate("pagina_inicio", u"Inicio", None))
         self.boton_comprarboleto.setText(QCoreApplication.translate("pagina_inicio", u"Comprar boleto", None))
         self.label_estatico_operadores.setText(QCoreApplication.translate("pagina_inicio", u"Operadores", None))
