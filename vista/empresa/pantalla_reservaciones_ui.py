@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QComboBox, QHeaderView,
-    QLabel, QLineEdit, QPushButton, QSizePolicy,
-    QStackedWidget, QTableWidget, QTableWidgetItem, QWidget)
+from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QHeaderView, QLabel,
+    QLineEdit, QPushButton, QSizePolicy, QStackedWidget,
+    QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_pantalla_reservaciones(object):
     def setupUi(self, pantalla_reservaciones):
@@ -53,7 +53,7 @@ class Ui_pantalla_reservaciones(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon = QIcon()
-        icon.addFile(u"../recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_rutas.setIcon(icon)
         self.boton_rutas.setIconSize(QSize(30, 30))
         self.boton_corridas = QPushButton(self.header_widget)
@@ -77,7 +77,7 @@ class Ui_pantalla_reservaciones(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon1 = QIcon()
-        icon1.addFile(u"../recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u"recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_corridas.setIcon(icon1)
         self.boton_corridas.setIconSize(QSize(30, 30))
         self.boton_operadores = QPushButton(self.header_widget)
@@ -101,7 +101,7 @@ class Ui_pantalla_reservaciones(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon2 = QIcon()
-        icon2.addFile(u"../recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u"recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_operadores.setIcon(icon2)
         self.boton_operadores.setIconSize(QSize(30, 30))
         self.boton_autobuses = QPushButton(self.header_widget)
@@ -125,7 +125,7 @@ class Ui_pantalla_reservaciones(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon3 = QIcon()
-        icon3.addFile(u"../recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u"recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_autobuses.setIcon(icon3)
         self.boton_autobuses.setIconSize(QSize(30, 30))
         self.boton_inicio = QPushButton(self.header_widget)
@@ -149,7 +149,7 @@ class Ui_pantalla_reservaciones(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon4 = QIcon()
-        icon4.addFile(u"../recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon4.addFile(u"recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_inicio.setIcon(icon4)
         self.boton_inicio.setIconSize(QSize(30, 30))
         self.boton_reservaciones = QPushButton(self.header_widget)
@@ -173,37 +173,13 @@ class Ui_pantalla_reservaciones(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon5 = QIcon()
-        icon5.addFile(u"../recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon5.addFile(u"recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_reservaciones.setIcon(icon5)
         self.boton_reservaciones.setIconSize(QSize(30, 30))
-        self.boton_salir = QPushButton(self.header_widget)
-        self.boton_salir.setObjectName(u"boton_salir")
-        self.boton_salir.setGeometry(QRect(1640, 20, 91, 71))
-        self.boton_salir.setFont(font)
-        self.boton_salir.setStyleSheet(u"QPushButton{\n"
-"	background: #1061C4;\n"
-"	color:WHITE;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size: 25px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0D4FAB;    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #0A3F8A;     \n"
-"}")
-        icon6 = QIcon()
-        icon6.addFile(u"../recursos/recursos_empresa/cerrar-sesion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_salir.setIcon(icon6)
-        self.boton_salir.setIconSize(QSize(30, 30))
         self.label_logo = QLabel(self.header_widget)
         self.label_logo.setObjectName(u"label_logo")
         self.label_logo.setGeometry(QRect(30, 10, 211, 81))
-        self.label_logo.setPixmap(QPixmap(u"../recursos/recursos_empresa/logo.png"))
+        self.label_logo.setPixmap(QPixmap(u"recursos/recursos_empresa/logo.png"))
         self.main_stackedWidget = QStackedWidget(pantalla_reservaciones)
         self.main_stackedWidget.setObjectName(u"main_stackedWidget")
         self.main_stackedWidget.setGeometry(QRect(0, 130, 1920, 971))
@@ -225,41 +201,17 @@ class Ui_pantalla_reservaciones(object):
 "color: #606266;\n"
 "\n"
 "")
-        self.boton_crear_reservacion = QPushButton(self.widget_opbotones_6)
-        self.boton_crear_reservacion.setObjectName(u"boton_crear_reservacion")
-        self.boton_crear_reservacion.setGeometry(QRect(30, 40, 160, 71))
-        self.boton_crear_reservacion.setFont(font)
-        self.boton_crear_reservacion.setStyleSheet(u"QPushButton{\n"
+        self.boton_mostrarboleto = QPushButton(self.widget_opbotones_6)
+        self.boton_mostrarboleto.setObjectName(u"boton_mostrarboleto")
+        self.boton_mostrarboleto.setGeometry(QRect(9, 30, 201, 71))
+        self.boton_mostrarboleto.setFont(font)
+        self.boton_mostrarboleto.setStyleSheet(u"QPushButton{\n"
 "	background: #1061C4;\n"
 "	color:WHITE;\n"
 "	border:none;\n"
 "	border-radius: 8px;\n"
 "	font-weight: bold;\n"
-"	font-size: 25px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0D4FAB;    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-c\n"
-"}")
-        icon7 = QIcon()
-        icon7.addFile(u"../recursos/recursos_empresa/crear-reservacion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_crear_reservacion.setIcon(icon7)
-        self.boton_crear_reservacion.setIconSize(QSize(30, 30))
-        self.boton_editar_reservacion = QPushButton(self.widget_opbotones_6)
-        self.boton_editar_reservacion.setObjectName(u"boton_editar_reservacion")
-        self.boton_editar_reservacion.setGeometry(QRect(30, 140, 160, 71))
-        self.boton_editar_reservacion.setFont(font)
-        self.boton_editar_reservacion.setStyleSheet(u"QPushButton{\n"
-"	background: #1061C4;\n"
-"	color:WHITE;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size: 25px;\n"
+"	font-size: 20px;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -270,10 +222,10 @@ class Ui_pantalla_reservaciones(object):
 "    background-c\n"
 "\n"
 "}")
-        icon8 = QIcon()
-        icon8.addFile(u"../recursos/recursos_empresa/editar-reservacion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_editar_reservacion.setIcon(icon8)
-        self.boton_editar_reservacion.setIconSize(QSize(30, 30))
+        icon6 = QIcon()
+        icon6.addFile(u"recursos/recursos_empresa/editar-reservacion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_mostrarboleto.setIcon(icon6)
+        self.boton_mostrarboleto.setIconSize(QSize(30, 30))
         self.widget_opfiltro_6 = QWidget(self.pantalla_reservaciones_content)
         self.widget_opfiltro_6.setObjectName(u"widget_opfiltro_6")
         self.widget_opfiltro_6.setGeometry(QRect(270, 20, 1641, 101))
@@ -298,63 +250,6 @@ class Ui_pantalla_reservaciones(object):
         self.label_estatico_reservaciones.setStyleSheet(u"border:none\n"
 "\n"
 "")
-        self.comboBox_filtros = QComboBox(self.widget_opfiltro_6)
-        self.comboBox_filtros.addItem("")
-        self.comboBox_filtros.addItem("")
-        self.comboBox_filtros.addItem("")
-        self.comboBox_filtros.addItem("")
-        self.comboBox_filtros.addItem("")
-        self.comboBox_filtros.addItem("")
-        self.comboBox_filtros.setObjectName(u"comboBox_filtros")
-        self.comboBox_filtros.setGeometry(QRect(1380, 30, 221, 41))
-        font2 = QFont()
-        self.comboBox_filtros.setFont(font2)
-        self.comboBox_filtros.setStyleSheet(u"QComboBox {\n"
-"    background-color: #ffffff;\n"
-"    border: 1px solid #dcdfe6;\n"
-"    border-radius: 6px;\n"
-"    padding: 6px 12px;\n"
-"    font-size: 16px;\n"
-"    color: #606266;\n"
-"    min-height: 10px;\n"
-"}\n"
-"\n"
-"QComboBox:hover {\n"
-"    border-color: #c0c4cc;\n"
-"}\n"
-"\n"
-"QComboBox:focus {\n"
-"    border-color: #409eff;\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"    border: none;\n"
-"    width: 25px;\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow {\n"
-"    image: none;\n"
-"    border-left: 4px solid transparent;\n"
-"    border-right: 4px solid transparent;\n"
-"    border-top: 4px solid #909399;\n"
-"}\n"
-"\n"
-"QComboBox QAbstractItemView {\n"
-"    border: 1px solid #dcdfe6;\n"
-"    border-radius: 6px;\n"
-"    background-color: white;\n"
-"    outline: none;\n"
-"    selection-background-color: #409eff;\n"
-"    selection-color: white;\n"
-"}")
-        self.label = QLabel(self.widget_opfiltro_6)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(1290, 40, 81, 19))
-        font3 = QFont()
-        font3.setPointSize(12)
-        font3.setBold(False)
-        self.label.setFont(font3)
-        self.label.setStyleSheet(u"border:None;")
         self.lineEdit_buscar = QLineEdit(self.widget_opfiltro_6)
         self.lineEdit_buscar.setObjectName(u"lineEdit_buscar")
         self.lineEdit_buscar.setGeometry(QRect(720, 30, 431, 41))
@@ -385,9 +280,9 @@ class Ui_pantalla_reservaciones(object):
 "QPushButton:pressed {\n"
 "    background-color: #0A3F8A;     \n"
 "}")
-        icon9 = QIcon()
-        icon9.addFile(u"../recursos/recursos empresa/boton_buscar_reservaciones.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_buscar.setIcon(icon9)
+        icon7 = QIcon()
+        icon7.addFile(u"recursos/recursos_empresa/boton_buscar_reservaciones.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_buscar.setIcon(icon7)
         self.boton_buscar.setIconSize(QSize(30, 30))
         self.tabla_reservaciones = QTableWidget(self.pantalla_reservaciones_content)
         if (self.tabla_reservaciones.columnCount() < 10):
@@ -544,19 +439,9 @@ class Ui_pantalla_reservaciones(object):
         self.boton_autobuses.setText(QCoreApplication.translate("pantalla_reservaciones", u"Autobuses", None))
         self.boton_inicio.setText("")
         self.boton_reservaciones.setText(QCoreApplication.translate("pantalla_reservaciones", u"Reservaciones", None))
-        self.boton_salir.setText("")
         self.label_logo.setText("")
-        self.boton_crear_reservacion.setText(QCoreApplication.translate("pantalla_reservaciones", u"Crear", None))
-        self.boton_editar_reservacion.setText(QCoreApplication.translate("pantalla_reservaciones", u"Editar", None))
+        self.boton_mostrarboleto.setText(QCoreApplication.translate("pantalla_reservaciones", u"Mostrar boleto", None))
         self.label_estatico_reservaciones.setText(QCoreApplication.translate("pantalla_reservaciones", u"Reservaciones", None))
-        self.comboBox_filtros.setItemText(0, QCoreApplication.translate("pantalla_reservaciones", u"Reservaciones Activas", None))
-        self.comboBox_filtros.setItemText(1, QCoreApplication.translate("pantalla_reservaciones", u"Reservaciones Pendientes", None))
-        self.comboBox_filtros.setItemText(2, QCoreApplication.translate("pantalla_reservaciones", u"Fecha", None))
-        self.comboBox_filtros.setItemText(3, QCoreApplication.translate("pantalla_reservaciones", u"Nombre de cliente", None))
-        self.comboBox_filtros.setItemText(4, QCoreApplication.translate("pantalla_reservaciones", u"Origen", None))
-        self.comboBox_filtros.setItemText(5, QCoreApplication.translate("pantalla_reservaciones", u"Destino", None))
-
-        self.label.setText(QCoreApplication.translate("pantalla_reservaciones", u"Filtrar por:", None))
         self.lineEdit_buscar.setPlaceholderText(QCoreApplication.translate("pantalla_reservaciones", u"Buscar por numero de corrida...", None))
         self.boton_buscar.setText("")
         ___qtablewidgetitem = self.tabla_reservaciones.horizontalHeaderItem(0)

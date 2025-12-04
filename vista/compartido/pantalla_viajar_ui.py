@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QFram
     QHeaderView, QLabel, QLineEdit, QPushButton,
     QSizePolicy, QTableWidget, QTableWidgetItem, QWidget)
 
-class Ui_Form(object):
+class PantallaViajar(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")

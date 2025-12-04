@@ -58,7 +58,8 @@ class MainUIEmpresa(QMainWindow):
         # Pasar app_manager a PantallaIndex
         self.index_ui = PantallaIndex(self.app_manager.controlador_index, self.app_manager)
         
-        self.pagina_reservaciones_widget = PantallaReservaciones(self.app_manager.controlador_pr)
+        # ACTUALIZADO - Pasar app_manager a PantallaReservaciones
+        self.pagina_reservaciones_widget = PantallaReservaciones(self.app_manager.controlador_pr, self.app_manager)
         self.pagina_corridas_widget = PantallaCorridas(self.app_manager.controlador_pc)
         self.pagina_autobuses_widget = PantallaAutobuses(self.app_manager.controlador_pa)
         self.pagina_rutas_widget = PantallaRutas(self.app_manager)
