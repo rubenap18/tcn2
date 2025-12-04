@@ -557,7 +557,7 @@ y adultos mayores</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../recursos/recursos usuario/volvo 9800 blanco.png</pixmap>
+    <pixmap>recursos/recursos_usuario/volvo 9800 blanco.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
