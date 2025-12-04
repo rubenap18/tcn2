@@ -94,7 +94,7 @@ class PantallaReservaciones(QWidget):
         Retorna una lista con el contenido de cada celda de esa fila.
         """
 
-        tabla = self.table_widget  # Asume que 'self.tableWidget' es tu QTableWidget
+        tabla = self.table_widget  # Se Asume que 'self.tableWidget' es tu QTableWidget
 
         # 1. Obtener el indice de la fila actualmente seleccionada/enfocada
         fila_actual = tabla.currentRow()

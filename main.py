@@ -35,7 +35,7 @@ from dao.ruta_dao import RutaDAO
 from dao.operador_dao import OperadorDAO
 from dao.pasajero_dao import PasajeroDAO
 from dao.ciudad_dao import CiudadesDAO # Agregado
-from dao.viajar_dao import ViajarDAO  # ⭐ NUEVO: DAO para compra de boletos
+from dao.viajar_dao import ViajarDAO 
 
 #importando controladores
 from controladores.controlador_index_empresa import ControladorIndex
@@ -48,7 +48,7 @@ from controladores.controlador_pantalla_rutas import ControladorPantallaRutas
 from controladores.controlador_pantalla_operadores import ControladorPantallaOperadores
 from controladores.controlador_pantalla_pasajeros import ControladorPantallaPasajeros
 from controladores.controlador_pantalla_ciudad import ControladorPantallaCiudad # Agregado
-from controladores.controlador_viajar import ControladorViajar   # ⭐ NUEVO: Controlador para compra de boletos
+from controladores.controlador_viajar import ControladorViajar 
 
 from utilidades.validaciones import Validaciones
 

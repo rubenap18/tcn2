@@ -112,43 +112,6 @@
     <string>Teléfono:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="boton_invitado">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>530</y>
-     <width>261</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>-1</pointsize>
-     <bold>true</bold>
-     <underline>true</underline>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-	background: white;
-	color:#00000;
-	border:none;
-	border-radius: 15px;
-	font-weight: bold;
-	font-size: 14px;
-}
-QPushButton:hover {
-	background-color: rgb(222, 221, 218);
-}
-
-QPushButton:pressed {
-	background-color: rgb(192, 191, 188);
-}</string>
-   </property>
-   <property name="text">
-    <string>Ingresa como invitado</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_estatico_identificatetxt">
    <property name="geometry">
     <rect>
