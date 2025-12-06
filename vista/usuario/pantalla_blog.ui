@@ -55,7 +55,7 @@ QPushButton:pressed {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../recursos/recursos empresa/volver.png</normaloff>../recursos/recursos empresa/volver.png</iconset>
+     <normaloff>recursos/recursos_empresa/volver.png</normaloff>recursos/recursos_empresa/volver.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -356,7 +356,7 @@ Transporte</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../recursos/recursos usuario/carretera-escenica-palya-saldamando-1024x768.jpg</pixmap>
+    <pixmap>recursos/recursos_usuario/carretera-escenica-palya-saldamando-1024x768.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -375,7 +375,7 @@ Transporte</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../recursos/recursos usuario/provino-1-1-1200x783.jpg</pixmap>
+    <pixmap>recursos/recursos_usuario/provino-1-1-1200x783.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -394,7 +394,7 @@ Transporte</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../recursos/recursos usuario/ensenada_2.jpg</pixmap>
+    <pixmap>recursos/recursos_usuario/ensenada_2.jpg</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_imagen_destinos">
@@ -410,7 +410,7 @@ Transporte</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../recursos/recursos usuario/tecate_2.jpg</pixmap>
+    <pixmap>recursos/recursos_usuario/tecate_2.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -429,7 +429,7 @@ Transporte</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../recursos/recursos usuario/viajar-en-autobus-busolinea.jpg</pixmap>
+    <pixmap>recursos/recursos_usuario/viajar-en-autobus-busolinea.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

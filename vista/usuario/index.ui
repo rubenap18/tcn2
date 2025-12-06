@@ -28,7 +28,6 @@
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
      <underline>true</underline>
     </font>
@@ -99,7 +98,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -143,7 +141,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -175,51 +172,6 @@ QPushButton:pressed {
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="boton_nosotros">
-   <property name="geometry">
-    <rect>
-     <x>1380</x>
-     <y>890</y>
-     <width>161</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-	background: rgb(255, 255, 255);
-	color:black;
-	border: 2px solid #1061C4;
-	color: #1061C4;
-	border-radius: 8px;
-	font-weight: bold;
-	font-size:27px;
-}
-
-QPushButton:hover {
-    background-color: rgb(222, 221, 218);    
-}
-
-QPushButton:pressed {
-    background-color: rgb(192, 191, 188);     
-}</string>
-   </property>
-   <property name="text">
-    <string>Nosotros</string>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_estatico_numdestinos">
    <property name="geometry">
     <rect>
@@ -232,7 +184,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>46</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -258,7 +209,6 @@ border:none;
    <property name="font">
     <font>
      <pointsize>46</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -283,7 +233,6 @@ color: rgb(255, 106, 54);</string>
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
      <underline>false</underline>
     </font>
@@ -329,7 +278,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>16</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -353,7 +301,6 @@ una experiencia única</string>
    <property name="font">
     <font>
      <pointsize>27</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -374,59 +321,12 @@ una experiencia única</string>
    <property name="font">
     <font>
      <pointsize>59</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
    </property>
    <property name="text">
     <string>Viaja por toda </string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="label_estatico_nuestroservicios">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>600</y>
-     <width>351</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-     <underline>true</underline>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-	background: rgb(255, 255, 255);
-	color:#1061C4;
-	border:none;
-	border-radius: 8px;
-	font-weight: bold;
-	font-size:25px;
-	text-decoration: underline;
-}
-
-QPushButton:hover {
-    background-color: rgb(222, 221, 218);    
-}
-
-QPushButton:pressed {
-    background-color: rgb(192, 191, 188);     
-}</string>
-   </property>
-   <property name="text">
-    <string>Conoce nuestros servicios</string>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
    </property>
   </widget>
   <widget class="QLabel" name="label_estatico_pordescuento">
@@ -441,7 +341,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>46</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -456,7 +355,7 @@ QPushButton:pressed {
   <widget class="QPushButton" name="boton_blog">
    <property name="geometry">
     <rect>
-     <x>1140</x>
+     <x>1340</x>
      <y>890</y>
      <width>201</width>
      <height>61</height>
@@ -465,7 +364,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -509,7 +407,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>27</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -530,7 +427,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>19</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
      <kerning>true</kerning>
@@ -541,7 +437,7 @@ QPushButton:pressed {
 y adultos mayores</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="label_imagen_camion">
@@ -581,7 +477,6 @@ y adultos mayores</string>
    <property name="font">
     <font>
      <pointsize>60</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>

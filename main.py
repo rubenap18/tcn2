@@ -49,12 +49,15 @@ from controladores.controlador_pantalla_operadores import ControladorPantallaOpe
 from controladores.controlador_pantalla_pasajeros import ControladorPantallaPasajeros
 from controladores.controlador_pantalla_ciudad import ControladorPantallaCiudad # Agregado
 from controladores.controlador_viajar import ControladorViajar 
+from controladores.controlador_index_usuario import ControladorIndexUsuario  # ¡Asegúrate que está importado!
+from controladores.controlador_pantalla_misreservaciones import ControladorPantallaMisReservaciones
 
 from utilidades.validaciones import Validaciones
 
 def main():
     print('Iniciando Transportes Cuervo Negro')
     app = QApplication(sys.argv) # inicia la app
+    
     #Iniciando conexion que usara todo el sistema.
     try:
         Connection.getConnection()
@@ -86,20 +89,32 @@ def main():
     controlador_pr = ControlardorPantallaReservaciones(reservacion_dao=reservacion_dao)
     controlador_pc = ControladorPantallaCorridas(corrida_dao=corrida_dao)
     controlador_pa = ControladorPantallaAutobuses(autobus_dao=autobus_dao)
-    # controlador_prutas ahora se inicializa sin app_manager
     controlador_prutas = ControladorPantallaRutas(ruta_dao=ruta_dao, ciudad_dao=ciudad_dao) 
     controlador_po = ControladorPantallaOperadores(operador_dao=operador_dao)
     controlador_pp = ControladorPantallaPasajeros(pasajero_dao=pasajero_dao)
     controlador_pcidad = ControladorPantallaCiudad(ciudad_dao=ciudad_dao) 
     controlador_viajar = ControladorViajar(viajar_dao=viajar_dao) # Agregado por Hector :3
-
-    #iniciando app manager
-    app_manager = AppManager(controlador_index=controlador_index, controlador_isd=controlador_isd, controlador_rd=controlador_rd, 
-                            controlador_pr=controlador_pr, controlador_pc=controlador_pc, controlador_pa=controlador_pa, 
-                            controlador_prutas=controlador_prutas, controlador_po=controlador_po, controlador_pp=controlador_pp,
-                            controlador_pcidad=controlador_pcidad) 
     
-    # Inyectando controlador de viajar (despues de crear app_manager)
+    
+    controlador_index_usuario = ControladorIndexUsuario()
+    print(f"ControladorIndexUsuario creado: {controlador_index_usuario}")
+    
+    #iniciando app manager (AHORA CON controlador_index_usuario)
+    app_manager = AppManager(
+        controlador_index=controlador_index, 
+        controlador_isd=controlador_isd, 
+        controlador_rd=controlador_rd, 
+        controlador_pr=controlador_pr, 
+        controlador_pc=controlador_pc, 
+        controlador_pa=controlador_pa, 
+        controlador_prutas=controlador_prutas, 
+        controlador_po=controlador_po, 
+        controlador_pp=controlador_pp,
+        controlador_pcidad=controlador_pcidad,
+        controlador_index_usuario=controlador_index_usuario  # ESTO ES LO QUE FALTABA!!!
+    ) 
+    
+    # Inyectando controlador de viajar (despues de crear app_manager) ya que funciona en ambas vistas
     app_manager.controlador_viajar = controlador_viajar
     
     #iniciando UI

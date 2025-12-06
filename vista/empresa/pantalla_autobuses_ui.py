@@ -102,7 +102,7 @@ class Ui_pantalla_autobuses(object):
 "}")
         self.label_estatico_tituloAutobuses = QLabel(self.widget_opfiltro_autobus)
         self.label_estatico_tituloAutobuses.setObjectName(u"label_estatico_tituloAutobuses")
-        self.label_estatico_tituloAutobuses.setGeometry(QRect(30, 0, 481, 101))
+        self.label_estatico_tituloAutobuses.setGeometry(QRect(50, 0, 481, 101))
         font1 = QFont()
         font1.setPointSize(59)
         font1.setBold(True)
@@ -112,7 +112,7 @@ class Ui_pantalla_autobuses(object):
 "")
         self.label_estatico_servicio = QLabel(self.widget_opfiltro_autobus)
         self.label_estatico_servicio.setObjectName(u"label_estatico_servicio")
-        self.label_estatico_servicio.setGeometry(QRect(1200, 40, 201, 28))
+        self.label_estatico_servicio.setGeometry(QRect(1050, 30, 221, 51))
         self.label_estatico_servicio.setStyleSheet(u"QLabel {\n"
 "    background: transparent;\n"
 "    border: none;\n"
@@ -122,13 +122,13 @@ class Ui_pantalla_autobuses(object):
 "}")
         self.comboBox_tiposAutobus = QComboBox(self.widget_opfiltro_autobus)
         self.comboBox_tiposAutobus.setObjectName(u"comboBox_tiposAutobus")
-        self.comboBox_tiposAutobus.setGeometry(QRect(1400, 40, 151, 32))
+        self.comboBox_tiposAutobus.setGeometry(QRect(1270, 40, 221, 41))
         self.comboBox_tiposAutobus.setStyleSheet(u"QComboBox {\n"
 "    background-color: #ffffff;\n"
 "    border: 1px solid #dcdfe6;\n"
 "    border-radius: 6px;\n"
 "    padding: 6px 12px;\n"
-"    font-size: 13px;\n"
+"    font-size: 18px;\n"
 "    color: #606266;\n"
 "    min-height: 18px;\n"
 "}\n"
@@ -182,11 +182,14 @@ class Ui_pantalla_autobuses(object):
         __qtablewidgetitem4 = QTableWidgetItem()
         __qtablewidgetitem4.setFont(font2);
         self.QtableWidget_autobuses.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        font3 = QFont()
+        font3.setPointSize(12)
+        font3.setBold(True)
         __qtablewidgetitem5 = QTableWidgetItem()
-        __qtablewidgetitem5.setFont(font2);
+        __qtablewidgetitem5.setFont(font3);
         self.QtableWidget_autobuses.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         self.QtableWidget_autobuses.setObjectName(u"QtableWidget_autobuses")
-        self.QtableWidget_autobuses.setGeometry(QRect(270, 260, 1641, 801))
+        self.QtableWidget_autobuses.setGeometry(QRect(300, 240, 1491, 801))
         self.QtableWidget_autobuses.setFont(font)
         self.QtableWidget_autobuses.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QtableWidget_autobuses.setStyleSheet(u"QTableView {\n"
@@ -274,7 +277,7 @@ class Ui_pantalla_autobuses(object):
         self.QtableWidget_autobuses.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustIgnored)
         self.QtableWidget_autobuses.horizontalHeader().setVisible(True)
         self.QtableWidget_autobuses.horizontalHeader().setCascadingSectionResizes(True)
-        self.QtableWidget_autobuses.horizontalHeader().setDefaultSectionSize(273)
+        self.QtableWidget_autobuses.horizontalHeader().setDefaultSectionSize(248)
         self.QtableWidget_autobuses.horizontalHeader().setHighlightSections(False)
         self.QtableWidget_autobuses.verticalHeader().setCascadingSectionResizes(True)
         self.header_autobuses = QWidget(pantalla_autobuses)
@@ -453,7 +456,7 @@ class Ui_pantalla_autobuses(object):
         self.boton_registrarAutobus.setText(QCoreApplication.translate("pantalla_autobuses", u" Registrar", None))
         self.boton_bajaAutobus.setText(QCoreApplication.translate("pantalla_autobuses", u"Dar de baja", None))
         self.label_estatico_tituloAutobuses.setText(QCoreApplication.translate("pantalla_autobuses", u"<html><head/><body><p><span style=\" color:#636363;\">Autobuses</span></p></body></html>", None))
-        self.label_estatico_servicio.setText(QCoreApplication.translate("pantalla_autobuses", u"<html><head/><body><p><span style=\" font-size:16pt; font-weight:700;\">Filtrar por servicio:</span></p></body></html>", None))
+        self.label_estatico_servicio.setText(QCoreApplication.translate("pantalla_autobuses", u"<html><head/><body><p><span style=\" font-size:20pt; font-weight:700;\">Tipo de servicio:</span></p></body></html>", None))
         ___qtablewidgetitem = self.QtableWidget_autobuses.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("pantalla_autobuses", u"N\u00famero", None));
         ___qtablewidgetitem1 = self.QtableWidget_autobuses.horizontalHeaderItem(1)

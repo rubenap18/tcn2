@@ -252,7 +252,7 @@ class Ui_pantalla_operadores(object):
 "")
         self.label_estatico_operadores = QLabel(self.widget_titulo)
         self.label_estatico_operadores.setObjectName(u"label_estatico_operadores")
-        self.label_estatico_operadores.setGeometry(QRect(30, 10, 461, 71))
+        self.label_estatico_operadores.setGeometry(QRect(30, 10, 461, 81))
         font1 = QFont()
         font1.setPointSize(59)
         font1.setBold(True)
@@ -393,7 +393,7 @@ class Ui_pantalla_operadores(object):
         self.label.setText("")
         self.boton_editaroperadores.setText(QCoreApplication.translate("pantalla_operadores", u"Editar", None))
         self.boton_agregaroperadores.setText(QCoreApplication.translate("pantalla_operadores", u"A\u00f1adir", None))
-        self.label_estatico_operadores.setText(QCoreApplication.translate("pantalla_operadores", u"Operadores", None))
+        self.label_estatico_operadores.setText(QCoreApplication.translate("pantalla_operadores", u"<html><head/><body><p><span style=\" font-size:48pt;\">Operadores</span></p></body></html>", None))
         self.lineEdit_boperadores.setPlaceholderText(QCoreApplication.translate("pantalla_operadores", u"Buscar operador..", None))
         ___qtablewidgetitem = self.QTableWidget_operadores.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("pantalla_operadores", u"Num", None));
