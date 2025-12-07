@@ -2,7 +2,7 @@
 class AppManager:
     
     def __init__(self, controlador_index,controlador_isd, controlador_rd, controlador_pr, 
-                controlador_pc,controlador_pa,controlador_prutas, controlador_po,controlador_pp, controlador_pcidad):
+                controlador_pc,controlador_pa,controlador_prutas, controlador_po,controlador_pp, controlador_pcidad, controlador_index_usuario=None):
         # Almacena los controladores como atributos
         self.controlador_index = controlador_index #controlador index
         self.controlador_isd = controlador_isd #controlador inicio sesion dialog
@@ -14,6 +14,7 @@ class AppManager:
         self.controlador_po = controlador_po #controlador pantalla operadores
         self.controlador_pp = controlador_pp #controlador pantalla pasajeros
         self.controlador_pcidad = controlador_pcidad #controlador pantalla ciudad
+        self.controlador_index_usuario = controlador_index_usuario #controlador pantalla index usuario
         
         # Usuario logueado y controlador de compra
         self.usuario_actual = None

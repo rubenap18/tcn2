@@ -44,7 +44,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../recursos/recursos usuario/LOGOJPG.jpg</pixmap>
+    <pixmap>recursos_recursos usuario/LOGOJPG.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -221,7 +221,7 @@ QPushButton:pressed {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../recursos/recursos usuario/facebook.png</pixmap>
+    <pixmap>recursos_recursos usuario/facebook.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -243,7 +243,7 @@ QPushButton:pressed {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../recursos/recursos usuario/gmail.png</pixmap>
+    <pixmap>recursos_recursos usuario/gmail.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -262,7 +262,7 @@ QPushButton:pressed {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../recursos/recursos usuario/instagram.png</pixmap>
+    <pixmap>recursos_recursos usuario/instagram.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -323,7 +323,7 @@ QPushButton:pressed {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../recursos/recursos usuario/irizar i6 naranja.png</pixmap>
+    <pixmap>recursos_recursos usuario/irizar i6 naranja.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="contactanos_instagram_5">
@@ -444,7 +444,7 @@ QPushButton:pressed {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../recursos/recursos usuario/whatsapp.png</pixmap>
+    <pixmap>recursos/recursos_usuario/whatsapp.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -489,7 +489,7 @@ QPushButton:pressed {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../recursos/recursos empresa/volver.png</normaloff>../recursos/recursos empresa/volver.png</iconset>
+     <normaloff>recursos/recursos empresa/volver.png</normaloff>recursos/recursos empresa/volver.png</iconset>
    </property>
    <property name="iconSize">
     <size>

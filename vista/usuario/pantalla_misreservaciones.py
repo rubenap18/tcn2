@@ -1,79 +1,179 @@
-import os
-from PySide6.QtWidgets import (QWidget, QVBoxLayout, QMessageBox, QTableWidgetItem)
-from PySide6.QtUiTools import QUiLoader
-from PySide6.QtCore import QFile, QIODevice, Qt # Import Qt for alignment
+"""
+Wrapper para la pantalla de Mis Reservaciones.
+Maneja la interfaz de usuario y la interacción con el controlador.
+"""
 
-class PantallaMisReservaciones(QWidget):
-    def __init__(self, controlador, user_id, parent=None):
+from PySide6.QtWidgets import QWidget, QMessageBox, QTableWidgetItem, QPushButton, QAbstractItemView
+from PySide6.QtCore import Qt
+from vista.usuario.pantalla_misreservaciones_ui import Ui_pagina_misreservaciones
+from controladores.controlador_pantalla_misreservaciones import ControladorPantallaMisReservaciones
+
+class PantallaMisReservacionesWidget(QWidget):
+    """
+    Widget que muestra las reservaciones del usuario logueado.
+    """
+    
+    def __init__(self, app_manager, parent=None):
         super().__init__(parent)
-        self.controlador = controlador
-        self.user_id = user_id # Store the user_id
+        self.app_manager = app_manager
         
-        # Crear una instancia del loader
-        loader = QUiLoader()
-
-        # Esto construye la ruta correcta sin importar desde donde se ejecute el script
-        path = os.path.join(os.path.dirname(__file__),"pantalla_misreservaciones.ui")
-        ui_file = QFile(path)
-
-        if not ui_file.open(QIODevice.ReadOnly):
-            print(f"Error: No se puede abrir el archivo UI en: {path}")
+        # Configurar la UI
+        self.ui = Ui_pagina_misreservaciones()
+        self.ui.setupUi(self)
+        
+        # Obtener el controlador
+        if not hasattr(self.app_manager, 'controlador_misreservaciones'):
+            self.app_manager.controlador_misreservaciones = ControladorPantallaMisReservaciones()
+        
+        self.controlador = self.app_manager.controlador_misreservaciones
+        
+        # Configurar la tabla
+        self.configurar_tabla()
+        
+        # Conectar botones
+        self.conectar_senales()
+        
+        # Cargar las reservaciones del usuario
+        self.cargar_reservaciones()
+    
+    def configurar_tabla(self):
+        """Configura las propiedades de la tabla de reservaciones."""
+        tabla = self.ui.tableWidget_tusReservaciones
+        
+        # Configurar encabezados
+        headers = [
+            "Reservación",
+            "Pasajeros",
+            "Origen",
+            "Destino",
+            "Fecha de viaje",
+            "Límite de pago",
+            "IVA aplicado",
+            "Subtotal",
+            "Total"
+        ]
+        tabla.setColumnCount(len(headers))
+        tabla.setHorizontalHeaderLabels(headers)
+        
+        # Configurar selección
+        tabla.setSelectionBehavior(QAbstractItemView.SelectRows)  # Seleccionar fila completa
+        tabla.setSelectionMode(QAbstractItemView.SingleSelection)  # Solo una fila a la vez
+        
+        # Ajustar ancho de columnas (más parejas y balanceadas)
+        tabla.setColumnWidth(0, 140)  # Reservación
+        tabla.setColumnWidth(1, 120)  # Pasajeros
+        tabla.setColumnWidth(2, 180)  # Origen
+        tabla.setColumnWidth(3, 180)  # Destino
+        tabla.setColumnWidth(4, 180)  # Fecha de viaje
+        tabla.setColumnWidth(5, 180)  # Límite de pago
+        tabla.setColumnWidth(6, 140)  # IVA
+        tabla.setColumnWidth(7, 140)  # Subtotal
+        tabla.setColumnWidth(8, 140)  # Total
+        
+        # Hacer que la tabla no sea editable
+        tabla.setEditTriggers(QAbstractItemView.NoEditTriggers)
+    
+    def conectar_senales(self):
+        """Conecta las señales de los botones."""
+        # Botón para regresar al index
+        self.ui.boton_regresar.clicked.connect(self.regresar_a_index)
+        
+        # Botón para ver boletos
+        self.ui.boton_verBoleto.clicked.connect(self.ver_boletos_reservacion)
+    
+    def cargar_reservaciones(self):
+        """Carga las reservaciones del usuario logueado en la tabla."""
+        # Obtener el usuario actual
+        usuario = self.app_manager.get_usuario_actual()
+        
+        if not usuario:
+            QMessageBox.warning(
+                self,
+                "Sin sesión",
+                "No hay un usuario logueado. Por favor, inicie sesión."
+            )
             return
         
-        # Cargar el UI en self.ui
-        self.ui = loader.load(ui_file, self)
-        ui_file.close()
-
-        # Integrar el widget cargado en este QWidget usando un layout
-        layout = QVBoxLayout(self)
-        layout.setContentsMargins(0, 0, 0, 0)
-        layout.addWidget(self.ui)
-        self.setLayout(layout)
-
-        # Assuming tableWidget_tusReservaciones exists in the UI
-        self.ui.tableWidget_tusReservaciones.setColumnCount(9) # 9 columns based on the provided logic
-        self.ui.tableWidget_tusReservaciones.setHorizontalHeaderLabels([
-            "N° Reserva", "Fecha", "Límite Pago", "Pasajeros", "Origen", "Destino", "Subtotal", "IVA", "Total"
-        ])
+        # Obtener reservaciones del usuario
+        reservaciones = self.controlador.obtener_reservaciones_cliente(usuario.id)
         
-        self.cargar_reservaciones_usuario()
-
-    def cargar_reservaciones_usuario(self):
-        """Cargar reservaciones con origen y destino"""
-        if not self.user_id:
-            QMessageBox.warning(self, "Advertencia", "No se ha proporcionado un ID de usuario.")
+        if not reservaciones:
+            # Solo limpiar la tabla sin mostrar mensaje
+            self.ui.tableWidget_tusReservaciones.setRowCount(0)
+            print(f"ℹ Usuario ID {usuario.id} no tiene reservaciones")
             return
         
+        # Formatear datos para la tabla
+        datos_tabla = self.controlador.formatear_reservaciones_para_tabla(reservaciones)
+        
+        # Llenar la tabla
+        self.llenar_tabla(datos_tabla)
+        
+        print(f"✓ Cargadas {len(reservaciones)} reservaciones para el usuario ID: {usuario.id}")
+    
+    def llenar_tabla(self, datos):
+        """
+        Llena la tabla con los datos de reservaciones.
+        
+        Args:
+            datos: Lista de listas con los datos a mostrar
+        """
+        tabla = self.ui.tableWidget_tusReservaciones
+        tabla.setRowCount(0)  # Limpiar tabla
+        
+        # Agregar filas
+        for fila_datos in datos:
+            fila = tabla.rowCount()
+            tabla.insertRow(fila)
+            
+            for columna, valor in enumerate(fila_datos):
+                item = QTableWidgetItem(str(valor))
+                item.setTextAlignment(Qt.AlignCenter)
+                tabla.setItem(fila, columna, item)
+        
+        # Ajustar altura de filas
+        for i in range(tabla.rowCount()):
+            tabla.setRowHeight(i, 50)
+    
+    def ver_boletos_reservacion(self):
+        """Muestra los boletos de la reservación seleccionada."""
+        # Validar que haya una selección
+        numero_reservacion = self.controlador.validar_seleccion_tabla(
+            self.ui.tableWidget_tusReservaciones
+        )
+        
+        if numero_reservacion is None:
+            QMessageBox.warning(
+                self,
+                "Sin selección",
+                "Por favor, selecciona una reservación de la tabla para ver sus boletos."
+            )
+            return
+        
+        # Abrir el diálogo de boletos
         try:
-            # The controller method for user reservations
-            reservaciones = self.controlador.obtener_reservaciones_cliente(self.user_id)
+            from vista.compartido.mostrarBoletosDialog import MostrarBoletosDialog
             
-            tabla = self.ui.tableWidget_tusReservaciones
-            tabla.setRowCount(len(reservaciones))
+            dialog = MostrarBoletosDialog(
+                self.app_manager,
+                numero_reservacion,
+                self
+            )
+            dialog.exec()
             
-            if reservaciones:
-                for fila, reserva in enumerate(reservaciones):
-                    # The provided 'reserva' tuple has 9 elements:
-                    # 0: r.numero, 1: r.fecha, 2: r.fechaLimPago, 3: r.cantPasajeros,
-                    # 4: rt.ciudadOrigen, 5: rt.ciudadDestino, 6: r.subtotal, 7: r.IVA, 8: r.total
-
-                    # Original order in the provided logic:
-                    # 0: N° Reserva, 1: Fecha, 2: Límite Pago, 3: Pasajeros, 
-                    # 4: Origen, 5: Destino, 6: Subtotal, 7: IVA, 8: Total
-
-                    tabla.setItem(fila, 0, QTableWidgetItem(str(reserva[0])))  # N° Reserva (r.numero)
-                    tabla.setItem(fila, 1, QTableWidgetItem(str(reserva[1])))  # Fecha (r.fecha)
-                    tabla.setItem(fila, 2, QTableWidgetItem(str(reserva[2])))  # Límite Pago (r.fechaLimPago)
-                    tabla.setItem(fila, 3, QTableWidgetItem(str(reserva[3])))  # Pasajeros (r.cantPasajeros)
-                    tabla.setItem(fila, 4, QTableWidgetItem(str(reserva[4])))  # Origen (rt.ciudadOrigen)
-                    tabla.setItem(fila, 5, QTableWidgetItem(str(reserva[5])))  # Destino (rt.ciudadDestino)
-                    tabla.setItem(fila, 6, QTableWidgetItem(str(reserva[6])))  # Subtotal (r.subtotal)
-                    tabla.setItem(fila, 7, QTableWidgetItem(str(reserva[7])))  # IVA (r.IVA)
-                    tabla.setItem(fila, 8, QTableWidgetItem(str(reserva[8])))  # Total (r.total)
-            else:
-                QMessageBox.information(self, "Reservaciones", "No tienes reservaciones registradas.")
-                
         except Exception as e:
-            QMessageBox.critical(self, "Error", f"Error al cargar reservaciones: {str(e)}")
-        # finally: # Removed this block as self.consultas.cerrar_conexion() is not needed here
-            # self.consultas.cerrar_conexion() # This should be handled by the DAO's connection management
+            QMessageBox.critical(
+                self,
+                "Error",
+                f"No se pudieron cargar los boletos:\n{str(e)}"
+            )
+            print(f"Error al abrir diálogo de boletos: {e}")
+    
+    def regresar_a_index(self):
+        """Regresa a la pantalla principal (index)."""
+        if hasattr(self.app_manager, 'controlador_index_usuario'):
+            self.app_manager.controlador_index_usuario.navegar_a_index()
+    
+    def actualizar_tabla(self):
+        """Actualiza los datos de la tabla (útil después de cambios)."""
+        self.cargar_reservaciones()

@@ -50,8 +50,8 @@ class ControladorPantallaAutobuses:
     def configurar_tabla(self):
         """Configura la tabla de autobuses"""
         if self.ui:
-            # Configurar columnas (sin Estado)
-            columnas = ["Número", "Matrícula", "Tipo Servicio", "Marca", "Modelo", "Asientos"]
+            # Configurar columnas: Número, Matrícula, Marca, Modelo, Asientos, Estado
+            columnas = ["Número", "Matrícula", "Marca", "Modelo", "Asientos", "Estado"]
             self.ui.QtableWidget_autobuses.setColumnCount(len(columnas))
             self.ui.QtableWidget_autobuses.setHorizontalHeaderLabels(columnas)
             
@@ -61,15 +61,16 @@ class ControladorPantallaAutobuses:
             # Configurar modos de redimensionamiento
             header.setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)      # Número
             header.setSectionResizeMode(1, QHeaderView.ResizeMode.Fixed)      # Matrícula
-            header.setSectionResizeMode(2, QHeaderView.ResizeMode.Stretch)    # Tipo Servicio
-            header.setSectionResizeMode(3, QHeaderView.ResizeMode.Stretch)    # Marca
-            header.setSectionResizeMode(4, QHeaderView.ResizeMode.Stretch)    # Modelo
-            header.setSectionResizeMode(5, QHeaderView.ResizeMode.Fixed)      # Asientos
+            header.setSectionResizeMode(2, QHeaderView.ResizeMode.Stretch)    # Marca
+            header.setSectionResizeMode(3, QHeaderView.ResizeMode.Stretch)    # Modelo
+            header.setSectionResizeMode(4, QHeaderView.ResizeMode.Fixed)      # Asientos
+            header.setSectionResizeMode(5, QHeaderView.ResizeMode.Fixed)      # Estado
             
             # Establecer anchos fijos para columnas específicas
-            self.ui.QtableWidget_autobuses.setColumnWidth(0, 120)   # Número (más ancho)
+            self.ui.QtableWidget_autobuses.setColumnWidth(0, 120)   # Número
             self.ui.QtableWidget_autobuses.setColumnWidth(1, 150)   # Matrícula
-            self.ui.QtableWidget_autobuses.setColumnWidth(5, 120)   # Asientos
+            self.ui.QtableWidget_autobuses.setColumnWidth(4, 120)   # Asientos
+            self.ui.QtableWidget_autobuses.setColumnWidth(5, 130)   # Estado
             
             # Deshabilitar edición de celdas
             self.ui.QtableWidget_autobuses.setEditTriggers(self.ui.QtableWidget_autobuses.EditTrigger.NoEditTriggers)
@@ -94,8 +95,8 @@ class ControladorPantallaAutobuses:
     def cargar_autobuses(self, filtro="TODOS"):
         
         try:
-            # Obtener autobuses del DAO
-            autobuses = self.autobus_dao.obtener_autobuses_activos(filtro)
+            # Obtener autobuses del DAO (ahora incluye ACTIVOS e INACTIVOS)
+            autobuses = self.autobus_dao.obtener_todos_autobuses(filtro)
             
             # Limpiar tabla
             self.ui.QtableWidget_autobuses.setRowCount(0)
@@ -104,13 +105,13 @@ class ControladorPantallaAutobuses:
             for i, autobus in enumerate(autobuses):
                 self.ui.QtableWidget_autobuses.insertRow(i)
                 
-                # Agregar datos centrados (sin Estado)
+                # Agregar datos: Número, Matrícula, Marca, Modelo, Asientos, Estado
                 self.agregar_item_tabla(i, 0, str(autobus.get_numero()), True)
                 self.agregar_item_tabla(i, 1, autobus.get_matricula(), True)
-                self.agregar_item_tabla(i, 2, autobus.get_tipoAutobus(), True)
-                self.agregar_item_tabla(i, 3, autobus.get_marca(), True)
-                self.agregar_item_tabla(i, 4, autobus.get_modelo(), True)
-                self.agregar_item_tabla(i, 5, str(autobus.get_cantAsientos()), True)
+                self.agregar_item_tabla(i, 2, autobus.get_marca(), True)
+                self.agregar_item_tabla(i, 3, autobus.get_modelo(), True)
+                self.agregar_item_tabla(i, 4, str(autobus.get_cantAsientos()), True)
+                self.agregar_item_tabla(i, 5, autobus.get_estado(), True)
                 
         except Exception as e:
             QMessageBox.critical(self.pantalla, "Error", f"Error al cargar autobuses: {str(e)}")

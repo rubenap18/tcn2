@@ -3,13 +3,65 @@ import mysql.connector
 from mysql.connector import Error
 from dao.conn import Connection
 from objetos.autobus import Autobus
+
 class AutobusDAO:
     def __init__(self):
         self._conexion = Connection.getConnection()
         self._marca_modelo_dao = MarcaModeloDAO()
     
+    def obtener_todos_autobuses(self, filtro_servicio="TODOS"):
+        """
+        Obtiene TODOS los autobuses (ACTIVOS e INACTIVOS) según el filtro de servicio
+        """
+        cursor = self._conexion.cursor(dictionary=True)
+        try:
+            query = """
+            SELECT a.numero, a.matricula, a.claveWIFI, a.cantAsientos, 
+                   ta.descripcion as tipoAutobus, ma.nombre as marca, 
+                   mo.nombre as modelo, ea.descripcion as estado
+            FROM autobus a
+            JOIN tipo_autobus ta ON a.tipoAutobus = ta.codigo
+            JOIN marca ma ON a.marca = ma.clave
+            JOIN modelo mo ON a.modelo = mo.clave
+            JOIN edo_autobus ea ON a.estado = ea.codigo
+            """
+            
+            params = []
+            where_added = False
+            
+            # Filtrar por tipo de servicio si no es "TODOS"
+            if filtro_servicio != "TODOS":
+                query += " WHERE ta.descripcion = %s"
+                params.append(filtro_servicio)
+                where_added = True
+            
+            query += " ORDER BY a.numero"
+            
+            cursor.execute(query, params)
+            resultados = cursor.fetchall()
+            
+            autobuses = []
+            for row in resultados:
+                autobus = Autobus()
+                autobus.set_numero(row['numero'])
+                autobus.set_matricula(row['matricula'])
+                autobus.set_claveWIFI(row['claveWIFI'])
+                autobus.set_cantAsientos(row['cantAsientos'])
+                autobus.set_tipoAutobus(row['tipoAutobus'])
+                autobus.set_marca(row['marca'])
+                autobus.set_modelo(row['modelo'])
+                autobus.set_estado(row['estado'])
+                autobuses.append(autobus)
+            
+            return autobuses
+            
+        finally:
+            cursor.close()
+    
     def obtener_autobuses_activos(self, filtro_servicio="TODOS"):
-        
+        """
+        Obtiene solo los autobuses ACTIVOS según el filtro de servicio
+        """
         cursor = self._conexion.cursor(dictionary=True)
         try:
             query = """
@@ -177,14 +229,20 @@ class AutobusDAO:
         
         cursor = self._conexion.cursor()
         try:
-            # Asumiendo que 'INA' es el código para INACTIVO
+            # 1. Verificar si tiene corridas futuras
+            if self.tiene_corridas_futuras(numero_autobus):
+                return (False, "Tiene corridas asignadas.")
+            
+            # 2. Dar de baja (cambiar estado a INACTIVO)
             query = "UPDATE autobus SET estado = 'INAC' WHERE numero = %s"
             cursor.execute(query, (numero_autobus,))
             self._conexion.commit()
-            return cursor.rowcount > 0
+            
+            return (True, None)
+            
         except Exception as e:
             self._conexion.rollback()
-            raise e
+            return (False, f"Error al dar de baja autobús: {str(e)}")
         finally:
             cursor.close()
     
@@ -236,29 +294,6 @@ class AutobusDAO:
             return cursor.fetchall()
         finally:
             cursor.close()
-
-    # REEMPLAZA el método dar_baja_autobus existente con este:
-    def dar_baja_autobus(self, numero_autobus):
-        
-        cursor = self._conexion.cursor()
-        try:
-            # 1. Verificar si tiene corridas futuras
-            if self.tiene_corridas_futuras(numero_autobus):
-                return (False, "Tiene corridas asignadas.")
-            
-            # 2. Dar de baja
-            query = "UPDATE autobus SET estado = 'INAC' WHERE numero = %s"
-            cursor.execute(query, (numero_autobus,))
-            self._conexion.commit()
-            
-            return (True, None)
-            
-        except Exception as e:
-            self._conexion.rollback()
-            return (False, f"Error al dar de baja autobús: {str(e)}")
-        finally:
-            cursor.close()
-    
     
     def listar_autobuses(self):
         autobuses = []
@@ -282,10 +317,6 @@ class AutobusDAO:
                 INNER JOIN marca AS m ON a.marca = m.clave
                 INNER JOIN modelo AS mo ON a.modelo = mo.clave
             """
-            # a.marca AS marca_clave,
-                    # a.modelo AS modelo_clave,
-                    # m.nombre AS marca_nombre,
-                    # mo.nombre AS modelo_nombre
             cursor.execute(query)
             resultados = cursor.fetchall()
 
@@ -303,7 +334,4 @@ class AutobusDAO:
         finally:
             if cursor:
                 cursor.close()
-            # Not closing the connection here because it's a Singleton
-            # and should be managed by the main application flow.
-            # Connection.closeConnection()
         return autobuses

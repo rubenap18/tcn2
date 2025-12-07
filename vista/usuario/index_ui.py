@@ -100,28 +100,6 @@ class Ui_pagina_inicio(object):
 "    background-color: #CC532A;   /* M\u00e1s oscuro para click */\n"
 "}")
         self.boton_viajar.setIconSize(QSize(30, 30))
-        self.boton_nosotros = QPushButton(pagina_inicio)
-        self.boton_nosotros.setObjectName(u"boton_nosotros")
-        self.boton_nosotros.setGeometry(QRect(1380, 890, 161, 61))
-        self.boton_nosotros.setFont(font1)
-        self.boton_nosotros.setStyleSheet(u"QPushButton{\n"
-"	background: rgb(255, 255, 255);\n"
-"	color:black;\n"
-"	border: 2px solid #1061C4;\n"
-"	color: #1061C4;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size:27px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(222, 221, 218);    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(192, 191, 188);     \n"
-"}")
-        self.boton_nosotros.setIconSize(QSize(30, 30))
         self.label_estatico_numdestinos = QLabel(pagina_inicio)
         self.label_estatico_numdestinos.setObjectName(u"label_estatico_numdestinos")
         self.label_estatico_numdestinos.setGeometry(QRect(180, 840, 41, 61))
@@ -188,28 +166,6 @@ class Ui_pagina_inicio(object):
         font6.setBold(True)
         font6.setItalic(True)
         self.label_estatico_viajatitulo.setFont(font6)
-        self.label_estatico_nuestroservicios = QPushButton(pagina_inicio)
-        self.label_estatico_nuestroservicios.setObjectName(u"label_estatico_nuestroservicios")
-        self.label_estatico_nuestroservicios.setGeometry(QRect(100, 600, 351, 71))
-        self.label_estatico_nuestroservicios.setFont(font)
-        self.label_estatico_nuestroservicios.setStyleSheet(u"QPushButton{\n"
-"	background: rgb(255, 255, 255);\n"
-"	color:#1061C4;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size:25px;\n"
-"	text-decoration: underline;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(222, 221, 218);    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(192, 191, 188);     \n"
-"}")
-        self.label_estatico_nuestroservicios.setIconSize(QSize(30, 30))
         self.label_estatico_pordescuento = QLabel(pagina_inicio)
         self.label_estatico_pordescuento.setObjectName(u"label_estatico_pordescuento")
         self.label_estatico_pordescuento.setGeometry(QRect(810, 840, 141, 61))
@@ -217,7 +173,7 @@ class Ui_pagina_inicio(object):
         self.label_estatico_pordescuento.setStyleSheet(u"color: rgb(255, 106, 54);")
         self.boton_blog = QPushButton(pagina_inicio)
         self.boton_blog.setObjectName(u"boton_blog")
-        self.boton_blog.setGeometry(QRect(1140, 890, 201, 61))
+        self.boton_blog.setGeometry(QRect(1340, 890, 201, 61))
         self.boton_blog.setFont(font1)
         self.boton_blog.setStyleSheet(u"QPushButton{\n"
 "	background: rgb(255, 255, 255);\n"
@@ -249,11 +205,11 @@ class Ui_pagina_inicio(object):
         font7.setItalic(True)
         font7.setKerning(True)
         self.label_estatico_pordescripcion.setFont(font7)
-        self.label_estatico_pordescripcion.setAlignment(Qt.AlignCenter)
+        self.label_estatico_pordescripcion.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_imagen_camion = QLabel(pagina_inicio)
         self.label_imagen_camion.setObjectName(u"label_imagen_camion")
         self.label_imagen_camion.setGeometry(QRect(920, 230, 941, 481))
-        self.label_imagen_camion.setPixmap(QPixmap(u"../recursos/recursos usuario/volvo 9800 blanco.png"))
+        self.label_imagen_camion.setPixmap(QPixmap(u"recursos/recursos_usuario/volvo 9800 blanco.png"))
         self.label_imagen_camion.setScaledContents(True)
         self.label_imagen_camion.setWordWrap(True)
         self.label_imagen_camion.setIndent(2)
@@ -279,7 +235,6 @@ class Ui_pagina_inicio(object):
         self.label_estatico_logo.setText("")
         self.boton_destinos.setText(QCoreApplication.translate("pagina_inicio", u"Destinos", None))
         self.boton_viajar.setText(QCoreApplication.translate("pagina_inicio", u"VIAJAR", None))
-        self.boton_nosotros.setText(QCoreApplication.translate("pagina_inicio", u"Nosotros", None))
         self.label_estatico_numdestinos.setText(QCoreApplication.translate("pagina_inicio", u"6 ", None))
         self.label_estatico_247.setText(QCoreApplication.translate("pagina_inicio", u"24/7", None))
         self.boton_contactanos.setText(QCoreApplication.translate("pagina_inicio", u"Contactanos", None))
@@ -289,7 +244,6 @@ class Ui_pagina_inicio(object):
 "una experiencia \u00fanica", None))
         self.label_estatico_disponibilidad.setText(QCoreApplication.translate("pagina_inicio", u"Disponibilidad", None))
         self.label_estatico_viajatitulo.setText(QCoreApplication.translate("pagina_inicio", u"Viaja por toda ", None))
-        self.label_estatico_nuestroservicios.setText(QCoreApplication.translate("pagina_inicio", u"Conoce nuestros servicios", None))
         self.label_estatico_pordescuento.setText(QCoreApplication.translate("pagina_inicio", u"50%", None))
         self.boton_blog.setText(QCoreApplication.translate("pagina_inicio", u"Nuestro blog", None))
         self.label_estatico_ndestinos.setText(QCoreApplication.translate("pagina_inicio", u"Destinos", None))
