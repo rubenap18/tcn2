@@ -662,6 +662,19 @@ QScrollBar::sub-line {
      </attribute>
      <column>
       <property name="text">
+       <string>Reservación</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignLeading|AlignVCenter</set>
+      </property>
+     </column>
+     <column>
+      <property name="text">
        <string>Fecha</string>
       </property>
       <property name="font">
