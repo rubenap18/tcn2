@@ -4,10 +4,6 @@ from vista.compartido.pantalla_viajar_ui import PantallaViajar
 from datetime import datetime
 
 class PantallaViajarWidget(QWidget):
-    """
-    Wrapper de pantalla_viajar_ui con lógica de negocio.
-    Este archivo es NUEVO y debe ser creado en vista/compartido/
-    """
     
     def __init__(self, app_manager, parent=None):
         super().__init__(parent)
@@ -164,13 +160,13 @@ class PantallaViajarWidget(QWidget):
             item.setTextAlignment(Qt.AlignCenter)
             self.ui.tableWidget.setItem(row_position, 3, item)
             
-            # Columna 4: Hora de llegada
-            item = QTableWidgetItem(str(corrida['hora_llegada']))
+            # Columna 4: Hora de salida
+            item = QTableWidgetItem(str(corrida['hora_salida']))
             item.setTextAlignment(Qt.AlignCenter)
             self.ui.tableWidget.setItem(row_position, 4, item)
             
-            # Columna 5: Hora de salida
-            item = QTableWidgetItem(str(corrida['hora_salida']))
+            # Columna 5: Hora de llegada
+            item = QTableWidgetItem(str(corrida['hora_llegada']))
             item.setTextAlignment(Qt.AlignCenter)
             self.ui.tableWidget.setItem(row_position, 5, item)
             

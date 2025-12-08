@@ -7,19 +7,19 @@ from PySide6.QtWidgets import (QDialog, QFrame, QGridLayout, QVBoxLayout,
 class SeleccionAsientoPlatino(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(650, 800)
+        Dialog.resize(650, 870)  # Aumentado para acomodar todo
         Dialog.setStyleSheet("background-color: #f5f5f5;")
         
-        # TÍTULO
+        # TÍTULO - Ajustado para que no se corte
         self.label_titulo = QLabel(Dialog)
-        self.label_titulo.setGeometry(QRect(50, 10, 550, 60))
-        self.label_titulo.setStyleSheet("font-size: 32pt; font-weight: bold; color: #9C27B0;")
+        self.label_titulo.setGeometry(QRect(20, 10, 610, 70))  # Más ancho
+        self.label_titulo.setStyleSheet("font-size: 26pt; font-weight: bold; color: #9C27B0;")  # Fuente reducida
         self.label_titulo.setAlignment(Qt.AlignCenter)
         self.label_titulo.setText("Selecciona tus Asientos - Platino")
         
-        # INFORMACIÓN DE LA CORRIDA
+        # INFORMACIÓN DE LA CORRIDA - Frame más alto y ancho
         self.frame_info = QFrame(Dialog)
-        self.frame_info.setGeometry(QRect(50, 80, 550, 120))
+        self.frame_info.setGeometry(QRect(20, 90, 610, 180))  # Aumentado aún más
         self.frame_info.setStyleSheet("""
             QFrame {
                 background-color: white;
@@ -29,29 +29,31 @@ class SeleccionAsientoPlatino(object):
             }
         """)
         
+        # Labels con más espacio
         self.label_numeroCorrida = QLabel(self.frame_info)
-        self.label_numeroCorrida.setGeometry(QRect(20, 10, 250, 30))
-        self.label_numeroCorrida.setStyleSheet("font-size: 14pt; color: #333;")
+        self.label_numeroCorrida.setGeometry(QRect(20, 20, 320, 40))  # Más grande
+        self.label_numeroCorrida.setStyleSheet("font-size: 13pt; color: #333;")  
         
         self.label_ciudadOrigen = QLabel(self.frame_info)
-        self.label_ciudadOrigen.setGeometry(QRect(20, 40, 250, 30))
-        self.label_ciudadOrigen.setStyleSheet("font-size: 14pt; color: #333;")
+        self.label_ciudadOrigen.setGeometry(QRect(20, 65, 320, 47))  
+        self.label_ciudadOrigen.setStyleSheet("font-size: 13pt; color: #333;")  
         
         self.label_ciudadDestino = QLabel(self.frame_info)
-        self.label_ciudadDestino.setGeometry(QRect(20, 70, 250, 30))
-        self.label_ciudadDestino.setStyleSheet("font-size: 14pt; color: #333;")
+        self.label_ciudadDestino.setGeometry(QRect(20, 120, 320, 47))  
+        self.label_ciudadDestino.setStyleSheet("font-size: 13pt; color: #333;")  
         
+        # Labels columna derecha - Con más espacio
         self.label_fechaHoraSalida = QLabel(self.frame_info)
-        self.label_fechaHoraSalida.setGeometry(QRect(290, 25, 240, 30))
-        self.label_fechaHoraSalida.setStyleSheet("font-size: 13pt; color: #666;")
+        self.label_fechaHoraSalida.setGeometry(QRect(350, 35, 240, 50))  
+        self.label_fechaHoraSalida.setStyleSheet("font-size: 12pt; color: #666;")  
         
         self.label_numeroAutobus = QLabel(self.frame_info)
-        self.label_numeroAutobus.setGeometry(QRect(290, 60, 150, 30))
-        self.label_numeroAutobus.setStyleSheet("font-size: 13pt; color: #666;")
+        self.label_numeroAutobus.setGeometry(QRect(350, 90, 240, 50))  
+        self.label_numeroAutobus.setStyleSheet("font-size: 15pt; color: #666;")  
         
-        # LEYENDA
+        # LEYENDA - Ajustada posición
         self.frame_leyenda = QFrame(Dialog)
-        self.frame_leyenda.setGeometry(QRect(50, 210, 550, 50))
+        self.frame_leyenda.setGeometry(QRect(20, 280, 610, 50))  # Ajustado después del frame_info más grande
         self.frame_leyenda.setStyleSheet("background-color: white; border-radius: 5px;")
         
         layout_leyenda = QHBoxLayout(self.frame_leyenda)
@@ -105,9 +107,9 @@ class SeleccionAsientoPlatino(object):
         layout_leyenda.addWidget(self.btn_leyenda_seleccionado)
         layout_leyenda.addWidget(self.btn_leyenda_ocupado)
         
-        # FRAME DE ASIENTOS
+        # FRAME DE ASIENTOS - Ajustado posición
         self.frame_asientos = QFrame(Dialog)
-        self.frame_asientos.setGeometry(QRect(120, 280, 410, 450))
+        self.frame_asientos.setGeometry(QRect(120, 340, 410, 450))  # Ajustado Y
         self.frame_asientos.setStyleSheet("""
             QFrame {
                 background-color: white;
@@ -191,9 +193,9 @@ class SeleccionAsientoPlatino(object):
             if posicion_en_fila == 3:
                 row += 1
         
-        # BOTONES DE ACCIÓN
+        # BOTONES DE ACCIÓN - Ajustado posición
         self.frame_botones = QFrame(Dialog)
-        self.frame_botones.setGeometry(QRect(150, 740, 350, 60))
+        self.frame_botones.setGeometry(QRect(150, 800, 350, 60))  # Ajustado Y
         self.layout_botones = QHBoxLayout(self.frame_botones)
         
         self.boton_cancelar = QPushButton(self.frame_botones)
