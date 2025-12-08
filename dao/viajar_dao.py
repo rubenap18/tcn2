@@ -8,8 +8,7 @@ class ViajarDAO:
     def __init__(self):
         pass
     
-    # ==================== BÚSQUEDA DE CORRIDAS ====================
-    
+    #BÚSQUEDA DE CORRIDAS
     def obtener_corridas_disponibles(self, ciudad_origen, ciudad_destino, fecha, num_pasajeros):
         
         
@@ -20,7 +19,7 @@ class ViajarDAO:
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
-                raise Error('No se puede establecer conexión con la BD.')
+                raise Error('No se puede establecer conexión con la BD')
             
             cursor = conn.cursor(dictionary=True)
             
@@ -159,7 +158,7 @@ class ViajarDAO:
         
         return fechas
     
-    # ==================== ASIENTOS ====================
+    # ASIENTOS 
     
     def obtener_asientos_disponibles(self, numero_corrida):
         
@@ -226,7 +225,7 @@ class ViajarDAO:
             if cursor:
                 cursor.close()
     
-    # ==================== CÁLCULO DE PRECIOS ====================
+    #  CÁLCULO DE PRECIOS 
     
     def calcular_tipo_pasajero(self, fecha_nacimiento):
         
@@ -259,7 +258,7 @@ class ViajarDAO:
         precio_final = tarifa_base - descuento
         return (precio_final, descuento)
     
-    # ==================== PROCESO DE COMPRA COMPLETO ====================
+    #  PROCESO DE COMPRA COMPLETO 
     
     def procesar_compra_boletos(self, datos_compra, usuario_id=None):
        
@@ -448,7 +447,7 @@ class ViajarDAO:
             if cursor:
                 cursor.close()
     
-    # ==================== CONSULTAS DE RESERVACIONES ====================
+    #  CONSULTAS DE RESERVACIONES 
     
     def obtener_boletos_reservacion(self, numero_reservacion):
         """
@@ -498,7 +497,7 @@ class ViajarDAO:
             cursor.execute(query, (numero_reservacion, numero_reservacion))
             boletos = cursor.fetchall()
             
-            print(f"✓ Encontrados {len(boletos)} boletos para reservación #{numero_reservacion}")
+            print(f"Encontrados {len(boletos)} boletos para reservación no. {numero_reservacion}")
             
         except Error as e:
             print(f'Error en ViajarDAO.obtener_boletos_reservacion: {e}')

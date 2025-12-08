@@ -439,9 +439,9 @@ class PantallaViajar(object):
         ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("Form", u"Servicio", None));
         ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("Form", u"Hora de llegada", None));
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("Form", u"Hora de salida", None));
         ___qtablewidgetitem5 = self.tableWidget.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("Form", u"Hora de salida", None));
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("Form", u"Hora de llegada", None));
         ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("Form", u"Lugares disponibles", None));
         ___qtablewidgetitem7 = self.tableWidget.horizontalHeaderItem(7)
