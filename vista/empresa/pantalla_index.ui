@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1920</width>
-    <height>1095</height>
+    <height>1102</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -424,8 +424,8 @@ QPushButton:pressed {
   <widget class="QLabel" name="label_estatico_operadores">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>646</y>
+     <x>1200</x>
+     <y>650</y>
      <width>318</width>
      <height>68</height>
     </rect>
@@ -444,138 +444,9 @@ QPushButton:pressed {
   <widget class="QTableWidget" name="QtableWidget_operadores">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>720</y>
-     <width>751</width>
-     <height>281</height>
-    </rect>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::LayoutDirection::LeftToRight</enum>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QTableView {
-    background: #ffffff;
-    border: 2px solid #e6e8ec;
-    border-radius: 8px;
-    gridline-color: #f1f1f3;
-    selection-background-color: #e8f0fe;
-    selection-color: #1a1a1a;
-    font-size: 18px;
-    color: #333;
-    alternate-background-color: #fafbff;
-    show-grid: false;
-}
-
-QTableView::item {
-    padding: 8px 12px;
-    border: 0px;
-}
-
-QTableView::item:hover {
-    background: #f5f8ff;
-}
-
-QTableView::item:selected {
-    background: #e2edff;
-    color: #1a1a1a;
-}
-
-QHeaderView::section {
-    background: #ffffff;
-    color: #6b7280;
-    padding: 10px 12px;
-    border: 0;
-    border-bottom: 2px solid #e6e8ec;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-QHeaderView::section:hover {
-    background: #f7f9fc;
-}
-
-QHeaderView {
-    background: #ffffff;
-    border: 0;
-}
-
-QTableView::indicator {
-    width: 18px;
-    height: 18px;
-}
-
-QHeaderView::section:first {
-    border-top-left-radius: 15px;
-}
-
-QHeaderView::section:last {
-    border-top-right-radius: 15px;
-}
-
-
-QScrollBar:vertical {
-    background: transparent;
-    width: 10px;
-    margin: 0px;
-}
-
-QScrollBar::handle:vertical {
-    background: #cfd3da;
-    min-height: 25px;
-    border-radius: 5px;
-}
-
-QScrollBar::handle:vertical:hover {
-    background: #b5bac4;
-}
-
-QScrollBar::add-line,
-QScrollBar::sub-line {
-    background: none;
-    height: 0px;
-}
-</string>
-   </property>
-   <property name="verticalScrollBarPolicy">
-    <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-   </property>
-   <property name="horizontalScrollBarPolicy">
-    <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-   </property>
-   <attribute name="horizontalHeaderDefaultSectionSize">
-    <number>187</number>
-   </attribute>
-   <attribute name="verticalHeaderVisible">
-    <bool>false</bool>
-   </attribute>
-   <column>
-    <property name="text">
-     <string>N° Operador</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Nombre</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Corrida asignada</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Fecha de corrida</string>
-    </property>
-   </column>
-  </widget>
-  <widget class="QTableWidget" name="QtableWidget_corridasact">
-   <property name="geometry">
-    <rect>
-     <x>42</x>
-     <y>340</y>
-     <width>751</width>
+     <x>1200</x>
+     <y>730</y>
+     <width>681</width>
      <height>291</height>
     </rect>
    </property>
@@ -673,119 +544,29 @@ QScrollBar::sub-line {
     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
    </property>
    <attribute name="horizontalHeaderDefaultSectionSize">
-    <number>187</number>
+    <number>338</number>
    </attribute>
    <attribute name="verticalHeaderVisible">
     <bool>false</bool>
    </attribute>
    <column>
     <property name="text">
-     <string>N° Corrida</string>
+     <string>N° Operador</string>
     </property>
    </column>
    <column>
     <property name="text">
-     <string>Fecha</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Hora Salida</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Ruta</string>
+     <string>Nombre</string>
     </property>
    </column>
   </widget>
-  <widget class="QLabel" name="label_estatico_corridas">
+  <widget class="QTableWidget" name="QtableWidget_corridasact">
    <property name="geometry">
     <rect>
-     <x>43</x>
-     <y>260</y>
-     <width>448</width>
-     <height>68</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>41</pointsize>
-     <italic>true</italic>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Corridas activas</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox_bfecha">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>280</y>
-     <width>241</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>-1</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-QComboBox {
-    background-color: #ffffff;
-    border: 2px solid #dcdfe6;
-    border-radius: 6px;
-    padding: 6px 12px;
-    font-size: 18px;
-    color: #606266;
-    min-height: 18px;
-}
-
-QComboBox:hover {
-    border-color: #c0c4cc;
-}
-
-QComboBox:focus {
-    border-color: #409eff;
-}
-
-QComboBox::drop-down {
-    border: none;
-    width: 25px;
-}
-
-QComboBox::down-arrow {
-    image: none;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 4px solid #909399;
-}
-
-QComboBox QAbstractItemView {
-    border: 1px solid #dcdfe6;
-    border-radius: 6px;
-    background-color: white;
-    outline: none;
-    selection-background-color: #409eff;
-    selection-color: white;
-}
-</string>
-   </property>
-   <property name="placeholderText">
-    <string>Buscar por fecha</string>
-   </property>
-  </widget>
-  <widget class="QTableWidget" name="QtableWidget_pasajeros">
-   <property name="geometry">
-    <rect>
-     <x>830</x>
+     <x>52</x>
      <y>340</y>
-     <width>1051</width>
-     <height>661</height>
+     <width>1111</width>
+     <height>291</height>
     </rect>
    </property>
    <property name="layoutDirection">
@@ -882,14 +663,233 @@ QScrollBar::sub-line {
     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
    </property>
    <attribute name="horizontalHeaderDefaultSectionSize">
-    <number>262</number>
+    <number>221</number>
    </attribute>
    <attribute name="verticalHeaderVisible">
     <bool>false</bool>
    </attribute>
    <column>
     <property name="text">
-     <string>N° Pasajero</string>
+     <string>N° Corrida</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Fecha y Hora Salida</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Origen</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Destino</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Autobus</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QLabel" name="label_estatico_corridas">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>260</y>
+     <width>448</width>
+     <height>68</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>41</pointsize>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Corridas activas</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_bfecha">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>280</y>
+     <width>241</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QComboBox {
+    background-color: #ffffff;
+    border: 2px solid #dcdfe6;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 18px;
+    color: #606266;
+    min-height: 18px;
+}
+
+QComboBox:hover {
+    border-color: #c0c4cc;
+}
+
+QComboBox:focus {
+    border-color: #409eff;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 25px;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #909399;
+}
+
+QComboBox QAbstractItemView {
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    background-color: white;
+    outline: none;
+    selection-background-color: #409eff;
+    selection-color: white;
+}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>Buscar por fecha</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="QtableWidget_pasajeros">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>730</y>
+     <width>1111</width>
+     <height>291</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTableView {
+    background: #ffffff;
+    border: 2px solid #e6e8ec;
+    border-radius: 8px;
+    gridline-color: #f1f1f3;
+    selection-background-color: #e8f0fe;
+    selection-color: #1a1a1a;
+    font-size: 18px;
+    color: #333;
+    alternate-background-color: #fafbff;
+    show-grid: false;
+}
+
+QTableView::item {
+    padding: 8px 12px;
+    border: 0px;
+}
+
+QTableView::item:hover {
+    background: #f5f8ff;
+}
+
+QTableView::item:selected {
+    background: #e2edff;
+    color: #1a1a1a;
+}
+
+QHeaderView::section {
+    background: #ffffff;
+    color: #6b7280;
+    padding: 10px 12px;
+    border: 0;
+    border-bottom: 2px solid #e6e8ec;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+QHeaderView::section:hover {
+    background: #f7f9fc;
+}
+
+QHeaderView {
+    background: #ffffff;
+    border: 0;
+}
+
+QTableView::indicator {
+    width: 18px;
+    height: 18px;
+}
+
+QHeaderView::section:first {
+    border-top-left-radius: 15px;
+}
+
+QHeaderView::section:last {
+    border-top-right-radius: 15px;
+}
+
+
+QScrollBar:vertical {
+    background: transparent;
+    width: 10px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #cfd3da;
+    min-height: 25px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #b5bac4;
+}
+
+QScrollBar::add-line,
+QScrollBar::sub-line {
+    background: none;
+    height: 0px;
+}
+</string>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+   </property>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>276</number>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>N° boleto</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>N° Asiento</string>
     </property>
    </column>
    <column>
@@ -902,17 +902,12 @@ QScrollBar::sub-line {
      <string>Edad</string>
     </property>
    </column>
-   <column>
-    <property name="text">
-     <string>Telefono</string>
-    </property>
-   </column>
   </widget>
   <widget class="QLabel" name="label_estatico_pasajeros">
    <property name="geometry">
     <rect>
-     <x>840</x>
-     <y>261</y>
+     <x>50</x>
+     <y>650</y>
      <width>269</width>
      <height>68</height>
     </rect>
@@ -928,6 +923,128 @@ QScrollBar::sub-line {
     <string>Pasajeros</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="boton_boletospasajeros">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>650</y>
+     <width>221</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background: #1061C4;
+	color:WHITE;
+	border:none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+QPushButton:hover {
+    background-color: #0D4FAB;    
+}
+
+QPushButton:pressed {
+    background-color: #0A3F8A;     
+}</string>
+   </property>
+   <property name="text">
+    <string>Boletos</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>recursos/recursos_empresa/boleto.png</normaloff>recursos/recursos_empresa/boleto.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="boton_corridasoperadores">
+   <property name="geometry">
+    <rect>
+     <x>1630</x>
+     <y>650</y>
+     <width>221</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background: #1061C4;
+	color:WHITE;
+	border:none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+QPushButton:hover {
+    background-color: #0D4FAB;    
+}
+
+QPushButton:pressed {
+    background-color: #0A3F8A;     
+}</string>
+   </property>
+   <property name="text">
+    <string>Corridas</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>recursos/recursos_empresa/boleto.png</normaloff>recursos/recursos_empresa/boleto.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>1280</x>
+     <y>335</y>
+     <width>506</width>
+     <height>326</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../recursos/recursos_usuario/image(1).png</pixmap>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>header_corridas</zorder>
+  <zorder>widget_opfiltro_2</zorder>
+  <zorder>label_estatico_operadores</zorder>
+  <zorder>QtableWidget_operadores</zorder>
+  <zorder>QtableWidget_corridasact</zorder>
+  <zorder>label_estatico_corridas</zorder>
+  <zorder>comboBox_bfecha</zorder>
+  <zorder>QtableWidget_pasajeros</zorder>
+  <zorder>label_estatico_pasajeros</zorder>
+  <zorder>boton_boletospasajeros</zorder>
+  <zorder>boton_corridasoperadores</zorder>
  </widget>
  <resources/>
  <connections/>

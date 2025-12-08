@@ -31,15 +31,29 @@ class IndexDAO:
         
         try:
             comando = """
-            SELECT c.numero as numero, c.fecha, c.hora_salida as horasalida, 
-                   c.ruta as ruta
-            FROM corrida c 
+            SELECT
+                c.numero AS numero_viaje,
+                CONCAT(c.fecha, ' ', c.hora_salida) AS fecha_hora_salida,
+                ro.nombre AS ciudad_origen,
+                rd.nombre AS ciudad_destino,
+                a.numero AS autobus_numero
+            FROM
+                corrida c
+            JOIN
+                ruta r ON c.ruta = r.codigo
+            JOIN
+                ciudad ro ON r.ciudadOrigen = ro.codigo
+            JOIN
+                ciudad rd ON r.ciudadDestino = rd.codigo
+            JOIN
+                autobus a ON c.autobus = a.numero
             ORDER BY c.fecha, c.hora_salida
             """
             
-            cursor = self.db.cursor()
+            cursor = self.db.cursor(dictionary=True)
             cursor.execute(comando)
             corridas = cursor.fetchall()
+            
             cursor.close()
             return corridas
                 
@@ -51,21 +65,18 @@ class IndexDAO:
         
         try:
             comando = """
-            SELECT
-                op.numero,
-                CONCAT(op.nombre, ' ', op.apellPat, ' ', op.apellMat) AS nombre_completo_operador,
-                c.ruta AS ruta_corrida,
-                c.fecha AS fecha_corrida
+            SELECT DISTINCT
+                op.numero AS numero_operador,
+                CONCAT(op.nombre, ' ', op.apellPat, ' ', COALESCE(op.apellMat, '')) AS nombre_completo_operador
             FROM operador op
-            JOIN corrida c ON op.numero = c.operador
-            ORDER BY op.numero, c.fecha DESC
+            ORDER BY op.numero
             """
             
-            cursor = self.db.cursor()
+            cursor = self.db.cursor(dictionary=True) # Added dictionary=True
             cursor.execute(comando)
-            operadores_corridas = cursor.fetchall()
+            operadores = cursor.fetchall() # Changed variable name for clarity
             cursor.close()
-            return operadores_corridas
+            return operadores
                 
         except Error as e:
             print(f"Error en IndexDAO.cargar_operadores_con_corridas_dashboard: {e}")
@@ -75,17 +86,22 @@ class IndexDAO:
         
         try:
             comando = """
-            SELECT p.numero, p.nombre, p.apellPat, p.apellMat, 
-                   TIMESTAMPDIFF(YEAR, p.fechaNac, CURDATE()) as edad,
-                   p.telefono
+            SELECT
+                r.numero AS numero_boleto,
+                a.numero AS numero_asiento,
+                CONCAT(p.nombre, ' ', p.apellPat, ' ', COALESCE(p.apellMat, '')) AS nombre_pasajero,
+                TIMESTAMPDIFF(YEAR, p.fechaNac, CURDATE()) AS edad
             FROM pasajero p
             JOIN reservacion r ON p.numero = r.pasajero
+            JOIN asiento_reservacion ar ON r.numero = ar.reservacion
+            JOIN asiento a ON ar.asiento = a.clave
             WHERE r.corrida = %s
-            ORDER BY p.numero
+            ORDER BY r.numero
             """
-            cursor = self.db.cursor()
+            cursor = self.db.cursor(dictionary=True) # Added dictionary=True
             cursor.execute(comando, (corrida_id,))
             pasajeros = cursor.fetchall()
+            print(f"DEBUG: Pasajeros fetched for corrida_id {corrida_id}: {pasajeros}") # DEBUG
             cursor.close()
             return pasajeros
         except Error as e:
