@@ -37,15 +37,24 @@ class PantallaIndex(QWidget):
         self.setLayout(layout)
 
         # Configurar las tablas para que no sean editables y los datos estén centrados
+        self.ui.QtableWidget_operadores.setColumnCount(2) # Set column count to 2
+        self.ui.QtableWidget_operadores.setHorizontalHeaderLabels(["Número", "Nombre Completo"])
         self.ui.QtableWidget_operadores.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.ui.QtableWidget_operadores.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.ui.QtableWidget_operadores.setSelectionBehavior(QAbstractItemView.SelectRows)
 
-        self.ui.QtableWidget_corridasact.setColumnCount(4) # Set column count
+        self.ui.QtableWidget_corridasact.setColumnCount(5) # Set column count
+        self.ui.QtableWidget_corridasact.setHorizontalHeaderLabels([
+            "Corrida", "Fecha y Hora de Salida", "Origen", "Destino", "Autobus"
+        ])
         self.ui.QtableWidget_corridasact.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        # Set specific resize mode for the "Fecha y Hora de Salida" column (index 1)
+        self.ui.QtableWidget_corridasact.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeToContents)
         self.ui.QtableWidget_corridasact.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.ui.QtableWidget_corridasact.setSelectionBehavior(QAbstractItemView.SelectRows)
         
+        self.ui.QtableWidget_pasajeros.setColumnCount(4) # Set column count to 4
+        self.ui.QtableWidget_pasajeros.setHorizontalHeaderLabels(["Boleto", "Asiento", "Pasajero", "Edad"])
         self.ui.QtableWidget_pasajeros.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.ui.QtableWidget_pasajeros.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.ui.QtableWidget_pasajeros.setSelectionBehavior(QAbstractItemView.SelectRows)
@@ -58,9 +67,17 @@ class PantallaIndex(QWidget):
         self.ui.QtableWidget_corridasact.itemClicked.connect(self._on_corrida_selected)
 
     def cargar_datos_dashboard(self):
-        self.cargar_pasajeros_dashboard()
+        # The passenger table is now populated via corrida selection, so no direct load here
         self.cargar_corridas_dashboard()
         self.cargar_operadores_dashboard()
+        
+        # Automatically select the first corrida to populate the passenger table
+        if self.ui.QtableWidget_corridasact.rowCount() > 0:
+            self.ui.QtableWidget_corridasact.selectRow(0)
+            # Manually trigger the itemClicked signal for the first row
+            first_item = self.ui.QtableWidget_corridasact.item(0, 0)
+            if first_item:
+                self._on_corrida_selected(first_item)
     
     def _on_corrida_selected(self, item):
         fila_seleccionada = item.row()
@@ -76,66 +93,35 @@ class PantallaIndex(QWidget):
 
             if pasajeros_data:
                 for fila_idx, pasajero in enumerate(pasajeros_data):
-                    numero, nombre, apellPat, apellMat, edad, telefono = pasajero
                     self.ui.QtableWidget_pasajeros.insertRow(fila_idx)
                     
-                    item_numero = QTableWidgetItem(str(numero))
-                    item_numero.setTextAlignment(Qt.AlignCenter)
-                    item_numero.setFont(font_bold)
-                    self.ui.QtableWidget_pasajeros.setItem(fila_idx, 0, item_numero)
+                    # Column 0: Numero Boleto
+                    item_boleto = QTableWidgetItem(str(pasajero['numero_boleto']))
+                    item_boleto.setTextAlignment(Qt.AlignCenter)
+                    item_boleto.setFont(font_bold)
+                    self.ui.QtableWidget_pasajeros.setItem(fila_idx, 0, item_boleto)
                     
-                    item_nombre_completo = QTableWidgetItem(f"{nombre} {apellPat} {apellMat}")
-                    item_nombre_completo.setTextAlignment(Qt.AlignCenter)
-                    item_nombre_completo.setFont(font_bold)
-                    self.ui.QtableWidget_pasajeros.setItem(fila_idx, 1, item_nombre_completo)
+                    # Column 1: Numero Asiento
+                    item_asiento = QTableWidgetItem(str(pasajero['numero_asiento']))
+                    item_asiento.setTextAlignment(Qt.AlignCenter)
+                    item_asiento.setFont(font_bold)
+                    self.ui.QtableWidget_pasajeros.setItem(fila_idx, 1, item_asiento)
                     
-                    item_edad = QTableWidgetItem(str(edad))
+                    # Column 2: Nombre Pasajero
+                    item_nombre_pasajero = QTableWidgetItem(pasajero['nombre_pasajero'])
+                    item_nombre_pasajero.setTextAlignment(Qt.AlignCenter)
+                    item_nombre_pasajero.setFont(font_bold)
+                    self.ui.QtableWidget_pasajeros.setItem(fila_idx, 2, item_nombre_pasajero)
+                    
+                    # Column 3: Edad
+                    item_edad = QTableWidgetItem(str(pasajero['edad']))
                     item_edad.setTextAlignment(Qt.AlignCenter)
                     item_edad.setFont(font_bold)
-                    self.ui.QtableWidget_pasajeros.setItem(fila_idx, 2, item_edad)
-                    
-                    item_telefono = QTableWidgetItem(telefono)
-                    item_telefono.setTextAlignment(Qt.AlignCenter)
-                    item_telefono.setFont(font_bold)
-                    self.ui.QtableWidget_pasajeros.setItem(fila_idx, 3, item_telefono)
+                    self.ui.QtableWidget_pasajeros.setItem(fila_idx, 3, item_edad)
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Error al cargar pasajeros por corrida: {e}")
 
-    def cargar_pasajeros_dashboard(self):
-        try:
-            pasajeros_data = self.controlador.obtener_pasajeros_dashboard()
-            self.ui.QtableWidget_pasajeros.setRowCount(0)
-            
-            font_bold = QFont()
-            font_bold.setBold(True)
 
-            if pasajeros_data:
-                for fila_idx, pasajero in enumerate(pasajeros_data):
-                    numero, nombre, apellPat, apellMat, edad, telefono = pasajero
-                    self.ui.QtableWidget_pasajeros.insertRow(fila_idx)
-                    
-                    item_numero = QTableWidgetItem(str(numero))
-                    item_numero.setTextAlignment(Qt.AlignCenter)
-                    item_numero.setFont(font_bold)
-                    self.ui.QtableWidget_pasajeros.setItem(fila_idx, 0, item_numero)
-                    
-                    item_nombre_completo = QTableWidgetItem(f"{nombre} {apellPat} {apellMat}")
-                    item_nombre_completo.setTextAlignment(Qt.AlignCenter)
-                    item_nombre_completo.setFont(font_bold)
-                    self.ui.QtableWidget_pasajeros.setItem(fila_idx, 1, item_nombre_completo)
-                    
-                    item_edad = QTableWidgetItem(str(edad))
-                    item_edad.setTextAlignment(Qt.AlignCenter)
-                    item_edad.setFont(font_bold)
-                    self.ui.QtableWidget_pasajeros.setItem(fila_idx, 2, item_edad)
-                    
-                    item_telefono = QTableWidgetItem(telefono)
-                    item_telefono.setTextAlignment(Qt.AlignCenter)
-                    item_telefono.setFont(font_bold)
-                    self.ui.QtableWidget_pasajeros.setItem(fila_idx, 3, item_telefono)
-                    
-        except Exception as e:
-            QMessageBox.critical(self, "Error", f"Error al cargar pasajeros dashboard: {e}")
 
     def cargar_corridas_dashboard(self):
         try:
@@ -149,7 +135,8 @@ class PantallaIndex(QWidget):
         self.ui.comboBox_bfecha.clear()
         self.ui.comboBox_bfecha.addItem("Todas las fechas")
         
-        unique_dates = sorted(list(set([corrida[1].strftime("%Y-%m-%d") for corrida in corridas_data])))
+        # Extract date part from 'fecha_hora_salida' string (e.g., "YYYY-MM-DD HH:MM:SS" -> "YYYY-MM-DD")
+        unique_dates = sorted(list(set([corrida['fecha_hora_salida'].split(' ')[0] for corrida in corridas_data])))
         for date_str in unique_dates:
             self.ui.comboBox_bfecha.addItem(date_str)
 
@@ -161,28 +148,37 @@ class PantallaIndex(QWidget):
         
         if corridas_to_display:
             for fila_idx, corrida in enumerate(corridas_to_display):
-                numero, fecha, hora_salida, ruta = corrida
                 self.ui.QtableWidget_corridasact.insertRow(fila_idx)
                 
-                item_numero = QTableWidgetItem(str(numero))
+                # Column 0: Corrida (numero_viaje)
+                item_numero = QTableWidgetItem(str(corrida['numero_viaje']))
                 item_numero.setTextAlignment(Qt.AlignCenter)
                 item_numero.setFont(font_bold)
                 self.ui.QtableWidget_corridasact.setItem(fila_idx, 0, item_numero)
                 
-                item_fecha = QTableWidgetItem(fecha.strftime("%Y-%m-%d"))
-                item_fecha.setTextAlignment(Qt.AlignCenter)
-                item_fecha.setFont(font_bold)
-                self.ui.QtableWidget_corridasact.setItem(fila_idx, 1, item_fecha)
+                # Column 1: Fecha y Hora de Salida (fecha_hora_salida)
+                item_fecha_hora_salida = QTableWidgetItem(corrida['fecha_hora_salida'])
+                item_fecha_hora_salida.setTextAlignment(Qt.AlignCenter)
+                item_fecha_hora_salida.setFont(font_bold)
+                self.ui.QtableWidget_corridasact.setItem(fila_idx, 1, item_fecha_hora_salida)
                 
-                item_hora_salida = QTableWidgetItem(str(hora_salida).split('.')[0])
-                item_hora_salida.setTextAlignment(Qt.AlignCenter)
-                item_hora_salida.setFont(font_bold)
-                self.ui.QtableWidget_corridasact.setItem(fila_idx, 2, item_hora_salida)
+                # Column 2: Origen (ciudad_origen)
+                item_origen = QTableWidgetItem(corrida['ciudad_origen'])
+                item_origen.setTextAlignment(Qt.AlignCenter)
+                item_origen.setFont(font_bold)
+                self.ui.QtableWidget_corridasact.setItem(fila_idx, 2, item_origen)
                 
-                item_ruta = QTableWidgetItem(ruta)
-                item_ruta.setTextAlignment(Qt.AlignCenter)
-                item_ruta.setFont(font_bold)
-                self.ui.QtableWidget_corridasact.setItem(fila_idx, 3, item_ruta)
+                # Column 3: Destino (ciudad_destino)
+                item_destino = QTableWidgetItem(corrida['ciudad_destino'])
+                item_destino.setTextAlignment(Qt.AlignCenter)
+                item_destino.setFont(font_bold)
+                self.ui.QtableWidget_corridasact.setItem(fila_idx, 3, item_destino)
+                
+                # Column 4: Autobus (autobus_numero)
+                item_autobus = QTableWidgetItem(str(corrida['autobus_numero']))
+                item_autobus.setTextAlignment(Qt.AlignCenter)
+                item_autobus.setFont(font_bold)
+                self.ui.QtableWidget_corridasact.setItem(fila_idx, 4, item_autobus)
 
     def _filter_corridas_by_fecha(self):
         selected_text = self.ui.comboBox_bfecha.currentText()
@@ -190,10 +186,11 @@ class PantallaIndex(QWidget):
         if selected_text == "Todas las fechas":
             corridas_to_display = self.all_corridas_data
         else:
-            corridas_to_display = [corrida for corrida in self.all_corridas_data if corrida[1].strftime("%Y-%m-%d") == selected_text]
+            # Filter by the date part of 'fecha_hora_salida'
+            corridas_to_display = [corrida for corrida in self.all_corridas_data if corrida['fecha_hora_salida'].split(' ')[0] == selected_text]
 
-        # Sort the corridas_to_display by hora_salida (which is at index 2 in the tuple)
-        corridas_to_display.sort(key=lambda x: x[2])
+        # Sort the corridas_to_display by fecha_hora_salida
+        corridas_to_display.sort(key=lambda x: x['fecha_hora_salida'])
         self._display_corridas_in_table(corridas_to_display)
 
     def cargar_operadores_dashboard(self):
@@ -204,38 +201,21 @@ class PantallaIndex(QWidget):
             font_bold = QFont()
             font_bold.setBold(True)
             
-            last_operator_numero = None
-
             if operadores_data:
                 for fila_idx, operador in enumerate(operadores_data):
-                    numero, nombre_completo, ruta_corrida, fecha_corrida = operador
                     self.ui.QtableWidget_operadores.insertRow(fila_idx)
                     
-                    # Display operator number and name only if it's a new operator
-                    if numero != last_operator_numero:
-                        item_numero = QTableWidgetItem(str(numero))
-                        item_numero.setTextAlignment(Qt.AlignCenter)
-                        item_numero.setFont(font_bold)
-                        self.ui.QtableWidget_operadores.setItem(fila_idx, 0, item_numero)
-                        
-                        item_nombre_completo = QTableWidgetItem(nombre_completo)
-                        item_nombre_completo.setTextAlignment(Qt.AlignCenter)
-                        item_nombre_completo.setFont(font_bold)
-                        self.ui.QtableWidget_operadores.setItem(fila_idx, 1, item_nombre_completo)
-                        last_operator_numero = numero
-                    else:
-                        # For repeated operators, leave the cells empty
-                        self.ui.QtableWidget_operadores.setItem(fila_idx, 0, QTableWidgetItem(""))
-                        self.ui.QtableWidget_operadores.setItem(fila_idx, 1, QTableWidgetItem(""))
+                    # Column 0: Numero Operador
+                    item_numero = QTableWidgetItem(str(operador['numero_operador']))
+                    item_numero.setTextAlignment(Qt.AlignCenter)
+                    item_numero.setFont(font_bold)
+                    self.ui.QtableWidget_operadores.setItem(fila_idx, 0, item_numero)
                     
-                    item_ruta = QTableWidgetItem(ruta_corrida)
-                    item_ruta.setTextAlignment(Qt.AlignCenter)
-                    item_ruta.setFont(font_bold)
-                    self.ui.QtableWidget_operadores.setItem(fila_idx, 2, item_ruta)
+                    # Column 1: Nombre Completo
+                    item_nombre_completo = QTableWidgetItem(operador['nombre_completo_operador'])
+                    item_nombre_completo.setTextAlignment(Qt.AlignCenter)
+                    item_nombre_completo.setFont(font_bold)
+                    self.ui.QtableWidget_operadores.setItem(fila_idx, 1, item_nombre_completo)
                     
-                    item_fecha = QTableWidgetItem(str(fecha_corrida))
-                    item_fecha.setTextAlignment(Qt.AlignCenter)
-                    item_fecha.setFont(font_bold)
-                    self.ui.QtableWidget_operadores.setItem(fila_idx, 3, item_fecha)
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Error al cargar operadores dashboard: {e}")
