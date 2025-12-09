@@ -49,7 +49,7 @@ from controladores.controlador_pantalla_operadores import ControladorPantallaOpe
 from controladores.controlador_pantalla_pasajeros import ControladorPantallaPasajeros
 from controladores.controlador_pantalla_ciudad import ControladorPantallaCiudad # Agregado
 from controladores.controlador_viajar import ControladorViajar 
-from controladores.controlador_index_usuario import ControladorIndexUsuario  
+from controladores.controlador_index_usuario import ControladorIndexUsuario  # ¡Asegúrate que está importado!
 from controladores.controlador_pantalla_misreservaciones import ControladorPantallaMisReservaciones
 
 from utilidades.validaciones import Validaciones
