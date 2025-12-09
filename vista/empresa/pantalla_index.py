@@ -6,6 +6,7 @@ from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile, QIODevice, QCoreApplication, Qt
 from PySide6.QtGui import QCloseEvent, QFont
 from utilidades.validaciones import Validaciones
+from vista.empresa.pantalla_operadorescorridas import PantallaOperadoresCorridas
 
 
 class PantallaIndex(QWidget):
@@ -42,7 +43,8 @@ class PantallaIndex(QWidget):
         self.ui.QtableWidget_operadores.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.ui.QtableWidget_operadores.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.ui.QtableWidget_operadores.setSelectionBehavior(QAbstractItemView.SelectRows)
-
+        self.selected_operator_id = None
+        
         self.ui.QtableWidget_corridasact.setColumnCount(5) # Set column count
         self.ui.QtableWidget_corridasact.setHorizontalHeaderLabels([
             "Corrida", "Fecha y Hora de Salida", "Origen", "Destino", "Autobus"
@@ -65,6 +67,29 @@ class PantallaIndex(QWidget):
     def _setup_connections(self):
         self.ui.comboBox_bfecha.currentIndexChanged.connect(self._filter_corridas_by_fecha)
         self.ui.QtableWidget_corridasact.itemClicked.connect(self._on_corrida_selected)
+        self.ui.boton_corridasoperadores.clicked.connect(self._mostrar_pantalla_operadores_corridas)
+        self.ui.QtableWidget_operadores.itemClicked.connect(self._on_operator_selected)
+
+    def _on_operator_selected(self, item):
+        fila_seleccionada = item.row()
+        self.selected_operator_id = int(self.ui.QtableWidget_operadores.item(fila_seleccionada, 0).text())
+        print(f"Operator selected, ID: {self.selected_operator_id}")
+
+    def _mostrar_pantalla_operadores_corridas(self):
+        if self.selected_operator_id is None:
+            QMessageBox.warning(self, "Operador no seleccionado", "Por favor, seleccione un operador de la tabla.")
+            return
+
+        print("Opening PantallaOperadoresCorridas...")
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Corridas de Operadores")
+        
+        layout = QVBoxLayout()
+        pantalla = PantallaOperadoresCorridas(self.controlador, self.selected_operator_id, dialog)
+        layout.addWidget(pantalla)
+        
+        dialog.setLayout(layout)
+        dialog.exec()
 
     def cargar_datos_dashboard(self):
         # The passenger table is now populated via corrida selection, so no direct load here
