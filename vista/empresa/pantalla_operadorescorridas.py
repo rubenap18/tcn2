@@ -1,4 +1,4 @@
-f'''rom PySide6.QtWidgets import QWidget
+'''from PySide6.QtWidgets import QWidget
 from vista.empresa.pantalla_operadorescorridas_ui import Ui_pantalla_operadorescorridas
 
 class PantallaOperadoresCorridas(QWidget):
