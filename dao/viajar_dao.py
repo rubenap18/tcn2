@@ -209,7 +209,7 @@ class ViajarDAO:
                 FROM corrida_asiento
                 WHERE corrida = %s 
                     AND asiento IN ({placeholders})
-                    AND estado = 'disponible'
+                    AND estado = 'DISPONIBLE'
             """
             
             params = [numero_corrida] + asientos_seleccionados
@@ -244,7 +244,7 @@ class ViajarDAO:
             if edad <= 12:
                 return ('NINO', 'Niño', 50, edad)
             elif edad >= 62:
-                return ('ADUL', 'Adulto Mayor', 50, edad)
+                return ('ADUL', '3ra Edad', 50, edad)
             else:
                 return ('REGU', 'Regular', 0, edad)
                 
@@ -281,13 +281,13 @@ class ViajarDAO:
             
             if not adultos:
                 conn.rollback()
-                return {'exito': False, 'mensaje': 'Debe haber al menos un adulto en la reservación'}
+                return {'Exito': False, 'Error': 'Debe haber al menos un adulto en la reservación'}
             
             # 2. VALIDAR DISPONIBILIDAD DE ASIENTOS
             asientos_seleccionados = [p['asiento_clave'] for p in datos_compra['pasajeros']]
             if not self.validar_asientos_disponibles(datos_compra['numero_corrida'], asientos_seleccionados):
                 conn.rollback()
-                return {'exito': False, 'mensaje': 'Uno o más asientos ya no están disponibles'}
+                return {'Exito': False, 'Error': 'Uno o más asientos ya no están disponibles'}
             
             # 3. CREAR/OBTENER PASAJEROS Y CALCULAR TOTALES
             pasajeros_ids = []
@@ -400,7 +400,7 @@ class ViajarDAO:
             for asiento_clave in asientos_seleccionados:
                 query_update_asiento = """
                     UPDATE corrida_asiento
-                    SET estado = 'ocupado'
+                    SET estado = 'NO DISPONIBLE'
                     WHERE corrida = %s AND asiento = %s
                 """
                 cursor.execute(query_update_asiento, (datos_compra['numero_corrida'], asiento_clave))
@@ -497,7 +497,7 @@ class ViajarDAO:
             cursor.execute(query, (numero_reservacion, numero_reservacion))
             boletos = cursor.fetchall()
             
-            print(f"Encontrados {len(boletos)} boletos para reservación no. {numero_reservacion}")
+            print(f"Encontrados {len(boletos)} boletos para reservación {numero_reservacion}")
             
         except Error as e:
             print(f'Error en ViajarDAO.obtener_boletos_reservacion: {e}')

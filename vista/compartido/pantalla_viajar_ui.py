@@ -33,7 +33,7 @@ class PantallaViajar(object):
         self.label_estatico_logo = QLabel(Form)
         self.label_estatico_logo.setObjectName(u"label_estatico_logo")
         self.label_estatico_logo.setGeometry(QRect(1560, 20, 331, 91))
-        self.label_estatico_logo.setPixmap(QPixmap(u"../../recursos/recursos_empresa/Screenshot from 2025-11-22 14-58-14.png"))
+        self.label_estatico_logo.setPixmap(QPixmap(u"../recursos/recursos_empresa/Screenshot from 2025-11-22 14-58-14.png"))
         self.label_estatico_logo.setScaledContents(True)
         self.label_estatico_titulo = QLabel(Form)
         self.label_estatico_titulo.setObjectName(u"label_estatico_titulo")

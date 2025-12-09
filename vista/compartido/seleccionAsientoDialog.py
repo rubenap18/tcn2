@@ -65,8 +65,8 @@ class SeleccionAsientoDialog(QDialog):
         
         # Si no hay asientos en corrida_asiento, todos están disponibles por defecto
         if not asientos:
-            print(f"⚠️ ADVERTENCIA: No hay registros en corrida_asiento para la corrida {self.corrida_info['numero_corrida']}")
-            print("⚠️ Todos los asientos se marcarán como DISPONIBLES")
+            print(f"ADVERTENCIA: No hay registros en corrida_asiento para la corrida {self.corrida_info['numero_corrida']}")
+            print("Todos los asientos se marcarán como DISPONIBLES")
             # Dejar todos los botones habilitados con el estilo por defecto de la UI
             return
         
@@ -79,11 +79,10 @@ class SeleccionAsientoDialog(QDialog):
             asiento_clave = f"{self.corrida_info['numero_autobus']}-{asiento_numero.zfill(2)}"
             
             # Si el asiento está en la BD, usar su estado; si no, disponible
-            estado = estado_asientos.get(asiento_clave, 'disponible')
+            estado = estado_asientos.get(asiento_clave, 'DISPONIBLE')
             
-            print(f"DEBUG: Asiento {asiento_clave} - Estado: {estado}")  # Debug
             
-            if estado == 'ocupado':
+            if estado == 'NO DISPONIBLE':
                 btn.setEnabled(False)
                 btn.setCheckable(False)
                 btn.setStyleSheet("""
@@ -103,7 +102,7 @@ class SeleccionAsientoDialog(QDialog):
                     }
                 """)
             else:
-                # Asiento disponible - asegurar que esté habilitado
+                # Asiento disponible: asegurar que esté habilitado para seleccionar
                 btn.setEnabled(True)
                 btn.setCheckable(True)
                 # El estilo ya viene de la UI, pero lo reforzamos

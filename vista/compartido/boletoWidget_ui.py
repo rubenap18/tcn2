@@ -68,7 +68,7 @@ class BoletoWidget(object):
         self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_dinamico_origen = QLabel(self.widget)
         self.label_dinamico_origen.setObjectName(u"label_dinamico_origen")
-        self.label_dinamico_origen.setGeometry(QRect(110, 380, 91, 34))
+        self.label_dinamico_origen.setGeometry(QRect(110, 380, 181, 34))
         self.label_dinamico_origen.setFont(font2)
         self.label_dinamico_origen.setStyleSheet(u"border:none;\n"
 "background-color: rgb(246, 245, 244);\n"
@@ -77,13 +77,13 @@ class BoletoWidget(object):
 "")
         self.label_estatico_origen = QLabel(self.widget)
         self.label_estatico_origen.setObjectName(u"label_estatico_origen")
-        self.label_estatico_origen.setGeometry(QRect(110, 340, 91, 34))
+        self.label_estatico_origen.setGeometry(QRect(160, 340, 91, 34))
         self.label_estatico_origen.setFont(font1)
         self.label_estatico_origen.setStyleSheet(u"border:none;\n"
 "background-color: rgb(246, 245, 244);")
         self.label_dinamico_destino = QLabel(self.widget)
         self.label_dinamico_destino.setObjectName(u"label_dinamico_destino")
-        self.label_dinamico_destino.setGeometry(QRect(420, 380, 101, 34))
+        self.label_dinamico_destino.setGeometry(QRect(330, 380, 161, 34))
         self.label_dinamico_destino.setFont(font2)
         self.label_dinamico_destino.setStyleSheet(u"border:none;\n"
 "background-color: rgb(246, 245, 244);\n"
@@ -92,7 +92,7 @@ class BoletoWidget(object):
 "")
         self.label_estatico_destino = QLabel(self.widget)
         self.label_estatico_destino.setObjectName(u"label_estatico_destino")
-        self.label_estatico_destino.setGeometry(QRect(420, 340, 101, 34))
+        self.label_estatico_destino.setGeometry(QRect(360, 340, 101, 34))
         self.label_estatico_destino.setFont(font1)
         self.label_estatico_destino.setStyleSheet(u"border:none;\n"
 "background-color: rgb(246, 245, 244);")
@@ -182,10 +182,13 @@ class BoletoWidget(object):
 "")
         self.label_dinamico_tipopasajero = QLabel(self.widget)
         self.label_dinamico_tipopasajero.setObjectName(u"label_dinamico_tipopasajero")
-        self.label_dinamico_tipopasajero.setGeometry(QRect(60, 690, 201, 41))
-        self.label_dinamico_tipopasajero.setFont(font2)
+        self.label_dinamico_tipopasajero.setGeometry(QRect(60, 690, 230, 61))
+        font3 = QFont()
+        font3.setBold(True)
+        font3.setItalic(True)
+        self.label_dinamico_tipopasajero.setFont(font3)
         self.label_dinamico_tipopasajero.setStyleSheet(u"border:none;\n"
-"\n"
+"font-size: 24px;\n"
 "\n"
 "\n"
 "\n"
@@ -201,7 +204,7 @@ class BoletoWidget(object):
         self.label_estatico_tipopasajero.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_estatico_precioboleto = QLabel(self.widget)
         self.label_estatico_precioboleto.setObjectName(u"label_estatico_precioboleto")
-        self.label_estatico_precioboleto.setGeometry(QRect(320, 550, 81, 34))
+        self.label_estatico_precioboleto.setGeometry(QRect(300, 550, 111, 34))
         self.label_estatico_precioboleto.setFont(font1)
         self.label_estatico_precioboleto.setStyleSheet(u"border:none\n"
 "\n"
@@ -220,7 +223,7 @@ class BoletoWidget(object):
         self.label_dinamico_precioboleto.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_estatico_descuento = QLabel(self.widget)
         self.label_estatico_descuento.setObjectName(u"label_estatico_descuento")
-        self.label_estatico_descuento.setGeometry(QRect(270, 600, 141, 34))
+        self.label_estatico_descuento.setGeometry(QRect(280, 600, 141, 34))
         self.label_estatico_descuento.setFont(font1)
         self.label_estatico_descuento.setStyleSheet(u"border:none\n"
 "\n"
@@ -334,25 +337,25 @@ class BoletoWidget(object):
         self.label_estatico_viaje.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"center\">Viaje</p></body></html>", None))
         self.label_dinamico_viaje.setText(QCoreApplication.translate("Form", u"Viaje", None))
         self.label_2.setText("")
-        self.label_dinamico_origen.setText(QCoreApplication.translate("Form", u"Origen", None))
-        self.label_estatico_origen.setText(QCoreApplication.translate("Form", u"Origen", None))
-        self.label_dinamico_destino.setText(QCoreApplication.translate("Form", u"Destino", None))
-        self.label_estatico_destino.setText(QCoreApplication.translate("Form", u"Destino", None))
+        self.label_dinamico_origen.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">Origen</p></body></html>", None))
+        self.label_estatico_origen.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"center\">Origen</p></body></html>", None))
+        self.label_dinamico_destino.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">Destino</p></body></html>", None))
+        self.label_estatico_destino.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"center\">Destino</p></body></html>", None))
         self.label_dinamico_numboleto.setText(QCoreApplication.translate("Form", u"3", None))
         self.label_estatico_numboleto.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"center\">No.Boleto</p></body></html>", None))
-        self.label_estatico_salida_2.setText(QCoreApplication.translate("Form", u"Salida", None))
+        self.label_estatico_salida_2.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">Salida</p></body></html>", None))
         self.label_dinamico_salida.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt;\">Salida</span></p></body></html>", None))
         self.label_dinamico_llegada.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt;\">Llegada</span></p></body></html>", None))
-        self.label_estatico_llegada.setText(QCoreApplication.translate("Form", u"Llegada", None))
+        self.label_estatico_llegada.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">Llegada</p></body></html>", None))
         self.label_dinamico_pasajero.setText(QCoreApplication.translate("Form", u"juan manuel hernandez medina", None))
         self.label_estatico_pasajero.setText(QCoreApplication.translate("Form", u"Pasajero", None))
         self.label_dinamico_numasiento.setText(QCoreApplication.translate("Form", u"texto", None))
-        self.label_estatico_numasientos.setText(QCoreApplication.translate("Form", u"No.Asiento", None))
-        self.label_dinamico_tipopasajero.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-size:12pt;\">ADULTO MAYOR</span></p></body></html>", None))
+        self.label_estatico_numasientos.setText(QCoreApplication.translate("Form", u"No. Asiento", None))
+        self.label_dinamico_tipopasajero.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-size:16pt;\">ADULTO MAYOR</span></p></body></html>", None))
         self.label_estatico_tipopasajero.setText(QCoreApplication.translate("Form", u"Tipo", None))
-        self.label_estatico_precioboleto.setText(QCoreApplication.translate("Form", u"Boleto", None))
+        self.label_estatico_precioboleto.setText(QCoreApplication.translate("Form", u"Subtotal", None))
         self.label_dinamico_precioboleto.setText(QCoreApplication.translate("Form", u"texto", None))
-        self.label_estatico_descuento.setText(QCoreApplication.translate("Form", u"decuento", None))
+        self.label_estatico_descuento.setText(QCoreApplication.translate("Form", u"descuento", None))
         self.label_dinamico_pordescuento.setText(QCoreApplication.translate("Form", u"texto", None))
         self.label_estatico_total.setText(QCoreApplication.translate("Form", u"Total", None))
         self.label_dinamico_total.setText(QCoreApplication.translate("Form", u"texto", None))
