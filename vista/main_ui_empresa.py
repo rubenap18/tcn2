@@ -15,6 +15,7 @@ from vista.empresa.pantalla_rutas import PantallaRutas
 from vista.empresa.pantalla_operadores import PantallaOperadores
 from vista.empresa.pantalla_pasajeros import PantallaPasajeros
 from vista.empresa.pantalla_index import PantallaIndex
+from vista.empresa.pantalla_operadorescorridas import PantallaOperadoresCorridas
 
 class MainUIEmpresa(QMainWindow):
     
@@ -34,6 +35,7 @@ class MainUIEmpresa(QMainWindow):
         self.pagina_pasajeros_widget = None
         self.pagina_reservaciones_widget = None
         self.pagina_rutas_widget = None
+        self.pagina_operadores_corridas_widget = None
         
         # Cargar todas las interfaces
         self.cargar_interfaces()
@@ -65,6 +67,7 @@ class MainUIEmpresa(QMainWindow):
         self.pagina_rutas_widget = PantallaRutas(self.app_manager)
         self.pagina_operadores_widget = PantallaOperadores(self.app_manager.controlador_po, self.app_manager)
         self.pagina_pasajeros_widget = PantallaPasajeros(self.app_manager.controlador_pp)
+        self.pagina_operadores_corridas_widget = PantallaOperadoresCorridas(self.app_manager.controlador_index, None)
                                                     
         # Agregar al stacked widget en orden
         if self.index_ui: self.stacked_widget.addWidget(self.index_ui)
@@ -74,6 +77,7 @@ class MainUIEmpresa(QMainWindow):
         if self.pagina_rutas_widget: self.stacked_widget.addWidget(self.pagina_rutas_widget)
         if self.pagina_operadores_widget: self.stacked_widget.addWidget(self.pagina_operadores_widget)
         if self.pagina_pasajeros_widget: self.stacked_widget.addWidget(self.pagina_pasajeros_widget)
+        if self.pagina_operadores_corridas_widget: self.stacked_widget.addWidget(self.pagina_operadores_corridas_widget)
 
     
     def load_ui(self, ui_path):
