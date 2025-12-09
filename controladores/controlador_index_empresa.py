@@ -30,16 +30,9 @@ class ControladorIndex:
             return []
 
     def obtener_pasajeros_por_corrida(self, corrida_id):
+        
         try:
             return self.index_dao.cargar_pasajeros_por_corrida(corrida_id)
         except Exception as e:
             print(f"Error en ControladorIndex.obtener_pasajeros_por_corrida: {e}")
             return []
-
-    def obtener_todas_las_corridas_detalladas(self, operator_id):
-        try:
-            return self.index_dao.obtener_todas_las_corridas_detalladas(operator_id)
-        except Exception as e:
-            print(f"Error en ControladorIndex.obtener_todas_las_corridas_detalladas: {e}")
-            return []        
-        
