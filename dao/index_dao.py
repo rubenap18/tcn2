@@ -107,3 +107,47 @@ class IndexDAO:
         except Error as e:
             print(f"Error en IndexDAO.cargar_pasajeros_por_corrida: {e}")
             return []
+        
+    def obtener_todas_las_corridas_detalladas(self, operator_id):
+        corridas_detalladas = []
+        try:
+            conn = self.db
+            cursor = conn.cursor(dictionary=True)
+            query = """
+                SELECT
+                    c.numero AS numero_viaje,
+                    ro.nombre AS ciudad_origen,
+                    rd.nombre AS ciudad_destino,
+                    r.codigo AS ruta_codigo,
+                    r.distancia,
+                    CONCAT(c.fecha, ' ', c.hora_salida) AS fecha_hora_salida,
+                    CONCAT(c.fecha, ' ', c.hora_llegada) AS fecha_hora_llegada,
+                    CONCAT(o.nombre, ' ', o.apellPat, ' ', COALESCE(o.apellMat, '')) AS nombre_operador,
+                    c.operador AS operador_numero,
+                    a.numero AS autobus_numero,
+                    a.matricula,
+                    a.cantAsientos AS cantidad_asientos,
+                    c.tarifaBase AS precio,
+                    (SELECT COUNT(*) FROM boleto b WHERE b.corrida = c.numero) AS cantidad_pasajeros
+                FROM
+                    corrida c
+                JOIN
+                    ruta r ON c.ruta = r.codigo
+                JOIN
+                    ciudad ro ON r.ciudadOrigen = ro.codigo
+                JOIN
+                    ciudad rd ON r.ciudadDestino = rd.codigo
+                JOIN
+                    operador o ON c.operador = o.numero
+                JOIN
+                    autobus a ON c.autobus = a.numero
+                WHERE
+                    c.operador = %s
+            """
+            cursor.execute(query, (operator_id,))
+            corridas_detalladas = cursor.fetchall()
+            cursor.close()
+            return corridas_detalladas
+        except Error as e:
+            print(f"Error en IndexDAO.obtener_todas_las_corridas_detalladas: {e}")
+            return []    
