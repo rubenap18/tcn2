@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>pantalla_consulta9</class>
+ <widget class="QWidget" name="pantalla_consulta9">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -582,7 +582,7 @@ border: none;</string>
 }</string>
     </property>
     <property name="text">
-     <string>Mexicali</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="boton_inicio_2">
@@ -757,21 +757,6 @@ QScrollBar::sub-line {
    <attribute name="verticalHeaderCascadingSectionResizes">
     <bool>true</bool>
    </attribute>
-   <row>
-    <property name="text">
-     <string/>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string/>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string/>
-    </property>
-   </row>
    <column>
     <property name="text">
      <string>Salida</string>
@@ -832,96 +817,6 @@ QScrollBar::sub-line {
      </font>
     </property>
    </column>
-   <item row="0" column="0">
-    <property name="text">
-     <string>2025-12-06 9:00:00</string>
-    </property>
-   </item>
-   <item row="0" column="1">
-    <property name="text">
-     <string>5</string>
-    </property>
-   </item>
-   <item row="0" column="2">
-    <property name="text">
-     <string>Tijuana</string>
-    </property>
-   </item>
-   <item row="0" column="3">
-    <property name="text">
-     <string>502</string>
-    </property>
-   </item>
-   <item row="0" column="4">
-    <property name="text">
-     <string>OSF87U</string>
-    </property>
-   </item>
-   <item row="0" column="5">
-    <property name="text">
-     <string>Carlos Rodríguez Martínez</string>
-    </property>
-   </item>
-   <item row="1" column="0">
-    <property name="text">
-     <string>2025-12-06 12:00:00</string>
-    </property>
-   </item>
-   <item row="1" column="1">
-    <property name="text">
-     <string>6</string>
-    </property>
-   </item>
-   <item row="1" column="2">
-    <property name="text">
-     <string>Tijuana</string>
-    </property>
-   </item>
-   <item row="1" column="3">
-    <property name="text">
-     <string>100</string>
-    </property>
-   </item>
-   <item row="1" column="4">
-    <property name="text">
-     <string>TU87Y6</string>
-    </property>
-   </item>
-   <item row="1" column="5">
-    <property name="text">
-     <string>María López García</string>
-    </property>
-   </item>
-   <item row="2" column="0">
-    <property name="text">
-     <string>2025-12-07 14:00:00</string>
-    </property>
-   </item>
-   <item row="2" column="1">
-    <property name="text">
-     <string>37</string>
-    </property>
-   </item>
-   <item row="2" column="2">
-    <property name="text">
-     <string>TIjuana</string>
-    </property>
-   </item>
-   <item row="2" column="3">
-    <property name="text">
-     <string>104</string>
-    </property>
-   </item>
-   <item row="2" column="4">
-    <property name="text">
-     <string>UY767Y</string>
-    </property>
-   </item>
-   <item row="2" column="5">
-    <property name="text">
-     <string>Miguel Pérez González</string>
-    </property>
-   </item>
   </widget>
  </widget>
  <resources/>
