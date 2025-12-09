@@ -15,8 +15,8 @@ class PantallaConsulta9(QWidget):
         # Set up table headers
         self.ui.QtableWidget_corridas.setColumnCount(6)
         self.ui.QtableWidget_corridas.setHorizontalHeaderLabels([
-            "Fecha y Hora de Salida", "Número de Corrida", "Ciudad de Destino",
-            "Número de Autobús", "Matrícula de Autobús", "Nombre del Operador"
+            "Fecha y Hora de Salida", "Corrida", "Destino",
+            "Num. Autobús", "Matrícula Autobús", "Operador"
         ])
         self.ui.QtableWidget_corridas.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.ui.QtableWidget_corridas.verticalHeader().setVisible(False)
