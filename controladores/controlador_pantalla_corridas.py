@@ -73,7 +73,7 @@ class ControladorPantallaCorridas:
         self.tabla_corridas.setHorizontalHeaderLabels([
             "Corrida", "Origen", "Destino", "Distancia",
             "Fecha y Hora de Salida", "Operador", "Autobus", # Changed "Número Autobús" to "Autobus"
-            "Matrícula", "Asientos", "Boletos Vendidos"
+            "Matrícula", "Asientos", "Pasajeros"
         ])
         self.tabla_corridas.setEditTriggers(QTableWidget.NoEditTriggers)
         self.tabla_corridas.verticalHeader().setVisible(False)
@@ -88,7 +88,7 @@ class ControladorPantallaCorridas:
         self.tabla_corridas.setColumnWidth(6, 120)  # Autobus
         self.tabla_corridas.setColumnWidth(7, 120)  # Matrícula
         self.tabla_corridas.setColumnWidth(8, 120)  # Asientos
-        self.tabla_corridas.setColumnWidth(9, 120)  # Boletos Vendidos
+        self.tabla_corridas.setColumnWidth(9, 120)  # Pasajeros
         
         self._cargar_todas_las_corridas() # Call this to load data on init and store it
 
@@ -169,7 +169,7 @@ class ControladorPantallaCorridas:
             self.tabla_corridas.setItem(row_num, 6, QTableWidgetItem(str(corrida['autobus_numero'])))
             self.tabla_corridas.setItem(row_num, 7, QTableWidgetItem(corrida['matricula']))
             self.tabla_corridas.setItem(row_num, 8, QTableWidgetItem(str(corrida['cantidad_asientos'])))
-            self.tabla_corridas.setItem(row_num, 9, QTableWidgetItem(str(corrida['boletos_vendidos'])))
+            self.tabla_corridas.setItem(row_num, 9, QTableWidgetItem(str(corrida['cantidad_pasajeros'])))
 
     def _on_numero_corrida_text_changed(self, texto_busqueda):
         self.filtro_numero_corrida = texto_busqueda

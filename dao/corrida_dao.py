@@ -27,8 +27,7 @@ class CorridaDAO:
                     a.matricula,
                     a.cantAsientos AS cantidad_asientos,
                     c.tarifaBase AS precio,
-                    c.lugaresDisp AS boletos_disponibles,
-                    (SELECT COUNT(*) FROM reservacion res WHERE res.corrida = c.numero) AS boletos_vendidos
+                    (SELECT COUNT(*) FROM reservacion res WHERE res.corrida = c.numero) AS cantidad_pasajeros
                 FROM
                     corrida c
                 JOIN
@@ -46,58 +45,6 @@ class CorridaDAO:
             corridas_detalladas = cursor.fetchall()
         except Exception as e:
             print(f"Error al obtener corridas detalladas: {e}")
-        finally:
-            if 'cursor' in locals() and cursor:
-                cursor.close()
-        return corridas_detalladas
-
-    def obtener_corridas_detalladas_por_fecha_y_origen(self, fecha_str, ciudad_origen_nombre):
-        corridas_detalladas = []
-        try:
-            conn = Connection.getConnection()
-            cursor = conn.cursor(dictionary=True)
-            query = """
-                SELECT
-                    c.numero AS numero_viaje,
-                    ro.nombre AS ciudad_origen,
-                    rd.nombre AS ciudad_destino,
-                    r.codigo AS ruta_codigo,
-                    r.distancia,
-                    CONCAT(c.fecha, ' ', c.hora_salida) AS fecha_hora_salida,
-                    CONCAT(c.fecha, ' ', c.hora_llegada) AS fecha_hora_llegada,
-                    CONCAT(o.nombre, ' ', o.apellPat, ' ', COALESCE(o.apellMat, '')) AS nombre_operador,
-                    c.operador AS operador_numero,
-                    a.numero AS autobus_numero,
-                    a.matricula,
-                    a.cantAsientos AS cantidad_asientos,
-                    c.tarifaBase AS precio,
-                    c.lugaresDisp AS boletos_disponibles,
-                    (SELECT COUNT(*) FROM reservacion res WHERE res.corrida = c.numero) AS boletos_vendidos
-                FROM
-                    corrida c
-                JOIN
-                    ruta r ON c.ruta = r.codigo
-                JOIN
-                    ciudad ro ON r.ciudadOrigen = ro.codigo
-                JOIN
-                    ciudad rd ON r.ciudadDestino = rd.codigo
-                JOIN
-                    operador o ON c.operador = o.numero
-                JOIN
-                    autobus a ON c.autobus = a.numero
-                WHERE
-                    c.fecha = %s
-            """
-            params = [fecha_str]
-            
-            if ciudad_origen_nombre is not None:
-                query += " AND ro.nombre = %s"
-                params.append(ciudad_origen_nombre)
-
-            cursor.execute(query, tuple(params))
-            corridas_detalladas = cursor.fetchall()
-        except Exception as e:
-            print(f"Error al obtener corridas detalladas por fecha y origen: {e}")
         finally:
             if 'cursor' in locals() and cursor:
                 cursor.close()
