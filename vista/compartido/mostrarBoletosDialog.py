@@ -18,10 +18,10 @@ class MostrarBoletosDialog(QDialog):
         self.boleto_actual = 0
         
         # Configurar diálogo con dimensiones ajustadas
-        self.setWindowTitle("Boletos - Compra Exitosa")
+        self.setWindowTitle("Boletos de la Reservación")
         self.setModal(True)
         # Aumentar más el tamaño para dar espacio adecuado
-        self.resize(650, 1050)
+        self.resize(650, 900)
         
         # Crear layout principal
         self.layout_principal = QVBoxLayout()
@@ -29,7 +29,7 @@ class MostrarBoletosDialog(QDialog):
         self.layout_principal.setSpacing(15)
         self.setLayout(self.layout_principal)
         
-        # Crear área de scroll para el boleto
+        # Area de scroll para el boleto
         self.scroll_area = QScrollArea()
         self.scroll_area.setWidgetResizable(True)
         self.scroll_area.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
@@ -55,7 +55,7 @@ class MostrarBoletosDialog(QDialog):
         self.scroll_area.setWidget(self.contenedor_boleto)
         self.layout_principal.addWidget(self.scroll_area, 1)
         
-        # Label de contador
+        # Label del contador
         self.label_contador = QLabel()
         self.label_contador.setAlignment(Qt.AlignCenter)
         self.label_contador.setStyleSheet("""
@@ -69,12 +69,12 @@ class MostrarBoletosDialog(QDialog):
         """)
         self.layout_principal.addWidget(self.label_contador)
         
-        # Layout de botones de navegación
+        # Layout de los botones de navegación
         self.layout_botones = QHBoxLayout()
         self.layout_botones.setSpacing(20)
         self.layout_botones.setContentsMargins(10, 5, 10, 5)
         
-        self.boton_anterior = QPushButton("← Anterior")
+        self.boton_anterior = QPushButton("Anterior")
         self.boton_anterior.setMinimumHeight(55)
         self.boton_anterior.setMinimumWidth(140)
         self.boton_anterior.setStyleSheet("""
@@ -98,7 +98,7 @@ class MostrarBoletosDialog(QDialog):
         """)
         self.boton_anterior.clicked.connect(self.anterior_boleto)
         
-        self.boton_siguiente = QPushButton("Siguiente →")
+        self.boton_siguiente = QPushButton("Siguiente")
         self.boton_siguiente.setMinimumHeight(55)
         self.boton_siguiente.setMinimumWidth(140)
         self.boton_siguiente.setStyleSheet("""
@@ -122,7 +122,7 @@ class MostrarBoletosDialog(QDialog):
         """)
         self.boton_siguiente.clicked.connect(self.siguiente_boleto)
         
-        self.boton_cerrar = QPushButton("✓ Cerrar")
+        self.boton_cerrar = QPushButton("Cerrar")
         self.boton_cerrar.setMinimumHeight(55)
         self.boton_cerrar.setMinimumWidth(140)
         self.boton_cerrar.setStyleSheet("""
@@ -162,21 +162,17 @@ class MostrarBoletosDialog(QDialog):
         self.ui_boleto = BoletoWidget()
         self.ui_boleto.setupUi(self.widget_boleto)
         
-        # Ajustar tamaño del widget para que se vea completo con más espacio
         self.widget_boleto.setFixedSize(600, 780)
-        
-        # Ajustar el widget interno para que se vea centrado
+       
         if hasattr(self.ui_boleto, 'widget'):
             # Corregir el offset negativo y centrar
             self.ui_boleto.widget.setGeometry(0, 0, 600, 780)
             # Ajustar elementos con mejor espaciado
             self._reposicionar_elementos()
         
-        # Ocultar botones de navegación del widget (usaremos los del diálogo)
         self.ui_boleto.boton_anterior.hide()
         self.ui_boleto.boton_siguiente.hide()
         
-        # Agregar sombra y borde al boleto para mejor presentación
         self.widget_boleto.setStyleSheet("""
             QWidget {
                 background-color: white;
@@ -193,7 +189,7 @@ class MostrarBoletosDialog(QDialog):
         margen_izq = 60  # Margen izquierdo general
         
         # Logo - centrado arriba
-        self.ui_boleto.label_imagen_logo.setGeometry(170, 40, 261, 71)
+        self.ui_boleto.label_imagen_logo.setGeometry(170, 20, 280, 90)
         
         # Sección Viaje y No.Boleto - Viaje centrado
         self.ui_boleto.label_estatico_viaje.setGeometry(margen_izq + 80, 130, 100, 34)
@@ -202,39 +198,39 @@ class MostrarBoletosDialog(QDialog):
         self.ui_boleto.label_estatico_viaje.setAlignment(Qt.AlignCenter)
         self.ui_boleto.label_dinamico_viaje.setAlignment(Qt.AlignCenter)
         
-        self.ui_boleto.label_estatico_numboleto.setGeometry(margen_izq + 240, 130, 140, 34)
-        self.ui_boleto.label_dinamico_numboleto.setGeometry(margen_izq + 240, 165, 140, 34)
+        self.ui_boleto.label_estatico_numboleto.setGeometry(margen_izq + 280, 130, 140, 34)
+        self.ui_boleto.label_dinamico_numboleto.setGeometry(margen_izq + 280, 165, 140, 34)
         
         # Sección Salida y Llegada - con más separación
-        self.ui_boleto.label_estatico_salida_2.setGeometry(margen_izq + 20, 220, 100, 34)
+        self.ui_boleto.label_estatico_salida_2.setGeometry(margen_izq + 50, 220, 100, 34)
         self.ui_boleto.label_dinamico_salida.setGeometry(margen_izq + 20, 255, 200, 34)
         # Reducir tamaño de fuente para salida
         self.ui_boleto.label_dinamico_salida.setStyleSheet("border:none; font-size: 14pt;")
         
-        self.ui_boleto.label_estatico_llegada.setGeometry(margen_izq + 250, 220, 100, 34)
-        self.ui_boleto.label_dinamico_llegada.setGeometry(margen_izq + 250, 255, 200, 34)
+        self.ui_boleto.label_estatico_llegada.setGeometry(margen_izq + 320, 220, 100, 34)
+        self.ui_boleto.label_dinamico_llegada.setGeometry(margen_izq + 270, 255, 200, 34)
         # Reducir tamaño de fuente para llegada
         self.ui_boleto.label_dinamico_llegada.setStyleSheet("border:none; font-size: 14pt;")
         
         # Barra gris Origen-Destino - más grande
         self.ui_boleto.label_2.setGeometry(30, 310, 540, 100)
         
-        self.ui_boleto.label_estatico_origen.setGeometry(margen_izq + 80, 325, 100, 34)
-        self.ui_boleto.label_dinamico_origen.setGeometry(margen_izq + 40, 360, 180, 34)
+        self.ui_boleto.label_estatico_origen.setGeometry(margen_izq + 80, 325, 120, 34)
+        self.ui_boleto.label_dinamico_origen.setGeometry(margen_izq + 90, 360, 180, 34)
         
         self.ui_boleto.label_estatico_destino.setGeometry(margen_izq + 260, 325, 120, 34)
-        self.ui_boleto.label_dinamico_destino.setGeometry(margen_izq + 240, 360, 180, 34)
+        self.ui_boleto.label_dinamico_destino.setGeometry(margen_izq + 270, 360, 180, 34)
         
-        # Pasajero - centrado y con espacio
+        # Nombre del pasajero - todo centrado
         self.ui_boleto.label_estatico_pasajero.setGeometry(200, 430, 200, 34)
         self.ui_boleto.label_dinamico_pasajero.setGeometry(100, 465, 400, 34)
         
-        # Columna izquierda - No.Asiento y Tipo
+        # Columna izquierda - No. Asiento y Tipo pasajero
         self.ui_boleto.label_estatico_numasientos.setGeometry(margen_izq, 525, 150, 34)
         self.ui_boleto.label_dinamico_numasiento.setGeometry(margen_izq, 560, 150, 34)
         
-        self.ui_boleto.label_estatico_tipopasajero.setGeometry(margen_izq, 610, 150, 34)
-        self.ui_boleto.label_dinamico_tipopasajero.setGeometry(margen_izq, 645, 150, 34)
+        self.ui_boleto.label_estatico_tipopasajero.setGeometry(margen_izq, 610, 130, 34)
+        self.ui_boleto.label_dinamico_tipopasajero.setGeometry(35, 645, 180, 34)
         
         # Columna derecha - Precios alineados a la derecha
         col_derecha_label = 270

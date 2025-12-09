@@ -137,7 +137,7 @@
      <rect>
       <x>110</x>
       <y>380</y>
-      <width>91</width>
+      <width>181</width>
       <height>34</height>
      </rect>
     </property>
@@ -156,13 +156,13 @@ color:#1061C4;
 </string>
     </property>
     <property name="text">
-     <string>Origen</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Origen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_estatico_origen">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>160</x>
       <y>340</y>
       <width>91</width>
       <height>34</height>
@@ -180,15 +180,15 @@ color:#1061C4;
 background-color: rgb(246, 245, 244);</string>
     </property>
     <property name="text">
-     <string>Origen</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Origen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_dinamico_destino">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>330</x>
       <y>380</y>
-      <width>101</width>
+      <width>161</width>
       <height>34</height>
      </rect>
     </property>
@@ -207,13 +207,13 @@ color:#1061C4;
 </string>
     </property>
     <property name="text">
-     <string>Destino</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Destino&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_estatico_destino">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>360</x>
       <y>340</y>
       <width>101</width>
       <height>34</height>
@@ -231,7 +231,7 @@ color:#1061C4;
 background-color: rgb(246, 245, 244);</string>
     </property>
     <property name="text">
-     <string>Destino</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Destino&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_dinamico_numboleto">
@@ -312,7 +312,7 @@ color:#1061C4;
 </string>
     </property>
     <property name="text">
-     <string>Salida</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Salida&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -396,7 +396,7 @@ color:#1061C4;
 </string>
     </property>
     <property name="text">
-     <string>Llegada</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Llegada&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -511,7 +511,7 @@ color:#1061C4;
 </string>
     </property>
     <property name="text">
-     <string>No.Asiento</string>
+     <string>No. Asiento</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_dinamico_tipopasajero">
@@ -520,26 +520,26 @@ color:#1061C4;
       <x>60</x>
       <y>690</y>
       <width>201</width>
-      <height>41</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>20</pointsize>
+      <pointsize>-1</pointsize>
       <italic>true</italic>
       <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">border:none;
-
+font-size: 24px;
 
 
 
 </string>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;ADULTO MAYOR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;ADULTO MAYOR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -576,9 +576,9 @@ color:#1061C4;
    <widget class="QLabel" name="label_estatico_precioboleto">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>300</x>
       <y>550</y>
-      <width>81</width>
+      <width>111</width>
       <height>34</height>
      </rect>
     </property>
@@ -595,7 +595,7 @@ color:#1061C4;
 </string>
     </property>
     <property name="text">
-     <string>Boleto</string>
+     <string>Subtotal</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -635,7 +635,7 @@ color:#1061C4;
    <widget class="QLabel" name="label_estatico_descuento">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>280</x>
       <y>600</y>
       <width>141</width>
       <height>34</height>
@@ -654,7 +654,7 @@ color:#1061C4;
 </string>
     </property>
     <property name="text">
-     <string>decuento</string>
+     <string>descuento</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
