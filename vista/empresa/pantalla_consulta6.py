@@ -15,18 +15,18 @@ class PantallaConsulta6(QWidget):
         # Set up table headers
         self.ui.QtableWidget_corridas.setColumnCount(7)
         self.ui.QtableWidget_corridas.setHorizontalHeaderLabels([
-            "Número de Corrida", "Fecha y Hora de Salida", "Ciudad de Origen", "Ciudad de Destino",
-            "Número de Autobús", "Boletos Vendidos", "Boletos Disponibles"
+            "Corrida", "Salida", "Origen", "Destino",
+            "Autobús", "Boletos Vendidos", "Boletos Disponibles"
         ])
         self.ui.QtableWidget_corridas.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.ui.QtableWidget_corridas.verticalHeader().setVisible(False)
-        self.ui.QtableWidget_corridas.setColumnWidth(0, 150)
+        self.ui.QtableWidget_corridas.setColumnWidth(0, 200)
         self.ui.QtableWidget_corridas.setColumnWidth(1, 200)
-        self.ui.QtableWidget_corridas.setColumnWidth(2, 150)
-        self.ui.QtableWidget_corridas.setColumnWidth(3, 150)
-        self.ui.QtableWidget_corridas.setColumnWidth(4, 150)
-        self.ui.QtableWidget_corridas.setColumnWidth(5, 150)
-        self.ui.QtableWidget_corridas.setColumnWidth(6, 150)
+        self.ui.QtableWidget_corridas.setColumnWidth(2, 200)
+        self.ui.QtableWidget_corridas.setColumnWidth(3, 200)
+        self.ui.QtableWidget_corridas.setColumnWidth(4, 200)
+        self.ui.QtableWidget_corridas.setColumnWidth(5, 200)
+        self.ui.QtableWidget_corridas.setColumnWidth(6, 200)
 
 
         # Connect signals
