@@ -17,6 +17,8 @@ from vista.empresa.pantalla_pasajeros import PantallaPasajeros
 from vista.empresa.pantalla_index import PantallaIndex
 from vista.empresa.pantalla_consulta9 import PantallaConsulta9
 from vista.empresa.pantalla_consulta6 import PantallaConsulta6
+from vista.empresa.pantalla_operadorescorridas import PantallaOperadoresCorridas
+
 
 class MainUIEmpresa(QMainWindow):
     
@@ -38,6 +40,7 @@ class MainUIEmpresa(QMainWindow):
         self.pagina_rutas_widget = None
         self.pagina_consulta9_widget = None
         self.pagina_consulta6_widget = None
+        self.pagina_operadores_corridas_widget = None
         
         # Cargar todas las interfaces
         self.cargar_interfaces()
@@ -50,6 +53,8 @@ class MainUIEmpresa(QMainWindow):
         self.setup_connections_pantalla_pasajeros()
         self.setup_connections_pantalla_consulta9()
         self.setup_connections_pantalla_consulta6()
+        self.setup_connections_pantalla_operadores_corridas()
+
 
         # Mostrar MainWindow por defecto (índice 0)
         self.stacked_widget.setCurrentIndex(0)
@@ -73,6 +78,7 @@ class MainUIEmpresa(QMainWindow):
         self.pagina_pasajeros_widget = PantallaPasajeros(self.app_manager.controlador_pp)
         self.pagina_consulta9_widget = PantallaConsulta9(self.app_manager)
         self.pagina_consulta6_widget = PantallaConsulta6(self.app_manager)
+        self.pagina_operadores_corridas_widget = PantallaOperadoresCorridas(self.app_manager.controlador_index, None)
                                                     
         # Agregar al stacked widget en orden
         if self.index_ui: self.stacked_widget.addWidget(self.index_ui)
@@ -84,6 +90,7 @@ class MainUIEmpresa(QMainWindow):
         if self.pagina_pasajeros_widget: self.stacked_widget.addWidget(self.pagina_pasajeros_widget)
         if self.pagina_consulta9_widget: self.stacked_widget.addWidget(self.pagina_consulta9_widget)
         if self.pagina_consulta6_widget: self.stacked_widget.addWidget(self.pagina_consulta6_widget)
+        if self.pagina_operadores_corridas_widget: self.stacked_widget.addWidget(self.pagina_operadores_corridas_widget)
 
     
     def load_ui(self, ui_path):
@@ -400,7 +407,7 @@ class MainUIEmpresa(QMainWindow):
             common_buttons = {
                 "boton_inicio": 0,
                 "boton_reservaciones": 1,
-                "boton_corridas": 2,  # Navigate to pantalla_corridas
+                "boton_corridas": 2,
                 "boton_autobuses": 3,
                 "boton_rutas": 4,
                 "boton_operadores": 5,
@@ -425,7 +432,7 @@ class MainUIEmpresa(QMainWindow):
             common_buttons = {
                 "boton_inicio": 0,
                 "boton_reservaciones": 1,
-                "boton_corridas": 2,  # Navigate to pantalla_corridas
+                "boton_corridas": 2,
                 "boton_autobuses": 3,
                 "boton_rutas": 4,
                 "boton_operadores": 5,
@@ -442,6 +449,9 @@ class MainUIEmpresa(QMainWindow):
             boton_inicio_2 = self.pagina_consulta6_widget.findChild(QWidget, "boton_inicio_2")
             if boton_inicio_2:
                 boton_inicio_2.clicked.connect(lambda: self.stacked_widget.setCurrentIndex(2)) # Index for pantalla_corridas
+
+    def setup_connections_pantalla_operadores_corridas(self):
+        pass
 
 
     def closeEvent(self, event: QCloseEvent):
