@@ -16,8 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QComboBox, QDateEdit,
-    QHeaderView, QLabel, QLineEdit, QPushButton,
-    QSizePolicy, QTableWidget, QTableWidgetItem, QWidget)
+    QHeaderView, QLabel, QPushButton, QSizePolicy,
+    QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_pantalla_consulta9(object):
     def setupUi(self, pantalla_consulta9):
@@ -202,7 +202,7 @@ class Ui_pantalla_consulta9(object):
 "")
         self.corridas_label = QLabel(self.widget_opfiltro_2)
         self.corridas_label.setObjectName(u"corridas_label")
-        self.corridas_label.setGeometry(QRect(20, 10, 1031, 91))
+        self.corridas_label.setGeometry(QRect(20, 10, 1231, 91))
         font1 = QFont()
         font1.setPointSize(59)
         font1.setBold(True)
@@ -287,11 +287,12 @@ class Ui_pantalla_consulta9(object):
         self.label_5.setFont(font2)
         self.label_5.setStyleSheet(u"color: black;\n"
 "border: none;")
-        self.lineEdit_origen = QLineEdit(self.widget_opfiltro_2)
-        self.lineEdit_origen.setObjectName(u"lineEdit_origen")
-        self.lineEdit_origen.setGeometry(QRect(30, 160, 113, 22))
-        self.lineEdit_origen.setStyleSheet(u"QLineEdit{\n"
+        self.label_origen = QLabel(self.widget_opfiltro_2)
+        self.label_origen.setObjectName(u"label_origen")
+        self.label_origen.setGeometry(QRect(30, 160, 150, 40))
+        self.label_origen.setStyleSheet(u"QLabel{\n"
 "	border-radius:5px;\n"
+"    font-size: 20px;\n"
 "}")
         self.boton_inicio_2 = QPushButton(self.widget_opfiltro_2)
         self.boton_inicio_2.setObjectName(u"boton_inicio_2")
@@ -338,52 +339,8 @@ class Ui_pantalla_consulta9(object):
         __qtablewidgetitem5 = QTableWidgetItem()
         __qtablewidgetitem5.setFont(font);
         self.QtableWidget_corridas.setHorizontalHeaderItem(5, __qtablewidgetitem5)
-        if (self.QtableWidget_corridas.rowCount() < 3):
-            self.QtableWidget_corridas.setRowCount(3)
-        __qtablewidgetitem6 = QTableWidgetItem()
-        self.QtableWidget_corridas.setVerticalHeaderItem(0, __qtablewidgetitem6)
-        __qtablewidgetitem7 = QTableWidgetItem()
-        self.QtableWidget_corridas.setVerticalHeaderItem(1, __qtablewidgetitem7)
-        __qtablewidgetitem8 = QTableWidgetItem()
-        self.QtableWidget_corridas.setVerticalHeaderItem(2, __qtablewidgetitem8)
-        __qtablewidgetitem9 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(0, 0, __qtablewidgetitem9)
-        __qtablewidgetitem10 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(0, 1, __qtablewidgetitem10)
-        __qtablewidgetitem11 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(0, 2, __qtablewidgetitem11)
-        __qtablewidgetitem12 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(0, 3, __qtablewidgetitem12)
-        __qtablewidgetitem13 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(0, 4, __qtablewidgetitem13)
-        __qtablewidgetitem14 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(0, 5, __qtablewidgetitem14)
-        __qtablewidgetitem15 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(1, 0, __qtablewidgetitem15)
-        __qtablewidgetitem16 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(1, 1, __qtablewidgetitem16)
-        __qtablewidgetitem17 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(1, 2, __qtablewidgetitem17)
-        __qtablewidgetitem18 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(1, 3, __qtablewidgetitem18)
-        __qtablewidgetitem19 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(1, 4, __qtablewidgetitem19)
-        __qtablewidgetitem20 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(1, 5, __qtablewidgetitem20)
-        __qtablewidgetitem21 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(2, 0, __qtablewidgetitem21)
-        __qtablewidgetitem22 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(2, 1, __qtablewidgetitem22)
-        __qtablewidgetitem23 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(2, 2, __qtablewidgetitem23)
-        __qtablewidgetitem24 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(2, 3, __qtablewidgetitem24)
-        __qtablewidgetitem25 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(2, 4, __qtablewidgetitem25)
-        __qtablewidgetitem26 = QTableWidgetItem()
-        self.QtableWidget_corridas.setItem(2, 5, __qtablewidgetitem26)
         self.QtableWidget_corridas.setObjectName(u"QtableWidget_corridas")
-        self.QtableWidget_corridas.setGeometry(QRect(0, 360, 1641, 551))
+        self.QtableWidget_corridas.setGeometry(QRect(315, 360, 1290, 551))
         self.QtableWidget_corridas.setFont(font)
         self.QtableWidget_corridas.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QtableWidget_corridas.setStyleSheet(u"QTableView {\n"
@@ -505,7 +462,6 @@ class Ui_pantalla_consulta9(object):
         self.label_2.setText(QCoreApplication.translate("pantalla_consulta9", u"Fecha", None))
         self.label_3.setText(QCoreApplication.translate("pantalla_consulta9", u"Origen", None))
         self.label_5.setText(QCoreApplication.translate("pantalla_consulta9", u"Origen", None))
-        self.lineEdit_origen.setText(QCoreApplication.translate("pantalla_consulta9", u"Mexicali", None))
         self.boton_inicio_2.setText("")
         ___qtablewidgetitem = self.QtableWidget_corridas.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("pantalla_consulta9", u"Salida", None));
@@ -519,46 +475,5 @@ class Ui_pantalla_consulta9(object):
         ___qtablewidgetitem4.setText(QCoreApplication.translate("pantalla_consulta9", u"Matr\u00edcula", None));
         ___qtablewidgetitem5 = self.QtableWidget_corridas.horizontalHeaderItem(5)
         ___qtablewidgetitem5.setText(QCoreApplication.translate("pantalla_consulta9", u"Operador", None));
-
-        __sortingEnabled = self.QtableWidget_corridas.isSortingEnabled()
-        self.QtableWidget_corridas.setSortingEnabled(False)
-        ___qtablewidgetitem6 = self.QtableWidget_corridas.item(0, 0)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("pantalla_consulta9", u"2025-12-06 9:00:00", None));
-        ___qtablewidgetitem7 = self.QtableWidget_corridas.item(0, 1)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("pantalla_consulta9", u"5", None));
-        ___qtablewidgetitem8 = self.QtableWidget_corridas.item(0, 2)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("pantalla_consulta9", u"Tijuana", None));
-        ___qtablewidgetitem9 = self.QtableWidget_corridas.item(0, 3)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("pantalla_consulta9", u"502", None));
-        ___qtablewidgetitem10 = self.QtableWidget_corridas.item(0, 4)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("pantalla_consulta9", u"OSF87U", None));
-        ___qtablewidgetitem11 = self.QtableWidget_corridas.item(0, 5)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("pantalla_consulta9", u"Carlos Rodr\u00edguez Mart\u00ednez", None));
-        ___qtablewidgetitem12 = self.QtableWidget_corridas.item(1, 0)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("pantalla_consulta9", u"2025-12-06 12:00:00", None));
-        ___qtablewidgetitem13 = self.QtableWidget_corridas.item(1, 1)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("pantalla_consulta9", u"6", None));
-        ___qtablewidgetitem14 = self.QtableWidget_corridas.item(1, 2)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("pantalla_consulta9", u"Tijuana", None));
-        ___qtablewidgetitem15 = self.QtableWidget_corridas.item(1, 3)
-        ___qtablewidgetitem15.setText(QCoreApplication.translate("pantalla_consulta9", u"100", None));
-        ___qtablewidgetitem16 = self.QtableWidget_corridas.item(1, 4)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("pantalla_consulta9", u"TU87Y6", None));
-        ___qtablewidgetitem17 = self.QtableWidget_corridas.item(1, 5)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("pantalla_consulta9", u"Mar\u00eda L\u00f3pez Garc\u00eda", None));
-        ___qtablewidgetitem18 = self.QtableWidget_corridas.item(2, 0)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("pantalla_consulta9", u"2025-12-07 14:00:00", None));
-        ___qtablewidgetitem19 = self.QtableWidget_corridas.item(2, 1)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("pantalla_consulta9", u"37", None));
-        ___qtablewidgetitem20 = self.QtableWidget_corridas.item(2, 2)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("pantalla_consulta9", u"TIjuana", None));
-        ___qtablewidgetitem21 = self.QtableWidget_corridas.item(2, 3)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("pantalla_consulta9", u"104", None));
-        ___qtablewidgetitem22 = self.QtableWidget_corridas.item(2, 4)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("pantalla_consulta9", u"UY767Y", None));
-        ___qtablewidgetitem23 = self.QtableWidget_corridas.item(2, 5)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("pantalla_consulta9", u"Miguel P\u00e9rez Gonz\u00e1lez", None));
-        self.QtableWidget_corridas.setSortingEnabled(__sortingEnabled)
-
     # retranslateUi
 

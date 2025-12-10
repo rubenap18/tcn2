@@ -42,9 +42,9 @@ class PantallaConsulta9(QWidget):
 
         # Actualizar el lineEdit de origen con la ciudad seleccionada
         if selected_origin_city == "TODOS":
-            self.ui.lineEdit_origen.setText("") # Limpiar si se selecciona "TODOS"
+            self.ui.label_origen.setText("") # Limpiar si se selecciona "TODOS"
         else:
-            self.ui.lineEdit_origen.setText(selected_origin_city)
+            self.ui.label_origen.setText(selected_origin_city)
 
         if not self.app_manager or not hasattr(self.app_manager, 'controlador_pc') or not hasattr(self.app_manager.controlador_pc, 'corrida_dao'):
             QMessageBox.critical(self, "Error", "AppManager o CorridaDAO no está disponible.")

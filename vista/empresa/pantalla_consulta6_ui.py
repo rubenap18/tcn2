@@ -52,7 +52,7 @@ class Ui_pantalla_consulta6(object):
         __qtablewidgetitem6.setFont(font);
         self.QtableWidget_corridas.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         self.QtableWidget_corridas.setObjectName(u"QtableWidget_corridas")
-        self.QtableWidget_corridas.setGeometry(QRect(180, 360, 1561, 551))
+        self.QtableWidget_corridas.setGeometry(QRect(325, 360, 1270, 551))
         self.QtableWidget_corridas.setFont(font)
         self.QtableWidget_corridas.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QtableWidget_corridas.setStyleSheet(u"QTableView {\n"
