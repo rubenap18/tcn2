@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
+    <width>1922</width>
     <height>1080</height>
    </rect>
   </property>
@@ -133,28 +133,31 @@ QPushButton:pressed {
   <widget class="QWidget" name="widget_opfiltro_autobus" native="true">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>320</x>
      <y>130</y>
-     <width>1651</width>
+     <width>1491</width>
      <height>111</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget {
-    background: transparent;
-    border: none;
-    border-radius: 0px;
-    padding: 0px;
-    margin: 0px;
-}</string>
+    <string notr="true">background-color: #ffffff;
+border: 2px solid #dcdfe6;
+border-radius: 15px;
+gridline-color: #e0e0e0;
+outline: none;
+color: #606266;
+border-radius: 15px;
+border-bottom: 1px solid #E3E3E3;
+
+</string>
    </property>
    <widget class="QLabel" name="label_estatico_tituloAutobuses">
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>0</y>
+      <y>10</y>
       <width>481</width>
-      <height>101</height>
+      <height>91</height>
      </rect>
     </property>
     <property name="font">
@@ -175,7 +178,7 @@ QPushButton:pressed {
    <widget class="QLabel" name="label_estatico_servicio">
     <property name="geometry">
      <rect>
-      <x>1050</x>
+      <x>1010</x>
       <y>30</y>
       <width>221</width>
       <height>51</height>
@@ -197,7 +200,7 @@ QPushButton:pressed {
    <widget class="QComboBox" name="comboBox_tiposAutobus">
     <property name="geometry">
      <rect>
-      <x>1270</x>
+      <x>1240</x>
       <y>40</y>
       <width>221</width>
       <height>41</height>
@@ -248,8 +251,8 @@ QComboBox QAbstractItemView {
   <widget class="QTableWidget" name="QtableWidget_autobuses">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>240</y>
+     <x>320</x>
+     <y>260</y>
      <width>1491</width>
      <height>801</height>
     </rect>
@@ -436,9 +439,9 @@ QScrollBar::sub-line {
   <widget class="QWidget" name="header_autobuses" native="true">
    <property name="geometry">
     <rect>
-     <x>-30</x>
+     <x>0</x>
      <y>0</y>
-     <width>1961</width>
+     <width>1921</width>
      <height>111</height>
     </rect>
    </property>
@@ -454,7 +457,7 @@ QScrollBar::sub-line {
    <widget class="QPushButton" name="boton_rutas">
     <property name="geometry">
      <rect>
-      <x>1140</x>
+      <x>1190</x>
       <y>20</y>
       <width>221</width>
       <height>71</height>
@@ -501,7 +504,7 @@ QPushButton:pressed {
    <widget class="QPushButton" name="boton_corridas">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>690</x>
       <y>20</y>
       <width>221</width>
       <height>71</height>
@@ -548,7 +551,7 @@ QPushButton:pressed {
    <widget class="QPushButton" name="boton_operadores">
     <property name="geometry">
      <rect>
-      <x>1390</x>
+      <x>1440</x>
       <y>20</y>
       <width>221</width>
       <height>71</height>
@@ -595,7 +598,7 @@ QPushButton:pressed {
    <widget class="QPushButton" name="boton_autobuses">
     <property name="geometry">
      <rect>
-      <x>890</x>
+      <x>940</x>
       <y>20</y>
       <width>221</width>
       <height>71</height>
@@ -642,7 +645,7 @@ QPushButton:pressed {
    <widget class="QPushButton" name="boton_inicio">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>320</x>
       <y>20</y>
       <width>91</width>
       <height>71</height>
@@ -689,7 +692,7 @@ QPushButton:pressed {
    <widget class="QPushButton" name="boton_reservaciones">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>440</x>
       <y>20</y>
       <width>221</width>
       <height>71</height>
@@ -736,7 +739,7 @@ QPushButton:pressed {
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>20</y>
       <width>211</width>
       <height>81</height>
