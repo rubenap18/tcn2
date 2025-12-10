@@ -14,7 +14,9 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">QWidget{
+	background-color: #ffffff;
+}</string>
   </property>
   <widget class="QWidget" name="header_corridas" native="true">
    <property name="geometry">

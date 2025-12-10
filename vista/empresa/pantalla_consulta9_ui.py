@@ -24,7 +24,9 @@ class Ui_pantalla_consulta9(object):
         if not pantalla_consulta9.objectName():
             pantalla_consulta9.setObjectName(u"pantalla_consulta9")
         pantalla_consulta9.resize(1920, 1080)
-        pantalla_consulta9.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        pantalla_consulta9.setStyleSheet(u"QWidget{\n"
+"	background-color: #ffffff;\n"
+"}")
         self.header_corridas = QWidget(pantalla_consulta9)
         self.header_corridas.setObjectName(u"header_corridas")
         self.header_corridas.setGeometry(QRect(0, 10, 1951, 111))
