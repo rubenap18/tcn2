@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QDateEdit, QHe
     QLabel, QPushButton, QSizePolicy, QTableWidget,
     QTableWidgetItem, QWidget)
 
-class Ui_pantalla_consulta6(object):
+class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
@@ -52,7 +52,7 @@ class Ui_pantalla_consulta6(object):
         __qtablewidgetitem6.setFont(font);
         self.QtableWidget_corridas.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         self.QtableWidget_corridas.setObjectName(u"QtableWidget_corridas")
-        self.QtableWidget_corridas.setGeometry(QRect(180, 360, 1561, 551))
+        self.QtableWidget_corridas.setGeometry(QRect(325, 360, 1270, 551))
         self.QtableWidget_corridas.setFont(font)
         self.QtableWidget_corridas.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QtableWidget_corridas.setStyleSheet(u"QTableView {\n"
@@ -390,31 +390,31 @@ class Ui_pantalla_consulta6(object):
     # setupUi
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QCoreApplication.translate("pantalla_consulta6", u"Form", None))
+        Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         ___qtablewidgetitem = self.QtableWidget_corridas.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("pantalla_consulta6", u"Corrida", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("Form", u"Corrida", None));
         ___qtablewidgetitem1 = self.QtableWidget_corridas.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("pantalla_consulta6", u"Salida", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("Form", u"Salida", None));
         ___qtablewidgetitem2 = self.QtableWidget_corridas.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("pantalla_consulta6", u"Origen", None));
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("Form", u"Origen", None));
         ___qtablewidgetitem3 = self.QtableWidget_corridas.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("pantalla_consulta6", u"Destino", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("Form", u"Destino", None));
         ___qtablewidgetitem4 = self.QtableWidget_corridas.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("pantalla_consulta6", u"Autob\u00fas", None));
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("Form", u"Autob\u00fas", None));
         ___qtablewidgetitem5 = self.QtableWidget_corridas.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("pantalla_consulta6", u"Boletos Vendidos", None));
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("Form", u"Boletos Vendidos", None));
         ___qtablewidgetitem6 = self.QtableWidget_corridas.horizontalHeaderItem(6)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("pantalla_consulta6", u"Boletos disponibles", None));
-        self.corridas_label.setText(QCoreApplication.translate("pantalla_consulta6", u"Boletos vendidos en un d\u00eda", None))
-        self.label_2.setText(QCoreApplication.translate("pantalla_consulta6", u"Fecha", None))
-        self.label_fecha_origen.setText(QCoreApplication.translate("pantalla_consulta6", u"Fecha de origen", None))
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("Form", u"Boletos disponibles", None));
+        self.corridas_label.setText(QCoreApplication.translate("Form", u"Boletos vendidos en un d\u00eda", None))
+        self.label_2.setText(QCoreApplication.translate("Form", u"Fecha", None))
+        self.label_fecha_origen.setText(QCoreApplication.translate("Form", u"Fecha de origen", None))
         self.boton_inicio_2.setText("")
-        self.boton_rutas.setText(QCoreApplication.translate("pantalla_consulta6", u"Rutas", None))
-        self.boton_corridas.setText(QCoreApplication.translate("pantalla_consulta6", u"Corridas", None))
-        self.boton_operadores.setText(QCoreApplication.translate("pantalla_consulta6", u"Operadores", None))
-        self.boton_autobuses.setText(QCoreApplication.translate("pantalla_consulta6", u"Autobuses", None))
+        self.boton_rutas.setText(QCoreApplication.translate("Form", u"Rutas", None))
+        self.boton_corridas.setText(QCoreApplication.translate("Form", u"Corridas", None))
+        self.boton_operadores.setText(QCoreApplication.translate("Form", u"Operadores", None))
+        self.boton_autobuses.setText(QCoreApplication.translate("Form", u"Autobuses", None))
         self.boton_inicio.setText("")
-        self.boton_reservaciones.setText(QCoreApplication.translate("pantalla_consulta6", u"Reservaciones", None))
+        self.boton_reservaciones.setText(QCoreApplication.translate("Form", u"Reservaciones", None))
         self.label_4.setText("")
         self.label_6.setText("")
     # retranslateUi

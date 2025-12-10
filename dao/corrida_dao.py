@@ -7,6 +7,33 @@ class CorridaDAO:
     def __init__(self):
         pass
 
+    def obtener_ciudades_origen_distintas(self):
+        origin_cities = []
+        try:
+            conn = Connection.getConnection()
+            cursor = conn.cursor(dictionary=True)
+            query = """
+                SELECT DISTINCT
+                    ro.nombre AS ciudad_origen
+                FROM
+                    corrida c
+                JOIN
+                    ruta r ON c.ruta = r.codigo
+                JOIN
+                    ciudad ro ON r.ciudadOrigen = ro.codigo
+                ORDER BY
+                    ro.nombre
+            """
+            cursor.execute(query)
+            for row in cursor.fetchall():
+                origin_cities.append(row['ciudad_origen'])
+        except Exception as e:
+            print(f"Error al obtener ciudades de origen distintas: {e}")
+        finally:
+            if 'cursor' in locals() and cursor:
+                cursor.close()
+        return origin_cities
+
     def obtener_todas_las_corridas_detalladas(self):
         corridas_detalladas = []
         try:

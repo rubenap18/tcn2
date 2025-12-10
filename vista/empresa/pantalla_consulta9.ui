@@ -14,7 +14,9 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">QWidget{
+	background-color: #ffffff;
+}</string>
   </property>
   <widget class="QWidget" name="header_corridas" native="true">
    <property name="geometry">
@@ -567,22 +569,20 @@ border: none;</string>
      <string>Origen</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_origen">
+   <widget class="QLabel" name="label_origen">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>160</y>
-      <width>113</width>
-      <height>22</height>
+      <width>150</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLineEdit{
+     <string notr="true">QLabel{
 	border-radius:5px;
+    font-size: 20px;
 }</string>
-    </property>
-    <property name="text">
-     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="boton_inicio_2">
@@ -636,9 +636,9 @@ QPushButton:pressed {
   <widget class="QTableWidget" name="QtableWidget_corridas">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>315</x>
      <y>360</y>
-     <width>1641</width>
+     <width>1050</width>
      <height>551</height>
     </rect>
    </property>
