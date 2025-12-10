@@ -166,9 +166,9 @@ class MainUIUsuario(QMainWindow):
                 boton_regresas.clicked.connect(
                     self.app_manager.controlador_index_usuario.navegar_a_index
                 )
-                print("✓ Conectado botón 'boton_regresas' en pantalla Catálogo de Destinos")
+                print("Conectado botón 'boton_regresas' en pantalla Catálogo de Destinos")
             else:
-                print("⚠ No se encontró 'boton_regresas' en pantalla Catálogo de Destinos")
+                print("No se encontró 'boton_regresas' en pantalla Catálogo de Destinos")
         
         # Conectar botón específico de la pantalla Contáctanos
         if self.contactanos_ui:
@@ -177,9 +177,9 @@ class MainUIUsuario(QMainWindow):
                 boton_salir.clicked.connect(
                     self.app_manager.controlador_index_usuario.navegar_a_index
                 )
-                print("✓ Conectado botón 'boton_salir' en pantalla Contáctanos")
+                print("Conectado botón boton_salir en pantalla Contáctanos")
             else:
-                print("⚠ No se encontró 'boton_salir' en pantalla Contáctanos")
+                print("No se encontró boton_salir en pantalla Contáctanos")
         
         # Buscar automáticamente botones de "Volver" en otras pantallas
         self._conectar_boton_volver(self.blog_ui)

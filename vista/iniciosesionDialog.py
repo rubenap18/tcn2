@@ -42,7 +42,6 @@ class InicioSesionDialog(QDialog):
         self.ui = loader.load(ui_file, self)
         ui_file.close()
 
-        # --- Integración del widget cargado en este QDialog ---
 
         # 5. Crear un layout para nuestro QDialog.
         #    El QDialog está vacío por defecto, necesitamos un layout para organizar su contenido.
@@ -74,7 +73,7 @@ class InicioSesionDialog(QDialog):
             # Si el boton registrar se presiona    
         if self.boton_registrate:
             self.boton_registrate.clicked.connect(self.abrirDialogRegistro)
-            # Si el boton ingresar como invitado se presiona
+            # Si el boton ingresar como invitado se presiona (SE QUITO ESE BOTON POR AHORA)
         if self.boton_invitado:
             self.boton_invitado.clicked.connect(self.ingresarComoInvitado)
 

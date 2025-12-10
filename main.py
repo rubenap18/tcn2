@@ -97,7 +97,6 @@ def main():
     
     
     controlador_index_usuario = ControladorIndexUsuario()
-    print(f"ControladorIndexUsuario creado: {controlador_index_usuario}")
     
     #iniciando app manager (AHORA CON controlador_index_usuario)
     app_manager = AppManager(

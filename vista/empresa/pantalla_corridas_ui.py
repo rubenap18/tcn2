@@ -237,11 +237,11 @@ class Ui_Form(object):
         icon2.addFile(u"recursos/recursos_empresa/borrar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_estadoCorr.setIcon(icon2)
         self.boton_estadoCorr.setIconSize(QSize(30, 30))
-        self.boton_estadoCorr_2 = QPushButton(self.widget_corrBotones)
-        self.boton_estadoCorr_2.setObjectName(u"boton_estadoCorr_2")
-        self.boton_estadoCorr_2.setGeometry(QRect(10, 290, 201, 71))
-        self.boton_estadoCorr_2.setFont(font)
-        self.boton_estadoCorr_2.setStyleSheet(u"QPushButton{\n"
+        self.boton_verAsientosCorrida = QPushButton(self.widget_corrBotones)
+        self.boton_verAsientosCorrida.setObjectName(u"boton_verAsientosCorrida")
+        self.boton_verAsientosCorrida.setGeometry(QRect(10, 310, 201, 71))
+        self.boton_verAsientosCorrida.setFont(font)
+        self.boton_verAsientosCorrida.setStyleSheet(u"QPushButton{\n"
 "	background: #1061C4;\n"
 "	color:WHITE;\n"
 "	border:none;\n"
@@ -258,9 +258,57 @@ class Ui_Form(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon3 = QIcon()
-        icon3.addFile(u"../../recursos/recursos_empresa/silla-de-coche.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_estadoCorr_2.setIcon(icon3)
-        self.boton_estadoCorr_2.setIconSize(QSize(30, 30))
+        icon3.addFile(u"recursos/recursos_empresa/silla-de-coche.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_verAsientosCorrida.setIcon(icon3)
+        self.boton_verAsientosCorrida.setIconSize(QSize(30, 30))
+        self.boton_verCiudadFechaCorr = QPushButton(self.widget_corrBotones)
+        self.boton_verCiudadFechaCorr.setObjectName(u"boton_verCiudadFechaCorr")
+        self.boton_verCiudadFechaCorr.setGeometry(QRect(10, 400, 201, 71))
+        self.boton_verCiudadFechaCorr.setFont(font)
+        self.boton_verCiudadFechaCorr.setStyleSheet(u"QPushButton{\n"
+"	background: #1061C4;\n"
+"	color:WHITE;\n"
+"	border:none;\n"
+"	border-radius: 8px;\n"
+"	font-weight: bold;\n"
+"	font-size: 20px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #0D4FAB;    \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0A3F8A;     \n"
+"}")
+        icon4 = QIcon()
+        icon4.addFile(u"recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_verCiudadFechaCorr.setIcon(icon4)
+        self.boton_verCiudadFechaCorr.setIconSize(QSize(30, 30))
+        self.boton_verBoletosVendidosCorr = QPushButton(self.widget_corrBotones)
+        self.boton_verBoletosVendidosCorr.setObjectName(u"boton_verBoletosVendidosCorr")
+        self.boton_verBoletosVendidosCorr.setGeometry(QRect(10, 490, 201, 71))
+        self.boton_verBoletosVendidosCorr.setFont(font)
+        self.boton_verBoletosVendidosCorr.setStyleSheet(u"QPushButton{\n"
+"	background: #1061C4;\n"
+"	color:WHITE;\n"
+"	border:none;\n"
+"	border-radius: 8px;\n"
+"	font-weight: bold;\n"
+"	font-size: 20px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #0D4FAB;    \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0A3F8A;     \n"
+"}")
+        icon5 = QIcon()
+        icon5.addFile(u"recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_verBoletosVendidosCorr.setIcon(icon5)
+        self.boton_verBoletosVendidosCorr.setIconSize(QSize(30, 30))
         self.widget_opfiltro_2 = QWidget(Form)
         self.widget_opfiltro_2.setObjectName(u"widget_opfiltro_2")
         self.widget_opfiltro_2.setGeometry(QRect(240, 130, 1641, 101))
@@ -435,9 +483,9 @@ class Ui_Form(object):
 "QPushButton:pressed {\n"
 "    background-color: #0A3F8A;     \n"
 "}")
-        icon4 = QIcon()
-        icon4.addFile(u"recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_rutas.setIcon(icon4)
+        icon6 = QIcon()
+        icon6.addFile(u"recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_rutas.setIcon(icon6)
         self.boton_rutas.setIconSize(QSize(30, 30))
         self.boton_corridas = QPushButton(self.header_corridas)
         self.boton_corridas.setObjectName(u"boton_corridas")
@@ -459,9 +507,7 @@ class Ui_Form(object):
 "QPushButton:pressed {\n"
 "    background-color: #0A3F8A;     \n"
 "}")
-        icon5 = QIcon()
-        icon5.addFile(u"recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_corridas.setIcon(icon5)
+        self.boton_corridas.setIcon(icon4)
         self.boton_corridas.setIconSize(QSize(30, 30))
         self.boton_operadores = QPushButton(self.header_corridas)
         self.boton_operadores.setObjectName(u"boton_operadores")
@@ -483,9 +529,9 @@ class Ui_Form(object):
 "QPushButton:pressed {\n"
 "    background-color: #0A3F8A;     \n"
 "}")
-        icon6 = QIcon()
-        icon6.addFile(u"recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_operadores.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u"recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_operadores.setIcon(icon7)
         self.boton_operadores.setIconSize(QSize(30, 30))
         self.boton_autobuses = QPushButton(self.header_corridas)
         self.boton_autobuses.setObjectName(u"boton_autobuses")
@@ -507,9 +553,9 @@ class Ui_Form(object):
 "QPushButton:pressed {\n"
 "    background-color: #0A3F8A;     \n"
 "}")
-        icon7 = QIcon()
-        icon7.addFile(u"recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_autobuses.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u"recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_autobuses.setIcon(icon8)
         self.boton_autobuses.setIconSize(QSize(30, 30))
         self.boton_inicio = QPushButton(self.header_corridas)
         self.boton_inicio.setObjectName(u"boton_inicio")
@@ -531,9 +577,9 @@ class Ui_Form(object):
 "QPushButton:pressed {\n"
 "    background-color: #0A3F8A;     \n"
 "}")
-        icon8 = QIcon()
-        icon8.addFile(u"recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_inicio.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u"recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_inicio.setIcon(icon9)
         self.boton_inicio.setIconSize(QSize(30, 30))
         self.boton_reservaciones = QPushButton(self.header_corridas)
         self.boton_reservaciones.setObjectName(u"boton_reservaciones")
@@ -555,9 +601,7 @@ class Ui_Form(object):
 "QPushButton:pressed {\n"
 "    background-color: #0A3F8A;     \n"
 "}")
-        icon9 = QIcon()
-        icon9.addFile(u"recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_reservaciones.setIcon(icon9)
+        self.boton_reservaciones.setIcon(icon5)
         self.boton_reservaciones.setIconSize(QSize(30, 30))
         self.label_4 = QLabel(self.header_corridas)
         self.label_4.setObjectName(u"label_4")
@@ -600,7 +644,11 @@ class Ui_Form(object):
         self.boton_anadirCorr.setText(QCoreApplication.translate("Form", u"A\u00f1adir", None))
         self.boton_actualizarCorr.setText(QCoreApplication.translate("Form", u"Actualizar", None))
         self.boton_estadoCorr.setText(QCoreApplication.translate("Form", u"Estado", None))
-        self.boton_estadoCorr_2.setText(QCoreApplication.translate("Form", u"Ver asientos", None))
+        self.boton_verAsientosCorrida.setText(QCoreApplication.translate("Form", u" Ver asientos", None))
+        self.boton_verCiudadFechaCorr.setText(QCoreApplication.translate("Form", u"Ver por ciudad  \n"
+"y fecha", None))
+        self.boton_verBoletosVendidosCorr.setText(QCoreApplication.translate("Form", u"Ver boletos \n"
+" vendidos", None))
         self.corridas_label.setText(QCoreApplication.translate("Form", u"Corridas", None))
         self.label.setText(QCoreApplication.translate("Form", u"Buscar", None))
         self.lineEdit_buscarNumCorr.setPlaceholderText(QCoreApplication.translate("Form", u"N\u00famero de corrida", None))

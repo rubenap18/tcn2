@@ -44,12 +44,12 @@ class PantallaOperadoresCorridas(QWidget):
 
     def cargar_datos(self):
         if not self.operator_id:
-            print("No operator ID provided.")
+            print("No existe el operador")
             return
 
-        print(f"Loading data for operator ID: {self.operator_id}")
+        print(f"Cargando datos del operador {self.operator_id}")
         corridas = self.controlador.obtener_todas_las_corridas_detalladas(self.operator_id)
-        print(f"Data returned from controller: {corridas}")
+        print(f"Datos del controlador: {corridas}")
         
         if not corridas:
             self.ui.QtableWidget_corridas.setRowCount(0)
