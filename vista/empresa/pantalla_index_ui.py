@@ -23,7 +23,7 @@ class Ui_pagina_inicio(object):
     def setupUi(self, pagina_inicio):
         if not pagina_inicio.objectName():
             pagina_inicio.setObjectName(u"pagina_inicio")
-        pagina_inicio.resize(1920, 1095)
+        pagina_inicio.resize(1920, 1102)
         pagina_inicio.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.header_corridas = QWidget(pagina_inicio)
         self.header_corridas.setObjectName(u"header_corridas")
@@ -227,25 +227,21 @@ class Ui_pagina_inicio(object):
         self.boton_comprarboleto.setIconSize(QSize(30, 30))
         self.label_estatico_operadores = QLabel(pagina_inicio)
         self.label_estatico_operadores.setObjectName(u"label_estatico_operadores")
-        self.label_estatico_operadores.setGeometry(QRect(40, 646, 318, 68))
+        self.label_estatico_operadores.setGeometry(QRect(1195, 260, 318, 68))
         font2 = QFont()
         font2.setPointSize(41)
         font2.setBold(True)
         font2.setItalic(True)
         self.label_estatico_operadores.setFont(font2)
         self.QtableWidget_operadores = QTableWidget(pagina_inicio)
-        if (self.QtableWidget_operadores.columnCount() < 4):
-            self.QtableWidget_operadores.setColumnCount(4)
+        if (self.QtableWidget_operadores.columnCount() < 2):
+            self.QtableWidget_operadores.setColumnCount(2)
         __qtablewidgetitem = QTableWidgetItem()
         self.QtableWidget_operadores.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
         self.QtableWidget_operadores.setHorizontalHeaderItem(1, __qtablewidgetitem1)
-        __qtablewidgetitem2 = QTableWidgetItem()
-        self.QtableWidget_operadores.setHorizontalHeaderItem(2, __qtablewidgetitem2)
-        __qtablewidgetitem3 = QTableWidgetItem()
-        self.QtableWidget_operadores.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         self.QtableWidget_operadores.setObjectName(u"QtableWidget_operadores")
-        self.QtableWidget_operadores.setGeometry(QRect(40, 720, 751, 281))
+        self.QtableWidget_operadores.setGeometry(QRect(1195, 340, 681, 291))
         self.QtableWidget_operadores.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QtableWidget_operadores.setStyleSheet(u"QTableView {\n"
 "    background: #ffffff;\n"
@@ -332,21 +328,23 @@ class Ui_pagina_inicio(object):
 "")
         self.QtableWidget_operadores.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.QtableWidget_operadores.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.QtableWidget_operadores.horizontalHeader().setDefaultSectionSize(187)
+        self.QtableWidget_operadores.horizontalHeader().setDefaultSectionSize(338)
         self.QtableWidget_operadores.verticalHeader().setVisible(False)
         self.QtableWidget_corridasact = QTableWidget(pagina_inicio)
-        if (self.QtableWidget_corridasact.columnCount() < 4):
-            self.QtableWidget_corridasact.setColumnCount(4)
+        if (self.QtableWidget_corridasact.columnCount() < 5):
+            self.QtableWidget_corridasact.setColumnCount(5)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.QtableWidget_corridasact.setHorizontalHeaderItem(0, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.QtableWidget_corridasact.setHorizontalHeaderItem(1, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
-        self.QtableWidget_corridasact.setHorizontalHeaderItem(0, __qtablewidgetitem4)
+        self.QtableWidget_corridasact.setHorizontalHeaderItem(2, __qtablewidgetitem4)
         __qtablewidgetitem5 = QTableWidgetItem()
-        self.QtableWidget_corridasact.setHorizontalHeaderItem(1, __qtablewidgetitem5)
+        self.QtableWidget_corridasact.setHorizontalHeaderItem(3, __qtablewidgetitem5)
         __qtablewidgetitem6 = QTableWidgetItem()
-        self.QtableWidget_corridasact.setHorizontalHeaderItem(2, __qtablewidgetitem6)
-        __qtablewidgetitem7 = QTableWidgetItem()
-        self.QtableWidget_corridasact.setHorizontalHeaderItem(3, __qtablewidgetitem7)
+        self.QtableWidget_corridasact.setHorizontalHeaderItem(4, __qtablewidgetitem6)
         self.QtableWidget_corridasact.setObjectName(u"QtableWidget_corridasact")
-        self.QtableWidget_corridasact.setGeometry(QRect(42, 340, 751, 291))
+        self.QtableWidget_corridasact.setGeometry(QRect(52, 340, 1111, 291))
         self.QtableWidget_corridasact.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QtableWidget_corridasact.setStyleSheet(u"QTableView {\n"
 "    background: #ffffff;\n"
@@ -433,11 +431,11 @@ class Ui_pagina_inicio(object):
 "")
         self.QtableWidget_corridasact.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.QtableWidget_corridasact.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.QtableWidget_corridasact.horizontalHeader().setDefaultSectionSize(187)
+        self.QtableWidget_corridasact.horizontalHeader().setDefaultSectionSize(221)
         self.QtableWidget_corridasact.verticalHeader().setVisible(False)
         self.label_estatico_corridas = QLabel(pagina_inicio)
         self.label_estatico_corridas.setObjectName(u"label_estatico_corridas")
-        self.label_estatico_corridas.setGeometry(QRect(43, 260, 448, 68))
+        self.label_estatico_corridas.setGeometry(QRect(50, 260, 448, 68))
         self.label_estatico_corridas.setFont(font2)
         self.comboBox_bfecha = QComboBox(pagina_inicio)
         self.comboBox_bfecha.setObjectName(u"comboBox_bfecha")
@@ -487,16 +485,16 @@ class Ui_pagina_inicio(object):
         self.QtableWidget_pasajeros = QTableWidget(pagina_inicio)
         if (self.QtableWidget_pasajeros.columnCount() < 4):
             self.QtableWidget_pasajeros.setColumnCount(4)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.QtableWidget_pasajeros.setHorizontalHeaderItem(0, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
-        self.QtableWidget_pasajeros.setHorizontalHeaderItem(0, __qtablewidgetitem8)
+        self.QtableWidget_pasajeros.setHorizontalHeaderItem(1, __qtablewidgetitem8)
         __qtablewidgetitem9 = QTableWidgetItem()
-        self.QtableWidget_pasajeros.setHorizontalHeaderItem(1, __qtablewidgetitem9)
+        self.QtableWidget_pasajeros.setHorizontalHeaderItem(2, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
-        self.QtableWidget_pasajeros.setHorizontalHeaderItem(2, __qtablewidgetitem10)
-        __qtablewidgetitem11 = QTableWidgetItem()
-        self.QtableWidget_pasajeros.setHorizontalHeaderItem(3, __qtablewidgetitem11)
+        self.QtableWidget_pasajeros.setHorizontalHeaderItem(3, __qtablewidgetitem10)
         self.QtableWidget_pasajeros.setObjectName(u"QtableWidget_pasajeros")
-        self.QtableWidget_pasajeros.setGeometry(QRect(830, 340, 1051, 661))
+        self.QtableWidget_pasajeros.setGeometry(QRect(50, 730, 1111, 291))
         self.QtableWidget_pasajeros.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QtableWidget_pasajeros.setStyleSheet(u"QTableView {\n"
 "    background: #ffffff;\n"
@@ -583,12 +581,40 @@ class Ui_pagina_inicio(object):
 "")
         self.QtableWidget_pasajeros.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.QtableWidget_pasajeros.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.QtableWidget_pasajeros.horizontalHeader().setDefaultSectionSize(262)
+        self.QtableWidget_pasajeros.horizontalHeader().setDefaultSectionSize(276)
         self.QtableWidget_pasajeros.verticalHeader().setVisible(False)
         self.label_estatico_pasajeros = QLabel(pagina_inicio)
         self.label_estatico_pasajeros.setObjectName(u"label_estatico_pasajeros")
-        self.label_estatico_pasajeros.setGeometry(QRect(840, 261, 269, 68))
+        self.label_estatico_pasajeros.setGeometry(QRect(50, 647, 269, 71))
         self.label_estatico_pasajeros.setFont(font2)
+        self.boton_corridasoperadores = QPushButton(pagina_inicio)
+        self.boton_corridasoperadores.setObjectName(u"boton_corridasoperadores")
+        self.boton_corridasoperadores.setGeometry(QRect(1625, 260, 221, 61))
+        self.boton_corridasoperadores.setFont(font)
+        self.boton_corridasoperadores.setStyleSheet(u"QPushButton{\n"
+"	background: #1061C4;\n"
+"	color:WHITE;\n"
+"	border:none;\n"
+"	border-radius: 8px;\n"
+"	font-weight: bold;\n"
+"	font-size: 25px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #0D4FAB;    \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0A3F8A;     \n"
+"}")
+        self.boton_corridasoperadores.setIcon(icon5)
+        self.boton_corridasoperadores.setIconSize(QSize(30, 30))
+        self.label_estatico_operadores_2 = QLabel(pagina_inicio)
+        self.label_estatico_operadores_2.setObjectName(u"label_estatico_operadores_2")
+        self.label_estatico_operadores_2.setGeometry(QRect(1240, 650, 621, 341))
+        self.label_estatico_operadores_2.setFont(font2)
+        self.label_estatico_operadores_2.setPixmap(QPixmap(u"recursos/recursos_empresa/irizar i6 blanco.png"))
+        self.label_estatico_operadores_2.setScaledContents(True)
 
         self.retranslateUi(pagina_inicio)
 
@@ -611,28 +637,28 @@ class Ui_pagina_inicio(object):
         ___qtablewidgetitem.setText(QCoreApplication.translate("pagina_inicio", u"N\u00b0 Operador", None));
         ___qtablewidgetitem1 = self.QtableWidget_operadores.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("pagina_inicio", u"Nombre", None));
-        ___qtablewidgetitem2 = self.QtableWidget_operadores.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("pagina_inicio", u"Corrida asignada", None));
-        ___qtablewidgetitem3 = self.QtableWidget_operadores.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("pagina_inicio", u"Fecha de corrida", None));
-        ___qtablewidgetitem4 = self.QtableWidget_corridasact.horizontalHeaderItem(0)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("pagina_inicio", u"N\u00b0 Corrida", None));
-        ___qtablewidgetitem5 = self.QtableWidget_corridasact.horizontalHeaderItem(1)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("pagina_inicio", u"Fecha", None));
-        ___qtablewidgetitem6 = self.QtableWidget_corridasact.horizontalHeaderItem(2)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("pagina_inicio", u"Hora Salida", None));
-        ___qtablewidgetitem7 = self.QtableWidget_corridasact.horizontalHeaderItem(3)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("pagina_inicio", u"Ruta", None));
+        ___qtablewidgetitem2 = self.QtableWidget_corridasact.horizontalHeaderItem(0)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("pagina_inicio", u"N\u00b0 Corrida", None));
+        ___qtablewidgetitem3 = self.QtableWidget_corridasact.horizontalHeaderItem(1)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("pagina_inicio", u"Fecha y Hora Salida", None));
+        ___qtablewidgetitem4 = self.QtableWidget_corridasact.horizontalHeaderItem(2)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("pagina_inicio", u"Origen", None));
+        ___qtablewidgetitem5 = self.QtableWidget_corridasact.horizontalHeaderItem(3)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("pagina_inicio", u"Destino", None));
+        ___qtablewidgetitem6 = self.QtableWidget_corridasact.horizontalHeaderItem(4)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("pagina_inicio", u"Autobus", None));
         self.label_estatico_corridas.setText(QCoreApplication.translate("pagina_inicio", u"Corridas activas", None))
         self.comboBox_bfecha.setPlaceholderText(QCoreApplication.translate("pagina_inicio", u"Buscar por fecha", None))
-        ___qtablewidgetitem8 = self.QtableWidget_pasajeros.horizontalHeaderItem(0)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("pagina_inicio", u"N\u00b0 Pasajero", None));
-        ___qtablewidgetitem9 = self.QtableWidget_pasajeros.horizontalHeaderItem(1)
+        ___qtablewidgetitem7 = self.QtableWidget_pasajeros.horizontalHeaderItem(0)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("pagina_inicio", u"N\u00b0 boleto", None));
+        ___qtablewidgetitem8 = self.QtableWidget_pasajeros.horizontalHeaderItem(1)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("pagina_inicio", u"N\u00b0 Asiento", None));
+        ___qtablewidgetitem9 = self.QtableWidget_pasajeros.horizontalHeaderItem(2)
         ___qtablewidgetitem9.setText(QCoreApplication.translate("pagina_inicio", u"Nombre ", None));
-        ___qtablewidgetitem10 = self.QtableWidget_pasajeros.horizontalHeaderItem(2)
+        ___qtablewidgetitem10 = self.QtableWidget_pasajeros.horizontalHeaderItem(3)
         ___qtablewidgetitem10.setText(QCoreApplication.translate("pagina_inicio", u"Edad", None));
-        ___qtablewidgetitem11 = self.QtableWidget_pasajeros.horizontalHeaderItem(3)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("pagina_inicio", u"Telefono", None));
         self.label_estatico_pasajeros.setText(QCoreApplication.translate("pagina_inicio", u"Pasajeros", None))
+        self.boton_corridasoperadores.setText(QCoreApplication.translate("pagina_inicio", u"Corridas", None))
+        self.label_estatico_operadores_2.setText("")
     # retranslateUi
 

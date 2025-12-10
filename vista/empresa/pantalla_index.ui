@@ -907,9 +907,9 @@ QScrollBar::sub-line {
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>650</y>
+     <y>647</y>
      <width>269</width>
-     <height>68</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="font">
@@ -921,53 +921,6 @@ QScrollBar::sub-line {
    </property>
    <property name="text">
     <string>Pasajeros</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="boton_boletospasajeros">
-   <property name="geometry">
-    <rect>
-     <x>910</x>
-     <y>650</y>
-     <width>221</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>-1</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-	background: #1061C4;
-	color:WHITE;
-	border:none;
-	border-radius: 8px;
-	font-weight: bold;
-	font-size: 25px;
-}
-
-QPushButton:hover {
-    background-color: #0D4FAB;    
-}
-
-QPushButton:pressed {
-    background-color: #0A3F8A;     
-}</string>
-   </property>
-   <property name="text">
-    <string>Boletos</string>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>recursos/recursos_empresa/boleto.png</normaloff>recursos/recursos_empresa/boleto.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="boton_corridasoperadores">
@@ -1015,6 +968,32 @@ QPushButton:pressed {
      <width>30</width>
      <height>30</height>
     </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_estatico_operadores_2">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>650</y>
+     <width>621</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>41</pointsize>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>recursos/recursos_empresa/irizar i6 blanco.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
