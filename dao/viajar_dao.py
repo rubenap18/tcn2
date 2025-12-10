@@ -4,7 +4,6 @@ from datetime import datetime, date
 
 class ViajarDAO:
    
-    
     def __init__(self):
         pass
     

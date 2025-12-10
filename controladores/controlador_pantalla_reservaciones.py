@@ -88,3 +88,24 @@ class ControlardorPantallaReservaciones:
         except Error as e:
             print(f'Error en ControladorVEReservaciones (buscarReservacionesPorCiudad()): {e}')
             raise e
+        
+
+    def buscarReservacionPorNombrePasajero(self, nombre):
+        """
+        NUEVO MÉTODO: Busca reservaciones por nombre del pasajero.
+        
+        Args:
+            nombre (str): Nombre o parte del nombre del pasajero a buscar
+            
+        Returns:
+            list o False: Lista de reservaciones encontradas o False si la validación falla
+        """
+        # Validar que el nombre no esté vacío y tenga un formato válido
+        if not nombre or not nombre.strip():
+            return False
+            
+        try:
+            return self.reservacion_dao.buscarReservacionPorNombrePasajero(nombre.strip())
+        except Error as e:
+            print(f'Error en ControladorVEReservaciones (buscarReservacionPorNombrePasajero()): {e}')
+            raise e
