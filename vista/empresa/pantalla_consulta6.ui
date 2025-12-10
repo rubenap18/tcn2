@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>pantalla_consulta6</class>
- <widget class="QWidget" name="pantalla_consulta6">
+ <widget class="QWidget" name="Form">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -19,7 +19,7 @@
   <widget class="QTableWidget" name="QtableWidget_corridas">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>180</x>
      <y>360</y>
      <width>1561</width>
      <height>551</height>
@@ -298,44 +298,21 @@ border: none;
 }</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>130</y>
-      <width>71</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: black;
-border: none;</string>
-    </property>
-    <property name="text">
-     <string>Fecha</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_fecha">
+
+   <widget class="QLabel" name="label_fecha">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>160</y>
-      <width>113</width>
-      <height>22</height>
+      <width>150</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLineEdit{
+     <string notr="true">QLabel{
 	border-radius:5px;
+    font-size: 20px;
 }</string>
-    </property>
-    <property name="text">
-     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="boton_inicio_2">
@@ -376,7 +353,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/volver.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/volver.png</iconset>
+      <normaloff>../../recursos/recursos_empresa/volver.png</normaloff>../../recursos/recursos_empresa/volver.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -438,7 +415,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/entrega.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/entrega.png</iconset>
+      <normaloff>../../recursos/recursos_empresa/entrega.png</normaloff>../../recursos/recursos_empresa/entrega.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -485,7 +462,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/calendario.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/calendario.png</iconset>
+      <normaloff>../../recursos/recursos_empresa/calendario.png</normaloff>../../recursos/recursos_empresa/calendario.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -532,7 +509,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/conductor.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/conductor.png</iconset>
+      <normaloff>../../recursos/recursos_empresa/conductor.png</normaloff>../../recursos/recursos_empresa/conductor.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -579,7 +556,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/autobus.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/autobus.png</iconset>
+      <normaloff>../../recursos/recursos_empresa/autobus.png</normaloff>../../recursos/recursos_empresa/autobus.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -626,7 +603,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</iconset>
+      <normaloff>../../recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</normaloff>../../recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -673,7 +650,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/boleto.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/boleto.png</iconset>
+      <normaloff>../../recursos/recursos_empresa/boleto.png</normaloff>../../recursos/recursos_empresa/boleto.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -698,7 +675,7 @@ QPushButton:pressed {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>tcn2/tcn2/recursos/recursos_empresa/logo.png</pixmap>
+     <pixmap>../../recursos/recursos_empresa/logo.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -714,7 +691,7 @@ QPushButton:pressed {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>tcn2/tcn2/vista/empresa/recursos/usuario.png</pixmap>
+     <pixmap>recursos/usuario.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>

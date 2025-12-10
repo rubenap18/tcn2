@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QWidget, QTableWidgetItem, QMessageBox, QAbstractItemView
-from PySide6.QtCore import QDate
+from PySide6.QtCore import QDate, Qt
 from vista.empresa.pantalla_consulta9_ui import Ui_pantalla_consulta9
 
 class PantallaConsulta9(QWidget):
@@ -75,9 +75,26 @@ class PantallaConsulta9(QWidget):
 
         for row_num, corrida in enumerate(corridas):
             self.ui.QtableWidget_corridas.insertRow(row_num)
-            self.ui.QtableWidget_corridas.setItem(row_num, 0, QTableWidgetItem(str(corrida['fecha_hora_salida'])))
-            self.ui.QtableWidget_corridas.setItem(row_num, 1, QTableWidgetItem(str(corrida['numero_viaje'])))
-            self.ui.QtableWidget_corridas.setItem(row_num, 2, QTableWidgetItem(corrida['ciudad_destino']))
-            self.ui.QtableWidget_corridas.setItem(row_num, 3, QTableWidgetItem(str(corrida['autobus_numero'])))
-            self.ui.QtableWidget_corridas.setItem(row_num, 4, QTableWidgetItem(corrida['matricula']))
-            self.ui.QtableWidget_corridas.setItem(row_num, 5, QTableWidgetItem(corrida['nombre_operador']))
+            item_fecha_hora_salida = QTableWidgetItem(str(corrida['fecha_hora_salida']))
+            item_fecha_hora_salida.setTextAlignment(Qt.AlignCenter)
+            self.ui.QtableWidget_corridas.setItem(row_num, 0, item_fecha_hora_salida)
+            
+            item_numero_viaje = QTableWidgetItem(str(corrida['numero_viaje']))
+            item_numero_viaje.setTextAlignment(Qt.AlignCenter)
+            self.ui.QtableWidget_corridas.setItem(row_num, 1, item_numero_viaje)
+            
+            item_ciudad_destino = QTableWidgetItem(corrida['ciudad_destino'])
+            item_ciudad_destino.setTextAlignment(Qt.AlignCenter)
+            self.ui.QtableWidget_corridas.setItem(row_num, 2, item_ciudad_destino)
+            
+            item_autobus_numero = QTableWidgetItem(str(corrida['autobus_numero']))
+            item_autobus_numero.setTextAlignment(Qt.AlignCenter)
+            self.ui.QtableWidget_corridas.setItem(row_num, 3, item_autobus_numero)
+            
+            item_matricula = QTableWidgetItem(corrida['matricula'])
+            item_matricula.setTextAlignment(Qt.AlignCenter)
+            self.ui.QtableWidget_corridas.setItem(row_num, 4, item_matricula)
+            
+            item_nombre_operador = QTableWidgetItem(corrida['nombre_operador'])
+            item_nombre_operador.setTextAlignment(Qt.AlignCenter)
+            self.ui.QtableWidget_corridas.setItem(row_num, 5, item_nombre_operador)

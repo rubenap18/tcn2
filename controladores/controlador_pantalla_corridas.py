@@ -1,4 +1,5 @@
 from PySide6.QtWidgets import QTableWidgetItem, QTableWidget, QLineEdit, QComboBox, QPushButton, QDialog, QMessageBox
+from PySide6.QtCore import Qt
 from controladores.controlador_corrida_dialog import ControladorCorridaDialog
 from controladores.controlador_actualizar_corrida_dialog import ControladorActualizarCorridaDialog # New Import
 from controladores.controlador_actualizar_corr_estado_dialog import ControladorActualizarCorrEstadoDialog # New Import
@@ -73,7 +74,7 @@ class ControladorPantallaCorridas:
         self.tabla_corridas.setHorizontalHeaderLabels([
             "Corrida", "Origen", "Destino", "Distancia",
             "Fecha y Hora de Salida", "Operador", "Autobus", # Changed "Número Autobús" to "Autobus"
-            "Matrícula", "Asientos", "Boletos Vendidos"
+            "Matrícula", "Asientos", "Pasajeros"
         ])
         self.tabla_corridas.setEditTriggers(QTableWidget.NoEditTriggers)
         self.tabla_corridas.verticalHeader().setVisible(False)
@@ -160,16 +161,45 @@ class ControladorPantallaCorridas:
         
         for row_num, corrida in enumerate(corridas_a_mostrar):
             self.tabla_corridas.insertRow(row_num)
-            self.tabla_corridas.setItem(row_num, 0, QTableWidgetItem(str(corrida['numero_viaje'])))
-            self.tabla_corridas.setItem(row_num, 1, QTableWidgetItem(corrida['ciudad_origen']))
-            self.tabla_corridas.setItem(row_num, 2, QTableWidgetItem(corrida['ciudad_destino']))
-            self.tabla_corridas.setItem(row_num, 3, QTableWidgetItem(str(corrida['distancia'])))
-            self.tabla_corridas.setItem(row_num, 4, QTableWidgetItem(str(corrida['fecha_hora_salida'])))
-            self.tabla_corridas.setItem(row_num, 5, QTableWidgetItem(corrida['nombre_operador']))
-            self.tabla_corridas.setItem(row_num, 6, QTableWidgetItem(str(corrida['autobus_numero'])))
-            self.tabla_corridas.setItem(row_num, 7, QTableWidgetItem(corrida['matricula']))
-            self.tabla_corridas.setItem(row_num, 8, QTableWidgetItem(str(corrida['cantidad_asientos'])))
-            self.tabla_corridas.setItem(row_num, 9, QTableWidgetItem(str(corrida['boletos_vendidos'])))
+            item_numero_viaje = QTableWidgetItem(str(corrida['numero_viaje']))
+            item_numero_viaje.setTextAlignment(Qt.AlignCenter)
+            self.tabla_corridas.setItem(row_num, 0, item_numero_viaje)
+            
+            item_origen = QTableWidgetItem(corrida['ciudad_origen'])
+            item_origen.setTextAlignment(Qt.AlignCenter)
+            self.tabla_corridas.setItem(row_num, 1, item_origen)
+            
+            item_destino = QTableWidgetItem(corrida['ciudad_destino'])
+            item_destino.setTextAlignment(Qt.AlignCenter)
+            self.tabla_corridas.setItem(row_num, 2, item_destino)
+            
+            item_distancia = QTableWidgetItem(str(corrida['distancia']))
+            item_distancia.setTextAlignment(Qt.AlignCenter)
+            self.tabla_corridas.setItem(row_num, 3, item_distancia)
+            
+            item_fecha_hora_salida = QTableWidgetItem(str(corrida['fecha_hora_salida']))
+            item_fecha_hora_salida.setTextAlignment(Qt.AlignCenter)
+            self.tabla_corridas.setItem(row_num, 4, item_fecha_hora_salida)
+            
+            item_nombre_operador = QTableWidgetItem(corrida['nombre_operador'])
+            item_nombre_operador.setTextAlignment(Qt.AlignCenter)
+            self.tabla_corridas.setItem(row_num, 5, item_nombre_operador)
+            
+            item_autobus_numero = QTableWidgetItem(str(corrida['autobus_numero']))
+            item_autobus_numero.setTextAlignment(Qt.AlignCenter)
+            self.tabla_corridas.setItem(row_num, 6, item_autobus_numero)
+            
+            item_matricula = QTableWidgetItem(corrida['matricula'])
+            item_matricula.setTextAlignment(Qt.AlignCenter)
+            self.tabla_corridas.setItem(row_num, 7, item_matricula)
+            
+            item_cantidad_asientos = QTableWidgetItem(str(corrida['cantidad_asientos']))
+            item_cantidad_asientos.setTextAlignment(Qt.AlignCenter)
+            self.tabla_corridas.setItem(row_num, 8, item_cantidad_asientos)
+            
+            item_boletos_vendidos = QTableWidgetItem(str(corrida['boletos_vendidos']))
+            item_boletos_vendidos.setTextAlignment(Qt.AlignCenter)
+            self.tabla_corridas.setItem(row_num, 9, item_boletos_vendidos)
 
     def _on_numero_corrida_text_changed(self, texto_busqueda):
         self.filtro_numero_corrida = texto_busqueda
