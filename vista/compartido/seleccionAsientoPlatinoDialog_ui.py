@@ -15,7 +15,7 @@ class SeleccionAsientoPlatino(object):
         self.label_titulo.setGeometry(QRect(20, 10, 610, 70))  # Más ancho
         self.label_titulo.setStyleSheet("font-size: 26pt; font-weight: bold; color: #9C27B0;")  # Fuente reducida
         self.label_titulo.setAlignment(Qt.AlignCenter)
-        self.label_titulo.setText("Selecciona tus Asientos - Platino")
+        self.label_titulo.setText("Selecciona tus Asientos")
         
         # INFORMACIÓN DE LA CORRIDA - Frame más alto y ancho
         self.frame_info = QFrame(Dialog)

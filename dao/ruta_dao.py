@@ -51,7 +51,7 @@ class RutaDAO:
             cursor.execute("INSERT INTO ruta (codigo, ciudadOrigen, ciudadDestino, distancia) VALUES (%s, %s, %s, %s)",
                            (codigo_ida, codigo_origen, codigo_destino, distancia))
             conn.commit()
-            print(f"DAO: Ruta {codigo_ida} insertada con éxito.")
+            print(f"DAO: Ruta {codigo_ida} insertada con éxito")
             return True
 
         except Error as e:
@@ -69,12 +69,12 @@ class RutaDAO:
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
-                print("DAO: Conexión a la base de datos no disponible.")
+                print("Fallo en conexion a BD")
                 return False
             cursor = conn.cursor()
             cursor.execute("UPDATE ruta SET distancia = %s WHERE codigo = %s", (distancia, codigo_ruta))
             conn.commit()
-            print(f"DAO: Distancia de ruta {codigo_ruta} actualizada con éxito.")
+            print(f"DAO: Distancia de ruta {codigo_ruta} actualizada con éxito")
             return True
 
         except Error as e:

@@ -424,8 +424,8 @@ QPushButton:pressed {
   <widget class="QLabel" name="label_estatico_operadores">
    <property name="geometry">
     <rect>
-     <x>1200</x>
-     <y>650</y>
+     <x>1195</x>
+     <y>260</y>
      <width>318</width>
      <height>68</height>
     </rect>
@@ -444,8 +444,8 @@ QPushButton:pressed {
   <widget class="QTableWidget" name="QtableWidget_operadores">
    <property name="geometry">
     <rect>
-     <x>1200</x>
-     <y>730</y>
+     <x>1195</x>
+     <y>340</y>
      <width>681</width>
      <height>291</height>
     </rect>
@@ -973,8 +973,8 @@ QPushButton:pressed {
   <widget class="QPushButton" name="boton_corridasoperadores">
    <property name="geometry">
     <rect>
-     <x>1630</x>
-     <y>650</y>
+     <x>1625</x>
+     <y>260</y>
      <width>221</width>
      <height>61</height>
     </rect>
@@ -1017,34 +1017,6 @@ QPushButton:pressed {
     </size>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>1280</x>
-     <y>335</y>
-     <width>506</width>
-     <height>326</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>../../recursos/recursos_usuario/image(1).png</pixmap>
-   </property>
-  </widget>
-  <zorder>label</zorder>
-  <zorder>header_corridas</zorder>
-  <zorder>widget_opfiltro_2</zorder>
-  <zorder>label_estatico_operadores</zorder>
-  <zorder>QtableWidget_operadores</zorder>
-  <zorder>QtableWidget_corridasact</zorder>
-  <zorder>label_estatico_corridas</zorder>
-  <zorder>comboBox_bfecha</zorder>
-  <zorder>QtableWidget_pasajeros</zorder>
-  <zorder>label_estatico_pasajeros</zorder>
-  <zorder>boton_boletospasajeros</zorder>
-  <zorder>boton_corridasoperadores</zorder>
  </widget>
  <resources/>
  <connections/>

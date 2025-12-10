@@ -9,12 +9,12 @@ class ControladorPantallaCorridas:
         self.corrida_dao = corrida_dao
         self.vista = None
         self.tabla_corridas = None 
-        self.todas_las_corridas = [] # Store all corridas
+        self.todas_las_corridas = [] 
 
         # Filter states
         self.filtro_numero_corrida = ""
         self.filtro_origen = ""
-        self.filtro_destino = "" # New: Filter state for destination
+        self.filtro_destino = "" 
 
     def set_vista(self, vista_corridas):
         self.vista = vista_corridas
@@ -251,3 +251,44 @@ class ControladorPantallaCorridas:
             ]
         
         self._actualizar_tabla(corridas_filtradas)
+    
+    def obtener_informacion_corrida_para_asientos(self, numero_corrida):
+        """
+        NUEVO MÉTODO: Obtiene la información completa de una corrida para mostrar en el diálogo de asientos.
+        
+        Args:
+            numero_corrida (int): Número de la corrida
+            
+        Returns:
+            dict: Diccionario con la información de la corrida o None si no se encuentra
+        """
+        # Buscar en las corridas ya cargadas
+        for corrida in self.todas_las_corridas:
+            if corrida['numero_viaje'] == numero_corrida:
+                # Retornar formato compatible con el diálogo de asientos
+                return {
+                    'numero_corrida': corrida['numero_viaje'],
+                    'numero_autobus': corrida['autobus_numero'],
+                    'ciudad_origen': corrida['ciudad_origen'],
+                    'ciudad_destino': corrida['ciudad_destino'],
+                    'fecha': corrida['fecha_hora_salida'].split()[0] if ' ' in str(corrida['fecha_hora_salida']) else corrida['fecha_hora_salida'],
+                    'hora_salida': corrida['fecha_hora_salida'].split()[1] if ' ' in str(corrida['fecha_hora_salida']) else ''
+                }
+        
+        # Si no está en las corridas cargadas, buscar en la BD
+        try:
+            corridas = self.corrida_dao.obtener_todas_las_corridas_detalladas()
+            for corrida in corridas:
+                if corrida['numero_viaje'] == numero_corrida:
+                    return {
+                        'numero_corrida': corrida['numero_viaje'],
+                        'numero_autobus': corrida['autobus_numero'],
+                        'ciudad_origen': corrida['ciudad_origen'],
+                        'ciudad_destino': corrida['ciudad_destino'],
+                        'fecha': corrida['fecha_hora_salida'].split()[0] if ' ' in str(corrida['fecha_hora_salida']) else corrida['fecha_hora_salida'],
+                        'hora_salida': corrida['fecha_hora_salida'].split()[1] if ' ' in str(corrida['fecha_hora_salida']) else ''
+                    }
+        except Exception as e:
+            print(f"Error al buscar corrida en BD: {e}")
+        
+        return None

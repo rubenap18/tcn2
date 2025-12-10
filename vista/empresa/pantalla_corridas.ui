@@ -396,7 +396,7 @@ QPushButton:pressed {
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="boton_verAsientosCorr">
+   <widget class="QPushButton" name="boton_verAsientosCorrida">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -430,11 +430,11 @@ QPushButton:pressed {
 }</string>
     </property>
     <property name="text">
-     <string>Ver asientos</string>
+     <string> Ver asientos</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../recursos/recursos_empresa/silla-de-coche.png</normaloff>../../recursos/recursos_empresa/silla-de-coche.png</iconset>
+      <normaloff>recursos/recursos_empresa/silla-de-coche.png</normaloff>recursos/recursos_empresa/silla-de-coche.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -477,12 +477,12 @@ QPushButton:pressed {
 }</string>
     </property>
     <property name="text">
-     <string>Ver por ciudad 
+     <string>Ver por ciudad  
 y fecha</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../recursos/recursos_empresa/calendario.png</normaloff>../../recursos/recursos_empresa/calendario.png</iconset>
+      <normaloff>recursos/recursos_empresa/calendario.png</normaloff>recursos/recursos_empresa/calendario.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -530,7 +530,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../recursos/recursos_empresa/boleto.png</normaloff>../../recursos/recursos_empresa/boleto.png</iconset>
+      <normaloff>recursos/recursos_empresa/boleto.png</normaloff>recursos/recursos_empresa/boleto.png</iconset>
     </property>
     <property name="iconSize">
      <size>

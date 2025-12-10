@@ -141,34 +141,48 @@ class ReservacionDAO:
 
     def getTodasReservacionesParaTabla(self):
         """
-        CORREGIDO: Ahora incluye reservacion.numero como primera columna
-        para poder identificar cada reservación única
+        Retorna las 8 columnas requeridas para la tabla de reservaciones:
+        1. Núm. Reservación
+        2. Fecha Reservación
+        3. Nombre Cliente (completo)
+        4. Ciudad Origen
+        5. Ciudad Destino
+        6. Fecha y Hora Salida (combinadas)
+        7. Cant. Pasajeros
+        8. Fecha Límite Pago
         """
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
                 raise Error('No se puede establecer conexion con la BD.')
 
-            query = f"""
-                    SELECT reservacion.numero, reservacion.fecha, corrida, CONCAT(p.nombre,' ', p.apellPat,' ',p.apellMat),
-                    co.nombre, cd.nombre, c.hora_salida, c.hora_llegada,
-                    cantPasajeros, fechaLimPago
-                    FROM reservacion 
-                    INNER JOIN corrida AS c ON reservacion.corrida = c.numero
-                    INNER JOIN pasajero AS p ON reservacion.pasajero = p.numero
-                    INNER JOIN ruta AS rt ON c.ruta = rt.codigo
-                    INNER JOIN ciudad AS co ON rt.ciudadOrigen = co.codigo
-                    INNER JOIN ciudad AS cd ON rt.ciudadDestino = cd.codigo
-                    ORDER BY fecha ASC;
-                    """          
+            query = """
+                SELECT 
+                    reservacion.numero,
+                    reservacion.fecha,
+                    CONCAT(p.nombre, ' ', p.apellPat, ' ', p.apellMat) AS nombre_completo,
+                    co.nombre AS ciudad_origen,
+                    cd.nombre AS ciudad_destino,
+                    CONCAT(c.fecha, ' ', c.hora_salida) AS fecha_hora_salida,
+                    reservacion.cantPasajeros,
+                    reservacion.fechaLimPago
+                FROM reservacion 
+                INNER JOIN corrida AS c ON reservacion.corrida = c.numero
+                INNER JOIN pasajero AS p ON reservacion.pasajero = p.numero
+                INNER JOIN ruta AS rt ON c.ruta = rt.codigo
+                INNER JOIN ciudad AS co ON rt.ciudadOrigen = co.codigo
+                INNER JOIN ciudad AS cd ON rt.ciudadDestino = cd.codigo
+                ORDER BY reservacion.fecha DESC;
+            """          
             cursor = conn.cursor()
             cursor.execute(query)
             respuesta = cursor.fetchall()
+            cursor.close()
             
             return respuesta
         
         except Error as e:
-            print(f'Error en ReservacionDAO (getTodasReservacionesPorParaTabla): {e}')
+            print(f'Error en ReservacionDAO (getTodasReservacionesParaTabla): {e}')
             raise e
         
 
@@ -194,6 +208,7 @@ class ReservacionDAO:
             cursor = conn.cursor()
             cursor.execute(query)
             respuesta = cursor.fetchall()
+            cursor.close()
             
             return respuesta
         
@@ -209,12 +224,12 @@ class ReservacionDAO:
             if not conn or not conn.is_connected():
                 raise Error('No se puede establecer conexion con la BD.')
 
-            query = query = f"""
-                    SELECT COUNT(*)
-                    FROM reservacion
-                    WHERE reservacion.fecha <= CURDATE()
-                    ORDER BY reservacion.numero ASC;
-                    """  
+            query = """
+                SELECT COUNT(*)
+                FROM reservacion
+                WHERE reservacion.fecha <= CURDATE()
+                ORDER BY reservacion.numero ASC;
+            """  
             cursor = conn.cursor()
             cursor.execute(query)
             respuesta = cursor.fetchone()
@@ -233,12 +248,12 @@ class ReservacionDAO:
             if not conn or not conn.is_connected():
                 raise Error('No se puede establecer conexion con la BD.')
 
-            query = query = f"""
-                    SELECT COUNT(*)
-                    FROM reservacion
-                    WHERE reservacion.fecha >= CURDATE()
-                    ORDER BY reservacion.numero ASC;
-                    """  
+            query = """
+                SELECT COUNT(*)
+                FROM reservacion
+                WHERE reservacion.fecha >= CURDATE()
+                ORDER BY reservacion.numero ASC;
+            """  
             cursor = conn.cursor()
             cursor.execute(query)
             respuesta = cursor.fetchone()
@@ -249,95 +264,170 @@ class ReservacionDAO:
             print(f'Error en ReservacionDAO (getNumeroDeReservacionesPasadas): {e}')
             raise e
         
-    def buscarReservacionPorCorrida(self,numero):
+    def buscarReservacionPorCorrida(self, numero):
         """
-        CORREGIDO: Ahora incluye reservacion.numero como primera columna
+        Busca reservaciones por número de corrida.
+        Retorna las 8 columnas en el mismo formato que getTodasReservacionesParaTabla()
         """
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
                 raise Error('No se puede establecer conexion con la BD.')
 
-            query = f"""
-                    SELECT reservacion.numero, reservacion.fecha, corrida, CONCAT(p.nombre,' ', p.apellPat,' ',p.apellMat),
-                    co.nombre, cd.nombre, c.hora_salida, c.hora_llegada,
-                    cantPasajeros, fechaLimPago
-                    FROM reservacion 
-                    INNER JOIN corrida AS c ON reservacion.corrida = c.numero
-                    INNER JOIN pasajero AS p ON reservacion.pasajero = p.numero
-                    INNER JOIN ruta AS rt ON c.ruta = rt.codigo
-                    INNER JOIN ciudad AS co ON rt.ciudadOrigen = co.codigo
-                    INNER JOIN ciudad AS cd ON rt.ciudadDestino = cd.codigo
-                    WHERE c.numero = {numero}
-                    ORDER BY fecha ASC;
-                    """          
+            query = """
+                SELECT 
+                    reservacion.numero,
+                    reservacion.fecha,
+                    CONCAT(p.nombre, ' ', p.apellPat, ' ', p.apellMat) AS nombre_completo,
+                    co.nombre AS ciudad_origen,
+                    cd.nombre AS ciudad_destino,
+                    CONCAT(c.fecha, ' ', c.hora_salida) AS fecha_hora_salida,
+                    reservacion.cantPasajeros,
+                    reservacion.fechaLimPago
+                FROM reservacion 
+                INNER JOIN corrida AS c ON reservacion.corrida = c.numero
+                INNER JOIN pasajero AS p ON reservacion.pasajero = p.numero
+                INNER JOIN ruta AS rt ON c.ruta = rt.codigo
+                INNER JOIN ciudad AS co ON rt.ciudadOrigen = co.codigo
+                INNER JOIN ciudad AS cd ON rt.ciudadDestino = cd.codigo
+                WHERE c.numero = %s
+                ORDER BY reservacion.fecha DESC;
+            """          
             cursor = conn.cursor()
-            cursor.execute(query)
+            cursor.execute(query, (numero,))
             respuesta = cursor.fetchall()
+            cursor.close()
             
             return respuesta
         
         except Error as e:
-            print(f'Error en ReservacionDAO (buscarReservacionesPorNumero): {e}')
+            print(f'Error en ReservacionDAO (buscarReservacionPorCorrida): {e}')
             raise e
         
 
-    def buscarReservacionPorCiudadOrigen(self,ciudad):
-  
+    def buscarReservacionPorCiudadOrigen(self, ciudad):
+        """
+        Busca reservaciones por ciudad de origen.
+        Retorna las 8 columnas en el mismo formato que getTodasReservacionesParaTabla()
+        """
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
                 raise Error('No se puede establecer conexion con la BD.')
 
-            query = f"""
-                    SELECT reservacion.numero, reservacion.fecha, corrida, CONCAT(p.nombre,' ', p.apellPat,' ',p.apellMat),
-                    co.nombre, cd.nombre, c.hora_salida, c.hora_llegada,
-                    cantPasajeros, fechaLimPago
-                    FROM reservacion 
-                    INNER JOIN corrida AS c ON reservacion.corrida = c.numero
-                    INNER JOIN pasajero AS p ON reservacion.pasajero = p.numero
-                    INNER JOIN ruta AS rt ON c.ruta = rt.codigo
-                    INNER JOIN ciudad AS co ON rt.ciudadOrigen = co.codigo
-                    INNER JOIN ciudad AS cd ON rt.ciudadDestino = cd.codigo
-                    WHERE co.nombre = '{ciudad}'
-                    ORDER BY fecha ASC;
-                    """          
+            query = """
+                SELECT 
+                    reservacion.numero,
+                    reservacion.fecha,
+                    CONCAT(p.nombre, ' ', p.apellPat, ' ', p.apellMat) AS nombre_completo,
+                    co.nombre AS ciudad_origen,
+                    cd.nombre AS ciudad_destino,
+                    CONCAT(c.fecha, ' ', c.hora_salida) AS fecha_hora_salida,
+                    reservacion.cantPasajeros,
+                    reservacion.fechaLimPago
+                FROM reservacion 
+                INNER JOIN corrida AS c ON reservacion.corrida = c.numero
+                INNER JOIN pasajero AS p ON reservacion.pasajero = p.numero
+                INNER JOIN ruta AS rt ON c.ruta = rt.codigo
+                INNER JOIN ciudad AS co ON rt.ciudadOrigen = co.codigo
+                INNER JOIN ciudad AS cd ON rt.ciudadDestino = cd.codigo
+                WHERE co.nombre LIKE %s
+                ORDER BY reservacion.fecha DESC;
+            """          
             cursor = conn.cursor()
-            cursor.execute(query)
+            cursor.execute(query, (f'%{ciudad}%',))
             respuesta = cursor.fetchall()
+            cursor.close()
             
             return respuesta
         
         except Error as e:
-            print(f'Error en ReservacionDAO (buscarReservacionesPorCiudadOrigen): {e}')
+            print(f'Error en ReservacionDAO (buscarReservacionPorCiudadOrigen): {e}')
             raise e
         
-    def buscarReservacionPorCiudadDestino(self,ciudad):
-      
+    def buscarReservacionPorCiudadDestino(self, ciudad):
+        """
+        Busca reservaciones por ciudad de destino.
+        Retorna las 8 columnas en el mismo formato que getTodasReservacionesParaTabla()
+        """
         try:
             conn = Connection.getConnection()
             if not conn or not conn.is_connected():
                 raise Error('No se puede establecer conexion con la BD.')
 
-            query = f"""
-                    SELECT reservacion.numero, reservacion.fecha, corrida, CONCAT(p.nombre,' ', p.apellPat,' ',p.apellMat),
-                    co.nombre, cd.nombre, c.hora_salida, c.hora_llegada,
-                    cantPasajeros, fechaLimPago
-                    FROM reservacion 
-                    INNER JOIN corrida AS c ON reservacion.corrida = c.numero
-                    INNER JOIN pasajero AS p ON reservacion.pasajero = p.numero
-                    INNER JOIN ruta AS rt ON c.ruta = rt.codigo
-                    INNER JOIN ciudad AS co ON rt.ciudadOrigen = co.codigo
-                    INNER JOIN ciudad AS cd ON rt.ciudadDestino = cd.codigo
-                    WHERE cd.nombre = '{ciudad}'
-                    ORDER BY fecha ASC;
-                    """          
+            query = """
+                SELECT 
+                    reservacion.numero,
+                    reservacion.fecha,
+                    CONCAT(p.nombre, ' ', p.apellPat, ' ', p.apellMat) AS nombre_completo,
+                    co.nombre AS ciudad_origen,
+                    cd.nombre AS ciudad_destino,
+                    CONCAT(c.fecha, ' ', c.hora_salida) AS fecha_hora_salida,
+                    reservacion.cantPasajeros,
+                    reservacion.fechaLimPago
+                FROM reservacion 
+                INNER JOIN corrida AS c ON reservacion.corrida = c.numero
+                INNER JOIN pasajero AS p ON reservacion.pasajero = p.numero
+                INNER JOIN ruta AS rt ON c.ruta = rt.codigo
+                INNER JOIN ciudad AS co ON rt.ciudadOrigen = co.codigo
+                INNER JOIN ciudad AS cd ON rt.ciudadDestino = cd.codigo
+                WHERE cd.nombre LIKE %s
+                ORDER BY reservacion.fecha DESC;
+            """          
             cursor = conn.cursor()
-            cursor.execute(query)
+            cursor.execute(query, (f'%{ciudad}%',))
             respuesta = cursor.fetchall()
+            cursor.close()
             
             return respuesta
         
         except Error as e:
-            print(f'Error en ReservacionDAO (buscarReservacionesPorCiudadDestino): {e}')
+            print(f'Error en ReservacionDAO (buscarReservacionPorCiudadDestino): {e}')
+            raise e
+        
+
+    def buscarReservacionPorNombrePasajero(self, nombre):
+        """
+        NUEVO MÉTODO: Busca reservaciones por nombre del pasajero.
+        Retorna las 8 columnas en el mismo formato que getTodasReservacionesParaTabla()
+        
+        Args:
+            nombre (str): Nombre, apellido o parte del nombre del pasajero a buscar
+            
+        Returns:
+            list: Lista de tuplas con los datos de las reservaciones encontradas
+        """
+        try:
+            conn = Connection.getConnection()
+            if not conn or not conn.is_connected():
+                raise Error('No se puede establecer conexion con la BD.')
+
+            query = """
+                SELECT 
+                    reservacion.numero,
+                    reservacion.fecha,
+                    CONCAT(p.nombre, ' ', p.apellPat, ' ', p.apellMat) AS nombre_completo,
+                    co.nombre AS ciudad_origen,
+                    cd.nombre AS ciudad_destino,
+                    CONCAT(c.fecha, ' ', c.hora_salida) AS fecha_hora_salida,
+                    reservacion.cantPasajeros,
+                    reservacion.fechaLimPago
+                FROM reservacion 
+                INNER JOIN corrida AS c ON reservacion.corrida = c.numero
+                INNER JOIN pasajero AS p ON reservacion.pasajero = p.numero
+                INNER JOIN ruta AS rt ON c.ruta = rt.codigo
+                INNER JOIN ciudad AS co ON rt.ciudadOrigen = co.codigo
+                INNER JOIN ciudad AS cd ON rt.ciudadDestino = cd.codigo
+                WHERE CONCAT(p.nombre, ' ', p.apellPat, ' ', p.apellMat) LIKE %s
+                ORDER BY reservacion.fecha DESC;
+            """          
+            cursor = conn.cursor()
+            cursor.execute(query, (f'%{nombre}%',))
+            respuesta = cursor.fetchall()
+            cursor.close()
+            
+            return respuesta
+        
+        except Error as e:
+            print(f'Error en ReservacionDAO (buscarReservacionPorNombrePasajero): {e}')
             raise e

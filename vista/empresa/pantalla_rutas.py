@@ -42,7 +42,7 @@ class PantallaRutas(QWidget):
         self.cargar_datos_iniciales()
 
     def load_ui(self, filename):
-        """Carga un archivo .ui dinámicamente y devuelve el widget."""
+        """Carga un archivo .ui dinámicamente y devuelve el widget"""
         loader = QUiLoader()
         path = os.path.join(os.path.dirname(__file__), filename)
         ui_file = QFile(path)
@@ -53,12 +53,12 @@ class PantallaRutas(QWidget):
         return widget
 
     def cargar_datos_iniciales(self):
-        """Llama al controlador para obtener rutas y ciudades y actualiza la UI."""
+        """Llama al controlador para obtener rutas y ciudades y actualiza la UI"""
         rutas = self.controlador.obtener_todas_las_rutas()
         ciudades_map = self.controlador.obtener_ciudades_map()
 
         if rutas is False or ciudades_map is False:
-            QMessageBox.critical(self, "Error", "No se pudieron cargar los datos iniciales desde la base de datos.")
+            QMessageBox.critical(self, "Error", "No se pudieron cargar los datos iniciales desde la base de datos")
             return
 
         self.todas_las_rutas = rutas if rutas is not None else []
@@ -68,7 +68,7 @@ class PantallaRutas(QWidget):
         self.mostrar_rutas_en_tabla(self.todas_las_rutas)
 
     def mostrar_rutas_en_tabla(self, rutas):
-        """Puebla la tabla con la lista de rutas proporcionada."""
+        """Puebla la tabla con la lista de rutas proporcionada"""
         self.ui.QtableWidget_rutas.setRowCount(0)
         for fila_idx, ruta in enumerate(rutas):
             self.ui.QtableWidget_rutas.insertRow(fila_idx)
@@ -90,7 +90,7 @@ class PantallaRutas(QWidget):
             self.ui.QtableWidget_rutas.setItem(fila_idx, 3, item_distancia)
 
     def llenar_filtros_ciudades(self):
-        """Puebla los ComboBox de filtro con ciudades únicas."""
+        """Puebla los ComboBox de filtro con ciudades únicas"""
         if not self.todas_las_rutas:
             origenes = []
             destinos = []
@@ -108,7 +108,7 @@ class PantallaRutas(QWidget):
         self.ui.comboBox_fdestino.addItems(destinos)
 
     def filtrar_rutas(self):
-        """Filtra las rutas mostradas según la selección de los ComboBox."""
+        """Filtra las rutas mostradas según la selección de los ComboBox"""
         filtro_origen = self.ui.comboBox_forigen.currentText()
         filtro_destino = self.ui.comboBox_fdestino.currentText()
         
@@ -135,22 +135,17 @@ class PantallaRutas(QWidget):
 
         # print("DEBUG: Calling controlador.agregar_nueva_ruta...")
         result = self.controlador.agregar_nueva_ruta(dialogo, codigo_origen, codigo_destino, distancia)
-        # print(f"DEBUG: controlador.agregar_nueva_ruta returned: {result}")
+       
 
         if result:
             # print("DEBUG: Controlador returned True (success).")
             self.cargar_datos_iniciales()
             QMessageBox.information(self, "Éxito", "Ruta agregada correctamente")
-            dialogo.accept() # <--- This closes the dialog on success
-            # print("DEBUG: Dialog accepted (success).")
-        # else:
-            # print("DEBUG: Controlador returned False (validation failed or error). Dialog should remain open.")
-        # If controller returns False (validation failed or error),
-        # it has already shown a QMessageBox, and we do nothing here, leaving the dialog open.
+            dialogo.accept() 
+        
 
     def abrir_dialogo_agregar(self):
-        """Abre un diálogo para agregar una nueva ruta."""
-        # print("DEBUG: abrir_dialogo_agregar called.")
+        """Abre un diálogo para agregar una nueva ruta"""
         try:
             dialogo = QDialog(self)
             
@@ -177,27 +172,22 @@ class PantallaRutas(QWidget):
             widget_dialogo.findChild(QPushButton, "boton_agregar").clicked.connect(lambda: self._attempt_add_ruta(dialogo, widget_dialogo))
             widget_dialogo.findChild(QPushButton, "boton_cancelar").clicked.connect(dialogo.reject)
 
-            # print("DEBUG: Calling dialogo.exec()...")
-            dialogo.exec() # <--- This shows the dialog as modal
-            # print("DEBUG: dialogo.exec() returned.")
+            dialogo.exec() 
+            
 
         except Exception as e:
-            # print(f"DEBUG: Exception in abrir_dialogo_agregar: {e}")
             QMessageBox.critical(self, "Error", f"No se pudo abrir el diálogo de agregar: {e}")
 
     def _attempt_edit_ruta(self, dialogo, widget_dialogo, codigo_ruta):
         nueva_distancia = widget_dialogo.findChild(QLineEdit, "txt_distancia").text().strip()
-        # print(f"Vista: Nueva distancia ingresada en el diálogo: {nueva_distancia}")
         
         if self.controlador.actualizar_distancia_ruta(dialogo, codigo_ruta, nueva_distancia):
             self.cargar_datos_iniciales()
             QMessageBox.information(self, "Éxito", "Distancia actualizada correctamente.")
             dialogo.accept()
-        # If controller returns False, it has already shown a QMessageBox, and the dialog remains open.
 
-    def abrir_dialogo_editar(self, numero_operador): # Changed parameter name from `numero_operador` to `codigo_ruta` for clarity
-        """Abre un diálogo para editar la distancia de una ruta seleccionada."""
-        # print("Vista: Abriendo diálogo para editar ruta.")
+    def abrir_dialogo_editar(self, numero_operador): 
+        """Abre un diálogo para editar la distancia de una ruta seleccionada"""
         fila_seleccionada = self.ui.QtableWidget_rutas.currentRow()
         if fila_seleccionada == -1:
             QMessageBox.warning(self, "Advertencia", "Selecciona una ruta para editar.")
@@ -207,7 +197,6 @@ class PantallaRutas(QWidget):
         origen_actual = self.ui.QtableWidget_rutas.item(fila_seleccionada, 1).text()
         destino_actual = self.ui.QtableWidget_rutas.item(fila_seleccionada, 2).text()
         distancia_actual = self.ui.QtableWidget_rutas.item(fila_seleccionada, 3).text().replace(" km", "")
-        # print(f"Vista: Ruta seleccionada para editar - Código: {codigo_ruta}, Origen: {origen_actual}, Destino: {destino_actual}, Distancia: {distancia_actual}")
 
         try:
             dialogo = QDialog(self)
@@ -259,7 +248,7 @@ class PantallaRutas(QWidget):
             QMessageBox.critical(self, "Error", f"No se pudo abrir el diálogo de edición: {e}")
 
     def abrir_widget_ciudades(self):
-        """Abre el widget para administrar las ciudades como un diálogo modal."""
+        """Abre el widget para administrar las ciudades como un diálogo"""
         try:
             dialogo_ciudades = QDialog(self)
             dialogo_ciudades.setWindowTitle("Administrar Ciudades")
