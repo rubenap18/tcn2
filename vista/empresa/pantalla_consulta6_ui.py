@@ -16,16 +16,16 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QDateEdit, QHeaderView,
-    QLabel, QLineEdit, QPushButton, QSizePolicy,
-    QTableWidget, QTableWidgetItem, QWidget)
+    QLabel, QPushButton, QSizePolicy, QTableWidget,
+    QTableWidgetItem, QWidget)
 
 class Ui_pantalla_consulta6(object):
-    def setupUi(self, pantalla_consulta6):
-        if not pantalla_consulta6.objectName():
-            pantalla_consulta6.setObjectName(u"pantalla_consulta6")
-        pantalla_consulta6.resize(1920, 1080)
-        pantalla_consulta6.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.QtableWidget_corridas = QTableWidget(pantalla_consulta6)
+    def setupUi(self, Form):
+        if not Form.objectName():
+            Form.setObjectName(u"Form")
+        Form.resize(1920, 1080)
+        Form.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.QtableWidget_corridas = QTableWidget(Form)
         if (self.QtableWidget_corridas.columnCount() < 7):
             self.QtableWidget_corridas.setColumnCount(7)
         font = QFont()
@@ -52,7 +52,7 @@ class Ui_pantalla_consulta6(object):
         __qtablewidgetitem6.setFont(font);
         self.QtableWidget_corridas.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         self.QtableWidget_corridas.setObjectName(u"QtableWidget_corridas")
-        self.QtableWidget_corridas.setGeometry(QRect(0, 360, 1561, 551))
+        self.QtableWidget_corridas.setGeometry(QRect(180, 360, 1561, 551))
         self.QtableWidget_corridas.setFont(font)
         self.QtableWidget_corridas.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.QtableWidget_corridas.setStyleSheet(u"QTableView {\n"
@@ -146,7 +146,7 @@ class Ui_pantalla_consulta6(object):
         self.QtableWidget_corridas.horizontalHeader().setDefaultSectionSize(218)
         self.QtableWidget_corridas.horizontalHeader().setHighlightSections(False)
         self.QtableWidget_corridas.verticalHeader().setCascadingSectionResizes(True)
-        self.widget_opfiltro_2 = QWidget(pantalla_consulta6)
+        self.widget_opfiltro_2 = QWidget(Form)
         self.widget_opfiltro_2.setObjectName(u"widget_opfiltro_2")
         self.widget_opfiltro_2.setGeometry(QRect(0, 130, 1911, 221))
         self.widget_opfiltro_2.setStyleSheet(u"background-color: #ffffff;\n"
@@ -161,7 +161,7 @@ class Ui_pantalla_consulta6(object):
 "")
         self.corridas_label = QLabel(self.widget_opfiltro_2)
         self.corridas_label.setObjectName(u"corridas_label")
-        self.corridas_label.setGeometry(QRect(20, 10, 1031, 91))
+        self.corridas_label.setGeometry(QRect(20, 10, 1181, 91))
         font1 = QFont()
         font1.setPointSize(59)
         font1.setBold(True)
@@ -186,17 +186,18 @@ class Ui_pantalla_consulta6(object):
         self.dateEdit.setStyleSheet(u"QDateEdit{\n"
 "	border-radius:5px;\n"
 "}")
-        self.label_5 = QLabel(self.widget_opfiltro_2)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(30, 130, 71, 27))
-        self.label_5.setFont(font2)
-        self.label_5.setStyleSheet(u"color: black;\n"
+        self.label_fecha_origen = QLabel(self.widget_opfiltro_2)
+        self.label_fecha_origen.setObjectName(u"label_fecha_origen")
+        self.label_fecha_origen.setGeometry(QRect(30, 130, 150, 27))
+        self.label_fecha_origen.setFont(font2)
+        self.label_fecha_origen.setStyleSheet(u"color: black;\n"
 "border: none;")
-        self.lineEdit_fecha = QLineEdit(self.widget_opfiltro_2)
-        self.lineEdit_fecha.setObjectName(u"lineEdit_fecha")
-        self.lineEdit_fecha.setGeometry(QRect(30, 160, 113, 22))
-        self.lineEdit_fecha.setStyleSheet(u"QLineEdit{\n"
+        self.label_fecha = QLabel(self.widget_opfiltro_2)
+        self.label_fecha.setObjectName(u"label_fecha")
+        self.label_fecha.setGeometry(QRect(30, 160, 150, 40))
+        self.label_fecha.setStyleSheet(u"QLabel{\n"
 "	border-radius:5px;\n"
+"    font-size: 20px;\n"
 "}")
         self.boton_inicio_2 = QPushButton(self.widget_opfiltro_2)
         self.boton_inicio_2.setObjectName(u"boton_inicio_2")
@@ -219,10 +220,10 @@ class Ui_pantalla_consulta6(object):
 "    background-color: #CC532A;   /* M\u00e1s oscuro para click */\n"
 "}")
         icon = QIcon()
-        icon.addFile(u"tcn2/tcn2/recursos/recursos_empresa/volver.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"../../recursos/recursos_empresa/volver.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_inicio_2.setIcon(icon)
         self.boton_inicio_2.setIconSize(QSize(30, 30))
-        self.header_corridas = QWidget(pantalla_consulta6)
+        self.header_corridas = QWidget(Form)
         self.header_corridas.setObjectName(u"header_corridas")
         self.header_corridas.setGeometry(QRect(0, 10, 1951, 111))
         self.header_corridas.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
@@ -249,7 +250,7 @@ class Ui_pantalla_consulta6(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon1 = QIcon()
-        icon1.addFile(u"tcn2/tcn2/recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u"../../recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_rutas.setIcon(icon1)
         self.boton_rutas.setIconSize(QSize(30, 30))
         self.boton_corridas = QPushButton(self.header_corridas)
@@ -273,7 +274,7 @@ class Ui_pantalla_consulta6(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon2 = QIcon()
-        icon2.addFile(u"tcn2/tcn2/recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u"../../recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_corridas.setIcon(icon2)
         self.boton_corridas.setIconSize(QSize(30, 30))
         self.boton_operadores = QPushButton(self.header_corridas)
@@ -297,7 +298,7 @@ class Ui_pantalla_consulta6(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon3 = QIcon()
-        icon3.addFile(u"tcn2/tcn2/recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u"../../recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_operadores.setIcon(icon3)
         self.boton_operadores.setIconSize(QSize(30, 30))
         self.boton_autobuses = QPushButton(self.header_corridas)
@@ -321,7 +322,7 @@ class Ui_pantalla_consulta6(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon4 = QIcon()
-        icon4.addFile(u"tcn2/tcn2/recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon4.addFile(u"../../recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_autobuses.setIcon(icon4)
         self.boton_autobuses.setIconSize(QSize(30, 30))
         self.boton_inicio = QPushButton(self.header_corridas)
@@ -345,7 +346,7 @@ class Ui_pantalla_consulta6(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon5 = QIcon()
-        icon5.addFile(u"tcn2/tcn2/recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon5.addFile(u"../../recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_inicio.setIcon(icon5)
         self.boton_inicio.setIconSize(QSize(30, 30))
         self.boton_reservaciones = QPushButton(self.header_corridas)
@@ -369,27 +370,27 @@ class Ui_pantalla_consulta6(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon6 = QIcon()
-        icon6.addFile(u"tcn2/tcn2/recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon6.addFile(u"../../recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_reservaciones.setIcon(icon6)
         self.boton_reservaciones.setIconSize(QSize(30, 30))
         self.label_4 = QLabel(self.header_corridas)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(18, 15, 231, 81))
         self.label_4.setStyleSheet(u"border: none")
-        self.label_4.setPixmap(QPixmap(u"tcn2/tcn2/recursos/recursos_empresa/logo.png"))
+        self.label_4.setPixmap(QPixmap(u"../../recursos/recursos_empresa/logo.png"))
         self.label_6 = QLabel(self.header_corridas)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(1790, 10, 70, 70))
-        self.label_6.setPixmap(QPixmap(u"tcn2/tcn2/vista/empresa/recursos/usuario.png"))
+        self.label_6.setPixmap(QPixmap(u"recursos/usuario.png"))
         self.label_6.setScaledContents(True)
 
-        self.retranslateUi(pantalla_consulta6)
+        self.retranslateUi(Form)
 
-        QMetaObject.connectSlotsByName(pantalla_consulta6)
+        QMetaObject.connectSlotsByName(Form)
     # setupUi
 
-    def retranslateUi(self, pantalla_consulta6):
-        pantalla_consulta6.setWindowTitle(QCoreApplication.translate("pantalla_consulta6", u"Form", None))
+    def retranslateUi(self, Form):
+        Form.setWindowTitle(QCoreApplication.translate("pantalla_consulta6", u"Form", None))
         ___qtablewidgetitem = self.QtableWidget_corridas.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("pantalla_consulta6", u"Corrida", None));
         ___qtablewidgetitem1 = self.QtableWidget_corridas.horizontalHeaderItem(1)
@@ -406,8 +407,7 @@ class Ui_pantalla_consulta6(object):
         ___qtablewidgetitem6.setText(QCoreApplication.translate("pantalla_consulta6", u"Boletos disponibles", None));
         self.corridas_label.setText(QCoreApplication.translate("pantalla_consulta6", u"Boletos vendidos en un d\u00eda", None))
         self.label_2.setText(QCoreApplication.translate("pantalla_consulta6", u"Fecha", None))
-        self.label_5.setText(QCoreApplication.translate("pantalla_consulta6", u"Fecha", None))
-        self.lineEdit_fecha.setText("")
+        self.label_fecha_origen.setText(QCoreApplication.translate("pantalla_consulta6", u"Fecha de origen", None))
         self.boton_inicio_2.setText("")
         self.boton_rutas.setText(QCoreApplication.translate("pantalla_consulta6", u"Rutas", None))
         self.boton_corridas.setText(QCoreApplication.translate("pantalla_consulta6", u"Corridas", None))

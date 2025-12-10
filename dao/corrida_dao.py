@@ -27,7 +27,7 @@ class CorridaDAO:
                     a.matricula,
                     a.cantAsientos AS cantidad_asientos,
                     c.tarifaBase AS precio,
-                    c.lugaresDisp AS boletos_disponibles,
+                    (a.cantAsientos - (SELECT COUNT(*) FROM reservacion res WHERE res.corrida = c.numero)) AS boletos_disponibles,
                     (SELECT COUNT(*) FROM reservacion res WHERE res.corrida = c.numero) AS boletos_vendidos
                 FROM
                     corrida c
@@ -71,7 +71,7 @@ class CorridaDAO:
                     a.matricula,
                     a.cantAsientos AS cantidad_asientos,
                     c.tarifaBase AS precio,
-                    c.lugaresDisp AS boletos_disponibles,
+                    (a.cantAsientos - (SELECT COUNT(*) FROM reservacion res WHERE res.corrida = c.numero)) AS boletos_disponibles,
                     (SELECT COUNT(*) FROM reservacion res WHERE res.corrida = c.numero) AS boletos_vendidos
                 FROM
                     corrida c
