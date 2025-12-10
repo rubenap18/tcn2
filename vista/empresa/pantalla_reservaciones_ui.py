@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QHeaderView, QLabel,
-    QLineEdit, QPushButton, QSizePolicy, QStackedWidget,
-    QTableWidget, QTableWidgetItem, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QHeaderView,
+    QLabel, QLineEdit, QPushButton, QSizePolicy,
+    QStackedWidget, QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_pantalla_reservaciones(object):
     def setupUi(self, pantalla_reservaciones):
@@ -222,9 +222,7 @@ class Ui_pantalla_reservaciones(object):
 "    background-c\n"
 "\n"
 "}")
-        icon6 = QIcon()
-        icon6.addFile(u"recursos/recursos_empresa/editar-reservacion.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_mostrarboleto.setIcon(icon6)
+        self.boton_mostrarboleto.setIcon(icon5)
         self.boton_mostrarboleto.setIconSize(QSize(30, 30))
         self.widget_opfiltro_6 = QWidget(self.pantalla_reservaciones_content)
         self.widget_opfiltro_6.setObjectName(u"widget_opfiltro_6")
@@ -241,7 +239,7 @@ class Ui_pantalla_reservaciones(object):
 "")
         self.label_estatico_reservaciones = QLabel(self.widget_opfiltro_6)
         self.label_estatico_reservaciones.setObjectName(u"label_estatico_reservaciones")
-        self.label_estatico_reservaciones.setGeometry(QRect(20, 10, 881, 71))
+        self.label_estatico_reservaciones.setGeometry(QRect(20, 10, 561, 71))
         font1 = QFont()
         font1.setPointSize(59)
         font1.setBold(True)
@@ -252,7 +250,7 @@ class Ui_pantalla_reservaciones(object):
 "")
         self.lineEdit_buscar = QLineEdit(self.widget_opfiltro_6)
         self.lineEdit_buscar.setObjectName(u"lineEdit_buscar")
-        self.lineEdit_buscar.setGeometry(QRect(720, 30, 431, 41))
+        self.lineEdit_buscar.setGeometry(QRect(1280, 30, 201, 41))
         self.lineEdit_buscar.setStyleSheet(u"QLineEdit { padding: 0 10px;\n"
 "}\n"
 "\n"
@@ -262,7 +260,7 @@ class Ui_pantalla_reservaciones(object):
         self.lineEdit_buscar.setMaxLength(20)
         self.boton_buscar = QPushButton(self.widget_opfiltro_6)
         self.boton_buscar.setObjectName(u"boton_buscar")
-        self.boton_buscar.setGeometry(QRect(1130, 30, 41, 41))
+        self.boton_buscar.setGeometry(QRect(1490, 30, 41, 41))
         self.boton_buscar.setFont(font)
         self.boton_buscar.setStyleSheet(u"QPushButton{\n"
 "	background: #1061C4;\n"
@@ -280,13 +278,96 @@ class Ui_pantalla_reservaciones(object):
 "QPushButton:pressed {\n"
 "    background-color: #0A3F8A;     \n"
 "}")
-        icon7 = QIcon()
-        icon7.addFile(u"recursos/recursos_empresa/boton_buscar_reservaciones.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_buscar.setIcon(icon7)
+        icon6 = QIcon()
+        icon6.addFile(u"recursos/recursos_empresa/lupa.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_buscar.setIcon(icon6)
         self.boton_buscar.setIconSize(QSize(30, 30))
+        self.label_estatico_reservaciones_2 = QLabel(self.widget_opfiltro_6)
+        self.label_estatico_reservaciones_2.setObjectName(u"label_estatico_reservaciones_2")
+        self.label_estatico_reservaciones_2.setGeometry(QRect(1140, 20, 131, 61))
+        self.label_estatico_reservaciones_2.setFont(font1)
+        self.label_estatico_reservaciones_2.setStyleSheet(u"border:none\n"
+"\n"
+"")
+        self.label_estatico_reservaciones_3 = QLabel(self.widget_opfiltro_6)
+        self.label_estatico_reservaciones_3.setObjectName(u"label_estatico_reservaciones_3")
+        self.label_estatico_reservaciones_3.setGeometry(QRect(610, 20, 141, 51))
+        self.label_estatico_reservaciones_3.setFont(font1)
+        self.label_estatico_reservaciones_3.setStyleSheet(u"border:none\n"
+"\n"
+"")
+        self.lineEdit_buscarPorNombrePasajero = QLineEdit(self.widget_opfiltro_6)
+        self.lineEdit_buscarPorNombrePasajero.setObjectName(u"lineEdit_buscarPorNombrePasajero")
+        self.lineEdit_buscarPorNombrePasajero.setGeometry(QRect(730, 30, 331, 41))
+        self.lineEdit_buscarPorNombrePasajero.setStyleSheet(u"QLineEdit { padding: 0 10px;\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"border: 1px solid #FF6A36\n"
+"}")
+        self.lineEdit_buscarPorNombrePasajero.setMaxLength(20)
+        self.boton_buscar_2 = QPushButton(self.widget_opfiltro_6)
+        self.boton_buscar_2.setObjectName(u"boton_buscar_2")
+        self.boton_buscar_2.setGeometry(QRect(1080, 30, 41, 41))
+        self.boton_buscar_2.setFont(font)
+        self.boton_buscar_2.setStyleSheet(u"QPushButton{\n"
+"	background: #1061C4;\n"
+"	color:WHITE;\n"
+"	border:none;\n"
+"	border-radius: 8px;\n"
+"	font-weight: bold;\n"
+"	font-size:25px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #0D4FAB;    \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0A3F8A;     \n"
+"}")
+        self.boton_buscar_2.setIcon(icon6)
+        self.boton_buscar_2.setIconSize(QSize(30, 30))
+        self.boton_actualizar = QPushButton(self.widget_opfiltro_6)
+        self.boton_actualizar.setObjectName(u"boton_actualizar")
+        self.boton_actualizar.setGeometry(QRect(1550, 20, 61, 51))
+        self.boton_actualizar.setFont(font)
+        self.boton_actualizar.setStyleSheet(u"QPushButton {\n"
+"    background: #FF6B35;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 8px;\n"
+"    font-weight: bold;\n"
+"    font-size: 25px;\n"
+"    padding: 15px 30px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #FF8B5C;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #E55A2B;\n"
+"    padding-top: 16px;  /* Efecto de presionado */\n"
+"    padding-bottom: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: #FFB896;\n"
+"    color: #F0F0F0;\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"    outline: 2px solid #FFD166;\n"
+"    outline-offset: 2px;\n"
+"}")
+        icon7 = QIcon()
+        icon7.addFile(u"recursos/recursos_empresa/actualizar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_actualizar.setIcon(icon7)
+        self.boton_actualizar.setIconSize(QSize(30, 30))
         self.tabla_reservaciones = QTableWidget(self.pantalla_reservaciones_content)
-        if (self.tabla_reservaciones.columnCount() < 10):
-            self.tabla_reservaciones.setColumnCount(10)
+        if (self.tabla_reservaciones.columnCount() < 8):
+            self.tabla_reservaciones.setColumnCount(8)
         __qtablewidgetitem = QTableWidgetItem()
         __qtablewidgetitem.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
         __qtablewidgetitem.setFont(font);
@@ -317,15 +398,8 @@ class Ui_pantalla_reservaciones(object):
         self.tabla_reservaciones.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         __qtablewidgetitem7 = QTableWidgetItem()
         __qtablewidgetitem7.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
+        __qtablewidgetitem7.setFont(font);
         self.tabla_reservaciones.setHorizontalHeaderItem(7, __qtablewidgetitem7)
-        __qtablewidgetitem8 = QTableWidgetItem()
-        __qtablewidgetitem8.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
-        __qtablewidgetitem8.setFont(font);
-        self.tabla_reservaciones.setHorizontalHeaderItem(8, __qtablewidgetitem8)
-        __qtablewidgetitem9 = QTableWidgetItem()
-        __qtablewidgetitem9.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
-        __qtablewidgetitem9.setFont(font);
-        self.tabla_reservaciones.setHorizontalHeaderItem(9, __qtablewidgetitem9)
         self.tabla_reservaciones.setObjectName(u"tabla_reservaciones")
         self.tabla_reservaciones.setGeometry(QRect(270, 140, 1641, 751))
         self.tabla_reservaciones.setFont(font)
@@ -414,10 +488,12 @@ class Ui_pantalla_reservaciones(object):
 "")
         self.tabla_reservaciones.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.tabla_reservaciones.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustIgnored)
+        self.tabla_reservaciones.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.tabla_reservaciones.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.tabla_reservaciones.setShowGrid(False)
         self.tabla_reservaciones.horizontalHeader().setVisible(True)
         self.tabla_reservaciones.horizontalHeader().setCascadingSectionResizes(True)
-        self.tabla_reservaciones.horizontalHeader().setDefaultSectionSize(164)
+        self.tabla_reservaciones.horizontalHeader().setDefaultSectionSize(205)
         self.tabla_reservaciones.horizontalHeader().setHighlightSections(False)
         self.tabla_reservaciones.verticalHeader().setVisible(False)
         self.tabla_reservaciones.verticalHeader().setCascadingSectionResizes(True)
@@ -440,14 +516,19 @@ class Ui_pantalla_reservaciones(object):
         self.boton_inicio.setText("")
         self.boton_reservaciones.setText(QCoreApplication.translate("pantalla_reservaciones", u"Reservaciones", None))
         self.label_logo.setText("")
-        self.boton_mostrarboleto.setText(QCoreApplication.translate("pantalla_reservaciones", u"Mostrar boleto", None))
+        self.boton_mostrarboleto.setText(QCoreApplication.translate("pantalla_reservaciones", u" Mostrar boleto", None))
         self.label_estatico_reservaciones.setText(QCoreApplication.translate("pantalla_reservaciones", u"Reservaciones", None))
         self.lineEdit_buscar.setPlaceholderText(QCoreApplication.translate("pantalla_reservaciones", u"Buscar por numero de corrida...", None))
         self.boton_buscar.setText("")
+        self.label_estatico_reservaciones_2.setText(QCoreApplication.translate("pantalla_reservaciones", u"<html><head/><body><p><span style=\" font-size:24pt; color:#000000;\">Corrida:</span></p></body></html>", None))
+        self.label_estatico_reservaciones_3.setText(QCoreApplication.translate("pantalla_reservaciones", u"<html><head/><body><p><span style=\" font-size:24pt; color:#000000;\">Cliente:</span></p></body></html>", None))
+        self.lineEdit_buscarPorNombrePasajero.setPlaceholderText(QCoreApplication.translate("pantalla_reservaciones", u"Buscar por numero de corrida...", None))
+        self.boton_buscar_2.setText("")
+        self.boton_actualizar.setText("")
         ___qtablewidgetitem = self.tabla_reservaciones.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("pantalla_reservaciones", u"Fecha", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("pantalla_reservaciones", u"Reservacion", None));
         ___qtablewidgetitem1 = self.tabla_reservaciones.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("pantalla_reservaciones", u"Corrida", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("pantalla_reservaciones", u"Fecha", None));
         ___qtablewidgetitem2 = self.tabla_reservaciones.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("pantalla_reservaciones", u"Cliente", None));
         ___qtablewidgetitem3 = self.tabla_reservaciones.horizontalHeaderItem(3)
@@ -457,12 +538,8 @@ class Ui_pantalla_reservaciones(object):
         ___qtablewidgetitem5 = self.tabla_reservaciones.horizontalHeaderItem(5)
         ___qtablewidgetitem5.setText(QCoreApplication.translate("pantalla_reservaciones", u"Salida", None));
         ___qtablewidgetitem6 = self.tabla_reservaciones.horizontalHeaderItem(6)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("pantalla_reservaciones", u"Llegada", None));
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("pantalla_reservaciones", u"Pasajeros", None));
         ___qtablewidgetitem7 = self.tabla_reservaciones.horizontalHeaderItem(7)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("pantalla_reservaciones", u"Pasajeros", None));
-        ___qtablewidgetitem8 = self.tabla_reservaciones.horizontalHeaderItem(8)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("pantalla_reservaciones", u"Limite de Pago", None));
-        ___qtablewidgetitem9 = self.tabla_reservaciones.horizontalHeaderItem(9)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("pantalla_reservaciones", u"Acciones", None));
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("pantalla_reservaciones", u"L\u00edmite para pagar", None));
     # retranslateUi
 
