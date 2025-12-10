@@ -24,8 +24,7 @@ class Connection:
                 use_pure = config.DB_USE_PURE)
             except Error as e:
                 cls._conexion = None
-                print(f'Error: Fallo conectar con la DB.{e}')
-                raise Error(f'Error de MySQL al intectar conectar con la BD. {e}')
+                raise Error(f'Error de MySQL al intectar conectar con la BD: {e}')
         #si no hay falla se regresa la conexion
         return cls._conexion
     
@@ -34,6 +33,6 @@ class Connection:
     @classmethod
     def closeConnection(cls):
         if cls._conexion and cls._conexion.is_connected():
-            print('Cerrando la conexion con la BD.')
+            print('Cerrando la conexion con la BD')
             cls._conexion.close()
         cls._conexion = None

@@ -44,7 +44,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>recursos_recursos usuario/LOGOJPG.jpg</pixmap>
+    <pixmap>recursos/recursos_usuario/LOGOJPG.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -65,7 +65,6 @@
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -109,7 +108,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
      <underline>true</underline>
     </font>
@@ -155,7 +153,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -199,7 +196,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>59</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -221,7 +217,7 @@ QPushButton:pressed {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>recursos_recursos usuario/facebook.png</pixmap>
+    <pixmap>recursos/recursos_usuario/facebook.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -243,7 +239,7 @@ QPushButton:pressed {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>recursos_recursos usuario/gmail.png</pixmap>
+    <pixmap>recursos/recursos_usuario/gmail.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -262,7 +258,7 @@ QPushButton:pressed {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>recursos_recursos usuario/instagram.png</pixmap>
+    <pixmap>recursos/recursos_usuario/instagram.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -280,7 +276,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>59</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -301,7 +296,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>59</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -315,15 +309,15 @@ QPushButton:pressed {
     <rect>
      <x>1080</x>
      <y>330</y>
-     <width>711</width>
-     <height>451</height>
+     <width>751</width>
+     <height>501</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>recursos_recursos usuario/irizar i6 naranja.png</pixmap>
+    <pixmap>recursos/recursos_usuario/irizar i6 naranja.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="contactanos_instagram_5">
@@ -338,7 +332,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>59</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -359,7 +352,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>59</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -380,7 +372,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>59</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -401,7 +392,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>59</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -422,7 +412,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>59</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -462,7 +451,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -489,7 +477,7 @@ QPushButton:pressed {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>recursos/recursos empresa/volver.png</normaloff>recursos/recursos empresa/volver.png</iconset>
+     <normaloff>recursos/recursos_empresa/volver.png</normaloff>recursos/recursos_empresa/volver.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -510,7 +498,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>59</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>

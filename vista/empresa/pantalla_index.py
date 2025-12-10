@@ -73,14 +73,12 @@ class PantallaIndex(QWidget):
     def _on_operator_selected(self, item):
         fila_seleccionada = item.row()
         self.selected_operator_id = int(self.ui.QtableWidget_operadores.item(fila_seleccionada, 0).text())
-        print(f"Operator selected, ID: {self.selected_operator_id}")
 
     def _mostrar_pantalla_operadores_corridas(self):
         if self.selected_operator_id is None:
             QMessageBox.warning(self, "Operador no seleccionado", "Por favor, seleccione un operador de la tabla.")
             return
 
-        print("Opening PantallaOperadoresCorridas...")
         dialog = QDialog(self)
         dialog.setWindowTitle("Corridas de Operadores")
         

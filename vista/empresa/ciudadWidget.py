@@ -108,7 +108,6 @@ class CiudadWidget(QWidget):
         self.ui.boton_editar.setEnabled(True)
 
     def limpiar_campos(self):
-        print("CiudadWidget: Limpiando campos y cerrando diálogo.")
         self.ui.lineEdit_codigo.clear()
         self.ui.lineEdit_ciudad.clear()
         self.ui.tableWidget_ciudad.clearSelection()

@@ -107,7 +107,6 @@ class PantallaReservaciones(QWidget):
         if validacion != num_corrida:
             return QMessageBox.information(self, "Mensaje", validacion)
         corridas = self.controlador.buscarReservacionPorCorrida(num_corrida)
-        print('corridas:',corridas)
         if not corridas:
             self.llenarTablaAlInicio()
             return QMessageBox.information(self, "Mensaje", "No se encontraron reservaciones para la corrida ingresada.")
@@ -319,7 +318,6 @@ class PantallaReservaciones(QWidget):
 
             # Verificamos si el usuario presionó "Ok" y si escribe algo
             if ok and texto_busqueda:
-                print(f"Buscando '{texto_busqueda}' en el filtro '{filtro_seleccionado}'")
                 validacion = Validaciones.validar_ciudad(texto_busqueda)
                 
                 if Validaciones.validar_ciudad(texto_busqueda) != texto_busqueda:
@@ -333,7 +331,7 @@ class PantallaReservaciones(QWidget):
                     self.__llenar_tabla_reservaciones(datos_tabla)
             else:
                 # El usuario cancelo o no ingreso texto o no hace nada
-                print("Busqueda cancelada por el usuario.")
+                print("Busqueda cancelada por el usuario")
                 self.llenarTablaAlInicio()
 
         elif filtro_seleccionado == "Fecha":
@@ -366,7 +364,7 @@ class PantallaReservaciones(QWidget):
         
         if not datos_tabla:
             self.table_widget.setRowCount(0)
-            print("No hay datos para llenar la tabla.")
+            print("No hay datos para llenar la tabla")
             return
 
         # Configurar número de filas

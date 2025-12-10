@@ -69,9 +69,9 @@ class MainUIEmpresa(QMainWindow):
         # Pasar app_manager a PantallaIndex
         self.index_ui = PantallaIndex(self.app_manager.controlador_index, self.app_manager)
         
-        # ACTUALIZADO - Pasar app_manager a PantallaReservaciones
+        # ACTUALIZADO - Pasar app_manager a PantallaReservaciones y PantallaCorridas
         self.pagina_reservaciones_widget = PantallaReservaciones(self.app_manager.controlador_pr, self.app_manager)
-        self.pagina_corridas_widget = PantallaCorridas(self.app_manager.controlador_pc)
+        self.pagina_corridas_widget = PantallaCorridas(self.app_manager.controlador_pc, app_manager=self.app_manager)
         self.pagina_autobuses_widget = PantallaAutobuses(self.app_manager.controlador_pa)
         self.pagina_rutas_widget = PantallaRutas(self.app_manager)
         self.pagina_operadores_widget = PantallaOperadores(self.app_manager.controlador_po, self.app_manager)
@@ -458,7 +458,7 @@ class MainUIEmpresa(QMainWindow):
         """
         Este metodo que se llama cuando se preciona la X en esta ventana.
         """
-        print("Terminando programa.")
+        print("Terminando programita")
         event.accept() 
         
         #Nota: Luego de esto event.accept(), el flujo del programa regresa al main.py

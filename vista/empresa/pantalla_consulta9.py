@@ -35,15 +35,14 @@ class PantallaConsulta9(QWidget):
         self._update_and_filter_corridas()
 
     def _update_and_filter_corridas(self):
-        print("DEBUG: _update_and_filter_corridas called.")
+        
         selected_date = self.ui.dateEdit.date().toString("yyyy-MM-dd")
         selected_origin_city = self.ui.comboBox_filtroDestinoCorr.currentText()
 
-        print(f"DEBUG: Selected Date: {selected_date}, Selected Origin City: {selected_origin_city}")
 
-        # Update lineEdit_origen
+        # Actualizar el lineEdit de origen con la ciudad seleccionada
         if selected_origin_city == "TODOS":
-            self.ui.lineEdit_origen.setText("") # Clear if "TODOS" is selected
+            self.ui.lineEdit_origen.setText("") # Limpiar si se selecciona "TODOS"
         else:
             self.ui.lineEdit_origen.setText(selected_origin_city)
 
@@ -54,23 +53,18 @@ class PantallaConsulta9(QWidget):
 
         corrida_dao = self.app_manager.controlador_pc.corrida_dao
         
-        # If "TODOS" is selected for origin, pass None to the DAO
+        # Si se selecciona :TODOS" no filtrar por ciudad de origen
         if selected_origin_city == "TODOS":
-            print(f"DEBUG: Calling DAO with date={selected_date}, origin=None")
             filtered_corridas = corrida_dao.obtener_corridas_detalladas_por_fecha_y_origen(selected_date, None)
         else:
-            print(f"DEBUG: Calling DAO with date={selected_date}, origin={selected_origin_city}")
             filtered_corridas = corrida_dao.obtener_corridas_detalladas_por_fecha_y_origen(selected_date, selected_origin_city)
             
-        print(f"DEBUG: Filtered Corridas received from DAO: {filtered_corridas}")
         self._populate_table(filtered_corridas)
 
     def _populate_table(self, corridas):
-        print(f"DEBUG: _populate_table called with {len(corridas)} corridas.")
-        self.ui.QtableWidget_corridas.setRowCount(0) # Clear existing data
+        self.ui.QtableWidget_corridas.setRowCount(0) # Limpiar datos
 
         if not corridas:
-            print("DEBUG: No corridas to display.")
             return
 
         for row_num, corrida in enumerate(corridas):

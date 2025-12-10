@@ -327,7 +327,6 @@ class AutobusDAO:
                     fila[7]  # marca_nombre, modelo_nombre
                 )
                 autobuses.append(autobus)
-                print(f"DEBUG DAO: Autobús cargado: {autobus}") # Re-added Debug print
 
         except Error as e:
             print(f"Error al listar autobuses: {e}")

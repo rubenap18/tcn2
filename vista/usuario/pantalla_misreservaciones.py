@@ -100,7 +100,7 @@ class PantallaMisReservacionesWidget(QWidget):
         if not reservaciones:
             # Solo limpiar la tabla sin mostrar mensaje
             self.ui.tableWidget_tusReservaciones.setRowCount(0)
-            print(f"ℹ Usuario ID {usuario.id} no tiene reservaciones")
+            print(f"ℹ Usuario {usuario.id} no tiene reservaciones")
             return
         
         # Formatear datos para la tabla
@@ -109,7 +109,7 @@ class PantallaMisReservacionesWidget(QWidget):
         # Llenar la tabla
         self.llenar_tabla(datos_tabla)
         
-        print(f"✓ Cargadas {len(reservaciones)} reservaciones para el usuario ID: {usuario.id}")
+        print(f"Cargadas {len(reservaciones)} reservaciones para el usuario {usuario.id}")
     
     def llenar_tabla(self, datos):
         """

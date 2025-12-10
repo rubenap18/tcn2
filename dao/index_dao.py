@@ -101,7 +101,6 @@ class IndexDAO:
             cursor = self.db.cursor(dictionary=True) # Added dictionary=True
             cursor.execute(comando, (corrida_id,))
             pasajeros = cursor.fetchall()
-            print(f"DEBUG: Pasajeros fetched for corrida_id {corrida_id}: {pasajeros}") # DEBUG
             cursor.close()
             return pasajeros
         except Error as e:
