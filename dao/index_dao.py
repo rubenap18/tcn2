@@ -83,24 +83,25 @@ class IndexDAO:
             return []
 
     def cargar_pasajeros_por_corrida(self, corrida_id):
-        
         try:
             comando = """
-            SELECT
-                r.numero AS numero_boleto,
-                a.numero AS numero_asiento,
-                CONCAT(p.nombre, ' ', p.apellPat, ' ', COALESCE(p.apellMat, '')) AS nombre_pasajero,
-                TIMESTAMPDIFF(YEAR, p.fechaNac, CURDATE()) AS edad
-            FROM pasajero p
-            JOIN reservacion r ON p.numero = r.pasajero
-            JOIN asiento_reservacion ar ON r.numero = ar.reservacion
-            JOIN asiento a ON ar.asiento = a.clave
-            WHERE r.corrida = %s
-            ORDER BY r.numero
-            """
-            cursor = self.db.cursor(dictionary=True) # Added dictionary=True
+                SELECT
+                    r.numero AS numero_boleto,
+                    MIN(a.numero) AS numero_asiento,
+                    CONCAT(p.nombre, ' ', p.apellPat, ' ', COALESCE(p.apellMat, '')) AS nombre_pasajero,
+                    TIMESTAMPDIFF(YEAR, p.fechaNac, CURDATE()) AS edad
+                FROM pasajero p
+                JOIN reservacion r ON p.numero = r.pasajero
+                JOIN asiento_reservacion ar ON r.numero = ar.reservacion
+                JOIN asiento a ON ar.asiento = a.clave
+                WHERE r.corrida = %s
+                GROUP BY r.numero, p.numero, p.nombre, p.apellPat, p.apellMat, p.fechaNac
+                ORDER BY r.numero
+                """
+            cursor = self.db.cursor(dictionary=True)
             cursor.execute(comando, (corrida_id,))
             pasajeros = cursor.fetchall()
+            
             cursor.close()
             return pasajeros
         except Error as e:
