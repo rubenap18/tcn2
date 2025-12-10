@@ -299,6 +299,28 @@ border: none;
     </property>
    </widget>
 
+   <widget class="QLabel" name="label_fecha_origen">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>130</y>
+      <width>150</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+border: none;</string>
+    </property>
+    <property name="text">
+     <string>Fecha de origen</string>
+    </property>
+   </widget>
    <widget class="QLabel" name="label_fecha">
     <property name="geometry">
      <rect>

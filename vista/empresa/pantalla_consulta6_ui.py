@@ -161,7 +161,7 @@ class Ui_pantalla_consulta6(object):
 "")
         self.corridas_label = QLabel(self.widget_opfiltro_2)
         self.corridas_label.setObjectName(u"corridas_label")
-        self.corridas_label.setGeometry(QRect(20, 10, 1031, 91))
+        self.corridas_label.setGeometry(QRect(20, 10, 1181, 91))
         font1 = QFont()
         font1.setPointSize(59)
         font1.setBold(True)
@@ -186,6 +186,12 @@ class Ui_pantalla_consulta6(object):
         self.dateEdit.setStyleSheet(u"QDateEdit{\n"
 "	border-radius:5px;\n"
 "}")
+        self.label_fecha_origen = QLabel(self.widget_opfiltro_2)
+        self.label_fecha_origen.setObjectName(u"label_fecha_origen")
+        self.label_fecha_origen.setGeometry(QRect(30, 130, 150, 27))
+        self.label_fecha_origen.setFont(font2)
+        self.label_fecha_origen.setStyleSheet(u"color: black;\n"
+"border: none;")
         self.label_fecha = QLabel(self.widget_opfiltro_2)
         self.label_fecha.setObjectName(u"label_fecha")
         self.label_fecha.setGeometry(QRect(30, 160, 150, 40))
@@ -401,6 +407,7 @@ class Ui_pantalla_consulta6(object):
         ___qtablewidgetitem6.setText(QCoreApplication.translate("pantalla_consulta6", u"Boletos disponibles", None));
         self.corridas_label.setText(QCoreApplication.translate("pantalla_consulta6", u"Boletos vendidos en un d\u00eda", None))
         self.label_2.setText(QCoreApplication.translate("pantalla_consulta6", u"Fecha", None))
+        self.label_fecha_origen.setText(QCoreApplication.translate("pantalla_consulta6", u"Fecha de origen", None))
         self.boton_inicio_2.setText("")
         self.boton_rutas.setText(QCoreApplication.translate("pantalla_consulta6", u"Rutas", None))
         self.boton_corridas.setText(QCoreApplication.translate("pantalla_consulta6", u"Corridas", None))
