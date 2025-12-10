@@ -644,11 +644,11 @@ QPushButton:pressed {
 }</string>
    </property>
    <property name="text">
-    <string>Corridas</string>
+    <string> Corridas</string>
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>recursos/recursos_empresa/boleto.png</normaloff>recursos/recursos_empresa/boleto.png</iconset>
+     <normaloff>../../recursos/recursos_empresa/autobus.png</normaloff>../../recursos/recursos_empresa/autobus.png</iconset>
    </property>
    <property name="iconSize">
     <size>

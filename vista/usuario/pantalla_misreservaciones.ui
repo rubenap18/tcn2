@@ -16,55 +16,11 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
-  <widget class="QPushButton" name="boton_destinos">
-   <property name="geometry">
-    <rect>
-     <x>1340</x>
-     <y>60</y>
-     <width>241</width>
-     <height>91</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-	background: #1061C4;
-	color:WHITE;
-	border:none;
-	border-radius: 8px;
-	font-weight: bold;
-	font-size:25px;
-}
-
-QPushButton:hover {
-    background-color: #0D4FAB;    
-}
-
-QPushButton:pressed {
-    background-color: #0A3F8A;     
-}</string>
-   </property>
-   <property name="text">
-    <string>Destinos</string>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_estatico_logo">
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>70</y>
+     <y>50</y>
      <width>441</width>
      <height>131</height>
     </rect>
@@ -76,103 +32,13 @@ QPushButton:pressed {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../recursos/recursos usuario/LOGOJPG.jpg</pixmap>
+    <pixmap>recursos/recursos_usuario/Screenshot from 2025-11-22 14-58-14.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
    </property>
    <property name="wordWrap">
     <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="boton_reservaciones">
-   <property name="geometry">
-    <rect>
-     <x>1080</x>
-     <y>70</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-     <underline>true</underline>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-	background: rgb(255, 255, 255);
-	color:black;
-	border:none;
-	border-radius: 8px;
-	font-weight: bold;
-	font-size:25px;
-	text-decoration: underline;
-}
-
-QPushButton:hover {
-    background-color: rgb(222, 221, 218);    
-}
-
-QPushButton:pressed {
-    background-color: rgb(192, 191, 188);     
-}</string>
-   </property>
-   <property name="text">
-    <string>Reservaciones</string>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="boto_viajar">
-   <property name="geometry">
-    <rect>
-     <x>1620</x>
-     <y>60</y>
-     <width>241</width>
-     <height>91</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-	background: #FF6A36;
-	color:WHITE;
-	border:none;
-	border-radius: 8px;
-	font-weight: bold;
-	font-size: 20px;
-}
-
-QPushButton:hover {
-    background-color: #E85F30;   /* Naranja más oscuro */
-}
-
-QPushButton:pressed {
-    background-color: #CC532A;   /* Más oscuro para click */
-}</string>
-   </property>
-   <property name="text">
-    <string>VIAJAR</string>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
    </property>
   </widget>
   <widget class="QTableWidget" name="tableWidget_tusReservaciones">
@@ -270,10 +136,10 @@ QScrollBar::sub-line {
 </string>
    </property>
    <property name="verticalScrollBarPolicy">
-    <enum>Qt::ScrollBarAsNeeded</enum>
+    <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
    </property>
    <property name="horizontalScrollBarPolicy">
-    <enum>Qt::ScrollBarAsNeeded</enum>
+    <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
    </property>
    <attribute name="horizontalHeaderDefaultSectionSize">
     <number>200</number>
@@ -339,7 +205,6 @@ QScrollBar::sub-line {
    <property name="font">
     <font>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -366,7 +231,7 @@ QPushButton:pressed {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../recursos/recursos empresa/volver.png</normaloff>../recursos/recursos empresa/volver.png</iconset>
+     <normaloff>recursos/recursos_empresa/volver.png</normaloff>recursos/recursos_empresa/volver.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -379,7 +244,7 @@ QPushButton:pressed {
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>230</y>
+     <y>220</y>
      <width>741</width>
      <height>71</height>
     </rect>
@@ -387,7 +252,6 @@ QPushButton:pressed {
    <property name="font">
     <font>
      <pointsize>59</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>

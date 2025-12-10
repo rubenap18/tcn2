@@ -25,163 +25,6 @@ class Ui_Form(object):
             Form.setObjectName(u"Form")
         Form.resize(1916, 1084)
         Form.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.header_widget = QWidget(Form)
-        self.header_widget.setObjectName(u"header_widget")
-        self.header_widget.setGeometry(QRect(-10, 0, 1951, 111))
-        self.header_widget.setStyleSheet(u"background-color:rgb(255, 255, 255);\n"
-"background-color: rgb(255, 255, 255);\n"
-"border-radius: 15px;\n"
-"border-bottom: 1px solid #E3E3E3;")
-        self.boton_rutas = QPushButton(self.header_widget)
-        self.boton_rutas.setObjectName(u"boton_rutas")
-        self.boton_rutas.setGeometry(QRect(1140, 20, 221, 71))
-        font = QFont()
-        font.setBold(True)
-        self.boton_rutas.setFont(font)
-        self.boton_rutas.setStyleSheet(u"QPushButton{\n"
-"	background: #1061C4;\n"
-"	color:WHITE;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size:25px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0D4FAB;    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #0A3F8A;     \n"
-"}")
-        icon = QIcon()
-        icon.addFile(u"recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_rutas.setIcon(icon)
-        self.boton_rutas.setIconSize(QSize(30, 30))
-        self.boton_corridas = QPushButton(self.header_widget)
-        self.boton_corridas.setObjectName(u"boton_corridas")
-        self.boton_corridas.setGeometry(QRect(640, 20, 221, 71))
-        self.boton_corridas.setFont(font)
-        self.boton_corridas.setStyleSheet(u"QPushButton{\n"
-"	background: #1061C4;\n"
-"	color:WHITE;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size: 25px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0D4FAB;    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #0A3F8A;     \n"
-"}")
-        icon1 = QIcon()
-        icon1.addFile(u"recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_corridas.setIcon(icon1)
-        self.boton_corridas.setIconSize(QSize(30, 30))
-        self.boton_operadores = QPushButton(self.header_widget)
-        self.boton_operadores.setObjectName(u"boton_operadores")
-        self.boton_operadores.setGeometry(QRect(1390, 20, 221, 71))
-        self.boton_operadores.setFont(font)
-        self.boton_operadores.setStyleSheet(u"QPushButton{\n"
-"	background: #1061C4;\n"
-"	color:WHITE;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size: 25px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0D4FAB;    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #0A3F8A;     \n"
-"}")
-        icon2 = QIcon()
-        icon2.addFile(u"recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_operadores.setIcon(icon2)
-        self.boton_operadores.setIconSize(QSize(30, 30))
-        self.boton_autobuses = QPushButton(self.header_widget)
-        self.boton_autobuses.setObjectName(u"boton_autobuses")
-        self.boton_autobuses.setGeometry(QRect(890, 20, 221, 71))
-        self.boton_autobuses.setFont(font)
-        self.boton_autobuses.setStyleSheet(u"QPushButton{\n"
-"	background: #1061C4;\n"
-"	color:WHITE;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size: 25px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0D4FAB;    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #0A3F8A;     \n"
-"}")
-        icon3 = QIcon()
-        icon3.addFile(u"recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_autobuses.setIcon(icon3)
-        self.boton_autobuses.setIconSize(QSize(30, 30))
-        self.boton_inicio = QPushButton(self.header_widget)
-        self.boton_inicio.setObjectName(u"boton_inicio")
-        self.boton_inicio.setGeometry(QRect(270, 20, 91, 71))
-        self.boton_inicio.setFont(font)
-        self.boton_inicio.setStyleSheet(u"QPushButton{\n"
-"	background: #1061C4;\n"
-"	color:WHITE;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size: 25px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0D4FAB;    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #0A3F8A;     \n"
-"}")
-        icon4 = QIcon()
-        icon4.addFile(u"recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_inicio.setIcon(icon4)
-        self.boton_inicio.setIconSize(QSize(30, 30))
-        self.boton_reservaciones = QPushButton(self.header_widget)
-        self.boton_reservaciones.setObjectName(u"boton_reservaciones")
-        self.boton_reservaciones.setGeometry(QRect(390, 20, 221, 71))
-        self.boton_reservaciones.setFont(font)
-        self.boton_reservaciones.setStyleSheet(u"QPushButton{\n"
-"	background: #1061C4;\n"
-"	color:WHITE;\n"
-"	border:none;\n"
-"	border-radius: 8px;\n"
-"	font-weight: bold;\n"
-"	font-size: 25px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #0D4FAB;    \n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #0A3F8A;     \n"
-"}")
-        icon5 = QIcon()
-        icon5.addFile(u"recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.boton_reservaciones.setIcon(icon5)
-        self.boton_reservaciones.setIconSize(QSize(30, 30))
-        self.label = QLabel(self.header_widget)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(30, 20, 201, 71))
-        self.label.setPixmap(QPixmap(u"recursos/recursos_empresa/logo.png"))
         self.widget = QWidget(Form)
         self.widget.setObjectName(u"widget")
         self.widget.setGeometry(QRect(0, 120, 1920, 971))
@@ -202,6 +45,8 @@ class Ui_Form(object):
         self.boton_agregaruta = QPushButton(self.widget_opbotones)
         self.boton_agregaruta.setObjectName(u"boton_agregaruta")
         self.boton_agregaruta.setGeometry(QRect(10, 90, 201, 71))
+        font = QFont()
+        font.setBold(True)
         self.boton_agregaruta.setFont(font)
         self.boton_agregaruta.setStyleSheet(u"QPushButton{\n"
 "	background: #1061C4;\n"
@@ -219,6 +64,9 @@ class Ui_Form(object):
 "QPushButton:pressed {\n"
 "    background-color: #0A3F8A;     \n"
 "}")
+        icon = QIcon()
+        icon.addFile(u"recursos/recursos_empresa/agregar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_agregaruta.setIcon(icon)
         self.boton_agregaruta.setIconSize(QSize(30, 30))
         self.boton_editaruta = QPushButton(self.widget_opbotones)
         self.boton_editaruta.setObjectName(u"boton_editaruta")
@@ -240,6 +88,9 @@ class Ui_Form(object):
 "QPushButton:pressed {\n"
 "    background-color: #0A3F8A;     \n"
 "}")
+        icon1 = QIcon()
+        icon1.addFile(u"recursos/recursos_empresa/editar.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_editaruta.setIcon(icon1)
         self.boton_editaruta.setIconSize(QSize(30, 30))
         self.boton_ciudades = QPushButton(self.widget_opbotones)
         self.boton_ciudades.setObjectName(u"boton_ciudades")
@@ -261,6 +112,9 @@ class Ui_Form(object):
 "QPushButton:pressed {\n"
 "    background-color: #0A3F8A;     \n"
 "}")
+        icon2 = QIcon()
+        icon2.addFile(u"recursos/recursos_empresa/ciudad.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_ciudades.setIcon(icon2)
         self.boton_ciudades.setIconSize(QSize(30, 30))
         self.QtableWidget_rutas = QTableWidget(self.widget)
         if (self.QtableWidget_rutas.columnCount() < 4):
@@ -517,6 +371,172 @@ class Ui_Form(object):
 "    selection-color: white;\n"
 "}\n"
 "")
+        self.header_autobuses = QWidget(Form)
+        self.header_autobuses.setObjectName(u"header_autobuses")
+        self.header_autobuses.setGeometry(QRect(0, 0, 1921, 111))
+        self.header_autobuses.setStyleSheet(u"QWidget {\n"
+"    background: transparent;\n"
+"    border: none;\n"
+"    border-radius: 0px;\n"
+"    padding: 0px;\n"
+"    margin: 0px;\n"
+"}")
+        self.boton_rutas = QPushButton(self.header_autobuses)
+        self.boton_rutas.setObjectName(u"boton_rutas")
+        self.boton_rutas.setGeometry(QRect(1190, 20, 221, 71))
+        self.boton_rutas.setFont(font)
+        self.boton_rutas.setStyleSheet(u"QPushButton{\n"
+"	background: #1061C4;\n"
+"	color:WHITE;\n"
+"	border:none;\n"
+"	border-radius: 8px;\n"
+"	font-weight: bold;\n"
+"	font-size:25px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #0D4FAB;    \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0A3F8A;     \n"
+"}")
+        icon3 = QIcon()
+        icon3.addFile(u"recursos/recursos_empresa/entrega.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_rutas.setIcon(icon3)
+        self.boton_rutas.setIconSize(QSize(30, 30))
+        self.boton_corridas = QPushButton(self.header_autobuses)
+        self.boton_corridas.setObjectName(u"boton_corridas")
+        self.boton_corridas.setGeometry(QRect(690, 20, 221, 71))
+        self.boton_corridas.setFont(font)
+        self.boton_corridas.setStyleSheet(u"QPushButton{\n"
+"	background: #1061C4;\n"
+"	color:WHITE;\n"
+"	border:none;\n"
+"	border-radius: 8px;\n"
+"	font-weight: bold;\n"
+"	font-size: 25px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #0D4FAB;    \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0A3F8A;     \n"
+"}")
+        icon4 = QIcon()
+        icon4.addFile(u"recursos/recursos_empresa/calendario.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_corridas.setIcon(icon4)
+        self.boton_corridas.setIconSize(QSize(30, 30))
+        self.boton_operadores = QPushButton(self.header_autobuses)
+        self.boton_operadores.setObjectName(u"boton_operadores")
+        self.boton_operadores.setGeometry(QRect(1440, 20, 221, 71))
+        self.boton_operadores.setFont(font)
+        self.boton_operadores.setStyleSheet(u"QPushButton{\n"
+"	background: #1061C4;\n"
+"	color:WHITE;\n"
+"	border:none;\n"
+"	border-radius: 8px;\n"
+"	font-weight: bold;\n"
+"	font-size: 25px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #0D4FAB;    \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0A3F8A;     \n"
+"}")
+        icon5 = QIcon()
+        icon5.addFile(u"recursos/recursos_empresa/conductor.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_operadores.setIcon(icon5)
+        self.boton_operadores.setIconSize(QSize(30, 30))
+        self.boton_autobuses = QPushButton(self.header_autobuses)
+        self.boton_autobuses.setObjectName(u"boton_autobuses")
+        self.boton_autobuses.setGeometry(QRect(940, 20, 221, 71))
+        self.boton_autobuses.setFont(font)
+        self.boton_autobuses.setStyleSheet(u"QPushButton{\n"
+"	background: #1061C4;\n"
+"	color:WHITE;\n"
+"	border:none;\n"
+"	border-radius: 8px;\n"
+"	font-weight: bold;\n"
+"	font-size: 25px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #0D4FAB;    \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0A3F8A;     \n"
+"}")
+        icon6 = QIcon()
+        icon6.addFile(u"recursos/recursos_empresa/autobus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_autobuses.setIcon(icon6)
+        self.boton_autobuses.setIconSize(QSize(30, 30))
+        self.boton_inicio = QPushButton(self.header_autobuses)
+        self.boton_inicio.setObjectName(u"boton_inicio")
+        self.boton_inicio.setGeometry(QRect(320, 20, 91, 71))
+        self.boton_inicio.setFont(font)
+        self.boton_inicio.setStyleSheet(u"QPushButton{\n"
+"	background: #1061C4;\n"
+"	color:WHITE;\n"
+"	border:none;\n"
+"	border-radius: 8px;\n"
+"	font-weight: bold;\n"
+"	font-size: 25px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #0D4FAB;    \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0A3F8A;     \n"
+"}")
+        icon7 = QIcon()
+        icon7.addFile(u"recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_inicio.setIcon(icon7)
+        self.boton_inicio.setIconSize(QSize(30, 30))
+        self.boton_reservaciones = QPushButton(self.header_autobuses)
+        self.boton_reservaciones.setObjectName(u"boton_reservaciones")
+        self.boton_reservaciones.setGeometry(QRect(440, 20, 221, 71))
+        self.boton_reservaciones.setFont(font)
+        self.boton_reservaciones.setStyleSheet(u"QPushButton{\n"
+"	background: #1061C4;\n"
+"	color:WHITE;\n"
+"	border:none;\n"
+"	border-radius: 8px;\n"
+"	font-weight: bold;\n"
+"	font-size: 25px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #0D4FAB;    \n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0A3F8A;     \n"
+"}")
+        icon8 = QIcon()
+        icon8.addFile(u"recursos/recursos_empresa/boleto.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.boton_reservaciones.setIcon(icon8)
+        self.boton_reservaciones.setIconSize(QSize(30, 30))
+        self.label = QLabel(self.header_autobuses)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(30, 20, 211, 81))
+        self.label.setStyleSheet(u"QLabel {\n"
+"    background: transparent;\n"
+"    border: none;\n"
+"    border-radius: 0px;\n"
+"    padding: 0px;\n"
+"    margin: 0px;\n"
+"}")
+        self.label.setPixmap(QPixmap(u"recursos/recursos_empresa/logo.png"))
+        self.label.setScaledContents(True)
 
         self.retranslateUi(Form)
 
@@ -525,16 +545,9 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.boton_rutas.setText(QCoreApplication.translate("Form", u"Rutas", None))
-        self.boton_corridas.setText(QCoreApplication.translate("Form", u"Corridas", None))
-        self.boton_operadores.setText(QCoreApplication.translate("Form", u"Operadores", None))
-        self.boton_autobuses.setText(QCoreApplication.translate("Form", u"Autobuses", None))
-        self.boton_inicio.setText("")
-        self.boton_reservaciones.setText(QCoreApplication.translate("Form", u"Reservaciones", None))
-        self.label.setText("")
-        self.boton_agregaruta.setText(QCoreApplication.translate("Form", u"A\u00f1adir", None))
-        self.boton_editaruta.setText(QCoreApplication.translate("Form", u"Editar", None))
-        self.boton_ciudades.setText(QCoreApplication.translate("Form", u"Ciudades", None))
+        self.boton_agregaruta.setText(QCoreApplication.translate("Form", u" A\u00f1adir", None))
+        self.boton_editaruta.setText(QCoreApplication.translate("Form", u" Editar", None))
+        self.boton_ciudades.setText(QCoreApplication.translate("Form", u" Ciudades", None))
         ___qtablewidgetitem = self.QtableWidget_rutas.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("Form", u"Codigo", None));
         ___qtablewidgetitem1 = self.QtableWidget_rutas.horizontalHeaderItem(1)
@@ -562,5 +575,12 @@ class Ui_Form(object):
         self.comboBox_fdestino.setItemText(5, QCoreApplication.translate("Form", u"Tecate", None))
         self.comboBox_fdestino.setItemText(6, QCoreApplication.translate("Form", u"San Quintin", None))
 
+        self.boton_rutas.setText(QCoreApplication.translate("Form", u"Rutas", None))
+        self.boton_corridas.setText(QCoreApplication.translate("Form", u"Corridas", None))
+        self.boton_operadores.setText(QCoreApplication.translate("Form", u"Operadores", None))
+        self.boton_autobuses.setText(QCoreApplication.translate("Form", u"Autobuses", None))
+        self.boton_inicio.setText("")
+        self.boton_reservaciones.setText(QCoreApplication.translate("Form", u"Reservaciones", None))
+        self.label.setText("")
     # retranslateUi
 

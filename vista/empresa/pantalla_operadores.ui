@@ -71,7 +71,11 @@ QPushButton:pressed {
 }</string>
     </property>
     <property name="text">
-     <string>Editar</string>
+     <string> Editar</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>recursos/recursos_empresa/editar.png</normaloff>recursos/recursos_empresa/editar.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -114,7 +118,11 @@ QPushButton:pressed {
 }</string>
     </property>
     <property name="text">
-     <string>Añadir</string>
+     <string> Añadir</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>recursos/recursos_empresa/agregar.png</normaloff>recursos/recursos_empresa/agregar.png</iconset>
     </property>
     <property name="iconSize">
      <size>

@@ -53,7 +53,7 @@ class Ui_pagina_inicio(object):
         self.label_estatico_logo.setObjectName(u"label_estatico_logo")
         self.label_estatico_logo.setGeometry(QRect(70, 70, 441, 131))
         self.label_estatico_logo.setStyleSheet(u"border:none")
-        self.label_estatico_logo.setPixmap(QPixmap(u"../recursos/recursos usuario/LOGOJPG.jpg"))
+        self.label_estatico_logo.setPixmap(QPixmap(u"recursos/recursos_usuario/LOGOJPG.jpg"))
         self.label_estatico_logo.setScaledContents(True)
         self.label_estatico_logo.setWordWrap(False)
         self.boton_destinos = QPushButton(pagina_inicio)

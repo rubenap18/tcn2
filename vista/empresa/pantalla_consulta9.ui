@@ -70,7 +70,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/entrega.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/entrega.png</iconset>
+      <normaloff>recursos/recursos_empresa/entrega.png</normaloff>recursos/recursos_empresa/entrega.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -117,7 +117,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/calendario.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/calendario.png</iconset>
+      <normaloff>recursos/recursos_empresa/calendario.png</normaloff>recursos/recursos_empresa/calendario.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -164,7 +164,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/conductor.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/conductor.png</iconset>
+      <normaloff>recursos/recursos_empresa/conductor.png</normaloff>recursos/recursos_empresa/conductor.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -211,7 +211,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/autobus.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/autobus.png</iconset>
+      <normaloff>recursos/recursos_empresa/autobus.png</normaloff>recursos/recursos_empresa/autobus.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -258,7 +258,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</iconset>
+      <normaloff>recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</normaloff>recursos/recursos_empresa/casa-silueta-negra-sin-puerta.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -305,7 +305,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/boleto.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/boleto.png</iconset>
+      <normaloff>recursos/recursos_empresa/boleto.png</normaloff>recursos/recursos_empresa/boleto.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -330,7 +330,7 @@ QPushButton:pressed {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>tcn2/tcn2/recursos/recursos_empresa/logo.png</pixmap>
+     <pixmap>recursos/recursos_empresa/logo.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -346,7 +346,7 @@ QPushButton:pressed {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>tcn2/tcn2/vista/empresa/recursos/usuario.png</pixmap>
+     <pixmap>vista/empresa/recursos/usuario.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -623,7 +623,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>tcn2/tcn2/recursos/recursos_empresa/volver.png</normaloff>tcn2/tcn2/recursos/recursos_empresa/volver.png</iconset>
+      <normaloff>recursos/recursos_empresa/volver.png</normaloff>recursos/recursos_empresa/volver.png</iconset>
     </property>
     <property name="iconSize">
      <size>

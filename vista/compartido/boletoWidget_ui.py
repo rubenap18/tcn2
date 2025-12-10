@@ -148,7 +148,7 @@ class BoletoWidget(object):
         self.label_estatico_llegada.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_dinamico_pasajero = QLabel(self.widget)
         self.label_dinamico_pasajero.setObjectName(u"label_dinamico_pasajero")
-        self.label_dinamico_pasajero.setGeometry(QRect(100, 500, 421, 34))
+        self.label_dinamico_pasajero.setGeometry(QRect(40, 500, 541, 34))
         self.label_dinamico_pasajero.setFont(font2)
         self.label_dinamico_pasajero.setStyleSheet(u"border:none\n"
 "\n"
@@ -182,7 +182,7 @@ class BoletoWidget(object):
 "")
         self.label_dinamico_tipopasajero = QLabel(self.widget)
         self.label_dinamico_tipopasajero.setObjectName(u"label_dinamico_tipopasajero")
-        self.label_dinamico_tipopasajero.setGeometry(QRect(60, 690, 230, 61))
+        self.label_dinamico_tipopasajero.setGeometry(QRect(60, 690, 201, 61))
         font3 = QFont()
         font3.setBold(True)
         font3.setItalic(True)

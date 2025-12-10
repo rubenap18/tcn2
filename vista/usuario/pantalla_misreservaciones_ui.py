@@ -26,9 +26,9 @@ class Ui_pagina_misreservaciones(object):
         pagina_misreservaciones.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.label_estatico_logo = QLabel(pagina_misreservaciones)
         self.label_estatico_logo.setObjectName(u"label_estatico_logo")
-        self.label_estatico_logo.setGeometry(QRect(70, 70, 461, 131))
+        self.label_estatico_logo.setGeometry(QRect(70, 50, 441, 131))
         self.label_estatico_logo.setStyleSheet(u"border:none")
-        self.label_estatico_logo.setPixmap(QPixmap(u"recursos/recursos_empresa/loguito1.png"))
+        self.label_estatico_logo.setPixmap(QPixmap(u"recursos/recursos_usuario/Screenshot from 2025-11-22 14-58-14.png"))
         self.label_estatico_logo.setScaledContents(True)
         self.label_estatico_logo.setWordWrap(False)
         self.tableWidget_tusReservaciones = QTableWidget(pagina_misreservaciones)
@@ -144,9 +144,8 @@ class Ui_pagina_misreservaciones(object):
         self.tableWidget_tusReservaciones.verticalHeader().setVisible(False)
         self.boton_regresar = QPushButton(pagina_misreservaciones)
         self.boton_regresar.setObjectName(u"boton_regresar")
-        self.boton_regresar.setGeometry(QRect(1540, 240, 91, 71))
+        self.boton_regresar.setGeometry(QRect(1550, 240, 81, 71))
         font = QFont()
-        font.setPointSize(-1)
         font.setBold(True)
         self.boton_regresar.setFont(font)
         self.boton_regresar.setStyleSheet(u"QPushButton{\n"
@@ -166,12 +165,12 @@ class Ui_pagina_misreservaciones(object):
 "    background-color: #0A3F8A;     \n"
 "}")
         icon = QIcon()
-        icon.addFile(u"recursos/recursos_usuario/volver.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"recursos/recursos_empresa/volver.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.boton_regresar.setIcon(icon)
         self.boton_regresar.setIconSize(QSize(35, 35))
         self.label_estatico_reservaciones = QLabel(pagina_misreservaciones)
         self.label_estatico_reservaciones.setObjectName(u"label_estatico_reservaciones")
-        self.label_estatico_reservaciones.setGeometry(QRect(60, 230, 741, 71))
+        self.label_estatico_reservaciones.setGeometry(QRect(60, 220, 741, 71))
         font1 = QFont()
         font1.setPointSize(59)
         font1.setBold(True)
@@ -216,7 +215,7 @@ class Ui_pagina_misreservaciones(object):
         ___qtablewidgetitem4 = self.tableWidget_tusReservaciones.horizontalHeaderItem(4)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("pagina_misreservaciones", u"Fecha de viaje", None));
         ___qtablewidgetitem5 = self.tableWidget_tusReservaciones.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("pagina_misreservaciones", u"Límite de pago", None));
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("pagina_misreservaciones", u"L\u00edmite de pago", None));
         ___qtablewidgetitem6 = self.tableWidget_tusReservaciones.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("pagina_misreservaciones", u"IVA aplicado", None));
         ___qtablewidgetitem7 = self.tableWidget_tusReservaciones.horizontalHeaderItem(7)
@@ -227,3 +226,4 @@ class Ui_pagina_misreservaciones(object):
         self.label_estatico_reservaciones.setText(QCoreApplication.translate("pagina_misreservaciones", u"Tus Reservaciones", None))
         self.boton_verBoleto.setText(QCoreApplication.translate("pagina_misreservaciones", u"Ver boletos", None))
     # retranslateUi
+

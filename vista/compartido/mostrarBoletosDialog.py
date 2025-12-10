@@ -223,7 +223,7 @@ class MostrarBoletosDialog(QDialog):
         
         # Nombre del pasajero - todo centrado
         self.ui_boleto.label_estatico_pasajero.setGeometry(200, 430, 200, 34)
-        self.ui_boleto.label_dinamico_pasajero.setGeometry(100, 465, 400, 34)
+        self.ui_boleto.label_dinamico_pasajero.setGeometry(60, 465, 470, 34)
         
         # Columna izquierda - No. Asiento y Tipo pasajero
         self.ui_boleto.label_estatico_numasientos.setGeometry(margen_izq, 525, 150, 34)

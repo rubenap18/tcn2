@@ -157,7 +157,6 @@ class MainUIUsuario(QMainWindow):
                 )
         
         # ============ CONEXIONES PARA OTRAS PANTALLAS ============
-        # Aquí puedes agregar botones de "Volver" o navegación adicional en cada pantalla
         
         # Conectar botón específico de la pantalla Catálogo de Destinos
         if self.catalogo_destinos_ui:
@@ -170,16 +169,39 @@ class MainUIUsuario(QMainWindow):
             else:
                 print("No se encontró 'boton_regresas' en pantalla Catálogo de Destinos")
         
-        # Conectar botón específico de la pantalla Contáctanos
+        # Conectar botones de la pantalla Contáctanos
         if self.contactanos_ui:
-            boton_salir = self.contactanos_ui.findChild(QPushButton, "boton_salir")
+            # Botón Salir/Volver (nombre correcto del UI)
+            boton_salir = self.contactanos_ui.findChild(QPushButton, "salir_pushButton_5")
             if boton_salir:
                 boton_salir.clicked.connect(
                     self.app_manager.controlador_index_usuario.navegar_a_index
                 )
-                print("Conectado botón boton_salir en pantalla Contáctanos")
+                print("Conectado botón 'salir_pushButton_5' en pantalla Contáctanos")
             else:
-                print("No se encontró boton_salir en pantalla Contáctanos")
+                print("No se encontró 'salir_pushButton_5' en pantalla Contáctanos")
+            
+            # Botón Destinos
+            boton_destinos = self.contactanos_ui.findChild(QPushButton, "destinos_pushButton")
+            if boton_destinos:
+                boton_destinos.clicked.connect(
+                    self.app_manager.controlador_index_usuario.navegar_a_catalogo_destinos
+                )
+                print("Conectado botón 'destinos_pushButton' en pantalla Contáctanos")
+            
+            # Botón Reservaciones
+            boton_reservaciones = self.contactanos_ui.findChild(QPushButton, "reservaciones_pushButton")
+            if boton_reservaciones:
+                boton_reservaciones.clicked.connect(
+                    self.app_manager.controlador_index_usuario.navegar_a_mis_reservaciones
+                )
+                print("Conectado botón 'reservaciones_pushButton' en pantalla Contáctanos")
+            
+            # Botón Viajar
+            boton_viajar = self.contactanos_ui.findChild(QPushButton, "viajar_pushButton")
+            if boton_viajar:
+                boton_viajar.clicked.connect(self.abrir_pantalla_viajar)
+                print("Conectado botón 'viajar_pushButton' en pantalla Contáctanos")
         
         # Buscar automáticamente botones de "Volver" en otras pantallas
         self._conectar_boton_volver(self.blog_ui)
