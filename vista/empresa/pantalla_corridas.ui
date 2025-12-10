@@ -845,24 +845,28 @@ QComboBox QAbstractItemView {
     </item>
    </widget>
   </widget>
-  <widget class="QWidget" name="header_corridas" native="true">
+  <widget class="QWidget" name="header_autobuses" native="true">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>10</y>
-     <width>1951</width>
+     <x>-10</x>
+     <y>-10</y>
+     <width>1921</width>
      <height>111</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px;
-border-bottom: 1px solid #E3E3E3;</string>
+    <string notr="true">QWidget {
+    background: transparent;
+    border: none;
+    border-radius: 0px;
+    padding: 0px;
+    margin: 0px;
+}</string>
    </property>
    <widget class="QPushButton" name="boton_rutas">
     <property name="geometry">
      <rect>
-      <x>1140</x>
+      <x>1190</x>
       <y>20</y>
       <width>221</width>
       <height>71</height>
@@ -909,7 +913,7 @@ QPushButton:pressed {
    <widget class="QPushButton" name="boton_corridas">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>690</x>
       <y>20</y>
       <width>221</width>
       <height>71</height>
@@ -956,7 +960,7 @@ QPushButton:pressed {
    <widget class="QPushButton" name="boton_operadores">
     <property name="geometry">
      <rect>
-      <x>1390</x>
+      <x>1440</x>
       <y>20</y>
       <width>221</width>
       <height>71</height>
@@ -1003,7 +1007,7 @@ QPushButton:pressed {
    <widget class="QPushButton" name="boton_autobuses">
     <property name="geometry">
      <rect>
-      <x>890</x>
+      <x>940</x>
       <y>20</y>
       <width>221</width>
       <height>71</height>
@@ -1050,7 +1054,7 @@ QPushButton:pressed {
    <widget class="QPushButton" name="boton_inicio">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>320</x>
       <y>20</y>
       <width>91</width>
       <height>71</height>
@@ -1097,7 +1101,7 @@ QPushButton:pressed {
    <widget class="QPushButton" name="boton_reservaciones">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>440</x>
       <y>20</y>
       <width>221</width>
       <height>71</height>
@@ -1144,36 +1148,26 @@ QPushButton:pressed {
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>18</x>
-      <y>15</y>
-      <width>231</width>
+      <x>30</x>
+      <y>20</y>
+      <width>211</width>
       <height>81</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: none</string>
+     <string notr="true">QLabel {
+    background: transparent;
+    border: none;
+    border-radius: 0px;
+    padding: 0px;
+    margin: 0px;
+}</string>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
      <pixmap>recursos/recursos_empresa/logo.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>1790</x>
-      <y>10</y>
-      <width>70</width>
-      <height>70</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>recursos/usuario.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
